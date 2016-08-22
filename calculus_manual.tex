@@ -1,0 +1,197 @@
+% Author: Alfredo Sánchez Alberca (asalber@gmail.com)
+% ASPECT RATIO FOR YOUTUBE VIDEO
+% \documentclass[aspectratio=1610,mathserif,profesionalfont,10pt,svgnames,red,xcolor=table]{beamer}
+% ASPECT RATIO FOR PROJECTOR
+\documentclass[profesionalfont,10pt,svgnames,xcolor=table]{beamer}
+
+% BEAMER THEME
+\usetheme[progressbar=frametitle,background=light,titleformat=smallcaps,block=fill]{metropolis}
+
+% ARTICLE VERSION
+% \pdfminorversion=4 % for solving some problems with png graphics in acrobat reader
+% \documentclass[10pt,a4paper,titlepage]{article}
+% \usepackage[hyperref]{beamerarticle}
+
+% LANGUAGE
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+
+% FONT
+\mode<article>{
+\usepackage{fontspec}
+\setmainfont[Ligatures=TeX]{TeX Gyre Pagella}
+\usepackage{unicode-math}
+\setmathfont[math-style=ISO,bold-style=ISO,vargreek-shape=TeX]{TeX Gyre Pagella Math}
+%\usepackage[sc]{mathpazo}
+%\setromanfont[Mapping=tex-text]{Linux Libertine}
+%\setsansfont[Mapping=tex-text]{Myriad Pro}
+%\setmonofont[Mapping=tex-text]{Courier New}
+}
+% IMPROVE FONT IN PDF
+\mode<article>{\usepackage{microtype}}
+
+% MATHS
+\usepackage{units}
+
+% MARGINS
+\setbeamersize{text margin left=.5cm, text margin right=.5cm}
+
+% MARGINS FOR ARTICLE
+\mode<article>{\usepackage{fullpage}}
+\mode<article>{\usepackage[headsep=1cm, top=3cm, bottom=3cm, left=2.54cm, right=2.54cm]{geometry}}
+
+% COLORS
+\definecolor{color1}{RGB}{5,161,230}
+\definecolor{color2}{RGB}{238,50,36}
+\definecolor{ocre}{RGB}{243,102,25} % Define the orange color used for highlighting throughout the book
+\definecolor{blueceu}{RGB}{5,161,230} % Blue color of CEU logo
+\definecolor{greenceu}{RGB}{185,209,16} % Green color of CEU logo
+\definecolor{redceu}{RGB}{238,50,36} % Red color of CEU logo
+\definecolor{grayceu}{RGB}{111,107,83} % Gray color of CEU logo
+\definecolor{coral}{rgb}{1,0.5,0.31} % Orange color for graphics
+\definecolor{royalblue1}{rgb}{0.28,0.46,1} % Blue color for graphics
+\definecolor{mygreen}{rgb}{0,0.8,0} % Green color for graphics
+\definecolor{chaptergrey}{RGB}{5,161,230} % Blue color of CEU logo
+
+% TABLE OF CONTENT style
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+
+% TABLES
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\newcommand{\tcrule}{\arrayrulecolor{color1!50!white}\toprule}
+\newcommand{\mcrule}{\arrayrulecolor{color1!50!white}\midrule}
+\newcommand{\bcrule}{\arrayrulecolor{color1!50!white}\bottomrule}
+
+% GRAPHICS
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usetikzlibrary{external,arrows,arrows.meta,calc,shapes,shapes.arrows,positioning,snakes,decorations.pathreplacing}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+% Graphics export
+\mode<article>{
+\tikzset{
+    png export/.style={
+        external/system call={
+            xelatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname "\image" "\texsource";
+            convert -density 300 -transparent white "\image.pdf" "\image.png"
+        }
+    }
+}
+\tikzset{
+	svg export/.style={
+        external/system call/.add={}%
+        {; pdf2svg "\image.pdf" "\image.svg"}
+    }
+}
+\tikzexternalize[prefix=img/exported/]
+\tikzset{png export}
+\tikzset{svg export}
+}
+
+\usepackage{graphicx}
+
+% CREATIVE COMMON ICONS
+\usepackage[scale=2]{ccicons}
+
+% LOGO POSITION
+\setbeamertemplate{title graphic}{
+ \vbox to 0pt {
+ 	\vspace*{0.9\textheight}
+ 	\inserttitlegraphic
+ }
+}
+
+% SPACE BETWEEN PARAGRAFS
+\setlength{\parskip}{0.5em}
+
+% THEORMEM ENVIRONMENTS
+%\theoremstyle{definition}
+%\newtheorem{defin}[theorem]{Definition}
+
+% BLOCKS COLORS
+\setbeamercolor{block title}{
+	use=normal text,
+	fg=normal text.fg,
+	bg=alerted text.fg!50
+}
+
+
+% HEADINGS AND FOOTERS FOR ARTICLE
+\mode<article>{
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rhead{\sffamily\slshape Elementary Calculus Manual}
+\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\floatpagefraction}{.8}
+%\renewcommand{\textfraction}{.1}
+}
+
+% FRAME TITLE CONFIGURATION
+% \defbeamertemplate{frametitle}{myframe}{
+% 	\nointerlineskip
+% 	\begin{beamercolorbox}[wd=\paperwidth,sep=1ex]{frametitle}
+% 		\insertframetitle
+% 	\end{beamercolorbox}
+% }
+% \setbeamertemplate{frametitle}[myframe]
+
+% SECTION COLOR FOR ARTICLE
+\mode<article>{
+\usepackage{titlesec}
+\titleformat{\section}{\color{color1}\normalfont\Large\bfseries}{\color{color1}\thesection}{1em}{}
+\titleformat{\subsection}{\color{color1}\normalfont\large\bfseries}{\color{color1}\thesubsection}{1em}{}
+}
+
+% COMMAND FOR HIGHLIGHTING
+\newcommand{\highlight}[1]{\textcolor{orange}{\textbf{#1}}}
+
+% PDF settings
+\hypersetup{colorlinks=true}
+
+
+%=====================================================================BODY=====
+
+%---------------------------------------------------------------------cover----
+\mode<article>{
+\title{\textcolor{color1}{\Huge Elementary Calculus Manual}}
+\author{Alfredo Sánchez Alberca (\href{mailto:asalber@ceu.es}{asalber@ceu.es})}
+\date{Feb 2016\\[1cm]
+Department of Applied Math and Statistics\\ CEU San Pablo\\[1cm]
+\includegraphics[height=2cm]{img/logo_uspceu}
+}
+}
+\mode<presentation>{
+\title{Elementary Calculus Manual}
+\author{Alfredo Sánchez Alberca (\href{mailto:asalber@ceu.es}{asalber@ceu.es})}
+\institute{Department of Applied Math and Statistics\\ CEU San Pablo}
+\date{Feb 2016}
+\titlegraphic{\hfill\includegraphics[height=1.5cm]{img/logo_uspceu}}
+}
+
+
+
+\begin{document}
+\mode<article>{\thispagestyle{empty}\maketitle}
+\mode<presentation>{\maketitle}
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\input{preamble/license}
+\end{frame}
+
+\mode<article>{\clearpage}
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\mode<presentation>{\frametitle{Contents}}
+\setbeamertemplate{section in toc}[sections numbered]
+\tableofcontents[hideallsubsections]
+\end{frame}
+
+\include{chapters/derivatives_one_variable}
+\end{document}
