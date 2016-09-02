@@ -1,3 +1,4 @@
+%!TEX program = xelatex
 % Author: Alfredo Sánchez Alberca (asalber@gmail.com)
 % ASPECT RATIO FOR YOUTUBE VIDEO
 % \documentclass[aspectratio=1610,mathserif,profesionalfont,10pt,svgnames,red,xcolor=table]{beamer}
@@ -41,8 +42,10 @@
 \mode<article>{\usepackage[headsep=1cm, top=3cm, bottom=3cm, left=2.54cm, right=2.54cm]{geometry}}
 
 % COLORS
-\definecolor{color1}{RGB}{5,161,230}
-\definecolor{color2}{RGB}{238,50,36}
+\definecolor{color1}{RGB}{5,161,230} % Blue
+\definecolor{color2}{RGB}{238,50,36} % Red
+\definecolor{color3}{RGB}{0,205,0} % Green
+\definecolor{color4}{RGB}{243,102,25} % Orange
 \definecolor{ocre}{RGB}{243,102,25} % Define the orange color used for highlighting throughout the book
 \definecolor{blueceu}{RGB}{5,161,230} % Blue color of CEU logo
 \definecolor{greenceu}{RGB}{185,209,16} % Green color of CEU logo
@@ -66,12 +69,25 @@
 \newcommand{\mcrule}{\arrayrulecolor{color1!50!white}\midrule}
 \newcommand{\bcrule}{\arrayrulecolor{color1!50!white}\bottomrule}
 
+\listfiles
 % GRAPHICS
 \usepackage{pgfplots}
+% pgfplots styles
+\input{settings/pgfplots}
 \usepackage{tikz}
-\usetikzlibrary{external,arrows,arrows.meta,calc,shapes,shapes.arrows,positioning,snakes,decorations.pathreplacing}
-\usepackage{tkz-euclide}
-\usetkzobj{all}
+\usetikzlibrary{external, arrows, arrows.meta, calc, shapes, shapes.arrows, positioning, decorations.pathreplacing, intersections}
+% Shape of arrow
+\tikzset{>=stealth}
+% Overlays
+\tikzset{
+    invisible/.style={opacity=0},
+    visible on/.style={alt={#1{}{invisible}}},
+    alt/.code args={<#1>#2#3}{%
+      \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+    },
+  }
+% \usepackage{tkz-euclide}
+% \usetkzobj{all}
 % Graphics export
 \mode<article>{
 \tikzset{

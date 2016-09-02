@@ -1,0 +1,12 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+\draw (0,0) -- (2,0) node[midway, above=0.5] {Time};
+\draw (4,0) -- (8,0) node[midway, above=0.5] {Position} node[right] {$\mathbb{R}$};
+\draw (1,0.1) -- (1,-0.1) node[anchor=north] (A) {$t$};
+\draw (5,0.1) -- (5,-0.1) node[anchor=north] {$O$};
+\draw (6,0.1) -- (6,-0.1) node[anchor=north] {$1$};
+\draw [->, color1] (5,0) -- (7,0);
+\draw [->, color2] (5,0) -- (6,0) node[midway, above] {\color{color2}$\mathbf{i}$};
+\fill (7,0) circle (1.2pt) node[above] {$P$} node[anchor=north, xshift=2.5ex] (P) {$x=f(t)$};
+\path [->, dashed] (A) edge[bend right] node[above] {$f$} (P);
+\end{tikzpicture}

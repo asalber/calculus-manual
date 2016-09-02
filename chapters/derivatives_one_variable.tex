@@ -1,10 +1,12 @@
 % !TEX root = ../calculus_manual.tex
-\section{Differential calculus with one variable}
+\section{Differential calculus with one real variable}
+\mode<presentation>{
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Differential calculus with one variable}
 \tableofcontents[sectionstyle=show/hide,hideothersubsections]
 \end{frame}
+}
 
 
 \subsection{Concept of derivative}
@@ -31,583 +33,614 @@ The \emph{increment} of a function $y=f(x)$ along an interval $[a,b]\subseteq Do
 
 \begin{frame}
 \frametitle{Average rate of change}
-The study of a function $y=f(x)$ requires to anderstand how the function changes, that is, how changes the dependent variable $y$ when we change the independent variable $x$.
+The study of a function $y=f(x)$ requires to understand how the function changes, that is, how changes the dependent variable $y$ when we change the independent variable $x$.
 
 \begin{definition}[Average rate of change]
-The  \emph average rate of change of a function $f$ in an interval $[a,a+\Delta x]\subseteq Dom(f)$, is the quotient between the increment of $y=f(x)$ and the increment of $x$ in that interval, and is denoted
+The  \emph{average rate of change} of a function $y=f(x)$ in an interval $[a,a+\Delta x]\subseteq Dom(f)$, is the quotient between the increment of $y$ and the increment of $x$ in that interval, and is denoted
 \[
 \mbox{ARC}\;f[a,a+\Delta x]=\frac{\Delta y}{\Delta x}=\frac{f(a+\Delta x)-f(a)}{\Delta x}.
 \]
 \end{definition}
 \end{frame}
 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Tasa de variación media: Ejemplo}
-% Consideremos la función $y=x^2$ que mide el área de un cuadrado de chapa metálica de lado $x$.
-%
-% Si en un determinado instante el lado del cuadrado es $a$, y sometemos la chapa a un proceso de calentamiento que aumenta el lado del cuadrado una cantidad $\Delta x$, ¿en cuánto se incrementará el área del cuadrado?
-% \begin{columns}
-% \begin{column}{0.3\textwidth}
-% \begin{align*}
-% \Delta y &= f(a+\Delta x)-f(a)=(a+\Delta x)^2-a^2=\\
-% &= a^2+2a\Delta x+\Delta x^2-a^2=2a\Delta x+\Delta x^2.
-% \end{align*}
-% \end{column}
-% \begin{column}{0.3\textwidth}
-% \begin{center}
-% \scalebox{1}{\input{img/calculo_diferencial_1_variable/variacion_area_cuadrado}}
-% \end{center}
-% \end{column}
-% \end{columns}
-% ¿Cuál será la tasa de variación media del área en el intervalo $[a,a+\Delta x]$?
-% \[
-% \textrm{TVM}\;f[a,a+\Delta x]=\frac{\Delta y}{\Delta x}=\frac{2a\Delta x+\Delta x^2}{\Delta x}=2a+\Delta x.
-% \]
-% \end{frame}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Average rate of change}
+\framesubtitle{Example of the area of a square}
+Let $y=x^2$ be the function that measures the area of a metallic square of side $x$.
 
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Interpretación geométrica de la tasa de variación media}
-% La tasa de variación media de $f$ en el intervalo $[a,a+\Delta x]$ es la pendiente de la recta \emph{secante} a $f$ en los puntos $(a,f(a))$ y $(a+\Delta x,f(a+\Delta x))$.
-% \begin{center}
-% \scalebox{1}{\input{img/calculo_diferencial_1_variable/secante}}
-% \end{center}
-% \end{frame}
-%
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Tasa de variación instantánea}
-% En muchas ocasiones, es interesante estudiar la tasa de variación que experimenta una función, no en intervalo, sino en
-% un punto.
-%
-% Conocer la tendencia de variación de una función en un instante puede ayudarnos a predecir valores en instantes
-% próximos.
-%
-% \begin{definicion}[Tasa de variación instantánea y derivada]
-% Dada una función $y=f(x)$, se llama \emph{tasa de variación instantánea} de $f$ en un punto $a$, al límite de la tasa de
-% variación media de $f$ en el intervalo $[a,a+\Delta x]$, cuando $\Delta x$ tiende a 0, y lo notaremos
-% \[
-% \textrm{TVI}\;f (a)=\lim_{\Delta x\rightarrow 0} \textrm{TVM}\; f[a,a+\Delta x]=\lim_{\Delta x\rightarrow 0}\frac{\Delta y}{\Delta x}=\lim_{\Delta x\rightarrow 0}\frac{f(a+\Delta x)-f(a)}{\Delta x}
-% \]
-% Cuando este límite existe, se dice que la función $f$ es derivable en el punto $a$, y al valor del mismo se le llama
-% derivada de $f$ en $a$, y se nota como
-% \[
-% f'(a) \mbox{ o bien } \frac{df}{dx}(a)
-% \]
-% \end{definicion}
-% \end{frame}
-%
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Tasa de variación instantánea: Ejemplo}
-% Consideremos de nuevo la función $y=x^2$ que mide el área de un cuadrado de chapa metálica de lado $x$.
-%
-% Si en un determinado instante el lado del cuadrado es $a$, y sometemos la chapa a un proceso de calentamiento que
-% aumenta el lado del cuadrado, ¿cuál es la tasa de variación instantánea del área del cuadrado en dicho instante?
-% \begin{align*}
-% \textrm{TVI}\;f(a)]&=\lim_{\Delta x\rightarrow 0}\frac{\Delta y}{\Delta x}=\lim_{\Delta x\rightarrow 0}\frac{f(a+\Delta x)-f(a)}{\Delta x} =\\
-% &=\lim_{\Delta x\rightarrow 0}\frac{2a\Delta x+\Delta x^2}{\Delta x}=\lim_{\Delta x\rightarrow 0} 2a+\Delta x= 2a.
-% \end{align*}
-% Así pues,
-% \[
-% f'(a)=2a,
-% \]
-% lo que indica que la tendencia de crecimiento el área es del doble del valor del lado.
-%
-% El signo de $f'(a)$ indica la tendencia de crecimiento de $f$ en el punto $a$:
-% \begin{itemize}
-% \item[--]  $f'(a)>0$ indica que la tendencia es creciente.
-% \item[--]  $f'(a)<0$ indica que la tendencia es decreciente.
-% \end{itemize}
-% \end{frame}
-%
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Interpretación geométrica de la tasa de variación instantánea}
-% La tasa de variación instantánea de $f$ en el punto $a$ es la pendiente de la recta \emph{tangente} a $f$ en el punto $(a,f(a))$.
-% \begin{center}
-% \scalebox{1}{\input{img/calculo_diferencial_1_variable/tangente}}
-% \end{center}
-% \end{frame}
-%
-%
-%
-% \subsection{Álgebra de derivadas}
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Propiedades de la derivada}
-% Si $y=c$, es una función constante, entonces $y'=0$.
-%
-% Si $y=x$, es la función identidad, entonces  $y'=1$.
-%
-% Si $u=f(x)$ y $v=g(x)$ son dos funciones diferenciables, entonces
-% \begin{itemize}
-% \item $(u+v)'=u'+v'$
-% \item $(u-v)'=u'-v'$
-% \item $(u\cdot v)'=u'\cdot v+ u\cdot v'$
-% \item $\left(\dfrac{u}{v}\right)'=\dfrac{u'\cdot v-u\cdot v'}{v^2}$
-% \end{itemize}
-% \end{frame}
-%
-%
-% \subsection{Derivada de una función compuesta: La regla de la cadena}
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Diferencial de una función compuesta}
-% \framesubtitle{La regla de la cadena}
-% \begin{teorema}[Regla de la cadena] Si
-% $y=f\circ g$ es la composición de dos funciones $y=f(z)$ y $z=g(x)$, entonces
-% \[
-% (f\circ g)'(x)=f'(g(x))g'(x),
-% \]
-% \end{teorema}
-%
-% Resulta sencillo demostrarlo con la notación diferencial
-% \[
-% \frac{dy}{dx}=\frac{dy}{dz}\frac{dz}{dx}=f'(z)g'(x)=f'(g(x))g'(x).
-% \]
-%
-% \structure{\textbf{Ejemplo}} Si $f(z)=\sen z$ y $g(x)=x^2$, entonces $f\circ g(x)=\sen(x^2)$ y, aplicando la regla de la cadena, su derivada
-% vale
-% \[
-% (f\circ g)'(x)=f'(g(x))g'(x) = \cos g(x) 2x = \cos(x^2)2x.
-% \]
-% Por otro lado, $g\circ f(z)= (\sin z)^2$ y, de nuevo aplicando la regla de la cadena, su derivada vale
-%
-% \[
-% (g\circ f)'(z)=g'(f(z))f'(z) = 2f(z)\cos z = 2\sen z\cos z.
-% \]
-% \end{frame}
-%
-%
-%
-% \subsection{Derivada de la inversa de una función}
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Derivada de la función inversa}
-% \begin{teorema}[Derivada de la inversa]
-% Si $y=f(x)$ es una función y $x=f^{-1}(y)$ es su inversa, entonces
-% \[
-% \left(f^{-1}\right)'(y)=\frac{1}{f'(x)}=\frac{1}{f'(f^{-1}(y))}
-% \]
-% \end{teorema}
-%
-% También resulta sencillo de demostrar con la notación diferencial
-% \[
-% \frac{dx}{dy}=\frac{1}{dy/dx}=\frac{1}{f'(x)}=\frac{1}{f'(f^{-1}(y))}
-% \]
-%
-% \structure{\textbf{Ejemplo}} La inversa de la función exponencial $y=f(x)=e^x$ es el logaritmo neperiano $x=f^{-1}(y)=\ln y$, de modo que
-% para calcular la derivada del logaritmo podemos utilizar el teorema de la derivada de la inversa y se tiene
-% \[
-% \left(f^{-1}\right)'(y)=\frac{1}{f'(x)}=\frac{1}{e^x}=\frac{1}{e^{\ln y}}=\frac{1}{y}.
-% \]
-% \end{frame}
-%
-%
-% \subsection{Interpretación cinemática de la derivada}
-% % ---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Interpretación cinemática de la tasa de variación}
-% \framesubtitle{Movimiento rectilineo}
-% Supongase que la función $f(t)$ describe la posición de un objeto móvil sobre la recta real en el instante $t$.
-% Tomando como referencia el origen de coordenadas $O$ y el vector unitario $\mathbf{i}=(1)$, se puede representar la
-% posición $P$ del móvil en cada instante $t$ mediante un vector $\vec{OP}=x\mathbf{i}$ donde $x=f(t)$.
-% \begin{center}
-% \scalebox{1}{\input{img/calculo_diferencial_1_variable/movimiento_rectilineo}}
-% \end{center}
-%
-% \structure{\textbf{Observación}}
-% También tiene sentido pensar en $f$ como una función que mide otras magnitudes como por ejemplo la temperatura de un
-% cuerpo, la concentración de un gas o la cantidad de un compuesto en una reacción química en un instante $t$.
-% \end{frame}
-%
-%
-% % ---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Interpretación cinemática de la tasa de variación media}
-% En este contexto, si se toman los instantes $t=t_0$ y $t=t_0+\Delta t$, ambos del dominio $I$ de $f$, el vector
-% \[
-% \mathbf{v}_m=\frac{f(t_0+\Delta t)-f(t_0)}{\Delta t}
-% \]
-% que se conoce como \emph{velocidad media} de la trayectoria $f$ entre los instantes $t_0$ y $t_0+\Delta t$.
-%
-% \structure{\textbf{Ejemplo}}
-% Un vehículo realiza un viaje de Madrid a Barcelona.
-% Sea $f$ la función que da la posición el vehículo en cada instante.
-% Si el vehículo parte de Madrid (km 0) a las 8 y llega a Barcelona (km 600) a las 14 horas, entonces la velocidad media
-% del vehículo en el trayecto es
-% \[
-% \mathbf{v}_m=\frac{f(14)-f(8)}{14-8}=\frac{600-0}{6} = 100 km/h.
-% \]
-% \end{frame}
-%
-%
-% % ---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Interpretación cinemática de la derivada}
-% Siguiendo en este mismo contexto del movimiento rectilineo, la derivada de $f$ en el instante $t=t_0$ es el vector
-% \[
-% \mathbf{v}=f'(t_0)=\lim_{\Delta t\rightarrow 0}\frac{f(t_0+\Delta t)-f(t_0)}{\Delta t},
-% \]
-% que se conoce, siempre que exista el límite, como \emph{velocidad instantánea} o simplemente la \emph{velocidad} de la
-% trayectoria $f$ en el instante $t_0$.
-%
-% Es decir, la derivada de la posición respecto del tiempo, es un campo de vectores que recibe el nombre de
-% \emph{velocidad a lo largo de la trayectoria $f$}.
-%
-% \structure{\textbf{Ejemplo}}
-% Siguiendo con el ejemplo anterior, lo que marca el velocímetro en un determinado instante sería el módulo del vector
-% velocidad  en ese instante.
-% \end{frame}
-%
-%
-% % ---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Generalización al movimiento curvilineo}
-% La derivada como velocidad a lo largo de una trayectoria en la recta real puede generalizarse a trayectorias en cualquier
-% espacio euclídeo $\mathbb{R}^n$.
-%
-% Para el caso del plano real $\mathbb{R}^2$, si $f(t)$ describe la posición de un objeto móvil en el plano en el instante
-% $t$, tomando como referencia el origen de coordenadas $O$ y los vectores coordenados
-% $\{\mathbf{i}=(1,0),\mathbf{j}=(0,1)\}$, se puede representar la posición $P$ del móvil en cada instante $t$ mediante un
-% vector $\vec{OP}=x(t)\mathbf{i}+y(t)\mathbf{j}$ cuyas coordenadas
-% \[
-% \begin{cases}
-% x=x(t)\\
-% y=y(t)
-% \end{cases}
-% \quad
-% t\in I\subseteq \mathbb{R}
-% \]
-% se conocen como \emph{funciones coordenadas} de $f$ y se escribe $f(t)=(x(t),y(t))$.
-%
-% \begin{center}
-% \scalebox{0.8}{\input{img/calculo_diferencial_1_variable/movimiento_curvilineo}}
-% \end{center}
-% \end{frame}
-%
-%
-% % ---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Velocidad en una trayectoria curvilinea en el plano}
-% En este contexto de una trayectoria $f(t)=(x(t),y(t))$ en el plano real $\mathbb{R}^2$, para un instante $t=t_0$, si existe el vector
-% \[
-% \mathbf{v} = \lim_{\Delta t\rightarrow 0} \frac{f(t_0+\Delta t)-f(t_0)}{\Delta t},
-% \]
-% entonces $f$ es derivable en el instante $t=t_0$ y el vector $\mathbf{v}=f'(t_0)$ se conoce como \emph{velocidad} de $f$ en ese instante.
-%
-% Como $f(t_0)=(x(t),y(t))$,
-% \begin{align*}
-% f'(t)&=\lim_{\Delta t\rightarrow 0} \frac{f(t_0+\Delta t)-f(t_0)}{\Delta t} = \lim_{\Delta t\rightarrow 0} \frac{(x(t_0+\Delta t),y(t_0+\Delta t))-(x(t_0),y(t_0))}{\Delta t} =\\
-% &=  \lim_{\Delta t\rightarrow 0} \left(\frac{x(t_0+\Delta t)-x(t_0)}{\Delta t},\frac{y(t_0+\Delta t)-y(t_0)}{\Delta t}\right) =\\
-% &= \left(\lim_{\Delta t\rightarrow 0}\frac{x(t_0+\Delta t)-x(t_0)}{\Delta t},\lim_{\Delta t\rightarrow 0}\frac{y(t_0+\Delta t)-y(t_0)}{\Delta t}\right) =
-% (x'(t_0),y'(t_0)).
-% \end{align*}
-% luego
-% \[
-% \mathbf{v} = x'(t_0)\mathbf{i}+y'(t_0)\mathbf{j}.
-% \]
-% \end{frame}
-%
-%
-% % ---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Velocidad en una trayectoria curvilinea en el plano}
-% \framesubtitle{Ejemplo}
-% Dada la trayectoria $f(t) = (\cos t,\sen t)$, $t\in \mathbb{R}$, cuya imagen es la circunferencia de centro el origen
-% de coordenas y radio 1, sus funciones coordenadas son $x(t) = \cos t$, $y(t) = \sen t$, $t\in \mathbb{R}$, y su velocidad es
-% \[
-% \mathbf{v}=f'(t)=(x'(t),y'(t))=(-\sen t, \cos t).
-% \]
-% En el instante $t=\pi/4$, el móvil estará en la posición $f(\pi/4) = (\cos(\pi/4),\sen(\pi/4)) =(\sqrt{2}/2,\sqrt{2}/2)$
-% y se moverá con una velocidad $\mathbf{v}=f'(\pi/4)=(-\sen(\pi/4),\cos(\pi/4))=(-\sqrt{2}/2,\sqrt{2}/2)$.
-% \begin{center}
-% \scalebox{0.8}{\input{img/calculo_diferencial_1_variable/circunferencia}}
-% \end{center}
-% Obsérvese que el módulo del vector velocidad siempre será 1 ya que
-% $|\mathbf{v}|=\sqrt{(-\sen t)^2+(\cos t)^2}=1$.
-% \end{frame}
-%
-%
-%
-% \subsection{Recta tangente a una trayectoria}
-% % ---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Recta tangente a una trayectoria en el plano}
-% Los vectores paralelos a la velocidad $\mathbf{v}$ se denominan \emph{vectores tangentes} a la trayectoria
-% $f$ en el instante $t=t_0$, y la recta que pasa por $P=f(t_0)$ dirigida por $\mathbf{v}$ es la recta tangente a $f$ cuando
-% $t=t_0$.
-% \begin{definicion}[Recta tangente a una trayectoria]
-% Dada una trayectoria $f$ sobre el plano real $\mathbb{R}^2$, se llama \emph{recta tangente} a $f$ para $t=t_0$ a la
-% recta de ecuación
-% \[
-% l: (x,y)= f(t_0)+tf'(t_0) = (x(t_0),y(t_0))+t(x'(t_0),y'(t_0)) = (x(t_0)+tx'(t_0),y(t_0)+ty'(t_0)).
-% \]
-% \end{definicion}
-% \structure{\texbf{Ejemplo}}
-% Se ha visto que para la trayectoria $f(t) = (\cos t,\sen t)$, $t\in \mathbb{R}$, cuya imagen es la circunferencia de
-% centro el origen de coordenas y radio 1, en el instante $t=\pi/4$ la posición del móvil era
-% $f(\pi/4)=(\sqrt{2}/2,\sqrt{2}/2)$ y su velocidad $\mathbf{v}=(-\sqrt{2}/2,\sqrt{2}/2)$, de modo que la recta tangente a
-% $f$ en ese instante es
-% \[
-% l: X=f(\pi/4)+t\mathbf{v} =
-% \left(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right)+t\left(\frac{-\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right) =
-% \left(\frac{\sqrt{2}}{2}-t\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}+t\frac{\sqrt{2}}{2}\right).
-% \]
-% \end{frame}
-%
-%
-% % ---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Recta tangente a una trayectoria en el plano}
-% De la ecuación vectorial de la recta tangente a $f$ para $t=t_0$, se obtiene que sus funciones cartesianas son
-% \[
-% \begin{cases}
-% x=x(t_0)+tx'(t_0)\\
-% y=y(t_0)+ty'(t_0)
-% \end{cases}
-% \quad t\in \mathbb{R},
-% \]
-% y despejando $t$ en ambas ecuaciones e igualando se llega a la ecuación cartesiana de la recta tangente
-% \[
-% \frac{x-x(t_0)}{x'(t_0)}=\frac{y-y(t_0)}{y'(t_0)},
-% \]
-% si $x'(t_0)\neq 0$ e $y'(t_0)\neq 0$, y de ahí a la ecuación en la forma punto-pendiente
-% \[
-% y-y(t_0)=\frac{y'(t_0)}{x'(t_0)}(x-x(t_0)).
-% \]
-% \structure{\texbf{Ejemplo}}
-% Partiendo de la ecuación vectorial de la tangente del ejemplo anterior
-% $l=\left(\frac{\sqrt{2}}{2}-t\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}+t\frac{\sqrt{2}}{2}\right)$, su ecuación cartesiana
-% es
-% \[
-% \frac{x-\sqrt{2}/2}{-\sqrt{2}/2} = \frac{y-\sqrt{2}/2}{\sqrt{2}/2}\Rightarrow y-\sqrt{2}/2 =
-% \frac{-\sqrt{2}/2}{\sqrt{2}/2}(x-\sqrt{2}/2) \Rightarrow y=-x+\sqrt{2}.
-% \]
-% \end{frame}
-%
-%
-% % ---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Recta normal a una trayectoria en el plano}
-% Se ha visto que la recta tangente a una trayectoria $f$ cuando $t=t_0$ es la recta que pasa por el punto el punto
-% $P=f(t_0)$ dirigida por el vector velocidad $\mathbf{v}=f'(t_0)=(x'(t_0),y'(t_0))$. Si en lugar de tomar ese vector se
-% toma como vector director el vector $\mathbf{w}=(y'(t_0),-x'(t_0))$, que es ortogonal a $\mathbf{v}$, se obtiene otra
-% recta que se conoce como \emph{recta normal} a la trayectoria $f$ cuanto $t=t_0$.
-% \begin{definicion}[Recta normal a una trayectoria]
-% Dada una trayectoria $f$ sobre el plano real $\mathbb{R}^2$, se llama \emph{recta normal} a $f$ para $t=t_0$ a la recta de ecuación
-% \[
-% l: (x,y)=(x(t_0),y(t_0))+t(y'(t_0),-x'(t_0)) = (x(t_0)+ty'(t_0),y(t_0)-tx'(t_0)).
-% \]
-% \end{definicion}
-% Su ecuación cartesiana es
-% \[
-% \frac{x-x(t_0)}{y'(t_0)} = \frac{y-y(t_0)}{-x'(t_0)},
-% \]
-% y su ecuación en la forma punto pendiente
-% \[
-% y-y(t_0) = \frac{-x'(t_0)}{y'(t_0)}(x-x(t_0)).
-% \]
-% La recta normal es perpendicular a la recta tangente ya que sus vectores directores son ortogonales.
-% \end{frame}
-%
-%
-% % ---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Recta normal a una trayectoria en el plano}
-% \framesubtitle{Ejemplo}
-% Siguiendo con el ejemplo de la trayectoria $f(t) = (\cos t,\sen t)$, $t\in \mathbb{R}$, la recta normal en el instante $t=\pi/4$ es
-% \begin{align*}
-% l&: (x,y)=(\cos(\pi/2),\sen(\pi/2))+t(\cos(\pi/2),\sen(\pi/2)) =\\
-% & \left(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right)+t\left(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right)
-% =\left(\frac{\sqrt{2}}{2}+t\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}+t\frac{\sqrt{2}}{2}\right),
-% \end{align*}
-% y su ecuación cartesiana es
-% \[
-% \frac{x-\sqrt{2}/2}{\sqrt{2}/2} = \frac{y-\sqrt{2}/2}{\sqrt{2}/2}\Rightarrow y-\sqrt{2}/2 = \frac{\sqrt{2}/2}{\sqrt{2}/2}(x-\sqrt{2}/2) \Rightarrow y=x.
-% \]
+If at any given time the side of the square is $a$, and we heat the square uniformly increasing the side by dilatation a quantity $\Delta x$, how much will increase the area of the square?
+\begin{columns}
+\begin{column}{0.3\textwidth}
+\begin{align*}
+\Delta y &= f(a+\Delta x)-f(a)=(a+\Delta x)^2-a^2=\\
+&= a^2+2a\Delta x+\Delta x^2-a^2=2a\Delta x+\Delta x^2.
+\end{align*}
+\end{column}
+\begin{column}{0.3\textwidth}
+\begin{center}
+\tikzsetnextfilename{derivatives_1_variable/square_area_variation}
+\mode<article>{\resizebox{0.3\textwidth}{!}{\input{img/derivatives_1_variable/square_area_variation}}}
+\mode<presentation>{\resizebox{0.9\textwidth}{!}{\input{img/derivatives_1_variable/square_area_variation}}}
+\end{center}
+\end{column}
+\end{columns}
+What is the average rate of change in the interval $[a,a+\Delta x]$?
+\[
+\mbox{ARC}\;f[a,a+\Delta x]=\frac{\Delta y}{\Delta x}=\frac{2a\Delta x+\Delta x^2}{\Delta x}=2a+\Delta x.
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Geometric interpretation of the average rate of change}
+The average rate of change of a function $y=f(x)$ in an interval $[a,a+\Delta x]$ is the slope of the \emph{secant} line of $f$ through the points $(a,f(a))$ and $(a+\Delta x,f(a+\Delta x))$.
+\begin{center}
+\tikzsetnextfilename{derivatives_1_variable/secant_line}
+\input{img/derivatives_1_variable/secant_line}
+\end{center}
+\end{frame} 
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Instantaneous rate of change}
+Often is interesting to study the rate of change of a function, not in an interval, but in a point.
+
+Knowing the tendency of change of a function in an instant can be used to predict the value of the function in next instants.
+
+\begin{definition}[Instantaneous rate of change and derivative]
+The \emph{instantaneous rate of change} of a function $f$ in a point $a$, is the limit of the average rate of change of $f$ in the interval $[a,a+\Delta x]$, when $\Delta x$ tends to 0, and is denoted
+\[
+\textrm{IRC}\;f (a)=\lim_{\Delta x\rightarrow 0} \textrm{ARC}\; f[a,a+\Delta x]=\lim_{\Delta x\rightarrow 0}\frac{\Delta y}{\Delta x}=\lim_{\Delta x\rightarrow 0}\frac{f(a+\Delta x)-f(a)}{\Delta x}
+\]
+When this limit exists, the function $f$ is said to be \emph{derivable} or \emph{differentiable} at the point $a$, and its value is called \emph{derivative} of $f$ at $a$, and denoted $f'(a)$ (Lagrange's notation) or $\frac{df}{dx}(a)$ (Leibniz's notation).
+\end{definition}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Instantaneous rate of change}
+\framesubtitle{Example of the area of a square}
+Let's take again the function $y=x^2$ that measures the area of a metallic square of side $x$.
+
+If at any given time the side of the square is $a$, and we heat the square uniformly increasing the side, what is the tendency of change of the area in that moment?
+\begin{align*}
+\textrm{IRC}\;f(a)&=\lim_{\Delta x\rightarrow 0}\frac{\Delta y}{\Delta x}=\lim_{\Delta x\rightarrow 0}\frac{f(a+\Delta x)-f(a)}{\Delta x} =\\
+&=\lim_{\Delta x\rightarrow 0}\frac{2a\Delta x+\Delta x^2}{\Delta x}=\lim_{\Delta x\rightarrow 0} 2a+\Delta x= 2a.
+\end{align*}
+Thus,
+\[
+f'(a)=\frac{df}{dx}(a)=2a,
+\]
+indicating that the area of the square tend to increase the double of the side.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Interpretation of the derivative}
+The derivative of a function $f'(a)$ shows the growth rate of $f$ at point $a$:
+\begin{itemize}
+\item $f'(a)>0$ indicates an increasing tendency ($y$ increases as $x$ increases).
+\item $f'(a)<0$ indicates a decreasing tendency ($y$ decreases as $x$ increases).
+\end{itemize}
+
+\structure{\textbf{Example}} A derivative $f'(a)=3$ indicates that $y$ tends to increase triple of $x$ at point $a$. 
+ A derivative $f'(a)=-0.5$ indicates that $y$ tends to decrease half of $x$ at point $a$. 
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Geometric interpretation fo the derivative}
+The instantaneous rate of change or derivative of a function $y=f(x)$ at a point $a$ is the slope of the \emph{tangent line} $f$ at point $(a,f(a))$.
+\begin{center}
+\tikzsetnextfilename{derivatives_1_variable/tangent_line}
+\input{img/derivatives_1_variable/tangent_line}
+\end{center}
+\end{frame}
+
+
+
+\subsection{Algebra of derivatives}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Properties of the derivative}
+If $y=c$, is a constant function, then $y'=0$ at any point.
+
+If $y=x$, is the identity function, then  $y'=1$ at any point.
+
+If $u=f(x)$ and $v=g(x)$ are two differentiable functions, then 
+\begin{itemize}
+\item $(u+v)'=u'+v'$
+\item $(u-v)'=u'-v'$
+\item $(u\cdot v)'=u'\cdot v+ u\cdot v'$
+\item $\left(\dfrac{u}{v}\right)'=\dfrac{u'\cdot v-u\cdot v'}{v^2}$
+\end{itemize}
+\end{frame}
+
+
+\subsection{Derivada de una función compuesta: La regla de la cadena}
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Derivative of a composite function}
+\framesubtitle{The chain rule}
+\begin{theorem}[Chain rule] If the function $y=f\circ g$ is the composition of two functions $y=f(z)$ and $z=g(x)$, then
+\[
+(f\circ g)'(x)=f'(g(x))g'(x).
+\]
+\end{theorem}
+
+It's easy to proof this using the Leibniz notation
+\[
+\frac{dy}{dx}=\frac{dy}{dz}\frac{dz}{dx}=f'(z)g'(x)=f'(g(x))g'(x).
+\]
+
+\structure{\textbf{Example}} If $f(z)=\sin z$ and $g(x)=x^2$, then $f\circ g(x)=\sin(x^2)$. Applying the chain rule the derivative of the composite function is
+\[
+(f\circ g)'(x)=f'(g(x))g'(x) = \cos(g(x)) 2x = \cos(x^2)2x.
+\]
+On the other hand, $g\circ f(z)= (\sin z)^2$, and applying the chain rule again, its derivative is
+\[
+(g\circ f)'(z)=g'(f(z))f'(z) = 2f(z)\cos z = 2\sin z\cos z.
+\]
+\end{frame}
+
+
+
+\subsection{Derivative of the inverse of a function}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Derivative of the inverse of a function}
+\begin{theorem}[Derivative of the inverse function]
+Given a function $y=f(x)$ with inverse $x=f^{-1}(y)$, then 
+\[
+\left(f^{-1}\right)'(y)=\frac{1}{f'(x)}=\frac{1}{f'(f^{-1}(y))},
+\]
+provided that $f$ is differentiable at $f^{-1}(y)$ and $f'(f^{-1}(y))\neq 0$.
+\end{theorem}
+
+It's easy to proof this using the Leibniz notation
+\[
+\frac{dx}{dy}=\frac{1}{dy/dx}=\frac{1}{f'(x)}=\frac{1}{f'(f^{-1}(y))}
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Derivative of the inverse of a function}
+\framesubtitle{Example}
+The inverse of the exponential function $y=f(x)=e^x$ is the natural logarithm $x=f^{-1}(y)=\ln y$, so that we can compute the derivative of the natural logarithm using the previous theorem and we get
+\[
+\left(f^{-1}\right)'(y)=\frac{1}{f'(x)}=\frac{1}{e^x}=\frac{1}{e^{\ln y}}=\frac{1}{y}.
+\]
+
+\structure{\textbf{Example}} Sometimes is easier to apply the chain rule to compute the derivative of the inverse of a function. 
+In this example, as $\ln x$ is the inverse of $e^x$, we know that $e^{\ln x}=x$, so that differentiating both sides and applying the chain rule to the left side we get
+\[
+(e^{\ln x})'=x' \Leftrightarrow e^{\ln x}(\ln(x))' = 1 \Leftrightarrow (\ln(x))'=\frac{1}{e^{\ln x}}=\frac{1}{x}.
+\]
+\end{frame}
+
+
+
+\subsection{Kinematics}
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Linear motion}
+Assume that the function $y=f(t)$ describes the position of an object moving in the real line at every time $t$.
+Taking as reference the coordinates origin $O$ and the unitary vector $\mathbf{i}=(1)$, we can represent the position of the moving object $P$ at every moment $t$ with a vector $\vec{OP}=x\mathbf{i}$ where $x=f(t)$.
+\begin{center}
+\tikzsetnextfilename{derivatives_1_variable/linear_motion}
+\input{img/derivatives_1_variable/linear_motion}
+\end{center}
+
+\structure{\textbf{Observation}} It also makes sense when $f$ measures other magnitudes as the temperature of a body, the concentration of a gas, or the quantity of substance in a chemical reaction at every moment $t$.
+\end{frame}
+
+
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Kinematic interpretation of the average rate of change}
+In this context, if we take the instants $t=t_0$ and $t=t_0+\Delta t$, both in $\mbox{Dom}(f)$, the vector
+\[
+\mathbf{v}_m=\frac{f(t_0+\Delta t)-f(t_0)}{\Delta t}
+\]
+is known as the \emph{average velocity} of the trajectory $f$ in the interval $[t_0, t_0+\Delta t]$.
+
+\structure{\textbf{Example}}
+A vehicle makes a trip from Madrid to Barcelona.
+Let $f(t)$ be the function that determine the position of the vehicle at every moment $t$.
+If the vehicle departs from Madrid (km 0) at 8:00 and arrive to Barcelona (km 600) at 14:00, then the average velocity
+of the vehicle in the path is
+\[
+\mathbf{v}_m=\frac{f(14)-f(8)}{14-8}=\frac{600-0}{6} = 100 km/h.
+\]
+\end{frame}
+
+
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Kinematic interpretation of the derivative}
+In the same context of the linear motion, the derivative of the function $f(t)$ at the moment $t_0$ is the vector
+\[
+\mathbf{v}=f'(t_0)=\lim_{\Delta t\rightarrow 0}\frac{f(t_0+\Delta t)-f(t_0)}{\Delta t},
+\]
+that is known, as long as the limit exists, as the \emph{instantaneous velocity} or simply \emph{velocity} of the trajectory $f$ at moment $t_0$.
+
+That is, the derivative of the object position with respect to time is a vector field that is called \emph{velocity along the trajectory $f$}.
+
+\structure{\textbf{Example}}
+Following with the previous example, what indicates the speedometer at any instant is the modulus of the instantaneous velocity vector at that moment.
+\end{frame}
+
+
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Generalization to curvilinear motion}
+The notion of derivative as a velocity along a trajectory in the real line can be generalized to a trajectory in any euclidean space $\mathbb{R}^n$.
+
+In case of a two dimensional space $\mathbb{R}^2$, if $f(t)$ describes the position of a moving object in the real plane at any time $t$, taking as reference the coordinates origin $O$ and the unitary vectors $\{\mathbf{i}=(1,0),\mathbf{j}=(0,1)\}$, we can represent the position of the moving object $P$ at every moment $t$ with a vector $\vec{OP}=x(t)\mathbf{i}+y(t)\mathbf{j}$, where the coordinates 
+\[
+\begin{cases}
+x=x(t)\\
+y=y(t)
+\end{cases}
+\quad
+t\in \mbox{Dom}(f)
+\]
+are known as \emph{coordinate functions} of $f$ and denoted $f(t)=(x(t),y(t))$.
+
+\begin{center}
+\tikzsetnextfilename{derivatives_1_variable/curvilinear_motion}
+\scalebox{0.8}{\input{img/derivatives_1_variable/curvilinear_motion}}
+\end{center}
+\end{frame}
+
+
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Velocity of a curvilinear motion in the plane}
+In the context of a trajectory $f(t)=(x(t),y(t))$ in the real plane $\mathbb{R}^2$, the derivative of the function $f(t)$ at the moment $t_0$ is the vector
+\[
+\mathbf{v} = \lim_{\Delta t\rightarrow 0} \frac{f(t_0+\Delta t)-f(t_0)}{\Delta t},
+\]
+that is known, as long as the limit exists, as the \emph{velocity} of the trajectory $f$ at moment $t_0$.
+
+As $f(t)=(x(t),y(t))$,
+\begin{align*}
+f'(t_0)&=\lim_{\Delta t\rightarrow 0} \frac{f(t_0+\Delta t)-f(t_0)}{\Delta t} = \lim_{\Delta t\rightarrow 0} \frac{(x(t_0+\Delta t),y(t_0+\Delta t))-(x(t_0),y(t_0))}{\Delta t} =\\
+&=  \lim_{\Delta t\rightarrow 0} \left(\frac{x(t_0+\Delta t)-x(t_0)}{\Delta t},\frac{y(t_0+\Delta t)-y(t_0)}{\Delta t}\right) =\\
+&= \left(\lim_{\Delta t\rightarrow 0}\frac{x(t_0+\Delta t)-x(t_0)}{\Delta t},\lim_{\Delta t\rightarrow 0}\frac{y(t_0+\Delta t)-y(t_0)}{\Delta t}\right) = (x'(t_0),y'(t_0)).
+\end{align*}
+Thus, 
+\[
+\mathbf{v} = x'(t_0)\mathbf{i}+y'(t_0)\mathbf{j}.
+\]
+\end{frame}
+
+
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Velocity of a curvilinear motion in the plane}
+\framesubtitle{Example}
+Given the trajectory $f(t) = (\cos t,\sin t)$, $t\in \mathbb{R}$, whose image is the unit circumference centered in the coordinate origin, its coordinate functions are $x(t) = \cos t$, $y(t) = \sin t$, $t\in \mathbb{R}$, and its velocity is
+\[
+\mathbf{v}=f'(t)=(x'(t),y'(t))=(-\sin t, \cos t).
+\]
+In the moment $t=\pi/4$, the object is in position $f(\pi/4) = (\cos(\pi/4),\sin(\pi/4)) =(\sqrt{2}/2,\sqrt{2}/2)$
+and it is moving with a velocity $\mathbf{v}=f'(\pi/4)=(-\sin(\pi/4),\cos(\pi/4))=(-\sqrt{2}/2,\sqrt{2}/2)$.
+\begin{center}
+\tikzsetnextfilename{derivatives_1_variable/circumference_trajectory}
+\scalebox{0.8}{\input{img/derivatives_1_variable/circumference_trajectory}}
+\end{center}
+Observe that the module of the velocity vector is always 1 as
+$|\mathbf{v}|=\sqrt{(-\sin t)^2+(\cos t)^2}=1$.
+\end{frame}
+
+
+
+\subsection{Tangent line to a trajectory}
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Tangent line to a trajectory in the plane}
+\framesubtitle{Vectorial equation}
+Given a trajectory $f(t)$ in the real plane, the vectors that are parallel to the velocity $\mathbf{v}$ at a moment $t_0$ are called \emph{tangent vectors} to the trajectory $f$ at the moment $t_0$, and the line passing through $P=f(t_0)$ directed by $\mathbf{v}$ is the tangent line to $f$ at the moment $t_0$.
+
+\begin{definition}[Tangent line to a trajectory]
+Given a trajectory $f(t)$ in the real plane $\mathbb{R}^2$, the \emph{tangent line} to $f$ at $t_0$ is the line with equation
+\begin{align*}
+l:(x,y) &= f(t_0)+tf'(t_0) = (x(t_0),y(t_0))+t(x'(t_0),y'(t_0))\\
+& = (x(t_0)+tx'(t_0),y(t_0)+ty'(t_0)).
+\end{align*}
+\end{definition}
+\end{frame}
+
+
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Tangent line to a trajectory in the plane}
+\framesubtitle{Example}
+We have seen that for the trajectory $f(t) = (\cos t,\sin t)$, $t\in \mathbb{R}$, whose image is unit circumference at the coordinate origin, the object position at the moment $t=\pi/4$ is $f(\pi/4)=(\sqrt{2}/2,\sqrt{2}/2)$ and its velocity $\mathbf{v}=(-\sqrt{2}/2,\sqrt{2}/2)$. 
+Thus the equation of the tangent line to $f$ at that moment is 
+\[
+l: (x,y) = f(\pi/4)+t\mathbf{v} =
+\left(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right)+t\left(\frac{-\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right) =
+\left(\frac{\sqrt{2}}{2}-t\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}+t\frac{\sqrt{2}}{2}\right).
+\]
+\end{frame}
+
+
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Tangent line to a trajectory in the plane}
+\framesubtitle{Cartesian and point-slope equations}
+From the vectorial equation of the tangent to a trajectory $f(t)$ at the moment $t_0$ we can get the coordinate functions
+\[
+\begin{cases}
+x=x(t_0)+tx'(t_0)\\
+y=y(t_0)+ty'(t_0)
+\end{cases}
+\quad t\in \mathbb{R},
+\]
+and solving for $t$ and equalling both equations we get the \emph{Cartesian equation} of the tangent
+\[
+\frac{x-x(t_0)}{x'(t_0)}=\frac{y-y(t_0)}{y'(t_0)},
+\]
+if $x'(t_0)\neq 0$ and $y'(t_0)\neq 0$.
+
+From this equation is easy to get the \emph{point-slope equation} of the tangent
+\[
+y-y(t_0)=\frac{y'(t_0)}{x'(t_0)}(x-x(t_0)).
+\]
+\end{frame}
+
+
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Tangent line to a trajectory in the plane}
+\framesubtitle{Example of Cartesian and point-slope equations}
+Using the vectorial equation of the tangent of the previous example
+\[
+l: (x,y)=\left(\frac{\sqrt{2}}{2}-t\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}+t\frac{\sqrt{2}}{2}\right),
+\]
+its Cartesian equation is 
+\[
+\frac{x-\sqrt{2}/2}{-\sqrt{2}/2} = \frac{y-\sqrt{2}/2}{\sqrt{2}/2}
+\]
+and the point-slope equation is 
+\[
+y-\sqrt{2}/2 = \frac{-\sqrt{2}/2}{\sqrt{2}/2}(x-\sqrt{2}/2) \Rightarrow y=-x+\sqrt{2}.
+\]
+\end{frame}
+
+
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Normal line to a trajectory in the plane}
+We have seen that the tangent line to a trajectory $f(t)$ at $t_0$ is the line passing through the point 
+$P=f(t_0)$ directed by the velocity vector $\mathbf{v}=f'(t_0)=(x'(t_0),y'(t_0))$. 
+If we take as direction vector a vector orthogonal to $\mathbf{v}$, we get another line that is known as \emph{normal line} to $f$ at moment $t_0$.
+\begin{definition}[Normal line to a trajectory]
+Given a trajectory $f(t)$ in the real plane $\mathbb{R}^2$, the \emph{normal line} to $f$ at moment $t_0$ is the line with equation
+\[
+l: (x,y)=(x(t_0),y(t_0))+t(y'(t_0),-x'(t_0)) = (x(t_0)+ty'(t_0),y(t_0)-tx'(t_0)).
+\]
+\end{definition}
+The Cartesian equation is 
+\[
+\frac{x-x(t_0)}{y'(t_0)} = \frac{y-y(t_0)}{-x'(t_0)},
+\]
+and the point-slope equation is
+\[
+y-y(t_0) = \frac{-x'(t_0)}{y'(t_0)}(x-x(t_0)).
+\]
+The normal line is always perpendicular to the tangent line as their direction vectors are orthogonal. 
+\end{frame}
+
+
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Normal line to a trajectory in the plane}
+\framesubtitle{Example}
+Considering again the trajectory of the unit circumference $f(t) = (\cos t,\sin t)$, $t\in \mathbb{R}$, the normal line to $f$ at moment $t=\pi/4$ is
+\begin{align*}
+l: (x,y)&=(\cos(\pi/2),\sin(\pi/2))+t(\cos(\pi/2),\sin(\pi/2)) =\\
+&= \left(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right)+t\left(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right)
+=\left(\frac{\sqrt{2}}{2}+t\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}+t\frac{\sqrt{2}}{2}\right),
+\end{align*}
+the Cartesian equation is 
+\[
+\frac{x-\sqrt{2}/2}{\sqrt{2}/2} = \frac{y-\sqrt{2}/2}{\sqrt{2}/2},
+\]
+and the point-slope equation is 
+\[
+y-\sqrt{2}/2 = \frac{\sqrt{2}/2}{\sqrt{2}/2}(x-\sqrt{2}/2) \Rightarrow y=x.
+\]
 % \begin{center}
 % \scalebox{0.8}{\input{img/calculo_diferencial_1_variable/circunferencia_tangente_normal}}
 % \end{center}
-% \end{frame}
-%
-%
-% % ---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Rectas tangente y normal a una función}
-% Un caso particular de las recta tangente y normal a una trayectoria es son la recta tangente y normal a una función de una variable real.
-% Si se tiene la función $y=f(x)$, $x\in I\subseteq \mathbb{R}$, una trayectoria que traza la gráfica de $f$ es
-% \[
-% g(t) = (t,f(t))  \quad t\in I,
-% \]
-% y su velocidad es
-% \[
-% g'(t) = (1,f'(t)),
-% \]
-% de modo que la recta tangente para $t=x_0$ es
-% \[
-% \frac{x-x_0}{1} = \frac{y-f(x_0)}{f'(x_0)} \Rightarrow y-f(x_0) = f'(x_0)(x-x_0),
-% \]
-% y la recta normal es
-% \[
-% \frac{x-x_0}{f'(x_0)} = \frac{y-f(x_0)}{-1} \Rightarrow y-f(x_0) = \frac{-1}{f'(x_0)}(x-x_0),
-% \]
-% % \begin{center}
-% % \scalebox{1}{\input{img/calculo_diferencial_1_variable/tangente_normal}}
-% % \end{center}
-% \end{frame}
-%
-%
-% % ---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Rectas tangente y normal a una función}
-% \framesubtitle{Ejemplo}
-% Dada la función $y=f(x)=x^2$, la trayectoria que dibuja la gráfica de esta función es $g(t)=(t,t^2)$ y su velocidad es
-% $g'(t)=(1,2t)$, de modo que en el punto $(1,1)$, que se alcanza en el instante $t=1$, la recta tangente es
-% \[
-% \frac{x-1}{1} = \frac{y-1}{2} \Rightarrow y-1 = 2(x-1) \Rightarrow y = 2x-1,
-% \]
-% y la recta normal es
-% \[
-% \frac{x-1}{2} = \frac{y-1}{-1} \Rightarrow y-1 = \frac{-1}{2}(x-1) \Rightarrow y = \frac{-x}{2}+\frac{3}{2}.
-% \]
-% \begin{center}
-% \scalebox{0.8}{\input{img/calculo_diferencial_1_variable/parabola_tangente_normal}}
-% \end{center}
-% \end{frame}
-%
-%
-% % ---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Recta tangente a una trayectoria en el espacio}
-% El concepto de recta tangente a una trayectoria en el plano real puede extenderse fácilmente a trayectorias en el espacio real $\mathbb{R}^3$.
-%
-% Si $f(t)=(x(t),y(t),z(t))$, $t\in I\subseteq \mathbb{R}$, es una trayectoria en el espacio real $\mathbb{R}^3$, entonces
-% el móvil que recorre esta trayectoria en el instante $t=t_0$, ocupará la posición $P=(x(t_0),y(t_0),z(t_0))$ y tendrá una velocidad $\mathbf{v}=f'(t)=(x'(t),y'(t),z'(t))$, de manera que la recta tangente a $f$ en ese instante será
-% \begin{align*}
-% l&: (x,y,z)=(x(t_0),y(t_0),z(t_0))+t(x'(t_0),y'(t_0),z'(t_0)) =\\
-% &= (x(t_0)+tx'(t_0),y(t_0)+ty'(t_0),z(t_0)+tz'(t_0)),
-% \end{align*}
-% cuyas ecuaciones cartesianas son
-% \[
-% \frac{x-x(t_0)}{x'(t_0)}=\frac{y-y(t_0)}{y'(t_0)}=\frac{z-z(t_0)}{z'(t_0)},
-% \]
-% siempre que $x'(t_0)\neq 0$, $y'(t_0)\neq 0$ y $z'(t_0)\neq 0$.
-% \end{frame}
-%
-%
-% % ---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Recta tangente a una trayectoria en el espacio}
-% \framesubtitle{Ejemplo}
-% Dada la trayectoria del espacio $f(t)=(\cos t, \sen t, t)$, $t\in \mathbb{R}$, en el instante $t=\pi/2$, la trayectoria
-% pasará por el punto
-% \[
-% f(\pi/2)=(\cos(\pi/2),\sen(\pi/2),\pi/2)=(0,1,\pi/2),
-% \] con una velocidad
-% \[
-% \mathbf{v}=f'(\pi/2)=(-\sen(\pi/2),\cos(\pi/2), 1)=(-1,0,1),
-% \] y la
-% tangente en ese punto es
-% \[
-% l:(x,y,z)=(0,1,\pi/2)+t(-1,0,1) = (-t,1,t+\pi/2).
-% \]
-% \begin{center}
-% \scalebox{0.8}{\input{img/calculo_diferencial_1_variable/tangente_trayectoria_espacio}}
-% \end{center}
-% \end{frame}
-%
-%
-% \subsection{Estudio del crecimiento de una función}
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Estudio del crecimiento de una función}
-% La principal aplicación de la derivada es el estudio del crecimiento de una función mediante el signo de la derivada.
-% \begin{teorema}
-% Si $f$ es una función cuya derivada existe en un intervalo $I$, entonces:
-% \begin{itemize}
-% \item Si $\forall x\in I\ f'(x)\geq 0$ entonces $f$ es creciente en el intervalo $I$.
-% \item Si $\forall x\in I\ f'(x)\leq 0$ entonces $f$ es decreciente en el intervalo $I$.
-% \end{itemize}
-% \end{teorema}
-% \structure{\textbf{Ejemplo}}
-% La función $f(x)=x^3$ es creciente en todo $\mathbb{R}$ ya que $\forall x\in \mathbb{R}\
-% f'(x)\geq 0$. \vskip .5cm
-% \textbf{Observación}. \emph{Una función puede ser creciente o decreciente en un intervalo y no tener derivada.}
-% \end{frame}
-%
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Estudio del crecimiento de una función}
-% \framesubtitle{Ejemplo}
-% Consideremos la función $f(x)=x^4-2x^2+1$. Su derivada $f'(x)=4x^3-4x$ está definida en todo $\mathbb{R}$ y es continua.
-% \begin{center}
-% \scalebox{1}{\input{img/calculo_diferencial_1_variable/estudio_crecimiento}}
-% \end{center}
-% \end{frame}
-%
-%
-% \subsection{Determinación de los extremos relativos de una función}
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Determinación de extremos relativos de una función}
-% Como consecuencia del resultado anterior, la derivada también sirve para determinar los extremos relativos de una función.
-% \begin{teorema}[Criterio de la primera derivada]
-% Sea $f$ es una función cuya derivada existe en un intervalo $I$, y sea $x_0\in I$ tal que $f'(x_0)=0$, entonces:
-% \begin{itemize}
-% \item Si existe un $\delta>0$ tal que $\forall x\in(x_0-\delta,x_0)\ f'(x)>0$ y $\forall x\in(x_0,x_0+\delta)\ f'(x)<0$ entonces $f$ tiene un \emph{máximo relativo} en $x_0$.
-% \item Si existe un $\delta>0$ tal que $\forall x\in(x_0-\delta,x_0)\ f'(x)<0$ y $\forall x\in(x_0,x_0+\delta)\ f'(x)>0$ entonces $f$ tiene un \emph{mínimo relativo} en $x_0$.
-% \item Si existe un $\delta>0$ tal que $\forall x\in(x_0-\delta,x_0)\ f'(x)>0$ y $\forall x\in(x_0,x_0+\delta)\ f'(x)>0$ entonces $f$ tiene un \emph{punto de inflexión creciente} en $x_0$.
-% \item Si existe un $\delta>0$ tal que $\forall x\in(x_0-\delta,x_0)\ f'(x)<0$ y $\forall x\in(x_0,x_0+\delta)\ f'(x)<0$ entonces $f$ tiene un \emph{punto de inflexión decreciente} en $x_0$.
-% \end{itemize}
-% \end{teorema}
-% Los puntos donde se anula la derivada de una función se denominan \emph{puntos críticos}.
-%
-% %\textbf{Observación}. \emph{La anulación de la derivada es una condición necesaria pero no suficiente para la existencia de un extremo relativo en un punto.}
-%
-% %\structure{\textbf{Ejemplo}} La función $f(x)=x^3$ tiene derivada $f'(x)=3x^2$ y por tanto tiene un punto crítico en $x=0$, pero no tiene un extremo relativo en el 0, sino un punto de inflexión.
-% \end{frame}
-%
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Determinación de extremos relativos de una función}
-% \framesubtitle{Ejemplo}
-% Consideremos de nuevo la función $f(x)=x^4-2x^2+1$.
-% Su derivada $f'(x)=4x^3-4x$ está definida en todo $\mathbb{R}$ y es continua.
-% \begin{center}
-% \scalebox{1}{\input{img/calculo_diferencial_1_variable/estudio_extremos}}
-% \end{center}
-% \end{frame}
-%
-%
-% \subsection{Estudio de la concavidad de una función}
-% %---------------------------------------------------------------------slide---
-% \begin{frame}
-% \frametitle{Estudio de la concavidad de una función}
-% La concavidad de una función puede estudiarse mediante el signo de la segunda derivada.
-% \begin{teorema}[Criterio de la segunda derivada]
-% Si $f$ es una función cuya segunda derivada existe en un intervalo $I$, entonces:
-% \begin{itemize}
-% \item Si $\forall x\in I\ f''(x)\geq 0$ entonces $f$ es cóncava en el intervalo $I$.
-% \item Si $\forall x\in I\ f''(x)\leq 0$ entonces $f$ es convexa en el intervalo $I$.
-% \end{itemize}
-% \end{teorema}
-%
-% \structure{\textbf{Ejemplo}} La función $f(x)=x^2$ tiene segunda derivada $f''(x)=2>0$ y por tanto es cóncava en todo $\mathbb{R}$.
-% \vskip .5cm
-% \textbf{Observación}. \emph{Una función puede ser cóncava o convexa en un intervalo y no tener derivada.}
-% \end{frame}
-%
-%
+\end{frame}
+
+
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Tangent and normal lines to a function}
+A particular case of tangent and normal lines to a trajectory are the tangent and normal lines to a function of one real variable. 
+For every function $y=f(x)$, the trajectory that trace its graph is
+\[
+g(x) = (x,f(x))  \quad x\in \mathbb{R},
+\]
+and its velocity is 
+\[
+g'(x) = (1,f'(x)),
+\]
+so that the tangent line to $g$ at the moment $x_0$ is
+\[
+\frac{x-x_0}{1} = \frac{y-f(x_0)}{f'(x_0)} \Rightarrow y-f(x_0) = f'(x_0)(x-x_0),
+\]
+and the normal line is 
+\[
+\frac{x-x_0}{f'(x_0)} = \frac{y-f(x_0)}{-1} \Rightarrow y-f(x_0) = \frac{-1}{f'(x_0)}(x-x_0),
+\]
+\end{frame}
+
+
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Tangent and normal lines to a function}
+\framesubtitle{Example}
+Given the function $y=x^2$, the trajectory that traces the its graph is $g(x)=(x,x^2)$ and its velocity is 
+$g'(x)=(1,2x)$. At the moment $x=1$ the trajectory passes through the point $(1,1)$ with a velocity $(1,2)$.
+Thus, the tangent line at that moment is 
+\[
+\frac{x-1}{1} = \frac{y-1}{2} \Rightarrow y-1 = 2(x-1) \Rightarrow y = 2x-1,
+\]
+and the normal line is 
+\[
+\frac{x-1}{2} = \frac{y-1}{-1} \Rightarrow y-1 = \frac{-1}{2}(x-1) \Rightarrow y = \frac{-x}{2}+\frac{3}{2}.
+\]
+\begin{center}
+\tikzsetnextfilename{derivatives_1_variable/parable_tangent_normal}
+\input{img/derivatives_1_variable/parable_tangent_normal}
+\end{center}
+\end{frame}
+
+
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Tangent line to a trajectory in the space}
+The concept of tangent line to a trajectory in can be easily extended from the real plane to the three-dimensional space $\mathbb{R}^3$.
+
+If $f(t)=(x(t),y(t),z(t))$, $t\in \mathbb{R}$, is a trajectory in the real space $\mathbb{R}^3$, then at the moment $t_0$, the moving object that follows this trajectory will be at the position $P=(x(t_0),y(t_0),z(t_0))$ with a velocity $\mathbf{v}=f'(t)=(x'(t),y'(t),z'(t))$.
+Thus, the tangent line to $f$ at this moment have the following vectorial equation
+\begin{align*}
+l&: (x,y,z)=(x(t_0),y(t_0),z(t_0))+t(x'(t_0),y'(t_0),z'(t_0)) =\\
+&= (x(t_0)+tx'(t_0),y(t_0)+ty'(t_0),z(t_0)+tz'(t_0)),
+\end{align*}
+and the Cartesian equations are 
+\[
+\frac{x-x(t_0)}{x'(t_0)}=\frac{y-y(t_0)}{y'(t_0)}=\frac{z-z(t_0)}{z'(t_0)},
+\]
+provided that $x'(t_0)\neq 0$, $y'(t_0)\neq 0$ y $z'(t_0)\neq 0$.
+\end{frame}
+
+
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Tangent line to a trajectory in the space}
+\framesubtitle{Example}
+Given the trajectory $f(t)=(\cos t, \sin t, t)$, $t\in \mathbb{R}$ in the real space, at the moment $t=\pi/2$ the trajectory passes through the point
+\[
+f(\pi/2)=(\cos(\pi/2),\sin(\pi/2),\pi/2)=(0,1,\pi/2),
+\]
+with a velocity
+\[
+\mathbf{v}=f'(\pi/2)=(-\sin(\pi/2),\cos(\pi/2), 1)=(-1,0,1),
+\] 
+and the tangent line to $f$ at that moment is 
+\[
+l:(x,y,z)=(0,1,\pi/2)+t(-1,0,1) = (-t,1,t+\pi/2).
+\]
+\begin{center}
+\tikzsetnextfilename{derivatives_1_variable/tangent_trajectory_space}
+\input{img/derivatives_1_variable/tangent_trajectory_space}
+\end{center}
+\end{frame}
+
+
+\subsection{Analysis of functions: increase and decrease}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Analysis of functions: increase and decrease}
+The main application of derivatives is to determine the variation (increase or decrease) of functions. 
+For that we use the sign of the first derivative.  
+\begin{theorem}
+Let $f(x)$ be a function with first derivative in an interval $I\subseteq \mathbb{R}$.
+\begin{itemize}
+\item If $\forall x\in I\ f'(x)\geq 0$ then $f$ is increasing on $I$.
+\item If $\forall x\in I\ f'(x)\leq 0$ then $f$ is decreasing on $I$.
+\end{itemize}
+\end{theorem}
+If $f'(x_0)=0$ then $x_0$ is known as a \emph{stationary point} and the function in non-increasing and non-decreasing at that point. 
+\structure{\textbf{Example}}
+The function $f(x)=x^3$ is increasing on $\mathbb{R}$ as $\forall x\in \mathbb{R}\
+f'(x)\geq 0$. \vskip .5cm
+\structure{\textbf{Observation}} {A function can be increasing or decreasing on an interval and not have first derivative.}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Estudio del crecimiento de una función}
+\framesubtitle{Ejemplo}
+Let's analyze the increase and decrease of the function $f(x)=x^4-2x^2+1$. 
+Its first derivative is $f'(x)=4x^3-4x$.
+\begin{center}
+\tikzsetnextfilename{derivatives_1_variable/increase_anlaysis}
+\scalebox{0.9}{\input{img/derivatives_1_variable/increase_analysis}}
+\end{center}
+\end{frame}
+
+
+\subsection{Analysis of functions: relative extrema}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Analysis of functions: relative extrema}
+As a consequence of the previous result we can also use the first derivative to determine the relative extrema of a function. 
+\begin{theorem}[First derivative test]
+Let $f(x)$ be a function with first derivative in an interval $I\subseteq \mathbb{R}$ and let $x_0\in I$ be a stationary point of $f$ ($f'(x_0)=0$).
+\begin{itemize}
+\item  If $f'(x)>0$ on an open interval extending left from $x_0$ and $f'(x)<0$ on an open interval extending right from $x_0$, then $f$ has a \emph{relative maximum} at $x_0$.
+\item  If $f'(x)<0$ on an open interval extending left from $x_0$ and $f'(x)>0$ on an open interval extending right from $x_0$, then $f$ has a \emph{relative minimum} at $x_0$.
+\item If $f'(x)$ has the same sign on both an open interval extending left from $x_0$ and an open interval extending right from $x_0$, then $f$ has an \emph{inflection point} at $_0$.
+\end{itemize}
+\end{theorem}
+
+\structure{\textbf{Observation}} \emph{A vanishing derivative is a necessary but not sufficient condition for the function to have a relative extrema at a point.}
+
+\structure{\textbf{Example}} The function $f(x)=x^3$ have derivative $f'(x)=3x^2$ and have a stationary point at $x=0$.
+However it doesn't have a relative extrema at that point, but an inflection point.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Analysis of functions: relative extrema}
+\framesubtitle{Example}
+Consider again the function $f(x)=x^4-2x^2+1$ and let's analyze its relative extrema now. 
+Its first derivative is $f'(x)=4x^3-4x$.
+\begin{center}
+\tikzsetnextfilename{derivatives_1_variable/extrema_anlaysis}
+\scalebox{0.9}{\input{img/derivatives_1_variable/extrema_analysis}}
+\end{center}
+\end{frame}
+
+
+\subsection{Analysis of functions: concavity}
+%---------------------------------------------------------------------slide---
+\begin{frame}
+\frametitle{Analysis of functions: concavity}
+The concavity of a function can be determined by de second derivative. 
+\begin{theorem}[Second derivative test]
+Let $f(x)$ be a function with second derivative in an interval $I\subseteq \mathbb{R}$.
+\begin{itemize}
+\item If $\forall x\in I\ f''(x)\geq 0$ then $f$ is concave up (convex) on $I$.
+\item If $\forall x\in I\ f''(x)\leq 0$ then $f$ is concave down (concave) on $I$.
+\end{itemize}
+\end{theorem}
+
+\structure{\textbf{Example}} The function $f(x)=x^2$ has second derivative $f''(x)=2>0$ $\forall x\in \mathbb{R}$, so it is concave up in all $\mathbb{R}$. 
+\vskip .5cm
+\structure{\textbf{Observation}} \emph{A function can be concave up or down and not have second derivative.}
+\end{frame}
+
+
 % %---------------------------------------------------------------------slide----
 % \begin{frame}
 % \frametitle{Estudio de la concavidad de una función}
@@ -875,7 +908,7 @@ The  \emph average rate of change of a function $f$ in an interval $[a,a+\Delta 
 % \begin{frame}
 % \frametitle{Cálculo del polinomio de Mc Laurin}
 % \framesubtitle{Ejemplo}
-% Vamos a aproximar la función $f(x)=\sen x$ en un entorno del punto $0$ mediante un polinomio de grado $3$.
+% Vamos a aproximar la función $f(x)=\sin x$ en un entorno del punto $0$ mediante un polinomio de grado $3$.
 %
 % La ecuación del polinomio de Mc Laurin de orden $3$ para $f$ es
 % \[
@@ -884,9 +917,9 @@ The  \emph average rate of change of a function $f$ in an interval $[a,a+\Delta 
 % Calculamos las tres primeras derivadas de $f$ en $0$:
 % \[
 % \begin{array}{lll}
-% f(x)=\sen x & \quad & f(0)=\sen 0 =0,\\
+% f(x)=\sin x & \quad & f(0)=\sin 0 =0,\\
 % f'(x)=\cos x & & f'(0)=\cos 0=1,\\
-% f''(x)=-\sen x & & f''(0)=-\sen 0=0,\\
+% f''(x)=-\sin x & & f''(0)=-\sin 0=0,\\
 % f'''(x)=-\cos x & & f'''(0)=-\cos 0=-1.
 % \end{array}
 % \]
@@ -915,7 +948,7 @@ The  \emph average rate of change of a function $f$ in an interval $[a,a+\Delta 
 % \hline
 % f(x) & p_{f,0}^n(x) \\
 % \hline\hline
-% \sen x & \displaystyle x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots +(-1)^k\frac{x^{2k-1}}{(2k-1)!} \mbox{ si $n=2k$ o $n=2k-1$}\\
+% \sin x & \displaystyle x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots +(-1)^k\frac{x^{2k-1}}{(2k-1)!} \mbox{ si $n=2k$ o $n=2k-1$}\\
 % \hline
 % \cos x &  \displaystyle 1-\frac{x^2}{2!}+\frac{x^4}{4!}-\cdots +(-1)^k\frac{x^{2k}}{(2k)!} \mbox{ si $n=2k$ o $n=2k+1$}\\
 % \hline
@@ -1081,13 +1114,13 @@ The  \emph average rate of change of a function $f$ in an interval $[a,a+\Delta 
 % \[
 % \left\{%
 % \begin{array}{l}
-% x=2\sen t \\
+% x=2\sin t \\
 % y=\cos t
 % \end{array}%
 % \right.
 % \]
 % Entonces
 % \[
-% \frac{dy}{dx}=\frac{-\sen t\; dt}{2 \cos t\; dt}=\frac{-1}{2}\tg t.
+% \frac{dy}{dx}=\frac{-\sin t\; dt}{2 \cos t\; dt}=\frac{-1}{2}\tg t.
 % \]
 % \end{frame}

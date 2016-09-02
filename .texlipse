@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Wed Aug 31 11:27:28 CEST 2016
+markTmpDer=true
+builderNum=7
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=calculus_manual.tex
+outputFile=calculus_manual.pdf
+langSpell=en
+markDer=true
+srcDir=

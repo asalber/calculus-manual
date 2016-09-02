@@ -1,0 +1,22 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+  \begin{axis}[
+    gen2dfun, 
+    xmin=0, xmax=4.5,
+    ymin=0, ymax=4,
+    axis equal=true,  
+    xtick={1},
+    xticklabels={$a$},
+    ytick={1},
+    yticklabels={$f(a)$}, 
+    height=5cm,
+    ]
+    \addplot+[domain=0.2:3.5, smooth, name path=F] {2^(x-2)+0.5} node[anchor=south] {$f(x)$};
+    \addplot+[domain=0.2:3.5, smooth, name path=T] {1+ln(2)/2*(x-1)} node[anchor=north west, pos=0.8] {Tangent} node [anchor=north, pos=0.8] {$y=f(a)+f'(a)(x-a)$};
+    \coordinate (O);
+    \coordinate (A) at (1,1);
+    \fill (A) circle (1.2pt);
+    \draw[gray, dotted] (A) -- (A|-O);
+    \draw[gray, dotted] (A) -- (A-|O);
+  \end{axis}
+\end{tikzpicture}

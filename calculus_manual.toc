@@ -1,5 +1,0 @@
-\beamer@endinputifotherversion {3.36pt}
-\select@language {english}
-\select@language {english}
-\beamer@sectionintoc {1}{Differential calculus with one variable}{4}{0}{1}
-\beamer@subsectionintoc {1}{1}{Concept of derivative}{6}{0}{1}

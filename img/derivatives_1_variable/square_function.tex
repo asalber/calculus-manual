@@ -1,0 +1,8 @@
+\begin{tikzpicture}
+% \draw[->] (-3,0) -- (4.2,0) node[right] {$x$};
+% \draw[->] (0,-3) -- (0,4.2) node[above] {$y$};
+% \draw[scale=0.5,domain=-3:3,smooth,variable=\x,blue] plot ({\x},{\x*\x});
+\begin{axis}[axis x line=middle, axis y line=middle, ylabel=$y$, xlabel=$x$]
+  \addplot[domain=-2:2, blue, thick, samples=100] {x^2};
+\end{axis}
+\end{tikzpicture}
