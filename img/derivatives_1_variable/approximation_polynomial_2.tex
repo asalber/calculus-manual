@@ -1,0 +1,33 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+  \begin{axis}[
+    gen2dfun, 
+    xmin=0, xmax=4,
+    ymin=0, ymax=4,
+    xtick={2.5},
+    xticklabel={$x_0$},
+    ytick={1.5},
+    yticklabels={$f(x_0)$}, 
+    clip=false, 
+    height=5cm,
+  	]
+    \addplot+[domain=0.5:3.6, smooth, name path=F] {2.7183^(x-2.5)+0.5} node[anchor=south west] {$f(x)$};
+    \coordinate (A) at (2.5,1.5);
+    \fill (A) circle (1.2pt);
+    \draw[gray, dotted] (A) -- (A|-O);
+    \draw[gray, dotted] (A) -- (A-|O);
+    \addplot+[domain=0.5:3.6, smooth, name path=P0, visible on=<2->] {1.5} node[anchor=west] {$p^0=f(x_0)$};
+    \addplot+[domain=1:3.6, smooth, name path=P1, visible on=<3->] {x-1} node[anchor=west] {$p^1=f(x_0)+f'(x_0)(x-x_0)$};
+    \addplot+[domain=0.5:3.6, smooth, name path=P1, visible on=<4->] {-1+x+(x-2.5)^2/2} node[anchor=west] {$p^2=f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x_0)}{2}(x-x_0)^2$};
+    
+    \coordinate (B) at (3.5,3.2183);
+    \coordinate (C) at (3.5,3);
+    \draw<4->[gray, very thin] (3.5,0.06) -- (3.5,-0.06);
+    \node<4-> at (3.5,-0.25) {$x_1$};
+    \draw<4->[gray, very thin] (-0.06,3.2183) -- (0.06,3.2183);
+    \node<4-> at (-0.25,3.2183) {$x_1$};
+    \draw<4->[gray, dotted] (B) -- (B|-O);
+    \draw<4->[gray, dotted] (B) -- (B-|O);
+    \draw[|-|, visible on=<5->] (B) -- (C) node[anchor=east, pos=0] {Approximation error} node[anchor=east, pos=1] {$e^2(x_1)=f(x_1)-p^2(x_1)$};
+  \end{axis};
+\end{tikzpicture}

@@ -1,0 +1,29 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+  \begin{axis}[
+    gen2dfun, 
+    xmin=0, xmax=4,
+    ymin=0, ymax=4,
+    xtick={2.5},
+    xticklabel={$x_0$},
+    ytick={1.5},
+    yticklabels={$f(x_0)$}, 
+    clip=false, 
+    height=5cm,
+  	]
+    \addplot+[domain=0.5:3.6, smooth, name path=F] {2.7183^(x-2.5)+0.5} node[anchor=south west] {$f(x)$};
+    \coordinate (A) at (2.5,1.5);
+    \fill (A) circle (1.2pt);
+    \draw[gray, dotted] (A) -- (A|-O);
+    \draw[gray, dotted] (A) -- (A-|O);
+    \addplot+[domain=0.5:3.6, smooth, name path=P, visible on=<2->] {1.5} node[anchor=west] {$p^0=f(x_0)$};
+    \coordinate (B) at (3.5,3.2183);
+    \draw<3->[gray, very thin] (3.5,0.06) -- (3.5,-0.06);
+    \node<3-> at (3.5,-0.25) {$x_1$};
+    \draw<3->[gray, very thin] (-0.06,3.2183) -- (0.06,3.2183);
+    \node<3-> at (-0.25,3.2183) {$x_1$};
+    \draw<3->[gray, dotted] (B) -- (B|-O);
+    \draw<3->[gray, dotted] (B) -- (B-|O);
+    \draw[|-|, visible on=<4->] (B) -- (B|-A) node[anchor=west, pos=0.3] {Approximation error} node[anchor=west, midway] {$e^0(x_1)=f(x_1)-p^0(x_1)$};
+  \end{axis};
+\end{tikzpicture}

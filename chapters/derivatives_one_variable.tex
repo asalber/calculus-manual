@@ -163,7 +163,7 @@ If $u=f(x)$ and $v=g(x)$ are two differentiable functions, then
 \end{frame}
 
 
-\subsection{Derivada de una función compuesta: La regla de la cadena}
+\subsection{Derivative of a composite function}
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
@@ -298,7 +298,8 @@ are known as \emph{coordinate functions} of $f$ and denoted $f(t)=(x(t),y(t))$.
 
 \begin{center}
 \tikzsetnextfilename{derivatives_1_variable/curvilinear_motion}
-\scalebox{0.8}{\input{img/derivatives_1_variable/curvilinear_motion}}
+\mode<article>{\input{img/derivatives_1_variable/curvilinear_motion}}
+\mode<presentation>{\scalebox{0.8}{\input{img/derivatives_1_variable/curvilinear_motion}}}
 \end{center}
 \end{frame}
 
@@ -337,7 +338,8 @@ In the moment $t=\pi/4$, the object is in position $f(\pi/4) = (\cos(\pi/4),\sin
 and it is moving with a velocity $\mathbf{v}=f'(\pi/4)=(-\sin(\pi/4),\cos(\pi/4))=(-\sqrt{2}/2,\sqrt{2}/2)$.
 \begin{center}
 \tikzsetnextfilename{derivatives_1_variable/circumference_trajectory}
-\scalebox{0.8}{\input{img/derivatives_1_variable/circumference_trajectory}}
+\mode<article>{\input{img/derivatives_1_variable/circumference_trajectory}}
+\mode<presentation>{\scalebox{0.8}{\input{img/derivatives_1_variable/circumference_trajectory}}}
 \end{center}
 Observe that the module of the velocity vector is always 1 as
 $|\mathbf{v}|=\sqrt{(-\sin t)^2+(\cos t)^2}=1$.
@@ -627,7 +629,7 @@ Its first derivative is $f'(x)=4x^3-4x$.
 \begin{frame}
 \frametitle{Analysis of functions: concavity}
 The concavity of a function can be determined by de second derivative. 
-\begin{theorem}[Second derivative test]
+\begin{theorem}
 Let $f(x)$ be a function with second derivative in an interval $I\subseteq \mathbb{R}$.
 \begin{itemize}
 \item If $\forall x\in I\ f''(x)\geq 0$ then $f$ is concave up (convex) on $I$.
@@ -641,486 +643,355 @@ Let $f(x)$ be a function with second derivative in an interval $I\subseteq \math
 \end{frame}
 
 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Estudio de la concavidad de una función}
-% \framesubtitle{Ejemplo}
-% Consideremos de nuevo la función $f(x)=x^4-2x^2+1$. Su segunda derivada $f''(x)=12x^2-4$ está definida en todo $\mathbb{R}$ y es continua.
-% \begin{center}
-% \scalebox{1}{\input{img/calculo_diferencial_1_variable/estudio_concavidad}}
-% \end{center}
-% \end{frame}
-%
-%
-%
-% \subsection{Polinomios de Taylor}
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Aproximación de una función mediante un polinomio}
-% Una apliación muy útil de la derivada es la aproximación de funciones mediante polinomios.
-%
-% Los polinomios son funciones sencillas de calcular (mediante sumas y productos), que tienen muy buenas propiedades:
-% \begin{itemize}
-% \item Están definidos en todos los números reales.
-% \item Son funciones continuas.
-% \item Son derivables hasta cualquier orden y sus derivadas son continuas.
-% \end{itemize}
-%
-% \begin{block}{Objetivo}
-% Aproximar una función $f(x)$ mediante un polinomio $p(x)$ cerca de un valor $x=x_0$.
-% \end{block}
-%
-% \end{frame}
-%
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Aproximación mediante un polinomio de grado 0}
-% Un polinomio de grado 0 tiene ecuación
-% \[
-% p(x) = c_0,
-% \]
-% donde $c_0$ es una constante.
-%
-% Como el polinomio debe valer lo que la función en el punto $x_0$, debe cumplir
-% \[p(x_0) = c_0 = f(x_0).\]
-%
-% En consecuencia, el polinomio de grado 0 que mejor aproxima a $f$ en un entorno de $x_0$ es
-% \[p(x) = f(x_0).\]
-% \end{frame}
-%
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Aproximación mediante un polinomio de grado 0}
-% \begin{center}
-% \scalebox{1}{\input{img/aplicaciones_derivada/polinomio_grado_0}}
-% \end{center}
-% \end{frame}
-%
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Aproximación mediante un polinomio de grado 1}
-% Un polinomio de grado 1 es una recta y tiene ecuación
-% \[
-% p(x) = c_0+c_1x,
-% \]
-% aunque también puede escribirse
-% \[
-% p(x) = c_0+c_1(x-x_0).
-% \]
-%
-% De entre todos los polinomios de grado 1, el que mejor aproxima a $f$ en entorno de $x_0$ será el que cumpla las dos condiciones siguientes:
-% \begin{itemize}
-% \item[\structure{1-}] $p$ y $f$ valen lo mismo en $x_0$: $p(x_0) = f(x_0)$,
-% \item[\structure{2-}] $p$ y $f$ tienen la misma tasa de crecimiento en $a$: $p'(x_0) = f'(x_0)$.
-% \end{itemize}
-% Esta última condición nos asegura que en un entorno de $x_0$, $p$ y $f$ tienen aproximadamente la misma tendencia de crecimiento, pero requiere que la función $f$ sea derivable en $x_0$.
-% \end{frame}
-%
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{La recta tangente: Mejor aproximación de grado 1}
-% Imponiendo las condiciones anteriores tenemos
-% \begin{itemize}
-% \item[\structure{1-}] $p(x)=c_0+c_1(x-x_0) \Rightarrow p(x_0)=c_0+c_1(x_0-x_0)=c_0=f(x_0)$,
-% \item[\structure{2-}] $p'(x)=c_1 \Rightarrow p'(x_0)=c_1=f'(x_0)$.
-% \end{itemize}
-%
-% Así pues, el polinomio de grado 1 que mejor aproxima a $f$ en un entorno de $x_0$ es
-% \[
-% p(x) = f(x_0)+f '(x_0)(x-x_0),
-% \]
-% que resulta ser la recta tangente a $f$ en el punto $(x_0,f(x_0))$.
-% \end{frame}
-%
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Aproximación mediante un polinomio de grado 1}
-% \begin{center}
-% \scalebox{1}{\input{img/aplicaciones_derivada/polinomio_grado_1}}
-% \end{center}
-% \end{frame}
-%
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Aproximación mediante un polinomio de grado 2}
-% Un polinomio de grado 2 es una parábola y tiene ecuación
-% \[
-% p(x) = c_0+c_1x+c_2x^2,
-% \]
-% aunque también puede escribirse
-% \[
-% p(x) = c_0+c_1(x-x_0)+c_2(x-x_0)^2.
-% \]
-%
-% De entre todos los polinomio de grado 2, el que mejor aproxima a $f$ en entorno de $x_0$ será el que cumpla las tres condiciones siguientes:
-% \begin{itemize}
-% \item[\structure{1-}] $p$ y $f$ valen lo mismo en $x_0$: $p(x_0) = f(x_0)$,
-% \item[\structure{2-}] $p$ y $f$ tienen la misma tasa de crecimiento en $x_0$: $p'(x_0) = f'(x_0)$.
-% \item[\structure{3-}] $p$ y $f$ tienen la misma curvatura en $x_0$: $p''(x_0)=f''(x_0)$.
-% \end{itemize}
-% Esta última condición requiere que la función $f$ sea dos veces derivable en $x_0$.
-% \end{frame}
-%
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Mejor polinomio de grado 2}
-% Imponiendo las condiciones anteriores tenemos
-% \begin{itemize}
-% \item[\structure{1-}] $p(x)=c_0+c_1(x-x_0)+c_2(x-x_0)^2 \Rightarrow p(x_0)=c_0=f(x_0)$,
-% \item[\structure{2-}] $p'(x)=c_1+2c_2(x-x_0) \Rightarrow p'(x_0)=c_1+2c_2(x_0-x_0)=c_1=f'(x_0)$,
-% \item[\structure{3-}] $p''(x)=2c_2 \Rightarrow p''(x_0)=2c_2=f''(x_0) \Rightarrow c_2=\frac{f''(x_0)}{2}$.
-% \end{itemize}
-%
-% Así pues, el polinomio de grado 2 que mejor aproxima a $f$ en un entorno de $x_0$ es
-% \[
-% p(x) = f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x_0)}{2}(x-x_0)^2.
-% \]
-% \end{frame}
-%
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Aproximación mediante un polinomio de grado 2}
-% \begin{center}
-% \scalebox{1}{\input{img/aplicaciones_derivada/polinomio_grado_2}}
-% \end{center}
-% \end{frame}
-%
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Aproximación mediante un polinomio de grado $n$}
-% Un polinomio de grado $n$ tiene ecuación
-% \[p(x) = c_0+c_1x+c_2x^2+\cdots +c_nx^n,\]
-% aunque también puede escribirse
-% \[p(x) = c_0+c_1(x-x_0)+c_2(x-x_0)^2+\cdots +c_n(x-x_0)^n.\]
-%
-% De entre todos los polinomio de grado $n$, el que mejor aproxima a $f$ en entorno de $x_0$ será el que cumpla las $n+1$ condiciones siguientes:
-% \begin{itemize}
-% \item[\structure{1-}] $p(x_0) = f(x_0)$,
-% \item[\structure{2-}] $p'(x_0) = f'(x_0)$,
-% \item[\structure{3-}] $p''(x_0)=f''(x_0)$,
-% \item[] $\cdots$
-% \item[\structure{n+1-}] $p^{(n}(x_0)=f^{(n}(x_0)$.
-% \end{itemize}
-% \alert{Obsérvese que para que se cumplan estas condiciones es necesario que $f$ sea $n$ veces derivable en $x_0$.}
-% \end{frame}
-%
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Cálculo de los coeficientes del polinomio de grado $n$}
-% Las sucesivas derivadas de $p$ valen
-% \begin{align*}
-% p(x) &= c_0+c_1(x-x_0)+c_2(x-x_0)^2+\cdots +c_n(x-x_0)^n,\\
-% p'(x)& = c_1+2c_2(x-x_0)+\cdots +nc_n(x-x_0)^{n-1},\\
-% p''(x)& = 2c_2+\cdots +n(n-1)c_n(x-x_0)^{n-2},\\
-% \vdots\ \
-% \\
-% p^{(n}(x)&= n(n-1)(n-2)\cdots 1 c_n=n!c_n.
-% \end{align*}
-%
-% Imponiendo las condiciones anteriores se tiene
-% \begin{itemize}
-% \item[\structure{1-}] $p(x_0) = c_0+c_1(x_0-x_0)+c_2(x_0-x_0)^2+\cdots +c_n(x_0-x_0)^n=c_0=f(x_0)$,
-% \item[\structure{2-}] $p'(x_0) = c_1+2c_2(x_0-x_0)+\cdots +nc_n(x_0-x_0)^{n-1}=c_1=f'(x_0)$,
-% \item[\structure{3-}] $p''(x_0) = 2c_2+\cdots +n(n-1)c_n(x_0-x_0)^{n-2}=2c_2=f''(x_0)\Rightarrow c_2=f''(x_0)/2$,
-% \item[] $\cdots$
-% \item[\structure{n+1-}] $p^{(n}(x_0)=n!c_n=f^{(n}(x_0)=c_n=\frac{f^{(n}(x_0)}{n!}$.
-% \end{itemize}
-% \end{frame}
-%
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Polinomio de Taylor de orden $n$}
-% \begin{definicion}[Polinomio de Taylor de orden $n$ para $f$ en el punto $a$]
-% Dada una función $f$, $n$ veces derivable en $x=x_0$, se define el \emph{polinomio de Taylor} de orden $n$ para $f$ en $x_0$ como
-% \begin{align*}
-% p_{f,x_0}^n(x)&=f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x_0)}{2}(x-x_0)^2+\cdots +\frac{f^{(n}(x_0)}{n!}(x-x_0)^n = \\ &=\sum_{i=0}^{n}\frac{f^{(i}(x_0)}{i!}(x-x_0)^i,
-% \end{align*}
-% o bien, escribiendo $x=x_0+h$
-% \[
-% p_f^n(x_0+h)&=f(x_0)+f'(x_0)h+\frac{f''(x_0)}{2}h^2+\cdots +\frac{f^{(n}(x_0)}{n!}h^n =\sum_{i=0}^{n}\frac{f^{(i}(x_0)}{i!}h^i,
-% \]
-% \end{definicion}
-%
-% El polinomio de Taylor de orden $n$ para $f$ en $x_0$ es el polinomio de orden $n$ que mejor aproxima a $f$ alrededor de $x_0$, ya que es el único que cumple las $n+1$ condiciones anteriores.
-% \end{frame}
-%
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Cálculo del polinomio de Taylor}
-% \framesubtitle{Ejemplo}
-% Vamos a aproximar la función $f(x)=\log x$ en un entorno del punto $1$ mediante un polinomio de grado $3$.
-%
-% La ecuación del polinomio de Taylor de orden $3$ para $f$ en el punto $1$ es
-% \[
-% p_{f,1}^3(x)=f(1)+f'(1)(x-1)+\frac{f''(1)}{2}(x-1)^2+\frac{f'''(1)}{3!}(x-1)^3.
-% \]
-% Calculamos las tres primeras derivadas de $f$ en $1$:
-% \[
-% \begin{array}{lll}
-% f(x)=\log x & \quad & f(1)=\log 1 =0,\\
-% f'(x)=1/x & & f'(1)=1/1=1,\\
-% f''(x)=-1/x^2 & & f''(1)=-1/1^2=-1,\\
-% f'''(x)=2/x^3 & & f'''(1)=2/1^3=2.
-% \end{array}
-% \]
-% Sustituyendo en la ecuación del polinomio se tiene
-% \[
-% p_{f,1}^3(x)=0+1(x-1)+\frac{-1}{2}(x-1)^2+\frac{2}{3!}(x-1)^3= \frac{2}{3}x^3-\frac{3}{2}x^2+3x-\frac{11}{6}.
-% \]
-% \end{frame}
-%
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Polinomios de Taylor para la función logaritmo}
-% \begin{center}
-% \scalebox{1}{\input{img/aplicaciones_derivada/polinomio_taylor_logaritmo}}
-% \end{center}
-% \end{frame}
-%
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Polinomio de Mc Laurin de orden $n$}
-% La ecuación del polinomio de Taylor se simplifica cuando el punto en torno al cual queremos aproximar es el $0$.
-% \begin{definicion}[Polinomio de Mc Laurin de orden $n$ para $f$]
-% Dada una función $f$, $n$ veces derivable en $0$, se define el \emph{polinomio de Mc Laurin} de orden $n$ para $f$ como
-% \begin{align*}
-% p_{f,0}^n(x)&=f(0)+f'(0)x+\frac{f''(0)}{2}x^2+\cdots +\frac{f^{(n}(0)}{n!}x^n = \\ &=\sum_{i=0}^{n}\frac{f^{(i}(0)}{i!}x^i.
-% \end{align*}
-% \end{definicion}
-% \end{frame}
-%
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Cálculo del polinomio de Mc Laurin}
-% \framesubtitle{Ejemplo}
-% Vamos a aproximar la función $f(x)=\sin x$ en un entorno del punto $0$ mediante un polinomio de grado $3$.
-%
-% La ecuación del polinomio de Mc Laurin de orden $3$ para $f$ es
-% \[
-% p_{f,0}^3(x)=f(0)+f'(0)x+\frac{f''(0)}{2}x^2+\frac{f'''(0)}{3!}x^3.
-% \]
-% Calculamos las tres primeras derivadas de $f$ en $0$:
-% \[
-% \begin{array}{lll}
-% f(x)=\sin x & \quad & f(0)=\sin 0 =0,\\
-% f'(x)=\cos x & & f'(0)=\cos 0=1,\\
-% f''(x)=-\sin x & & f''(0)=-\sin 0=0,\\
-% f'''(x)=-\cos x & & f'''(0)=-\cos 0=-1.
-% \end{array}
-% \]
-% Sustituyendo en la ecuación del polinomio obtenemos
-% \[
-% p_{f,0}^3(x)=0+1\cdot x+\frac{0}{2}x^2+\frac{-1}{3!}x^3= x-\frac{x^3}{6}.
-% \]
-% \end{frame}
-%
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Polinomios de Mc Laurin para la función seno}
-% \begin{center}
-% \scalebox{1}{\input{img/aplicaciones_derivada/polinomio_mclaurin_seno}}
-% \end{center}
-% \end{frame}
-%
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Polinomios de Mc Laurin de funciones elementales}
-% \[
-% \renewcommand{\arraystretch}{2.5}
-% \begin{array}{|c|c|}
-% \hline
-% f(x) & p_{f,0}^n(x) \\
-% \hline\hline
-% \sin x & \displaystyle x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots +(-1)^k\frac{x^{2k-1}}{(2k-1)!} \mbox{ si $n=2k$ o $n=2k-1$}\\
-% \hline
-% \cos x &  \displaystyle 1-\frac{x^2}{2!}+\frac{x^4}{4!}-\cdots +(-1)^k\frac{x^{2k}}{(2k)!} \mbox{ si $n=2k$ o $n=2k+1$}\\
-% \hline
-% \arctg x &  \displaystyle x-\frac{x^3}{3}+\frac{x^5}{5}-\cdots +(-1)^k\frac{x^{2k-1}}{(2k-1)} \mbox{ si $n=2k$ o $n=2k-1$}\\
-% \hline
-% e^x & \displaystyle 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots + \frac{x^n}{n!}\\
-% \hline
-% \log(1+x) & \displaystyle x-\frac{x^2}{2}+\frac{x^3}{3}-\cdots +(-1)^{n-1}\frac{x^n}{n}\\
-% \hline
-% \end{array}
-% \]
-% \end{frame}
-%
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Resto de Taylor}
-% Los polinomios de Taylor permiten calcular el valor aproximado de una función cerca de un valor $x_0$, pero siempre se comete un error en dicha aproximación.
-% \begin{definicion}[Resto de Taylor]
-% Si $f$ es una función para la que existe el su polinomio de Taylor de orden $n$ en $x_0$, $p_{f,x_0}^n$, entonces se define el \emph{resto de Taylor} de orden $n$ para $f$ en $x_0$ como
-% \[
-% r_{f,x_0}^n(x)=f(x)-p_{f,x_0}^n(x).
-% \]
-% \end{definicion}
-%
-% El resto mide el error cometido al aproximar $f(x)$ mediante $p_{f,x_0}^n(x)$ y permite expresar la función $f$ como la suma de un polinomio de Taylor más su resto correspondiente:
-% \[
-% f(x)=p_{f,x_0}^n(x) + r_{f,x_0}^n(x).
-% \]
-% Esta expresión se conoce como \emph{fórmula de Taylor} de orden $n$ para $f$ en $x_0$. Se pude demostrar, además, que
-% \[
-% \lim_{h\rightarrow 0}\frac{r_{f,x_0}^n(x_0+h)}{h^n}=0,
-% \]
-% lo cual indica que el resto $r_{f,x_0}^n(x_0+h)$ es mucho menor que $h^n$.
-% \end{frame}
-%
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Analysis of functions: concavity}
+\framesubtitle{Example}
+let's analyze its concavity of the same function of previous examples $f(x)=x^4-2x^2+1$. 
+Its second derivative is $f''(x)=12x^2-4$.
+\begin{center}
+\tikzsetnextfilename{derivatives_1_variable/concavity_anlaysis}
+\scalebox{0.9}{\input{img/derivatives_1_variable/concavity_analysis}}
+\end{center}
+\end{frame}
 
 
 
+\subsection{Taylor polynomials}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Approximating a function by a polynomial}
+Another useful application of the derivative is the approximation of functions by polynomials.
 
-%
-% \subsection{El concepto de diferencial}
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{El concepto de diferencial}
-% \begin{definicion}[Diferencial de una función en un punto]
-% Dada una función $f$, se llama \emph{diferencial} de $f$ en un punto $a$, al la función
-% \[
-% \begin{array}{rccc}
-% dy=df(a): & \mathbb{R} & \longrightarrow & \mathbb{R} \\
-% & \Delta x & \longrightarrow & f'(a)\Delta x
-% \end{array}
-% \]
-% \end{definicion}
-%
-% Cuando $f$ es la función identidad $y=x$,  entonces $f'(a)=1$, y se cumple que
-% \[ dx=dy=f'(a)\Delta x=\Delta x,\]
-% de modo que también podemos definir el diferencial como
-% \[dy=df(a)=f'(a)dx.\]
-%
-% De aquí se deduce otra forma de escribir la derivada de $f$ en $a$
-% \[f'(a)=\frac{dy}{dx}=\frac{df(a)}{dx}.\]
-% \end{frame}
-%
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Aproximación de una función mediante su diferencial}
-% El diferencial de una función $f$ en un punto $a$, permite aproximar la variación de $f$ cerca de $a$.
-%
-% \begin{center}
-% \scalebox{1}{\input{img/calculo_diferencial_1_variable/diferencial}}
-% \end{center}
-% \end{frame}
-%
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Aproximación de una función mediante su diferencial: Ejemplo}
-% Consideremos otra vez la función $y=x^2$ que mide el área de un cuadrado de chapa metálica de lado $x$.
-%
-% Si el lado del cuadrado es $a$, y sometemos la chapa a un proceso de calentamiento que aumenta el lado del cuadrado, ¿cuál  será aproximadamente la variación que habrá experimentado el área, cuando el lado aumente una cantidad $dx$?
-% \begin{columns}
-% \begin{column}{0.3\textwidth}
-% \begin{align*}
-% \Delta y &= f(a+dx)-f(a)=(a+dx)^2-a^2=\\
-% &= a^2+2adx+dx^2-a^2=2adx+dx^2,\\
-% \only<2->{dy &= f'(a)dx= 2adx.}
-% \end{align*}
-% \uncover<3->{Además, \[\lim_{dx\rightarrow 0}\Delta y-dy=\lim_{dx\rightarrow 0}dx^2=0.\]}
-% \end{column}
-% \begin{column}{0.3\textwidth}
-% \begin{center}
-% \scalebox{1}{\input{img/calculo_diferencial_1_variable/diferencial_area_cuadrado}}
-% \end{center}
-% \end{column}
-% \end{columns}
-% \end{frame}
+Polynomials are functions easy to calculate (sums and products) with very good properties:
+\begin{itemize}
+\item Defined in all the real numbers.
+\item Continuous.
+\item Differentiable of all orders with continuous derivatives.
+\end{itemize}
+
+\begin{block}{Goal}
+Approximate a function $f(x)$ by a polynomial $p(x)$ near a value $x=x_0$.
+\end{block}
+\end{frame}
 
 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Propiedades del diferencial}
-% Si $y=c$, es una función constante, entonces $dy=0$.
-% Si $y=x$, es la función identidad, entonces  $dy=dx$.
-%
-% Si $u=f(x)$ y $v=g(x)$ son dos funciones diferenciables, entonces
-% \begin{itemize}
-% \item $d(u+v)=d(u)+d(v)$
-% \item $d(u-v)=d(u)-d(v)$
-% \item $d(u\cdot v)=d(u)\cdot v+ u\cdot d(v)$
-% \item $d\left(\dfrac{u}{v}\right)=\dfrac{du\cdot v-u\cdot dv}{v^2}$
-% \end{itemize}
-% \end{frame}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Approximating a function by a polynomial of grade 0}
+A polynomial of grade 0 has equation
+\[
+p(x) = c_0,
+\]
+where $c_0$ is a constant.
+
+As the polynomial should coincide with the function at $x_0$, it must satisfy
+\[p(x_0) = c_0 = f(x_0).\]
+
+Therefore, the polynomial of grade 0 that best approximate $f$ near $x_0$ is
+\[p(x) = f(x_0).\]
+\end{frame}
 
 
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Approximating a function by a polynomial of grade 0}
+\begin{center}
+\tikzsetnextfilename{derivatives_1_variable/approximation_polynomial_0}
+\input{img/derivatives_1_variable/approximation_polynomial_0}
+\end{center}
+\end{frame}
 
 
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Approximating a function by a polynomial of grade 1}
+A polynomial of grade 1 has equation
+\[
+p(x) = c_0+c_1x,
+\]
+but it can also be expressed 
+\[
+p(x) = c_0+c_1(x-x_0).
+\]
 
-% \subsection{Derivada de una función implícita}
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Derivada de una función implícita}
-% Si $F(x,y)=0$ es una función implícita entonces
-% \[
-% dF(x,y)=d0=0.
-% \]
-%
-% Si $F(x,y)=0$ es una función implícita en la que $y$ depende de $x$, entonces podemos calcular la derivada de $y$ a partir del diferencial
-% \[
-% \frac{dF(x,y)}{dx}=\frac{d0}{dx}=0.
-% \]
-% \structure{\textbf{Ejemplo}}. Consideremos la función implícita de la circunferencia de radio 1, $x^2+y^2=1$. Entonces su diferencial es
-% \[
-% d(x^2+y^2)=d1=0 \Leftrightarrow d(x^2)+d(y^2)=2x\;dx+2y\;dy=0.
-% \]
-% A partir de aquí podemos calcular fácilmente la derivada de $y$:
-% \[
-% \frac{d(x^2+y^2)}{dx}= \frac{2x\;dx+2y\;dy}{dx}=2x\frac{dx}{dx}+2y\frac{dy}{dx}= 2x+2y\frac{dy}{dx}=0 \Leftrightarrow \frac{dy}{dx}=\frac{-x}{y}.
-% \]
-%
-% \end{frame}
-%
-%
-% \subsection{Derivada de una función paramétrica}
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Derivada de una función parametrica}
-%
-% Dada una función paramétrica
-% \[
-% \left\{%
-% \begin{array}{l}
-% x=f(t) \\
-% y=g(t)
-% \end{array}%
-% \right.
-% \]
-% podemos calcular su derivada a partir de las derivadas de $f$ y $g$:
-% \[\frac{dy}{dx}=\frac{g'(t)\,dt}{f'(t)\,dt}=\frac{g'(t)}{f'(t)}.\]
-%
-% \structure{\textbf{Ejemplo}}. Consideremos la elipse
-% \[
-% \left\{%
-% \begin{array}{l}
-% x=2\sin t \\
-% y=\cos t
-% \end{array}%
-% \right.
-% \]
-% Entonces
-% \[
-% \frac{dy}{dx}=\frac{-\sin t\; dt}{2 \cos t\; dt}=\frac{-1}{2}\tg t.
-% \]
-% \end{frame}
+Among all the polynomials of grade 1, the one that best approximate $f(x)$ near $x_0$ is that that meets the following conditions
+
+\begin{enumerate}
+\item $p$ and $f$ coincide at $x_0$: $p(x_0) = f(x_0)$,
+\item $p$ and $f$ have the same rate of change at $x_0$: $p'(x_0) = f'(x_0)$.
+\end{enumerate}
+
+The last condition guarantee that $p$ and $f$ have approximately the same tendency, but it requires the function $f$ to be differentiable at $x_0$.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{The tangent line: Best approximating polynomial of grade 1}
+Imposing the previous conditions we have
+\begin{enumerate}
+\item $p(x)=c_0+c_1(x-x_0) \Rightarrow p(x_0)=c_0+c_1(x_0-x_0)=c_0=f(x_0)$,
+\item $p'(x)=c_1 \Rightarrow p'(x_0)=c_1=f'(x_0)$.
+\end{enumerate}
+
+Therefore, the polynomial of grade 1 that best approximates $f$ near $x_0$ is
+\[
+p(x) = f(x_0)+f '(x_0)(x-x_0),
+\]
+which turns out to be the tangent line to $f$ at $(x_0,f(x_0))$.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Approximating a function by a polynomial of grade 1}
+\begin{center}
+\tikzsetnextfilename{derivatives_1_variable/approximation_polynomial_1}
+\input{img/derivatives_1_variable/approximation_polynomial_1}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Approximating a function by a polynomial of grade 2}
+A polynomial of grade 2 is a parable with equation
+\[
+p(x) = c_0+c_1x+c_2x^2,
+\]
+but it can also be expressed
+\[
+p(x) = c_0+c_1(x-x_0)+c_2(x-x_0)^2.
+\]
+
+Among all the polynomials of grade 2, the one that best approximate $f(x)$ near $x_0$ is that that meets the following conditions
+\begin{enumerate}
+\item $p$ and $f$ coincide at $x_0$: $p(x_0) = f(x_0)$,
+\item $p$ and $f$ have the same rate of change at $x_0$: $p'(x_0) = f'(x_0)$.
+\item $p$ and $f$ have the same concavity at $x_0$: $p''(x_0)=f''(x_0)$.
+\end{enumerate}
+The last condition requires the function $f$ to be differentiable twice at $x_0$.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Best approximating polynomial of grade 2}
+Imposing the previous conditions we have
+\begin{enumerate}
+\item $p(x)=c_0+c_1(x-x_0) \Rightarrow p(x_0)=c_0+c_1(x_0-x_0)=c_0=f(x_0)$,
+\item $p'(x)=c_1 \Rightarrow p'(x_0)=c_1=f'(x_0)$.
+\item $p''(x)=2c_2 \Rightarrow p''(x_0)=2c_2=f''(x_0) \Rightarrow c_2=\frac{f''(x_0)}{2}$.
+\end{enumerate}
+
+Therefore, the polynomial of grade 2 that best approximates $f$ near $x_0$ is
+\[
+p(x) = f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x_0)}{2}(x-x_0)^2.
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Approximating a function by a polynomial of grade 2}
+\begin{center}
+\tikzsetnextfilename{derivatives_1_variable/approximation_polynomial_2}
+\input{img/derivatives_1_variable/approximation_polynomial_2}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Approximating a function by a polynomial of grade $n$}
+A polynomial of grade $n$ has equation
+\[
+p(x) = c_0+c_1x+c_2x^2+\cdots +c_nx^n,
+\]
+but it can also be expressed
+\[
+p(x) = c_0+c_1(x-x_0)+c_2(x-x_0)^2+\cdots +c_n(x-x_0)^n.
+\]
+
+Among all the polynomials of grade 2, the one that best approximate $f(x)$ near $x_0$ is that that meets the following $n+1$ conditions
+\begin{enumerate}
+\item $p(x_0) = f(x_0)$,
+\item $p'(x_0) = f'(x_0)$,
+\item $p''(x_0)=f''(x_0)$,
+\item[] $\cdots$
+\item[n+1.] $p^{(n)}(x_0)=f^{(n)}(x_0)$.
+\end{enumerate}
+
+\alert{Observe that these conditions require the function $f$ to be differentiable $n$ times at $x_0$.}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Coefficients calculation for the best approximating polynomial of grade $n$}
+The successive derivatives of $p$ are 
+\begin{align*}
+p(x) &= c_0+c_1(x-x_0)+c_2(x-x_0)^2+\cdots +c_n(x-x_0)^n,\\
+p'(x)& = c_1+2c_2(x-x_0)+\cdots +nc_n(x-x_0)^{n-1},\\
+p''(x)& = 2c_2+\cdots +n(n-1)c_n(x-x_0)^{n-2},\\
+\vdots\ \
+\\
+p^{(n)}(x)&= n(n-1)(n-2)\cdots 1 c_n=n!c_n.
+\end{align*}
+
+Imposing the previous conditions we have
+\begin{enumerate}
+\item $p(x_0) = c_0+c_1(x_0-x_0)+c_2(x_0-x_0)^2+\cdots +c_n(x_0-x_0)^n=c_0=f(x_0)$,
+\item $p'(x_0) = c_1+2c_2(x_0-x_0)+\cdots +nc_n(x_0-x_0)^{n-1}=c_1=f'(x_0)$,
+\item $p''(x_0) = 2c_2+\cdots +n(n-1)c_n(x_0-x_0)^{n-2}=2c_2=f''(x_0)\Rightarrow c_2=f''(x_0)/2$,
+\item[] $\cdots$
+\item[n+1.] $p^{(n)}(x_0)=n!c_n=f^{(n)}(x_0)=c_n=\frac{f^{(n)}(x_0)}{n!}$.
+\end{enumerate}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Taylor polynomial of order $n$}
+\begin{definition}[Taylor polynomial]
+Given a function $f(x)$ differentiable $n$ times at $x_0$, the \emph{Taylor polynomial} of order $n$ of $f$ at $x_0$ is the polynomial with equation
+\begin{align*}
+p_{f,x_0}^n(x) &= f(x_0) + f'(x_0)(x-x_0) + \frac{f''(x_0)}{2}(x-x_0)^2 + \cdots + \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n = \\ 
+&= \sum_{i=0}^{n}\frac{f^{(i)}(x_0)}{i!}(x-x_0)^i,
+\end{align*}
+\end{definition}
+
+The Taylor polynomial of order $n$ of $f$ at $x_0$ is the $n$th degree polynomial that best approximates $f$ near $x_0$, as is the only one that meets the previous conditions.
+\end{frame} 
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Taylor polynomial calculation}
+\framesubtitle{Example}
+Let's approximate the function $f(x)=\log x$ near the value $1$ by a polynomial of order $3$.
+
+The equation of the Taylor polynomial of order $3$ of $f$ at $x_0=1$ is
+\[
+p_{f,1}^3(x)=f(1)+f'(1)(x-1)+\frac{f''(1)}{2}(x-1)^2+\frac{f'''(1)}{3!}(x-1)^3.
+\]
+The derivatives of $f$ at $1$ up to order $3$ are
+\[
+\begin{array}{lll}
+f(x)=\log x & \quad & f(1)=\log 1 =0,\\
+f'(x)=1/x & & f'(1)=1/1=1,\\
+f''(x)=-1/x^2 & & f''(1)=-1/1^2=-1,\\
+f'''(x)=2/x^3 & & f'''(1)=2/1^3=2.
+\end{array}
+\]
+And substituting into the polynomial equation we get
+\[
+p_{f,1}^3(x)=0+1(x-1)+\frac{-1}{2}(x-1)^2+\frac{2}{3!}(x-1)^3= \frac{2}{3}x^3-\frac{3}{2}x^2+3x-\frac{11}{6}.
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Taylor polynomials of the logarithmic function}
+\begin{center}
+\tikzsetnextfilename{derivatives_1_variable/taylor_polynomials_logarithm}
+\input{img/derivatives_1_variable/taylor_polynomials_logarithm}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Maclaurin polynomial of order $n$}
+The Taylor polynomial equation simplifies when the polynomial is calculated at $0$.
+This special case of Taylor polynomial at $0$ is known as the \emph{Mcalaurin polynomial}.
+\begin{definition}[Maclaurin polynomial]
+Given a function $f(x)$ differentiable $n$ times at $0$, the \emph{Maclaurin polynomial} of order $n$ of $f$ is the polynomial with equation
+\begin{align*}
+p_{f,0}^n(x)&=f(0)+f'(0)x+\frac{f''(0)}{2}x^2+\cdots +\frac{f^{(n)}(0)}{n!}x^n = \\ &=\sum_{i=0}^{n}\frac{f^{(i)}(0)}{i!}x^i.
+\end{align*}
+\end{definition}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Maclaurin polynomial calculation}
+\framesubtitle{Example}
+Let's approximate the function $f(x)=\sin x$ near the value $0$ by a polynomial of order $3$.
+
+The Maclaurin polynomial equation of order $3$ of $f$ is
+\[
+p_{f,0}^3(x)=f(0)+f'(0)x+\frac{f''(0)}{2}x^2+\frac{f'''(0)}{3!}x^3.
+\]
+The derivatives of $f$ at $0$ up to order $3$ are
+\[
+\begin{array}{lll}
+f(x)=\sin x & \quad & f(0)=\sin 0 =0,\\
+f'(x)=\cos x & & f'(0)=\cos 0=1,\\
+f''(x)=-\sin x & & f''(0)=-\sin 0=0,\\
+f'''(x)=-\cos x & & f'''(0)=-\cos 0=-1.
+\end{array}
+\]
+And substituting into the polynomial equation we get
+\[
+p_{f,0}^3(x)=0+1\cdot x+\frac{0}{2}x^2+\frac{-1}{3!}x^3= x-\frac{x^3}{6}.
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Maclaurin polynomial of the sine function}
+\begin{center}
+\tikzsetnextfilename{derivatives_1_variable/maclaurin_polynomials_sine}
+\input{img/derivatives_1_variable/maclaurin_polynomials_sine}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Maclaurin polynomials of elementary functions}
+\[
+\renewcommand{\arraystretch}{2.5}
+\begin{array}{cc}
+\toprule
+f(x) & p_{f,0}^n(x) \\
+\midrule
+\sin x & \displaystyle x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots + (-1)^k\frac{x^{2k-1}}{(2k-1)!} \mbox{ if $n=2k$ or $n=2k-1$}\\
+\cos x &  \displaystyle 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \cdots + (-1)^k\frac{x^{2k}}{(2k)!} \mbox{ if $n=2k$ or $n=2k+1$}\\
+\arctan x &  \displaystyle x - \frac{x^3}{3} + \frac{x^5}{5} - \cdots + (-1)^k\frac{x^{2k-1}}{(2k-1)} \mbox{ if $n=2k$ or $n=2k-1$}\\
+e^x & \displaystyle 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots + \frac{x^n}{n!}\\
+\log(1+x) & \displaystyle x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots + (-1)^{n-1}\frac{x^n}{n}\\
+\bottomrule
+\end{array}
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Taylor remainder and Taylor formula}
+Taylor polynomials allow to approximate a function in a neighborhood of a value $x_0$, but there is always an error in the approxition.
+\begin{definition}[Taylor remainder]
+Given a function  $f(x)$ and its Taylor polynomial of order $n$ at $x_0$, $p_{f,x_0}^n(x)$, the \emph{Taylor remainder} of order $n$ of $f$ at $x_0$ is de difference between the function and the polynomial,
+\[
+r_{f,x_0}^n(x)=f(x)-p_{f,x_0}^n(x).
+\]
+\end{definition}
+
+The Taylor remainder measures the error int the approximation of $f(x)$ by the Taylor polynomial and allow us to express the function as the Taylor polynomial plus the Taylor remainder
+\[
+f(x)=p_{f,x_0}^n(x) + r_{f,x_0}^n(x).
+\]
+This expression is known as \emph{Taylor formula} of order $n$ or $f$ at $x_0$. 
+
+It can be proved that
+\[
+\lim_{h\rightarrow 0}\frac{r_{f,x_0}^n(x_0+h)}{h^n}=0,
+\]
+which means that the remainder $r_{f,x_0}^n(x_0+h)$ is much less than $h^n$.
+\end{frame}
