@@ -12,6 +12,7 @@
     height=5cm,
   	]
     \addplot+[domain=0.5:3.6, smooth, name path=F] {2.7183^(x-2.5)+0.5} node[anchor=south west] {$f(x)$};
+    \coordinate (O);
     \coordinate (A) at (2.5,1.5);
     \fill (A) circle (1.2pt);
     \draw[gray, dotted] (A) -- (A|-O);

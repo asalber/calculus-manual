@@ -135,14 +135,52 @@ The derivative of a function $f'(a)$ shows the growth rate of $f$ at point $a$:
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Geometric interpretation fo the derivative}
-The instantaneous rate of change or derivative of a function $y=f(x)$ at a point $a$ is the slope of the \emph{tangent line} $f$ at point $(a,f(a))$.
+\frametitle{Geometric interpretation of the derivative}
+\mode<article>{We have seen that the average rate of change of a function $y=f(x)$ in an interval $[a,a+\Delta x]$ is the slope of the \emph{secant} line, but when $\Delta x$ tends to $0$, the secant line becomes the tangent line.}
+
+The instantaneous rate of change or derivative of a function $y=f(x)$ at $x=a$ is the slope of the \emph{tangent line} to $f$ at point $(a,f(a))$. 
+Thus, the equation of the tangent line to $f$ at the point $(a,f(a))$ is
+\[
+y-f(a) = f'(a)(x-a) \Leftrightarrow y = f(a)+f'(a)(x-a)
+\]
 \begin{center}
 \tikzsetnextfilename{derivatives_1_variable/tangent_line}
 \input{img/derivatives_1_variable/tangent_line}
 \end{center}
 \end{frame}
 
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Approximating a function with the derivative}
+The tangent line to a function $f(x)$ at $x=a$ can be used to approximate $f$ in a neighbourhood of $a$.
+\begin{center}
+\tikzsetnextfilename{derivatives_1_variable/tangent_line_approximation}
+\input{img/derivatives_1_variable/tangent_line_approximation}
+\end{center}
+Thus, the increment of a function $f(x)$ in an interval $[a,a+\Delta x]$ can be approximated multiplying the derivative of $f$ at $a$ by the increment of $x$
+\[
+\Delta y \approx f'(a)\Delta x
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Approximating a function with the derivative}
+\framesubtitle{Example of the area of a square}
+In the previous example of the function $y=x^2$ that measures the area of a metallic square of side $x$, if the side of the square is $a$ and we increment it a quantity $\Delta x$, then the increment on the area will be approximately
+\[
+\Delta y \approx f'(a)\Delta x = 2a\Delta x.
+\]
+In the figure below we can see that the error of this approximation is $\Delta x^2$, and is smaller than $\Delta x$ when $\Delta x$ tends to 0. 
+\begin{center}
+\tikzsetnextfilename{derivatives_1_variable/square_area_variation_approximation}
+\mode<article>{\resizebox{0.3\textwidth}{!}{\input{img/derivatives_1_variable/square_area_variation_approximation}}}
+\mode<presentation>{\resizebox{0.35\textwidth}{!}{\input{img/derivatives_1_variable/square_area_variation_approximation}}}
+\end{center}
+
+\end{frame}
 
 
 \subsection{Algebra of derivatives}
