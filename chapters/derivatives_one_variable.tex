@@ -201,14 +201,12 @@ If $u=f(x)$ and $v=g(x)$ are two differentiable functions, then
 \end{frame}
 
 
-\subsection{Derivative of a composite function}
-
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Derivative of a composite function}
 \framesubtitle{The chain rule}
 \begin{theorem}[Chain rule] If the function $y=f\circ g$ is the composition of two functions $y=f(z)$ and $z=g(x)$, then
-\[
+\[ 
 (f\circ g)'(x)=f'(g(x))g'(x).
 \]
 \end{theorem}
@@ -229,8 +227,6 @@ On the other hand, $g\circ f(z)= (\sin z)^2$, and applying the chain rule again,
 \end{frame}
 
 
-
-\subsection{Derivative of the inverse of a function}
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Derivative of the inverse of a function}
@@ -420,7 +416,7 @@ l: (x,y) = f(\pi/4)+t\mathbf{v} =
 \begin{frame}
 \frametitle{Tangent line to a trajectory in the plane}
 \framesubtitle{Cartesian and point-slope equations}
-From the vectorial equation of the tangent to a trajectory $f(t)$ at the moment $t_0$ we can get the coordinate functions
+From the vectorial equation of the tangent to a trajectory $f(t)$ at the moment $t=t_0$ we can get the coordinate functions
 \[
 \begin{cases}
 x=x(t_0)+tx'(t_0)\\
@@ -467,7 +463,7 @@ We have seen that the tangent line to a trajectory $f(t)$ at $t_0$ is the line p
 $P=f(t_0)$ directed by the velocity vector $\mathbf{v}=f'(t_0)=(x'(t_0),y'(t_0))$. 
 If we take as direction vector a vector orthogonal to $\mathbf{v}$, we get another line that is known as \emph{normal line} to $f$ at moment $t_0$.
 \begin{definition}[Normal line to a trajectory]
-Given a trajectory $f(t)$ in the real plane $\mathbb{R}^2$, the \emph{normal line} to $f$ at moment $t_0$ is the line with equation
+Given a trajectory $f(t)$ in the real plane $\mathbb{R}^2$, the \emph{normal line} to $f$ at moment $t=t_0$ is the line with equation
 \[
 l: (x,y)=(x(t_0),y(t_0))+t(y'(t_0),-x'(t_0)) = (x(t_0)+ty'(t_0),y(t_0)-tx'(t_0)).
 \]
@@ -594,7 +590,7 @@ l:(x,y,z)=(0,1,\pi/2)+t(-1,0,1) = (-t,1,t+\pi/2).
 \end{frame}
 
 
-\subsection{Analysis of functions: increase and decrease}
+\subsection{Analysis of functions}
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Analysis of functions: increase and decrease}
@@ -617,18 +613,17 @@ f'(x)\geq 0$. \vskip .5cm
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Estudio del crecimiento de una función}
-\framesubtitle{Ejemplo}
+\frametitle{Analysis of functions: increase and decrease}
+\framesubtitle{Example}
 Let's analyze the increase and decrease of the function $f(x)=x^4-2x^2+1$. 
 Its first derivative is $f'(x)=4x^3-4x$.
 \begin{center}
-\tikzsetnextfilename{derivatives_1_variable/increase_anlaysis}
+\tikzsetnextfilename{derivatives_1_variable/increase_analysis}
 \scalebox{0.9}{\input{img/derivatives_1_variable/increase_analysis}}
 \end{center}
 \end{frame}
 
 
-\subsection{Analysis of functions: relative extrema}
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Analysis of functions: relative extrema}
@@ -638,7 +633,7 @@ Let $f(x)$ be a function with first derivative in an interval $I\subseteq \mathb
 \begin{itemize}
 \item  If $f'(x)>0$ on an open interval extending left from $x_0$ and $f'(x)<0$ on an open interval extending right from $x_0$, then $f$ has a \emph{relative maximum} at $x_0$.
 \item  If $f'(x)<0$ on an open interval extending left from $x_0$ and $f'(x)>0$ on an open interval extending right from $x_0$, then $f$ has a \emph{relative minimum} at $x_0$.
-\item If $f'(x)$ has the same sign on both an open interval extending left from $x_0$ and an open interval extending right from $x_0$, then $f$ has an \emph{inflection point} at $_0$.
+\item If $f'(x)$ has the same sign on both an open interval extending left from $x_0$ and an open interval extending right from $x_0$, then $f$ has an \emph{inflection point} at $x_0$.
 \end{itemize}
 \end{theorem}
 
@@ -656,13 +651,12 @@ However it doesn't have a relative extrema at that point, but an inflection poin
 Consider again the function $f(x)=x^4-2x^2+1$ and let's analyze its relative extrema now. 
 Its first derivative is $f'(x)=4x^3-4x$.
 \begin{center}
-\tikzsetnextfilename{derivatives_1_variable/extrema_anlaysis}
+\tikzsetnextfilename{derivatives_1_variable/extrema_analysis}
 \scalebox{0.9}{\input{img/derivatives_1_variable/extrema_analysis}}
 \end{center}
 \end{frame}
 
 
-\subsection{Analysis of functions: concavity}
 %---------------------------------------------------------------------slide---
 \begin{frame}
 \frametitle{Analysis of functions: concavity}
@@ -685,10 +679,10 @@ Let $f(x)$ be a function with second derivative in an interval $I\subseteq \math
 \begin{frame}
 \frametitle{Analysis of functions: concavity}
 \framesubtitle{Example}
-let's analyze its concavity of the same function of previous examples $f(x)=x^4-2x^2+1$. 
+Let's analyze the concavity of the same function of previous examples $f(x)=x^4-2x^2+1$. 
 Its second derivative is $f''(x)=12x^2-4$.
 \begin{center}
-\tikzsetnextfilename{derivatives_1_variable/concavity_anlaysis}
+\tikzsetnextfilename{derivatives_1_variable/concavity_analysis}
 \scalebox{0.9}{\input{img/derivatives_1_variable/concavity_analysis}}
 \end{center}
 \end{frame}
@@ -716,7 +710,7 @@ Approximate a function $f(x)$ by a polynomial $p(x)$ near a value $x=x_0$.
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Approximating a function by a polynomial of grade 0}
+\frametitle{Approximating a function by a polynomial of order 0}
 A polynomial of grade 0 has equation
 \[
 p(x) = c_0,
@@ -733,7 +727,7 @@ Therefore, the polynomial of grade 0 that best approximate $f$ near $x_0$ is
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Approximating a function by a polynomial of grade 0}
+\frametitle{Approximating a function by a polynomial of order 0}
 \begin{center}
 \tikzsetnextfilename{derivatives_1_variable/approximation_polynomial_0}
 \input{img/derivatives_1_variable/approximation_polynomial_0}
@@ -743,7 +737,7 @@ Therefore, the polynomial of grade 0 that best approximate $f$ near $x_0$ is
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Approximating a function by a polynomial of grade 1}
+\frametitle{Approximating a function by a polynomial of order 1}
 A polynomial of grade 1 has equation
 \[
 p(x) = c_0+c_1x,
@@ -766,7 +760,7 @@ The last condition guarantee that $p$ and $f$ have approximately the same tenden
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{The tangent line: Best approximating polynomial of grade 1}
+\frametitle{The tangent line: Best approximating polynomial of order 1}
 Imposing the previous conditions we have
 \begin{enumerate}
 \item $p(x)=c_0+c_1(x-x_0) \Rightarrow p(x_0)=c_0+c_1(x_0-x_0)=c_0=f(x_0)$,
@@ -783,7 +777,7 @@ which turns out to be the tangent line to $f$ at $(x_0,f(x_0))$.
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Approximating a function by a polynomial of grade 1}
+\frametitle{Approximating a function by a polynomial of order 1}
 \begin{center}
 \tikzsetnextfilename{derivatives_1_variable/approximation_polynomial_1}
 \input{img/derivatives_1_variable/approximation_polynomial_1}
@@ -793,7 +787,7 @@ which turns out to be the tangent line to $f$ at $(x_0,f(x_0))$.
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Approximating a function by a polynomial of grade 2}
+\frametitle{Approximating a function by a polynomial of order 2}
 A polynomial of grade 2 is a parable with equation
 \[
 p(x) = c_0+c_1x+c_2x^2,
@@ -815,7 +809,7 @@ The last condition requires the function $f$ to be differentiable twice at $x_0$
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Best approximating polynomial of grade 2}
+\frametitle{Best approximating polynomial of order 2}
 Imposing the previous conditions we have
 \begin{enumerate}
 \item $p(x)=c_0+c_1(x-x_0) \Rightarrow p(x_0)=c_0+c_1(x_0-x_0)=c_0=f(x_0)$,
@@ -832,7 +826,7 @@ p(x) = f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x_0)}{2}(x-x_0)^2.
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Approximating a function by a polynomial of grade 2}
+\frametitle{Approximating a function by a polynomial of order 2}
 \begin{center}
 \tikzsetnextfilename{derivatives_1_variable/approximation_polynomial_2}
 \input{img/derivatives_1_variable/approximation_polynomial_2}
@@ -842,7 +836,7 @@ p(x) = f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x_0)}{2}(x-x_0)^2.
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Approximating a function by a polynomial of grade $n$}
+\frametitle{Approximating a function by a polynomial of order $n$}
 A polynomial of grade $n$ has equation
 \[
 p(x) = c_0+c_1x+c_2x^2+\cdots +c_nx^n,
@@ -867,7 +861,7 @@ Among all the polynomials of grade 2, the one that best approximate $f(x)$ near 
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Coefficients calculation for the best approximating polynomial of grade $n$}
+\frametitle{Coefficients calculation for the best approximating polynomial of order $n$}
 The successive derivatives of $p$ are 
 \begin{align*}
 p(x) &= c_0+c_1(x-x_0)+c_2(x-x_0)^2+\cdots +c_n(x-x_0)^n,\\
@@ -896,7 +890,7 @@ Imposing the previous conditions we have
 Given a function $f(x)$ differentiable $n$ times at $x_0$, the \emph{Taylor polynomial} of order $n$ of $f$ at $x_0$ is the polynomial with equation
 \begin{align*}
 p_{f,x_0}^n(x) &= f(x_0) + f'(x_0)(x-x_0) + \frac{f''(x_0)}{2}(x-x_0)^2 + \cdots + \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n = \\ 
-&= \sum_{i=0}^{n}\frac{f^{(i)}(x_0)}{i!}(x-x_0)^i,
+&= \sum_{i=0}^{n}\frac{f^{(i)}(x_0)}{i!}(x-x_0)^i.
 \end{align*}
 \end{definition}
 
@@ -944,7 +938,7 @@ p_{f,1}^3(x)=0+1(x-1)+\frac{-1}{2}(x-1)^2+\frac{2}{3!}(x-1)^3= \frac{2}{3}x^3-\f
 \begin{frame}
 \frametitle{Maclaurin polynomial of order $n$}
 The Taylor polynomial equation simplifies when the polynomial is calculated at $0$.
-This special case of Taylor polynomial at $0$ is known as the \emph{Mcalaurin polynomial}.
+This special case of Taylor polynomial at $0$ is known as the \emph{Maclaurin polynomial}.
 \begin{definition}[Maclaurin polynomial]
 Given a function $f(x)$ differentiable $n$ times at $0$, the \emph{Maclaurin polynomial} of order $n$ of $f$ is the polynomial with equation
 \begin{align*}

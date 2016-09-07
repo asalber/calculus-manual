@@ -2,13 +2,14 @@
 \begin{tikzpicture}
   \begin{axis}[
     gen2dfun, 
-    xmin=0, xmax=4.5,
-    ymin=0, ymax=4,
+    xmin=0, xmax=4,
+    ymin=0, ymax=3.3,
     axis equal=true,  
     xtick={1},
     xticklabels={$a$},
     ytick={1},
     yticklabels={$f(a)$}, 
+    clip=false,
     height=5cm,
     ]
     \addplot+[domain=0.2:3.5, smooth, name path=F] {2^(x-2)+0.5} node[anchor=south] {$f(x)$};
