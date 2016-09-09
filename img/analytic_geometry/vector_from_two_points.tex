@@ -1,0 +1,19 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}[trim axis left, trim axis right]
+  \begin{axis}[
+    2dfun, 
+    xmin=-4, xmax=4,
+    ymin=-4, ymax=4,  
+    equal axis=true,
+    height=4cm,
+    ]
+    \coordinate (0) at (0,0);
+    \coordinate (P) at (2,1);
+    \coordinate (Q) at (3,4);
+    \draw[->, color1] (O) -- (A) node[midway, below, anchor=west] {$\vec{PQ}=(1,3)$} ;
+    \draw[gray, dotted] (P) -- (P|-O);
+    \draw[gray, dotted] (P) -- (P-|O);
+    \draw[gray, dotted] (Q) -- (Q|-O);
+    \draw[gray, dotted] (Q) -- (Q-|O);
+  \end{axis}
+\end{tikzpicture}
