@@ -6,5 +6,5 @@
 \contentsline {section}{\numberline {2}Differential calculus with one real variable}{10}{section.2}
 \contentsline {subsection}{\numberline {2.1}Concept of derivative}{10}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Algebra of derivatives}{13}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Function approximation}{15}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.3}Function approximation}{14}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}Analysis of functions}{22}{subsection.2.4}
