@@ -18,6 +18,12 @@
 \setdefaultlanguage{english}
 
 % FONT
+%\usefonttheme{professionalfonts}
+%\usepackage{cmbright}
+%\setmainfont{CMU Bright}
+%\setmathfont{Arial}
+ 
+
 \mode<article>{
 \usepackage{fontspec}
 \usepackage{unicode-math}
@@ -78,13 +84,16 @@
 \usetikzlibrary{external, arrows, arrows.meta, calc, shapes, shapes.arrows, positioning, decorations.pathreplacing, intersections}
 % Shape of arrow
 \tikzset{>=stealth}
-% Overlays
+% TIKZ SETTINGS
 \tikzset{
+	% Overlays
     invisible/.style={opacity=0},
     visible on/.style={alt={#1{}{invisible}}},
     alt/.code args={<#1>#2#3}{%
       \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
     },
+    % Vectors
+    vector/.style={->, color1, thick},
   }
 % \usepackage{tkz-euclide}
 % \usetkzobj{all}
@@ -215,7 +224,7 @@ Alfredo Sánchez Alberca (\href{mailto:asalber@ceu.es}{asalber@ceu.es})}
 \tableofcontents[hideallsubsections]
 \end{frame}
 
-%\include{chapters/analytic_geometry}
+\include{chapters/analytic_geometry}
 \include{chapters/derivatives_one_variable}
 %\include{chapters/ordinary_differential_equations}
 %\include{chapters/derivatives_n_variables}

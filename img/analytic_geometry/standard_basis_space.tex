@@ -1,0 +1,24 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+  \begin{axis}[
+  3dfun,
+  xmin=-0.2, xmax=2,
+  ymin=-0.2, ymax=2,
+  zmin=-0.2, zmax=2,
+  axis x line=middle,
+  axis y line=middle,
+  axis z line=middle,
+  %axis equal=true,
+  every axis x label/.style={at={(ticklabel cs:1)}, anchor=center,},
+  every axis y label/.style={at={(ticklabel cs:1)}, anchor=center,},
+  every axis z label/.style={at={(ticklabel cs:1)}, anchor=center,},
+  clip=false,
+  height=4cm,
+  ]
+  %\addplot3+[domain=0:pi, samples y=0] ({cos(deg(x))}, {sin(deg(x))}, {x});
+  \coordinate (P) at (0,1,0);
+  \draw [vector] (0,0,0) -- (1,0,0) node[anchor=west] {$\textbf{i}$};
+  \draw [vector] (0,0,0) -- (0,1,0) node[anchor=west] {$\textbf{j}$};
+  \draw [vector] (0,0,0) -- (0,0,1) node[anchor=west] {$\textbf{k}$};
+  \end{axis}
+\end{tikzpicture}

@@ -1,0 +1,32 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+  \begin{axis}[%view={120}{20},
+  gen3dfun,
+  xmin=0, xmax=5,
+  ymin=0, ymax=4,
+  zmin=0, zmax=4,
+  %enlargelimits=false,
+  %axis x line=middle,
+  %axis y line=middle,
+  %axis z line=middle,
+  %axis equal=true,
+  every axis x label/.style={at={(ticklabel cs:0.5,12pt)}, anchor=center},
+  every axis y label/.style={at={(ticklabel cs:0.5,12pt)}, anchor=center},
+  every axis z label/.style={at={(ticklabel cs:0.5,12pt)}, anchor=center},
+  %x tick label style={anchor=east, inner sep=2pt}, 
+  %y tick label style={anchor=north, inner sep=5pt},
+  %z tick label style={anchor=east, inner sep=2pt},
+  ticks=none,  
+  clip=false,
+  height=4cm,
+  ]
+  \coordinate (O) at (0,0,0);
+  \coordinate (P) at (2,2,0.5);
+  \coordinate (Q) at (3,2,-0.5);
+  \fill (P) circle (1.2pt) node[anchor=south] {$P$};
+  \fill (Q) circle (1.2pt) node[anchor=south] {$Q$};
+  \addplot3[surf, domain=0:4, y domain=-1:5, samples=2, opacity=0.5, fill=color1, faceted color=color1] {(-2*x-y+7)/2};
+  \draw [vector, color2] (P) -- (4,2,3) node[midway, above] {$\textbf{v}$};
+  \draw [vector] (P) -- (Q) node[midway, below, anchor=east] {$\vec{PQ}$};
+  \end{axis}
+\end{tikzpicture}

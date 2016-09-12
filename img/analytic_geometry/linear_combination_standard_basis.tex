@@ -1,0 +1,46 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+  \begin{axis}[view={120}{20},
+  gen3dfun,
+  xmin=-0.2, xmax=2.2,
+  ymin=-0.2, ymax=2,
+  zmin=-0.2, zmax=3.2,
+  axis x line=middle,
+  axis y line=middle,
+  axis z line=middle,
+  axis equal=true,
+  every axis x label/.style={at={(ticklabel cs:1.08,-12pt)}, anchor=center},
+  every axis y label/.style={at={(ticklabel cs:1.03,-15pt)}, anchor=center},
+  every axis z label/.style={at={(ticklabel cs:1.03,-15pt)}, anchor=south},
+  x tick label style={anchor=east, inner sep=2pt}, 
+  y tick label style={anchor=north, inner sep=5pt},
+  z tick label style={anchor=east, inner sep=2pt},  
+  xtick={1},
+  xticklabels={$v_1$},
+  ytick={2},
+  yticklabels={$v_2$}, 
+  ztick={3},
+  zticklabels={$v_3$},
+  clip=false,
+  height=5cm,
+  ]
+  \coordinate (O) at (0,0,0);
+  \coordinate (I) at (1,0,0);
+  \coordinate (J) at (0,1,0);
+  \coordinate (K) at (0,0,1);
+  \coordinate (A) at (1,2,3);
+  \draw [vector] (O) -- (I) node[anchor=west] {$\textbf{i}$};
+  \draw [vector] (O) -- (J) node[anchor=west] {$\textbf{j}$};
+  \draw [vector] (O) -- (K) node[anchor=west] {$\textbf{k}$};
+  \draw [vector, color2] (O) -- (A) node[anchor=west] {$\textbf{v}$};
+  \draw[gray, dotted] (I) -- (1,2,0);
+  \draw[gray, dotted] (0,2,0) -- (1,2,0);
+  \draw[gray, dotted] (0,2,0) -- (0,2,3);
+  \draw[gray, dotted] (0,0,3) -- (0,2,3);
+  \draw[gray, dotted] (I) -- (1,0,3);
+  \draw[gray, dotted] (0,0,3) -- (1,0,3);
+  \draw[gray, dotted] (1,2,0) -- (A);
+  \draw[gray, dotted] (1,0,3) -- (A);
+  \draw[gray, dotted] (0,2,3) -- (A);
+  \end{axis}
+\end{tikzpicture}

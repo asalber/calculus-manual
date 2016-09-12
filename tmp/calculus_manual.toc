@@ -1,6 +1,10 @@
 \select@language {english}
-\contentsline {section}{\numberline {1}Differential calculus with one real variable}{3}{section.1}
-\contentsline {subsection}{\numberline {1.1}Concept of derivative}{3}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}Algebra of derivatives}{6}{subsection.1.2}
-\contentsline {subsection}{\numberline {1.3}Function approximation}{8}{subsection.1.3}
-\contentsline {subsection}{\numberline {1.4}Analysis of functions}{15}{subsection.1.4}
+\contentsline {section}{\numberline {1}Analytic geometry}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Vectors}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Lines}{7}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Planes}{8}{subsection.1.3}
+\contentsline {section}{\numberline {2}Differential calculus with one real variable}{10}{section.2}
+\contentsline {subsection}{\numberline {2.1}Concept of derivative}{10}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Algebra of derivatives}{13}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Function approximation}{15}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Analysis of functions}{22}{subsection.2.4}
