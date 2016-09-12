@@ -9,16 +9,18 @@
   axis y line=middle,
   axis z line=middle,
   %axis equal=true,
-  every axis x label/.style={at={(ticklabel cs:1)}, anchor=center,},
-  every axis y label/.style={at={(ticklabel cs:1)}, anchor=center,},
-  every axis z label/.style={at={(ticklabel cs:1)}, anchor=center,},
+  every axis x label/.style={at={(xticklabel* cs:1.1)}},
+  every axis y label/.style={at={(yticklabel* cs:1.15)}},
+  every axis z label/.style={at={(zticklabel* cs:1.1)}},
   clip=false,
   height=4cm,
   ]
-  %\addplot3+[domain=0:pi, samples y=0] ({cos(deg(x))}, {sin(deg(x))}, {x});
-  \coordinate (P) at (0,1,0);
-  \draw [vector] (0,0,0) -- (1,0,0) node[anchor=west] {$\textbf{i}$};
-  \draw [vector] (0,0,0) -- (0,1,0) node[anchor=west] {$\textbf{j}$};
-  \draw [vector] (0,0,0) -- (0,0,1) node[anchor=west] {$\textbf{k}$};
+  \coordinate (O) at (0,0,0);
+  \coordinate (I) at (1,0,0);
+  \coordinate (J) at (0,1,0);
+  \coordinate (K) at (0,0,1);
+  \draw [vector] (O) -- (I) node[anchor=west] {$\textbf{i}$};
+  \draw [vector] (O) -- (J) node[anchor=west] {$\textbf{j}$};
+  \draw [vector] (O) -- (K) node[anchor=west] {$\textbf{k}$};
   \end{axis}
 \end{tikzpicture}
