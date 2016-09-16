@@ -5,9 +5,11 @@
     xmin=0, xmax=4,
     ymin=0, ymax=4,
     xtick={2.5},
-    xticklabel={$x_0$},
+    xticklabel={$a$},
     ytick={1.5},
-    yticklabels={$f(x_0)$}, 
+    yticklabels={$f(a)$}, 
+    extra x ticks={3.5},
+    extra x tick labels={$x$},
     clip=false, 
     height=5cm,
   	]
@@ -17,14 +19,16 @@
     \fill (A) circle (1.2pt);
     \draw[gray, dotted] (A) -- (A|-O);
     \draw[gray, dotted] (A) -- (A-|O);
-    \addplot+[domain=0.5:3.6, smooth, name path=P, visible on=<2->] {1.5} node[anchor=west] {$p^0=f(x_0)$};
+    \addplot+[domain=0.5:3.6, smooth, name path=P, visible on=<2->] {1.5} node[anchor=west] {$p^0=f(a)$};
     \coordinate (B) at (3.5,3.2183);
-    \draw<3->[gray, very thin] (3.5,0.06) -- (3.5,-0.06);
-    \node<3-> at (3.5,-0.25) {$x_1$};
-    \draw<3->[gray, very thin] (-0.06,3.2183) -- (0.06,3.2183);
-    \node<3-> at (-0.25,3.2183) {$x_1$};
+    \draw<3->[gray, very thin] (3.5,0.05) -- (3.5,-0.05);
+    \node<3->[below, anchor=north] at (axis cs: 3.5,0) {$x$};
+%    \node<3->[anchor=north] at (3.5,-0.05) {$x$};
+    \draw<3->[gray, very thin] (-0.05,3.2183) -- (0.05,3.2183);
+    \node<3->[anchor=east] at (-0.05,3.2183) {$f(x)$};
     \draw<3->[gray, dotted] (B) -- (B|-O);
     \draw<3->[gray, dotted] (B) -- (B-|O);
-    \draw[|-|, visible on=<4->] (B) -- (B|-A) node[anchor=west, pos=0.3] {Approximation error} node[anchor=west, midway] {$e^0(x_1)=f(x_1)-p^0(x_1)$};
+    \draw[dashed, visible on=<4->] (B) -- (B|-A);
+    \draw[decorate, decoration={brace, amplitude=4pt}, visible on=<4->] (B) -- (B|-A) node [pos=0.3, right, xshift=5pt] {Approximation error} node[midway, right, xshift=4pt] {$e^0(x)=f(x)-p^0(x)$};
   \end{axis};
 \end{tikzpicture}

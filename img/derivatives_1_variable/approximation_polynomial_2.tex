@@ -5,9 +5,9 @@
     xmin=0, xmax=4,
     ymin=0, ymax=4,
     xtick={2.5},
-    xticklabel={$x_0$},
+    xticklabel={$a$},
     ytick={1.5},
-    yticklabels={$f(x_0)$}, 
+    yticklabels={$f(a)$}, 
     clip=false, 
     height=5cm,
   	]
@@ -17,18 +17,18 @@
     \fill (A) circle (1.2pt);
     \draw[gray, dotted] (A) -- (A|-O);
     \draw[gray, dotted] (A) -- (A-|O);
-    \addplot+[domain=0.5:3.6, smooth, name path=P0, visible on=<2->] {1.5} node[anchor=west] {$p^0=f(x_0)$};
-    \addplot+[domain=1:3.6, smooth, name path=P1, visible on=<3->] {x-1} node[anchor=west] {$p^1=f(x_0)+f'(x_0)(x-x_0)$};
-    \addplot+[domain=0.5:3.6, smooth, name path=P1, visible on=<4->] {-1+x+(x-2.5)^2/2} node[anchor=west] {$p^2=f(x_0)+f'(x_0)(x-x_0)+\frac{f''(x_0)}{2}(x-x_0)^2$};
-    
+    \addplot+[domain=0.5:3.6, smooth, name path=P0, visible on=<2->] {1.5} node[anchor=west] {$p^0=f(a)$};
+    \addplot+[domain=1:3.6, smooth, name path=P1, visible on=<3->] {x-1} node[anchor=west] {$p^1=f(a)+f'(a)(x-a)$};
+    \addplot+[domain=0.5:3.6, smooth, name path=P1, visible on=<4->] {-1+x+(x-2.5)^2/2} node[anchor=west] {$p^2=f(a)+f'(a)(x-a)+\frac{f''(a)}{2}(x-a)^2$};
     \coordinate (B) at (3.5,3.2183);
     \coordinate (C) at (3.5,3);
-    \draw<4->[gray, very thin] (3.5,0.06) -- (3.5,-0.06);
-    \node<4-> at (3.5,-0.25) {$x_1$};
+    \draw<4->[gray, very thin] (3.5,0.05) -- (3.5,-0.05);
+    \node<4-> at (3.5,-0.25) {$x$};
     \draw<4->[gray, very thin] (-0.06,3.2183) -- (0.06,3.2183);
-    \node<4-> at (-0.25,3.2183) {$x_1$};
+    \node<4-> at (-0.25,3.2183) {$f(x)$};
     \draw<4->[gray, dotted] (B) -- (B|-O);
     \draw<4->[gray, dotted] (B) -- (B-|O);
-    \draw[|-|, visible on=<5->] (B) -- (C) node[anchor=east, pos=0] {Approximation error} node[anchor=east, pos=1] {$e^2(x_1)=f(x_1)-p^2(x_1)$};
+    \draw[dashed, visible on=<5->] (B) -- (B|-A);
+    \draw[decorate, decoration={brace, amplitude=4pt}, visible on=<5->] (B) -- (B|-A) node [pos=0.3, right, xshift=5pt] {Approximation error} node[midway, right, xshift=4pt] {$e^2(x)=f(x)-p^2(x)$};
   \end{axis};
 \end{tikzpicture}

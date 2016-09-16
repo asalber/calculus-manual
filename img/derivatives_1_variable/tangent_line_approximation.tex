@@ -6,13 +6,12 @@
     ymin=0, ymax=3.5,
     xtick={1,3},
     xticklabels={$a$, $a+\Delta x$},
-    ytick={1,2.5,1.693147},
-    yticklabels={$f(a)$,$f(a+\Delta x)$, $f(a)+f'(a)\Delta x$},
+    ytick={1,2.5},
+    yticklabels={$f(a)$,$f(a+\Delta x)$},
     clip=false,
     height=4cm,
     ]
     \addplot+[domain=0.2:3.5, smooth] {2^(x-2)+0.5} node[anchor=south] {$f(x)$};
-    \addplot+[domain=0.2:3.5, smooth] {1+ln(2)/2*(x-1)} node[anchor=south west] {Tangent} node [anchor=west] {$y=f(a)+f'(a)(x-a)$};
     \coordinate (O);
     \coordinate (A) at (1,1);
     \coordinate (B) at (3,2.5);
@@ -22,9 +21,16 @@
     \draw[gray, dotted] (A) -- (A-|O);
     \draw[gray, dotted] (B) -- (B|-O);
     \draw[gray, dotted] (B) -- (B-|O);
-    \draw[gray, dotted] (C) -- (C-|O);
-    \draw (C) -- (C|-A) node[midway, anchor=west] {$f'(a)\Delta x$};
-    \draw (A) -- (A-|C) node[midway, anchor=north] {$\Delta x$};
-    \draw[color3] (B) -- (C) node[midway, anchor=east] {Error};
+    \draw<2->[gray, dashed] (A) -- (A-|C);
+    \draw<2->[decorate, decoration={brace, amplitude=5pt, mirror}] (A) -- (C|-A) node [midway, below, yshift=-4pt] {$\Delta x$};    
+    \draw<3->[gray, dashed] (C) -- (C|-A);
+    \draw<3->[decorate, decoration={brace, amplitude=5pt, mirror}] (B) -- (B|-A) node [midway, left, xshift=-4pt] {$\Delta y$};
+    \addplot+[domain=0.2:3.5, smooth, visible on=<4->] {1+ln(2)/2*(x-1)} node [anchor=west] {$y=f(a)+f'(a)(x-a)$ Tangent};
+    \fill<5-> (C) circle (1.2pt);
+    \draw<5->[gray, dotted] (C) -- (C-|O);
+    \draw<5->[gray, very thin] (-0.05,1.693147) -- (0.05,1.693147);
+    \node<5->[anchor=east] at (-0.05,1.693147) {$f(a)+f'(a)\Delta x$};
+    \draw<6->[decorate, decoration={brace, amplitude=4pt}] (C) -- (C|-A) node [midway, right, xshift=4pt] {$f'(a)\Delta x$};
+    \draw<7->[decorate, decoration={brace, amplitude=4pt}] (B) -- (C) node [midway, right, xshift=4pt, color2] {Error};
   \end{axis}
 \end{tikzpicture}

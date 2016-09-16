@@ -20,7 +20,7 @@ y=y(t)
 \quad
 t\in \mbox{Dom}(f)
 \]
-are known as \emph{coordinate functions} of $f$ and denoted $f(t)=(x(t),y(t))$.
+are known as \emph{coordinate functions} of $f$; we write $f(t)=(x(t),y(t))$.
 
 \begin{center}
 \tikzsetnextfilename{derivatives_1_variable/curvilinear_motion}
@@ -33,21 +33,21 @@ are known as \emph{coordinate functions} of $f$ and denoted $f(t)=(x(t),y(t))$.
 % ---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Velocity of a curvilinear motion in the plane}
-In the context of a trajectory $f(t)=(x(t),y(t))$ in the real plane $\mathbb{R}^2$, the derivative of the function $f(t)$ at the moment $t_0$ is the vector
+In the context of a trajectory $f(t)=(x(t),y(t))$ in the real plane $\mathbb{R}^2$, the derivative of the function $f(t)$ at the moment $a$ is the vector
 \[
-\mathbf{v} = \lim_{\Delta t\rightarrow 0} \frac{f(t_0+\Delta t)-f(t_0)}{\Delta t},
+\mathbf{v} = \lim_{\Delta t\rightarrow 0} \frac{f(a+\Delta t)-f(a)}{\Delta t},
 \]
-that is known, as long as the limit exists, as the \emph{velocity} of the trajectory $f$ at moment $t_0$.
+that is known, as long as the limit exists, as the \emph{velocity} of the trajectory $f$ at moment $a$.
 
 As $f(t)=(x(t),y(t))$,
 \begin{align*}
-f'(t_0)&=\lim_{\Delta t\rightarrow 0} \frac{f(t_0+\Delta t)-f(t_0)}{\Delta t} = \lim_{\Delta t\rightarrow 0} \frac{(x(t_0+\Delta t),y(t_0+\Delta t))-(x(t_0),y(t_0))}{\Delta t} =\\
-&=  \lim_{\Delta t\rightarrow 0} \left(\frac{x(t_0+\Delta t)-x(t_0)}{\Delta t},\frac{y(t_0+\Delta t)-y(t_0)}{\Delta t}\right) =\\
-&= \left(\lim_{\Delta t\rightarrow 0}\frac{x(t_0+\Delta t)-x(t_0)}{\Delta t},\lim_{\Delta t\rightarrow 0}\frac{y(t_0+\Delta t)-y(t_0)}{\Delta t}\right) = (x'(t_0),y'(t_0)).
+f'(a)&=\lim_{\Delta t\rightarrow 0} \frac{f(a+\Delta t)-f(a)}{\Delta t} = \lim_{\Delta t\rightarrow 0} \frac{(x(a+\Delta t),y(a+\Delta t))-(x(a),y(a))}{\Delta t} =\\
+&=  \lim_{\Delta t\rightarrow 0} \left(\frac{x(a+\Delta t)-x(a)}{\Delta t},\frac{y(a+\Delta t)-y(a)}{\Delta t}\right) =\\
+&= \left(\lim_{\Delta t\rightarrow 0}\frac{x(a+\Delta t)-x(a)}{\Delta t},\lim_{\Delta t\rightarrow 0}\frac{y(a+\Delta t)-y(a)}{\Delta t}\right) = (x'(a),y'(a)).
 \end{align*}
 Thus, 
 \[
-\mathbf{v} = x'(t_0)\mathbf{i}+y'(t_0)\mathbf{j}.
+\mathbf{v} = x'(a)\mathbf{i}+y'(a)\mathbf{j}.
 \]
 \end{frame}
 
@@ -78,13 +78,13 @@ $|\mathbf{v}|=\sqrt{(-\sin t)^2+(\cos t)^2}=1$.
 \begin{frame}
 \frametitle{Tangent line to a trajectory in the plane}
 \framesubtitle{Vectorial equation}
-Given a trajectory $f(t)$ in the real plane, the vectors that are parallel to the velocity $\mathbf{v}$ at a moment $t_0$ are called \emph{tangent vectors} to the trajectory $f$ at the moment $t_0$, and the line passing through $P=f(t_0)$ directed by $\mathbf{v}$ is the tangent line to $f$ at the moment $t_0$.
+Given a trajectory $f(t)$ in the real plane, the vectors that are parallel to the velocity $\mathbf{v}$ at a moment $a$ are called \emph{tangent vectors} to the trajectory $f$ at the moment $a$, and the line passing through $P=f(a)$ directed by $\mathbf{v}$ is the tangent line to the graph of $f$ at the moment $a$.
 
 \begin{definition}[Tangent line to a trajectory]
-Given a trajectory $f(t)$ in the real plane $\mathbb{R}^2$, the \emph{tangent line} to $f$ at $t_0$ is the line with equation
+Given a trajectory $f(t)$ in the real plane $\mathbb{R}^2$, the \emph{tangent line} to to the graph of $f$ at $a$ is the line with equation
 \begin{align*}
-l:(x,y) &= f(t_0)+tf'(t_0) = (x(t_0),y(t_0))+t(x'(t_0),y'(t_0))\\
-& = (x(t_0)+tx'(t_0),y(t_0)+ty'(t_0)).
+l:(x,y) &= f(a)+tf'(a) = (x(a),y(a))+t(x'(a),y'(a))\\
+& = (x(a)+tx'(a),y(a)+ty'(a)).
 \end{align*}
 \end{definition}
 \end{frame}
@@ -94,7 +94,7 @@ l:(x,y) &= f(t_0)+tf'(t_0) = (x(t_0),y(t_0))+t(x'(t_0),y'(t_0))\\
 \begin{frame}
 \frametitle{Tangent line to a trajectory in the plane}
 \framesubtitle{Example}
-We have seen that for the trajectory $f(t) = (\cos t,\sin t)$, $t\in \mathbb{R}$, whose image is unit circumference at the coordinate origin, the object position at the moment $t=\pi/4$ is $f(\pi/4)=(\sqrt{2}/2,\sqrt{2}/2)$ and its velocity $\mathbf{v}=(-\sqrt{2}/2,\sqrt{2}/2)$. 
+We have seen that for the trajectory $f(t) = (\cos t,\sin t)$, $t\in \mathbb{R}$, whose image is the unit circumference centered at the coordinate origin, the object position at the moment $t=\pi/4$ is $f(\pi/4)=(\sqrt{2}/2,\sqrt{2}/2)$ and its velocity $\mathbf{v}=(-\sqrt{2}/2,\sqrt{2}/2)$. 
 Thus the equation of the tangent line to $f$ at that moment is 
 \[
 l: (x,y) = f(\pi/4)+t\mathbf{v} =
@@ -108,23 +108,23 @@ l: (x,y) = f(\pi/4)+t\mathbf{v} =
 \begin{frame}
 \frametitle{Tangent line to a trajectory in the plane}
 \framesubtitle{Cartesian and point-slope equations}
-From the vectorial equation of the tangent to a trajectory $f(t)$ at the moment $t=t_0$ we can get the coordinate functions
+From the vectorial equation of the tangent to a trajectory $f(t)$ at the moment $t=a$ we can get the coordinate functions
 \[
 \begin{cases}
-x=x(t_0)+tx'(t_0)\\
-y=y(t_0)+ty'(t_0)
+x=x(a)+tx'(a)\\
+y=y(a)+ty'(a)
 \end{cases}
 \quad t\in \mathbb{R},
 \]
 and solving for $t$ and equalling both equations we get the \emph{Cartesian equation} of the tangent
 \[
-\frac{x-x(t_0)}{x'(t_0)}=\frac{y-y(t_0)}{y'(t_0)},
+\frac{x-x(a)}{x'(a)}=\frac{y-y(a)}{y'(a)},
 \]
-if $x'(t_0)\neq 0$ and $y'(t_0)\neq 0$.
+if $x'(a)\neq 0$ and $y'(a)\neq 0$.
 
-From this equation is easy to get the \emph{point-slope equation} of the tangent
+From this equation it is easy to get the \emph{point-slope equation} of the tangent
 \[
-y-y(t_0)=\frac{y'(t_0)}{x'(t_0)}(x-x(t_0)).
+y-y(a)=\frac{y'(a)}{x'(a)}(x-x(a)).
 \]
 \end{frame}
 
@@ -151,22 +151,22 @@ y-\sqrt{2}/2 = \frac{-\sqrt{2}/2}{\sqrt{2}/2}(x-\sqrt{2}/2) \Rightarrow y=-x+\sq
 % ---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Normal line to a trajectory in the plane}
-We have seen that the tangent line to a trajectory $f(t)$ at $t_0$ is the line passing through the point 
-$P=f(t_0)$ directed by the velocity vector $\mathbf{v}=f'(t_0)=(x'(t_0),y'(t_0))$. 
-If we take as direction vector a vector orthogonal to $\mathbf{v}$, we get another line that is known as \emph{normal line} to $f$ at moment $t_0$.
+We have seen that the tangent line to a trajectory $f(t)$ at $a$ is the line passing through the point 
+$P=f(a)$ directed by the velocity vector $\mathbf{v}=f'(a)=(x'(a),y'(a))$. 
+If we take as direction vector a vector orthogonal to $\mathbf{v}$, we get another line that is known as \emph{normal line} to the graph of $f$ at moment $a$.
 \begin{definition}[Normal line to a trajectory]
-Given a trajectory $f(t)$ in the real plane $\mathbb{R}^2$, the \emph{normal line} to $f$ at moment $t=t_0$ is the line with equation
+Given a trajectory $f(t)$ in the real plane $\mathbb{R}^2$, the \emph{normal line} to the graph of $f$ at moment $t=a$ is the line with equation
 \[
-l: (x,y)=(x(t_0),y(t_0))+t(y'(t_0),-x'(t_0)) = (x(t_0)+ty'(t_0),y(t_0)-tx'(t_0)).
+l: (x,y)=(x(a),y(a))+t(y'(a),-x'(a)) = (x(a)+ty'(a),y(a)-tx'(a)).
 \]
 \end{definition}
 The Cartesian equation is 
 \[
-\frac{x-x(t_0)}{y'(t_0)} = \frac{y-y(t_0)}{-x'(t_0)},
+\frac{x-x(a)}{y'(a)} = \frac{y-y(a)}{-x'(a)},
 \]
 and the point-slope equation is
 \[
-y-y(t_0) = \frac{-x'(t_0)}{y'(t_0)}(x-x(t_0)).
+y-y(a) = \frac{-x'(a)}{y'(a)}(x-x(a)).
 \]
 The normal line is always perpendicular to the tangent line as their direction vectors are orthogonal. 
 \end{frame}
@@ -176,7 +176,7 @@ The normal line is always perpendicular to the tangent line as their direction v
 \begin{frame}
 \frametitle{Normal line to a trajectory in the plane}
 \framesubtitle{Example}
-Considering again the trajectory of the unit circumference $f(t) = (\cos t,\sin t)$, $t\in \mathbb{R}$, the normal line to $f$ at moment $t=\pi/4$ is
+Considering again the trajectory of the unit circumference $f(t) = (\cos t,\sin t)$, $t\in \mathbb{R}$, the normal line to the graph of $f$ at moment $t=\pi/4$ is
 \begin{align*}
 l: (x,y)&=(\cos(\pi/2),\sin(\pi/2))+t(\cos(\pi/2),\sin(\pi/2)) =\\
 &= \left(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right)+t\left(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right)
@@ -208,13 +208,13 @@ and its velocity is
 \[
 g'(x) = (1,f'(x)),
 \]
-so that the tangent line to $g$ at the moment $x_0$ is
+so that the tangent line to $g$ at the moment $a$ is
 \[
-\frac{x-x_0}{1} = \frac{y-f(x_0)}{f'(x_0)} \Rightarrow y-f(x_0) = f'(x_0)(x-x_0),
+\frac{x-a}{1} = \frac{y-f(a)}{f'(a)} \Rightarrow y-f(a) = f'(a)(x-a),
 \]
 and the normal line is 
 \[
-\frac{x-x_0}{f'(x_0)} = \frac{y-f(x_0)}{-1} \Rightarrow y-f(x_0) = \frac{-1}{f'(x_0)}(x-x_0),
+\frac{x-a}{f'(a)} = \frac{y-f(a)}{-1} \Rightarrow y-f(a) = \frac{-1}{f'(a)}(x-a),
 \]
 \end{frame}
 
@@ -223,7 +223,7 @@ and the normal line is
 \begin{frame}
 \frametitle{Tangent and normal lines to a function}
 \framesubtitle{Example}
-Given the function $y=x^2$, the trajectory that traces the its graph is $g(x)=(x,x^2)$ and its velocity is 
+Given the function $y=x^2$, the trajectory that traces its graph is $g(x)=(x,x^2)$ and its velocity is 
 $g'(x)=(1,2x)$. At the moment $x=1$ the trajectory passes through the point $(1,1)$ with a velocity $(1,2)$.
 Thus, the tangent line at that moment is 
 \[
@@ -243,19 +243,19 @@ and the normal line is
 % ---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Tangent line to a trajectory in the space}
-The concept of tangent line to a trajectory in can be easily extended from the real plane to the three-dimensional space $\mathbb{R}^3$.
+The concept of tangent line to a trajectory can be easily extended from the real plane to the three-dimensional space $\mathbb{R}^3$.
 
-If $f(t)=(x(t),y(t),z(t))$, $t\in \mathbb{R}$, is a trajectory in the real space $\mathbb{R}^3$, then at the moment $t_0$, the moving object that follows this trajectory will be at the position $P=(x(t_0),y(t_0),z(t_0))$ with a velocity $\mathbf{v}=f'(t)=(x'(t),y'(t),z'(t))$.
+If $f(t)=(x(t),y(t),z(t))$, $t\in \mathbb{R}$, is a trajectory in the real space $\mathbb{R}^3$, then at the moment $a$, the moving object that follows this trajectory will be at the position $P=(x(a),y(a),z(a))$ with a velocity $\mathbf{v}=f'(t)=(x'(t),y'(t),z'(t))$.
 Thus, the tangent line to $f$ at this moment have the following vectorial equation
 \begin{align*}
-l&: (x,y,z)=(x(t_0),y(t_0),z(t_0))+t(x'(t_0),y'(t_0),z'(t_0)) =\\
-&= (x(t_0)+tx'(t_0),y(t_0)+ty'(t_0),z(t_0)+tz'(t_0)),
+l&: (x,y,z)=(x(a),y(a),z(a))+t(x'(a),y'(a),z'(a)) =\\
+&= (x(a)+tx'(a),y(a)+ty'(a),z(a)+tz'(a)),
 \end{align*}
 and the Cartesian equations are 
 \[
-\frac{x-x(t_0)}{x'(t_0)}=\frac{y-y(t_0)}{y'(t_0)}=\frac{z-z(t_0)}{z'(t_0)},
+\frac{x-x(a)}{x'(a)}=\frac{y-y(a)}{y'(a)}=\frac{z-z(a)}{z'(a)},
 \]
-provided that $x'(t_0)\neq 0$, $y'(t_0)\neq 0$ y $z'(t_0)\neq 0$.
+provided that $x'(a)\neq 0$, $y'(a)\neq 0$ y $z'(a)\neq 0$.
 \end{frame}
 
 
@@ -267,11 +267,11 @@ Given the trajectory $f(t)=(\cos t, \sin t, t)$, $t\in \mathbb{R}$ in the real s
 \[
 f(\pi/2)=(\cos(\pi/2),\sin(\pi/2),\pi/2)=(0,1,\pi/2),
 \]
-with a velocity
+with velocity
 \[
 \mathbf{v}=f'(\pi/2)=(-\sin(\pi/2),\cos(\pi/2), 1)=(-1,0,1),
 \] 
-and the tangent line to $f$ at that moment is 
+and the tangent line to the graph of $f$ at that moment is 
 \[
 l:(x,y,z)=(0,1,\pi/2)+t(-1,0,1) = (-t,1,t+\pi/2).
 \]
