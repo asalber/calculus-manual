@@ -22,13 +22,16 @@
     \addplot+[domain=0.5:3.6, smooth, name path=P1, visible on=<4->] {-1+x+(x-2.5)^2/2} node[anchor=west] {$p^2=f(a)+f'(a)(x-a)+\frac{f''(a)}{2}(x-a)^2$};
     \coordinate (B) at (3.5,3.2183);
     \coordinate (C) at (3.5,3);
-    \draw<4->[gray, very thin] (3.5,0.05) -- (3.5,-0.05);
-    \node<4-> at (3.5,-0.25) {$x$};
-    \draw<4->[gray, very thin] (-0.06,3.2183) -- (0.06,3.2183);
-    \node<4-> at (-0.25,3.2183) {$f(x)$};
-    \draw<4->[gray, dotted] (B) -- (B|-O);
-    \draw<4->[gray, dotted] (B) -- (B-|O);
-    \draw[dashed, visible on=<5->] (B) -- (B|-A);
-    \draw[decorate, decoration={brace, amplitude=4pt}, visible on=<5->] (B) -- (B|-A) node [pos=0.3, right, xshift=5pt] {Approximation error} node[midway, right, xshift=4pt] {$e^2(x)=f(x)-p^2(x)$};
+    \draw[gray, very thin, visible on=<5->] (3.5,0.05) -- (3.5,-0.05);
+    \node[yshift=-1.5ex, visible on=<5->] at (3.5,0) {$x$};
+    \draw[gray, very thin, visible on=<5->] (-0.05,3.2183) -- (0.05,3.2183);
+    \node[anchor=east, xshift=-0.25em, visible on=<5->] at (0,3.2183) {$f(x)$};
+    \draw[gray, very thin, visible on=<5->] (-0.05,3) -- (0.05,3);
+    \node[anchor=east, xshift=-0.25em, visible on=<5->] at (0,2.95) {$p^2(x)$};
+    \draw[gray, dotted, visible on=<5->] (B) -- (B-|O);
+    \draw[gray, dotted, visible on=<5->] (B) -- (B|-O);
+    \draw[gray, dotted, visible on=<5->] (C) -- (C-|O);
+    \draw[dashed, visible on=<6->] (B) -- (C);
+    \draw[decorate, decoration={brace, amplitude=2pt, mirror}, visible on=<6->] (B) -- (C) node [pos=0, left, xshift=-5pt, yshift=5pt] {Approximation error} node[midway, left, xshift=-5pt] {$e^2(x)=f(x)-p^2(x)$};
   \end{axis};
 \end{tikzpicture}

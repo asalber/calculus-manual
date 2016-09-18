@@ -281,6 +281,109 @@ In this example, as $\ln x$ is the inverse of $e^x$, we know that $e^{\ln x}=x$,
 
 
 
+\subsection{Analysis of functions}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Analysis of functions: increase and decrease}
+The main application of derivatives is to determine the variation (increase or decrease) of functions. 
+For that we use the sign of the first derivative.  
+\begin{theorem}
+Let $f(x)$ be a function with first derivative in an interval $I\subseteq \mathbb{R}$.
+\begin{itemize}
+\item If $\forall x\in I\ f'(x)> 0$ then $f$ is increasing on $I$.
+\item If $\forall x\in I\ f'(x)< 0$ then $f$ is decreasing on $I$.
+\end{itemize}
+\end{theorem}
+If $f'(a)=0$ then $a$ is known as a \emph{critical point} or \emph{stationary point}.
+At this point the function can be increasing, decreasing or neither increasing nor decreasing. 
+
+\structure{\textbf{Example}}
+The function $f(x)=x^2$ has derivative $f'(x)=2x$; it is decreasing on $\mathbb{R}^-$ as $f'(x)< 0$ $\forall x\in \mathbb{R}^-$  and increasing on $\mathbb{R}^+$ as $f'(x)> 0$ $\forall x\in \mathbb{R}^+$.
+
+It has a critical point at $x=0$, as $f'(0)=0$; at this point the function is neither increasing nor decreasing.
+
+\structure{\textbf{Remark}} {A function can be increasing or decreasing on an interval and not have first derivative.}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Analysis of functions: increase and decrease}
+\framesubtitle{Example}
+Let us analyze the increase and decrease of the function $f(x)=x^4-2x^2+1$. 
+Its first derivative is $f'(x)=4x^3-4x$.
+\begin{center}
+\tikzsetnextfilename{derivatives_1_variable/increase_analysis}
+\scalebox{0.9}{\input{img/derivatives_1_variable/increase_analysis}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Analysis of functions: relative extrema}
+As a consequence of the previous result we can also use the first derivative to determine the relative extrema of a function. 
+\begin{theorem}[First derivative test]
+Let $f(x)$ be a function with first derivative in an interval $I\subseteq \mathbb{R}$ and let $a\in I$ be a critical point of $f$ ($f'(a)=0$).
+\begin{itemize}
+\item  If $f'(x)>0$ on an open interval extending left from $a$ and $f'(x)<0$ on an open interval extending right from $a$, then $f$ has a \emph{relative maximum} at $a$.
+\item  If $f'(x)<0$ on an open interval extending left from $a$ and $f'(x)>0$ on an open interval extending right from $a$, then $f$ has a \emph{relative minimum} at $a$.
+\item If $f'(x)$ has the same sign on both an open interval extending left from $a$ and an open interval extending right from $a$, then $f$ has an \emph{inflection point} at $a$.
+\end{itemize}
+\end{theorem}
+
+\structure{\textbf{Remark}} \emph{A vanishing derivative is a necessary but not sufficient condition for the function to have a relative extrema at a point.}
+
+\structure{\textbf{Example}} The function $f(x)=x^3$ has derivative $f'(x)=3x^2$; it has a critical point at $x=0$.
+However it does not have a relative extrema at that point, but an inflection point.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Analysis of functions: relative extrema}
+\framesubtitle{Example}
+Consider again the function $f(x)=x^4-2x^2+1$ and let's analyze its relative extrema now. 
+Its first derivative is $f'(x)=4x^3-4x$.
+\begin{center}
+\tikzsetnextfilename{derivatives_1_variable/extrema_analysis}
+\scalebox{0.9}{\input{img/derivatives_1_variable/extrema_analysis}}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide---
+\begin{frame}
+\frametitle{Analysis of functions: concavity}
+The concavity of a function can be determined by de second derivative. 
+\begin{theorem}
+Let $f(x)$ be a function with second derivative in an interval $I\subseteq \mathbb{R}$.
+\begin{itemize}
+\item If $\forall x\in I\ f''(x)> 0$ then $f$ is concave up (convex) on $I$.
+\item If $\forall x\in I\ f''(x)< 0$ then $f$ is concave down (concave) on $I$.
+\end{itemize}
+\end{theorem}
+
+\structure{\textbf{Example}} The function $f(x)=x^2$ has second derivative $f''(x)=2>0$ $\forall x\in \mathbb{R}$, so it is concave up in all $\mathbb{R}$. 
+\vskip .5cm
+\structure{\textbf{Remark}} \emph{A function can be concave up or down and not have second derivative.}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Analysis of functions: concavity}
+\framesubtitle{Example}
+Let us analyze the concavity of the same function of previous examples $f(x)=x^4-2x^2+1$. 
+Its second derivative is $f''(x)=12x^2-4$.
+\begin{center}
+\tikzsetnextfilename{derivatives_1_variable/concavity_analysis}
+\scalebox{0.9}{\input{img/derivatives_1_variable/concavity_analysis}}
+\end{center}
+\end{frame}
+
+
+
 \subsection{Function approximation}
 
 %---------------------------------------------------------------------slide----
@@ -291,7 +394,7 @@ The tangent line to the graph of a function $f(x)$ at $x=a$ can be used to appro
 \tikzsetnextfilename{derivatives_1_variable/tangent_line_approximation}
 \input{img/derivatives_1_variable/tangent_line_approximation}
 \end{center}
-\only<8->{
+\uncover<8->{
 Thus, the increment of a function $f(x)$ in an interval $[a,a+\Delta x]$ can be approximated multiplying the derivative of $f$ at $a$ by the increment of $x$
 \[
 \Delta y \approx f'(a)\Delta x
@@ -473,7 +576,7 @@ but it can also be written as
 p(x) = c_0+c_1(x-a)+c_2(x-a)^2+\cdots +c_n(x-a)^n.
 \]
 
-Among all the polynomials of degree 2, the one that best approximate $f(x)$ near $a$ is that which meets the following $n+1$ conditions
+Among all the polynomials of degree $n$, the one that best approximate $f(x)$ near $a$ is that which meets the following $n+1$ conditions
 \begin{enumerate}
 \item $p(a) = f(a)$,
 \item $p'(a) = f'(a)$,
@@ -655,107 +758,6 @@ It can be proved that
 which means that the remainder $r_{f,a}^n(a+h)$ is much smaller than $h^n$.
 \end{frame}
 
-
-\subsection{Analysis of functions}
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Analysis of functions: increase and decrease}
-The main application of derivatives is to determine the variation (increase or decrease) of functions. 
-For that we use the sign of the first derivative.  
-\begin{theorem}
-Let $f(x)$ be a function with first derivative in an interval $I\subseteq \mathbb{R}$.
-\begin{itemize}
-\item If $\forall x\in I\ f'(x)> 0$ then $f$ is increasing on $I$.
-\item If $\forall x\in I\ f'(x)< 0$ then $f$ is decreasing on $I$.
-\end{itemize}
-\end{theorem}
-If $f'(a)=0$ then $a$ is known as a \emph{critical point}.
-At this point the function can be increasing, decreasing or neither increasing nor decreasing. 
-
-\structure{\textbf{Example}}
-The function $f(x)=x^2$ has derivative $f'(x)=2x$; it is decreasing on $\mathbb{R}^-$ as $f'(x)< 0$ $\forall x\in \mathbb{R}^-$  and increasing on $\mathbb{R}^+$ as $f'(x)> 0$ $\forall x\in \mathbb{R}^+$.
-
-It has a critical point at $x=0$, as $f'(0)=0$; at this point the function is neither increasing nor decreasing.
-
-\structure{\textbf{Remark}} {A function can be increasing or decreasing on an interval and not have first derivative.}
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Analysis of functions: increase and decrease}
-\framesubtitle{Example}
-Let us analyze the increase and decrease of the function $f(x)=x^4-2x^2+1$. 
-Its first derivative is $f'(x)=4x^3-4x$.
-\begin{center}
-\tikzsetnextfilename{derivatives_1_variable/increase_analysis}
-\scalebox{0.9}{\input{img/derivatives_1_variable/increase_analysis}}
-\end{center}
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Analysis of functions: relative extrema}
-As a consequence of the previous result we can also use the first derivative to determine the relative extrema of a function. 
-\begin{theorem}[First derivative test]
-Let $f(x)$ be a function with first derivative in an interval $I\subseteq \mathbb{R}$ and let $x_0\in I$ be a stationary point of $f$ ($f'(x_0)=0$).
-\begin{itemize}
-\item  If $f'(x)>0$ on an open interval extending left from $x_0$ and $f'(x)<0$ on an open interval extending right from $x_0$, then $f$ has a \emph{relative maximum} at $x_0$.
-\item  If $f'(x)<0$ on an open interval extending left from $x_0$ and $f'(x)>0$ on an open interval extending right from $x_0$, then $f$ has a \emph{relative minimum} at $x_0$.
-\item If $f'(x)$ has the same sign on both an open interval extending left from $x_0$ and an open interval extending right from $x_0$, then $f$ has an \emph{inflection point} at $x_0$.
-\end{itemize}
-\end{theorem}
-
-\structure{\textbf{Remark}} \emph{A vanishing derivative is a necessary but not sufficient condition for the function to have a relative extrema at a point.}
-
-\structure{\textbf{Example}} The function $f(x)=x^3$ has derivative $f'(x)=3x^2$; it has a critical point at $x=0$.
-However it does not have a relative extrema at that point, but an inflection point.
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Analysis of functions: relative extrema}
-\framesubtitle{Example}
-Consider again the function $f(x)=x^4-2x^2+1$ and let's analyze its relative extrema now. 
-Its first derivative is $f'(x)=4x^3-4x$.
-\begin{center}
-\tikzsetnextfilename{derivatives_1_variable/extrema_analysis}
-\scalebox{0.9}{\input{img/derivatives_1_variable/extrema_analysis}}
-\end{center}
-\end{frame}
-
-
-%---------------------------------------------------------------------slide---
-\begin{frame}
-\frametitle{Analysis of functions: concavity}
-The concavity of a function can be determined by de second derivative. 
-\begin{theorem}
-Let $f(x)$ be a function with second derivative in an interval $I\subseteq \mathbb{R}$.
-\begin{itemize}
-\item If $\forall x\in I\ f''(x)\geq 0$ then $f$ is concave up (convex) on $I$.
-\item If $\forall x\in I\ f''(x)\leq 0$ then $f$ is concave down (concave) on $I$.
-\end{itemize}
-\end{theorem}
-
-\structure{\textbf{Example}} The function $f(x)=x^2$ has second derivative $f''(x)=2>0$ $\forall x\in \mathbb{R}$, so it is concave up in all $\mathbb{R}$. 
-\vskip .5cm
-\structure{\textbf{Remark}} \emph{A function can be concave up or down and not have second derivative.}
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Analysis of functions: concavity}
-\framesubtitle{Example}
-Let us analyze the concavity of the same function of previous examples $f(x)=x^4-2x^2+1$. 
-Its second derivative is $f''(x)=12x^2-4$.
-\begin{center}
-\tikzsetnextfilename{derivatives_1_variable/concavity_analysis}
-\scalebox{0.9}{\input{img/derivatives_1_variable/concavity_analysis}}
-\end{center}
-\end{frame}
 
 
 

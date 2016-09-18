@@ -236,11 +236,11 @@
 </g>
 <path style="fill:none;stroke-width:0.3985;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 87.640719 80.98775 C 88.836031 80.390094 89.632906 78.995562 89.632906 77.003375 L 89.632906 71.905719 C 89.632906 69.913531 90.429781 68.519 91.625094 67.917437 C 90.429781 67.319781 89.632906 65.92525 89.632906 63.933062 L 89.632906 58.835406 C 89.632906 56.843219 88.836031 55.448687 87.640719 54.851031 " transform="matrix(1,0,0,-1,66.121,127.019)"/>
 <g style="fill:rgb(93.331909%,19.607544%,14.118958%);fill-opacity:1;">
-  <use xlink:href="#glyph2-7" x="161.267" y="62.112"/>
-  <use xlink:href="#glyph2-8" x="166.74547" y="62.112"/>
-  <use xlink:href="#glyph2-8" x="170.287198" y="62.112"/>
-  <use xlink:href="#glyph2-9" x="173.828926" y="62.112"/>
-  <use xlink:href="#glyph2-8" x="178.724581" y="62.112"/>
+  <use xlink:href="#glyph2-7" x="161.267" y="59.498"/>
+  <use xlink:href="#glyph2-8" x="166.74547" y="59.498"/>
+  <use xlink:href="#glyph2-8" x="170.287198" y="59.498"/>
+  <use xlink:href="#glyph2-9" x="173.828926" y="59.498"/>
+  <use xlink:href="#glyph2-8" x="178.724581" y="59.498"/>
 </g>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
   <use xlink:href="#glyph0-4" x="201.102" y="129.131"/>
