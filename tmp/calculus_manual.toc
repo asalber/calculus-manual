@@ -8,3 +8,9 @@
 \contentsline {subsection}{\numberline {2.2}Algebra of derivatives}{13}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}Analysis of functions}{14}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}Function approximation}{17}{subsection.2.4}
+\contentsline {section}{\numberline {3}Integrals}{25}{section.3}
+\contentsline {subsection}{\numberline {3.1}Antiderivative of a function}{25}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Elementary integrals}{26}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Techniques of integration}{27}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Definite integral}{31}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Area calculation}{32}{subsection.3.5}
