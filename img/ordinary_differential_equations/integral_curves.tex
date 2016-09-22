@@ -1,0 +1,19 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}[trim axis left, trim axis right]
+  \begin{axis}[
+    2dfun, 
+    xmin=-1, xmax=1,
+    ymin=0, ymax=10,
+    xlabel={$t$},         
+    ylabel={$T$},      
+    clip=false, 
+    height=3cm,
+  	]
+  	\foreach \c in {1,2,3,4,6}{
+  	\edef\temp{\noexpand \addplot[domain=-1:0.5, samples=100, smooth, thick, color1] {exp(x)*\c} node[anchor=west] {$T(t)=\c e^t$};}
+  	\temp
+    }
+    \addplot[domain=-1:0.5, samples=100, smooth, thick, color2] {5*exp(x)} node[anchor=west] {$T(t)=5e^t$};
+    \fill (0,5) circle (1.2pt);
+  \end{axis};
+\end{tikzpicture}

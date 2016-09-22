@@ -14,3 +14,8 @@
 \contentsline {subsection}{\numberline {3.3}Techniques of integration}{27}{subsection.3.3}
 \contentsline {subsection}{\numberline {3.4}Definite integral}{31}{subsection.3.4}
 \contentsline {subsection}{\numberline {3.5}Area calculation}{32}{subsection.3.5}
+\contentsline {section}{\numberline {4}Ordinary Differential Equations}{34}{section.4}
+\contentsline {subsection}{\numberline {4.1}Ordinary Differential Equations}{34}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Separable differential equations}{36}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Homogeneous differential equations}{37}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Linear differential equations}{38}{subsection.4.4}

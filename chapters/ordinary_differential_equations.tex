@@ -1,138 +1,133 @@
-%Version control information
-%$HeadURL: https://ejercicioscalculo.googlecode.com/svn/trunk/compendio_ejercicios_calculo.tex $} {$LastChangedDate: 2008-07-09 16:26:20 +0200 (mi�, 09 jul 2008) $
-%$LastChangedRevision: 6 $
-%$LastChangedBy: asalber $
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
 
-
-\section{Ecuaciones Diferenciales Ordinarias (E.D.O.)}
+\section{Ordinary Differential Equations}
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Ecuaciones Diferenciales Ordinarias}
+\frametitle{Ordinary Differential Equations}
 \tableofcontents[sectionstyle=show/hide,hideothersubsections]
 \end{frame}
 
 
 
-\subsection{Definición de las ecuaciones diferenciales ordinarias}
+\subsection{Ordinary Differential Equations}
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Ecuación Diferencial Ordinaria}
-En muchos problemas de geometría, física, química, etc, se presentan a menudo ecuaciones que relacionan una función con su derivada o derivadas sucesivas.
+\frametitle{Ordinary Differential Equation}
+Often in Physics, Chemistry, Biology, Geometry, etc they arise equations that relate a function with its derivative or successive derivatives.
 
-\begin{definicion}[Ecuación diferencial ordinaria]
-Se llama \emph{ecuación diferencial ordinaria} (E.D.O.) a una ecuación que relaciona
-una variable independiente $x$, una función desconocida $y(x)$, y las derivadas de $y$ de diversos órdenes $y',y'',\ldots,y^{(n}$; es decir una expresión de la forma
+\begin{definition}[Ordinary differential equation]
+An \emph{ordinary differential equation} (O.D.E.) is a equation that relates an independent variable $x$, a function $y(x)$ that depends on $x$, and the successive derivatives of $y$, $y',y'',\ldots,y^{(n)}$; it can be written as
 \[
-F(x, y, y', y'',\ldots, y^{(n})=0.
+F(x, y, y', y'',\ldots, y^{(n)})=0.
 \] 
-Se llama \emph{orden} de la ecuación diferencial al mayor de los órdenes de las derivadas que contienen la ecuación.
-\end{definicion}
-Así, por ejemplo, la ecuación $y'''+sen(x)y'=2x$ es una ecuación diferencial ordinaria de tercer orden.
+The \emph{order} of a differential equation is the greatest order of the derivatives in the equation. 
+\end{definition}
+Thus, for instance, the equation $y'''+sen(x)y'=2x$ is a differential equation of order 3.
 \end{frame}
 
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Deducción de una ecuación diferencial}
-Para deducir la ecuación diferencial que explica un fenómeno es fundamental saber interpretar las derivadas de una función.
+\frametitle{Deducing a differential equation}
+To deduce a differential equation that explains a natural phenomenon is essential to understand what is a derivative and how to interpret it. 
 
-\structure{\textbf{Ejemplo}} Una de las leyes de la termodinámica de Newton dice
+\structure{\textbf{Example}} One of the Newton's law of cooling states
 \begin{center}
 \begin{minipage}{0.8\textwidth}
-\textit{``La velocidad de enfriamiento de un cuerpo en el aire es proporcional a la diferencia de temperatura $T$ del cuerpo y la temperatura $T_a$ del aire.''}
+\textit{``The rate of change of the temperature of a body in a surrounding medium is proportional to the difference between the temperature of the body $T$ and the temperature of the medium $T_a$.''}
 \end{minipage}
 \end{center}
-La velocidad de enfriamiento es la variación instantánea de la temperatura con respecto al tiempo, es decir, la derivada de la temperatura con respecto al tiempo $dT/dt$.
-Por tanto, el fenómeno anterior puede describirse mediante la ecuación diferencial
+The rate of change of change of the temperature is the derivative of temperature with respect to time $dT/dt$.
+Thus, Newton's law of cooling can be explained by the differential equation
 \[
 \frac{dT}{dt}=k(T-T_a),
 \]
-donde $k$ es una constante de proporcionalidad. 
+where $k$ is a proportionality constant.
 \end{frame}
-
 
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Solución de una ecuación diferencial ordinaria}
-\begin{definicion}[Solución de una ecuación diferencial ordinaria]
-Se llama \emph{solución de una ecuación diferencial ordinaria} $F(x,y,y',y'',\ldots,y^{(n})=0$ a cualquier función $y =f(x)$ tal que al sustituirla en la ecuación la convierte en una igualdad; es decir 
+\frametitle{Solution of an ordinary differential equation}
+\begin{definition}[Solution of an ordinary differential equation]
+Given an ordinary differential equation $F(x,y,y',y'',\ldots,y^{(n})=0$, the function $y=f(x)$ is a \emph{solution of the ordinary differential equation} if it satisfies the equation, that is, if
 \[
 F(x,f(x), f'(x), f''(x),\ldots, f^{(n}(x))=0.
 \]
+The graph of a solution of the ordinary differential equation is known as \emph{integral curve}.
+\end{definition}
 
-La gráfica de la solución de una ecuación diferencial ordinaria se llama \emph{curva integral}.
-\end{definicion}
+Solving an ordinary differential equations consists in finding all its solutions in a given domain. 
+For that is required the integral calculus. 
 
-Resolver o integrar una ecuación diferencial ordinaria consiste en hallar todas sus soluciones en un dominio dado. Para ello, habrá que recurrir al cálculo integral.
-
-De igual modo que al integrar una función aparece una constante que nos da la familia de primitivas de la función,  al integrar una ecuación diferencial ordianaria surgen varias constantes arbitrarias. Dando valores a dichas constantes se obtienen todas las soluciones de la ecuación.
+The same manner than the indefinite integral is a family of antiderivatives, that differ in a constant term, after integrating an ordinary differential equation we get a family of solutions that differ in a constant.
+Giving values to this constant we can get particular solutions. 
 \end{frame}
 
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Solución general de una ecuación diferencial ordinaria}
-\begin{definicion}[Solución general de una E.D.O.]
-Se llama \emph{solución general de una ecuación diferencial ordinaria} de orden $n$, a una función de la forma 
-\[y =f (x,C_1,\ldots,C_n)\] 
-que es solución de la ecuación diferencial para cualquier valor que tomen las constantes $C_1,\ldots,C_n$.
-\end{definicion}
+\frametitle{General solution of an ordinary differential equation}
+\begin{definition}[General solution of an ordinary differential equation]
+Given an ordinary differential equation $F(x,y,y',y'',\ldots,y^{(n})=0$ of order $n$, the \emph{general solution} of the differential equation is a family of functions 
+\[y =f (x,C_1,\ldots,C_n),\] 
+depending on $n$ constants, such that for any value of $C_1,\ldots,C_n$ we get a solution of the differential equation. 
+\end{definition}
 
-Para cada valor que tomen las constantes se obtiene una \emph{solución particular} de la ecuación diferencial. Por ello, una E.D.O. tiene infinitas soluciones.
+For every value of the constant we get \emph{particular solution} of the differential equation.
+Thus, when a differential equation can be solved, it has infinite solutions.
 
-Geométricamente, la solución general representa una familia de curvas integrales de la ecuación diferencial.
+Geometrically, the general solution of a differential equation correspond to a family of integral curves of the differential equation.
 
-A menudo, se suelen imponer condiciones para reducir el número de soluciones de la  ecuación diferencial. En muchos casos estas condiciones permiten fijar los valores de las constantes y así obtener una solución particular a partir de la solución general.
+Often, it is common to impose conditions to the solutions of a differential equation to reduce the number of solutions. 
+In many cases, these conditions allow to determine the values of the constants in the general solution to get a particular solution.
 \end{frame}
 
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Ecuaciones diferenciales ordinarias de primer orden}
-Vamos a estudiar la resolución de E.D.O. de primer orden, 
+\frametitle{First order differential equations}
+In this chapter we are going to study first order differential equations
 \[
 F(x,y,y')=0.
 \]
 
-La solución general de una E.D.O. de primer orden es
+The general solution of a first order differential equation is
 \[
 y = f (x,C),
 \]
-de manera que para obtener una solución particular de la ecuación basta con darle valor a la constante $C$, y para ello es suficiente con fijar una condición inicial.
+so to get a particular solution from the general one, is enough to set the value of the constant $C$, and for that we only need to impose an initial condition.
 
-\begin{definicion}[Problema del valor inicial]
-Al conjunto formado por una ecuación diferencial ordinaria de primer orden y una condición inicial se le llama \emph{problema del valor inicial}:
+\begin{definition}[Initial value problem]
+The group consisting of a first order differential equation and an initial condition is known as \emph{initial value problem}:
 \[
-\left\{%
-\begin{array}{ll}
-    F(x,y,y')=0, & \hbox{E.D.O. de primer orden;} \\
-    y(x_0)=y_0, & \hbox{Condición inicial.} \\
-\end{array}%
-\right.    
+\begin{cases}
+F(x,y,y')=0, & \mbox{First order differential equation;} \\
+y(x_0)=y_0, & \mbox{Initial condition.}
+\end{cases}
 \]
-\end{definicion}
+\end{definition}
 
-Resolver un problema del valor inicial consiste en encontrar una solución de la ecuación diferencial que cumpla la condición inicial.
+Solving an initial value problem consists in finding a solution of the first order differential equation that satisfies the initial condition.
 \end{frame}
 
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Resolución de un problema del valor inicial}
-\framesubtitle{Ejemplo}
-Recordemos la ecuación diferencial de primer orden que explicaba el enfriamiento de un cuerpo en el aire:
+\frametitle{Solving an initial value problem}
+\framesubtitle{Example}
+Recall the first order differential equation of the Newton's law of cooling,
 \[
 \frac{dT}{dt}=k(T-T_a),
 \]
-donde $T$ es la temperatura del cuerpo y $T_a$ la del aire.
+where $T$ is the temperature of the body and $T_a$ is the temperature of the surrounding medium.
 
-Es fácil comprobar que la solución general de esta ecuación diferencial es 
+It is easy to check that the general solution of this equation is 
 \[T(t) = Ce^{kt}+T_a.\]
 
-Si imponemos la condición inicial de que en el instante inicial el cuerpo estaba a $5$ ºC, es decir, $T(0)=5$, tenemos 
+If we impose the initial condition that the temperature of the body at the initial instant is $5$ ºC, that is, $T(0)=5$, we have
 \[T(0) = Ce^{k\cdot0}+T_a = C+T_a = 5,\]
-de donde se deduce que $C=5-T_a$, y esto nos lleva a la solución particular 
+from where we get $C=5-T_a$, and this give us the particular solution
 \[
 T(t) = (5-T_a)e^{kt}+T_a.
 \]
@@ -141,151 +136,151 @@ T(t) = (5-T_a)e^{kt}+T_a.
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Familia de curvas integrales}
-\framesubtitle{Ejemplo}
-Para el ejemplo anterior, en el caso de que la temperatura del aire fuese $T_a=0$ ºC y $k=1$, la solución general de la ecuación sería 
+\frametitle{Integral curve of an initial value problem}
+\framesubtitle{Example}
+If we assume in the previous example that the temperature of the surrounding medium is $T_a=0$ ºC and the cooling constant of the body is $k=1$, the general solution of the differential equation is
 \[T(t)=Ce^t,\]
-lo que nos daría la siguiente familia de curvas integrales:
+that is a family of integral curves.
+From all of them, only the one that passes through the point $(0,5)$ corresponds to the particular solution of the previous initial value problem. 
 \begin{center}
-\scalebox{0.95}{\input{img/ecuaciones_diferenciales/curvas_integrales}}
+\tikzsetnextfilename{ordinary_differential_equations/integral_curves}
+\input{img/ordinary_differential_equations/integral_curves}
 \end{center}
 \end{frame}
 
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Existencia y unicidad de soluciones}
-\begin{teorema}[Existencia y unicidad de la solución de una E.D.O.]
-Si $g(x,y(x))$ es una función diferenciable en el intervalo $(a,b)$, entonces el problema del valor inicial
+\frametitle{Existence and uniqueness of solutions}
+\begin{theorem}[Existence and uniqueness of solutions of a first order ODE]
+Given an initial value problem 
 \[
-\left\{%
-\begin{array}{ll}
-    y'=g(x,y), & x\in (a,b); \\
-    y(x_0)=y_0.\\
-\end{array}%
-\right.
-\]   
-tiene solución única, es decir, existe una única $y=f(x)$, definida en $(a,b)$, solución de la ecuación diferencial y tal que $f(x_0)=y_0$.
-\end{teorema}
+\begin{cases}
+y'=F(x,y);\\
+y(x_0)=y_0;
+\end{cases}
+\]
+if $F(x,y(x))$ is a function continuous on an open interval around the point $(x_0,y_0)$, then a solution of exist. 
+If, in addition, $\frac{\partial F}{\partial y}$ is continuous in an open interval around $(x_0,y_0)$, the solution is unique. 
+\end{theorem}
 
-Aunque este teorema nos garantiza la existencia y la unicidad de las soluciones no nos proporciona un método para llegar a ellas.
-
-En realidad, no existe un método general para resolver ecuaciones diferenciales de primer orden pero veremos cómo resolver algunos tipos especiales de ellas:
+Although this theorem guarantees the existence and uniqueness of a solution of a first order differential equation, it does not provide a method to compute it. 
+In fact, there is not a general method to solve first order differential equations, but we will see how to solve some types:
 \begin{itemize}
-\item De variables separables,
-\item Homogéneas,
-\item Lineales.
+\item Separable differential equations
+\item Homogeneous differential equations
+\item Linear differential equations
 \end{itemize}
 \end{frame}
 
 
 
-\subsection{E.D.O. de variables separables}
+\subsection{Separable differential equations}
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{E.D.O. de variables separables}
-\begin{definicion}[E.D.O. de variables separables]
-Una \emph{ecuación diferencial ordinaria de variables separables} es una ecuación diferencial de primer orden que puede escribirse de la forma
+\frametitle{Separable differential equations}
+\begin{definition}[Separable differential equation]
+A \emph{separable differential equation} is a first order differential equation that can be written as
 \[y'g(y)=f(x),\]
-o lo que es lo mismo,
+or what is the same,
 \[g(y)dy=f(x)dx,\]
-de manera que a un lado de la igualdad sólo aparece la variable $y$ y al otro la variable $x$ (las variables están separadas).
-\end{definicion}
+so every variable is on one side of the equation (the variables are separated).
+\end{definition}
 
-La solución general de esta ecuación diferencial se obtiene integrando ambos lados de la igualdad:
+The general solution for a separable differential equation comes after integrating both sides of the equation
 \[\int g(y)\,dy = \int f(x)\,dx+C.\]
 \end{frame}
 
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Resolución de una E.D.O. de variables separables}
-\framesubtitle{Ejemplo}
-
-La ecuación diferencial que explica el enfriamiento de un cuerpo en el aire 
+\frametitle{Solving a separable differential equation}
+\framesubtitle{Example}
+The differential equation of the Newton's law of cooling 
 \[\frac{dT}{dt}=k(T-T_a),\]
-es una ecuación diferencial de variables separables ya que puede escribirse
+is a separable differential equation since it can be written as
 \[\frac{1}{T-T_a}dT=k\,dt.\]
 
-Integrando ambos miembros de la igualdad tenemos:
+Integrating both sides of the equation we have
 \[
 \int \frac{1}{T-T_a}\,dT=\int k\,dt\Leftrightarrow \log(T-T_a)=kt+C,
 \]
-y despejando $T$ llegamos a la solución general de la ecuación
+and solving for $T$ we get the general solution of the equation 
 \[
 T(t)=e^{kt+C}+T_a=e^Ce^{kt}+T_a=Ce^{kt}+T_a,
 \]
-reescribiendo $C=e^C$ como una constante arbitraria.
+rewriting $C=e^C$ as an arbitrary constant.
 \end{frame}
 
 
 
-\subsection{E.D.O. homogéneas}
+\subsection{Homogeneous differential equations}
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Funciones homogéneas}
-\begin{definicion}[Función homogénea]
-Una función $f(x,y)$ es \emph{homogénea} de grado $n$, si para cualquier valor $k$ se cumple
-\[f(kx,ky)= k^nf(x,y).\]
-\end{definicion}
+\frametitle{Homogeneous functions}
+\begin{definition}[Homogeneous function]
+A function $f(x,y)$ is \emph{homogeneous} of degree $n$, if it is satisfied
+\[f(kx,ky)= k^nf(x,y),\]
+for any value $k\in \mathbb{R}$.
+\end{definition}
 
-En particular, para una función homogénea de grado $0$ siempre se cumple  
+In particular, a homogeneous function of degree $0$ always satisfies
 \[f(kx,ky)=f(x,y).\]
 
-En concreto, si tomamos $k=1/x$ tenemos
+Setting $k=1/x$ we have
 \[
-f(x,y)=f\left(\frac{1}{x}x,\frac{1}{x}y\right)=f\left(1,\frac{y}{x}\right)=g\left(\frac{y}{x}\right),
+f(x,y)=f\left(\frac{1}{x}x,\frac{1}{x}y\right)=f\left(1,\frac{y}{x}\right)=g\left(\frac{y}{x}\right).
 \]
-de manera que una función homogénea de grado $0$ siempre puede escribirse como una función de $u=y/x$:
+This way, a homogeneous function of degree $0$ always can be written as a function of $u=y/x$:
 \[f(x,y)=g\left(\frac{y}{x}\right)=g(u).\]
 \end{frame}
 
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{E.D.O. homogéneas}
-\begin{definicion}[E.D.O. homogénea]
-Una ecuación diferencial ordinaria homogénea es una ecuación diferencial de primer orden que puede escribirse de la forma 
+\frametitle{Homogeneous differential equations}
+\begin{definition}[Homogeneous differential equation]
+A \emph{homogeneous differential equation} is a first order differential equation that can be written  
 \[y'=f(x,y),\]
-donde $f(x,y)$ es una función homogénea de grado $0$.
-\end{definicion}
+where $f(x,y)$ is a homogeneous function of degree $0$.
+\end{definition}
 
-La solución de esta ecuación diferencial se obtiene realizando el cambio de variable
+We can solve a homogeneous differential equation making the substitution
 \[
 u=\frac{y}{x}\Leftrightarrow y=ux,
 \]
-con lo que la ecuación diferencial anterior se convierte en 
+so the equation becomes
 \[
 u'x+u=f(u),
 \]
-que es de variables separables.
+that is a separable differential equation.
 
-Una vez resuelta la ecuación diferencial anterior, sólo queda deshacer el cambio de variable.
+One solved the separable differential equation, the substitution must be undone.
 \end{frame}
 
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Resolución de una E.D.O. homogénea}
-\framesubtitle{Ejemplo}
-Consideremos la siguiente ecuación diferencial: 
+\frametitle{Solving a homogeneous differential equation}
+\framesubtitle{Example}
+Let us consider the following differential equation
 \[
 4x-3y+y'(2y-3x)=0.
 \]
 
-Escribiéndola de la forma
+Rewriting the equation this way
 \[
 y'=\frac{3y-4x}{2y-3x}
 \]
-se puede ver fácilmente que es homogénea.
+we can check easily that is a homogeneous differential equation.
 
-Para resolverla se hace el cambio de variable $y=ux$ y se obtiene
+To solve this equation we have to do the substitution $y=ux$, and we get
 \[
 u'x+u=\frac{3ux-4x}{2ux-3x}=\frac{3u-4}{2u-3}
 \]
-que es de variables separables.
+that is a separable differential equation.
 
-Separando las variables se llega a
+Separating the variables we have
 \[
 u'x=\frac{3u-4}{2u-3}-u=\frac{-2u^2+6u-4}{2u-3}\Leftrightarrow \frac{2u-3}{-2u^2+6u-4}\,du=\frac{1}{x}\,dx.
 \]
@@ -294,9 +289,9 @@ u'x=\frac{3u-4}{2u-3}-u=\frac{-2u^2+6u-4}{2u-3}\Leftrightarrow \frac{2u-3}{-2u^2
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Resolución de una E.D.O. homogénea}
-\framesubtitle{Ejemplo}
-Integrando ahora ambos miembros obtenemos
+\frametitle{Solving a homogeneous differential equation}
+\framesubtitle{Example}
+Now, integrating both sides of the equation we have
 \[
 \renewcommand{\arraystretch}{2}
 \begin{array}{c}
@@ -305,13 +300,13 @@ Integrando ahora ambos miembros obtenemos
 \Leftrightarrow \log|u^2-3u+2|=-2\log|x|-2C,
 \end{array}
 \]
-y aplicando la función exponencial a ambos miembros y simplificando llegamos a la solución 
+then, applying the exponential function both sides and simplifying we get the general solution 
 \[
 u^2-3u+2=e^{-2\log|x|-2C}=\frac{e^{-2C}}{e^{\log|x|^2}}=\frac{C}{x^2},
 \]
-reescribiendo $C=e^{-2C}$, como una constante arbitraria.
+rewriting the constant $C=e^{-2C}$.
 
-Finalmente, deshaciendo el cambio inicial de variable $u=y/x$, llegamos a la solución general de la ecuación:
+Finally, undoing the initial substitution $u=y/x$, we arrive at the general solution of the homogeneous differential equation
 \[
 \left(\frac{y}{x}\right)^2-3\frac{y}{x}+2=\frac{C}{x^2}\Leftrightarrow y^2-3xy+2x^2=C.
 \]
@@ -319,18 +314,19 @@ Finalmente, deshaciendo el cambio inicial de variable $u=y/x$, llegamos a la sol
 
 
 
-\subsection{E.D.O. lineales}
+\subsection{Linear differential equations}
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{E.D.O. lineales}
-\begin{definicion}[E.D.O. lineal]
-Una ecuación diferencial ordinaria lineal es una ecuación diferencial de primer orden que puede escribirse de la forma
+\frametitle{Linear differential equations}
+\begin{definition}[Linear differential equation]
+A \emph{linear differential equation} is a first order differential equation that can be written
 \[y'+g(x)y = h(x).\]
-\end{definicion}
+\end{definition}
 
-Para resolver esta ecuación diferencial, intentamos poner el primer miembro como derivada de un producto. Para ello multiplicamos los dos miembros de la igualdad por una función $f(x)$ tal que 
+To solve a linear differential equation we try to write the left side of the equation as the derivative of a product. 
+For that we write both sides by the function $f(x)$,
 \[f'(x)=g(x)f(x).\]
-De esta manera tenemos
+Thus, we get
 \[
 \begin{array}{c}
 y'f(x)+g(x)f(x)y=h(x)f(x)\\
@@ -345,20 +341,20 @@ y'f(x)+f'(x)y=h(x)f(x)\\
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Resolución de una E.D.O. lineal}
-Integrando ambos miembros de la ecuación anterior llegamos a la solución
+\frametitle{Solving a linear differential equation}
+Integrating both sides of the previous equation we get the solution
 \[
 yf(x)=\int h(x)f(x)\,dx+C.
 \]
-Por otro lado, la única función que cumple $f'(x)=g(x)f(x)$ es
+On the other hand, the unique function that satisfies $f'(x)=g(x)f(x)$ is
 \[
 f(x)=e^{\int g(x)\,dx},
 \]
-de modo que, al sustituir en la solución anterior, llegamos a la solución general de una ecuación diferencial lineal
+so, substituting this function in the previous solution we arrive at the solution of the linear differential equation
 \[
 ye^{\int g(x)\,dx}=\int h(x) e^{\int g(x)\,dx}\,dx+C,
 \]
-o lo que es lo mismo
+or what is the same
 \[
 y=e^{-\int g(x)\,dx}\left(\int h(x)e^{\int g(x)\,dx}\,dx+C\right).
 \]
@@ -367,19 +363,19 @@ y=e^{-\int g(x)\,dx}\left(\int h(x)e^{\int g(x)\,dx}\,dx+C\right).
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Resolución de una E.D.O. lineal}
-\framesubtitle{Ejemplo}
-Si en la ecuación diferencial que explica el enfriamiento de un cuerpo, la temperatura del medio en el que se encuentra no es constante sino que cambia con el tiempo, es decir, es una función $T_a(t)$, entonces la ecuación diferencial resultante 
+\frametitle{Solving a linear differential equation}
+\framesubtitle{Example}
+If in the differential equation of the Newton's law of cooling the temperature of the surrounding medium is a function of time $T_a(t)$, then the differential equation 
 \[
 \frac{dT}{dt}=k(T-T_a(t)),
 \]
-es una ecuación diferencial lineal que puede escribirse como
+is a linear differential equation since it can be written as
 \[
 T'-kT=-kT_a(t),
 \]
-donde el término independiente es $-kT_a(t)$ y el coeficiente de $T$ es $-k$.
+where the independent term is $-kT_a(t)$ and de coefficient of $T$ is $-k$.
 
-Sustituyendo en la solución general de una ecuación diferencial lineal tenemos
+Substituting in the formula of the general solution of a linear differential equation we have
 \[
 y=e^{-\int -k\,dt}\left(\int -kT_a(t)e^{\int -k\,dt}\,dt+C\right)=
 e^{kt}\left(-\int kT_a(t)e^{-kt}\,dt+C\right).
@@ -389,18 +385,17 @@ e^{kt}\left(-\int kT_a(t)e^{-kt}\,dt+C\right).
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Resolución de una E.D.O. lineal}
-\framesubtitle{Ejemplo}
-Si en un caso concreto la temperatura del aire estuviese dada por la función $T_a(t)=t$, y la constante de proporcionalidad fuese $k=1$, entonces la solución general de la ecuación diferencial sería
+\frametitle{Solving a linear differential equation}
+\framesubtitle{Example}
+In the particular case that $T_a(t)=t$, and the proportionality constant $k=1$, the general solution of the linear differential equation is
 \[
 y=e^{t}\left(-\int te^{-kt}\,dt+C\right)=e^t(e^{-t}(t+1)+C)=Ce^t+t+1.
 \]
-Si además nos dicen que en el instante $0$ la temperatura del cuerpo es de $5$ ºC, es decir, nos dan la condición inicial $T(0)=5$, entonces
-se puede calcular la constante $C$:
+If, in addition, we know that the temperature of the body at time $t=0$ is $5$ ºC, that is, the initial condition $T(0)=5$, then we can compute the value of the constant $C$,
 \[
 y(0)=Ce^0+0+1=5 \Leftrightarrow C+1=5 \Leftrightarrow C=4,
 \]
-y entonces la solución particular que se obtiene es
+and we get the particular solution
 \[
 y(t)=4e^t+t+1.
 \]
