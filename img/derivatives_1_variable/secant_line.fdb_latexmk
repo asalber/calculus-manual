@@ -1,0 +1,10 @@
+# Fdb version 3
+["pdflatex"] 1472486800 "secant_line.tex" "secant_line.pdf" "secant_line" 1472486800
+  "/usr/local/texlive/2016/texmf-dist/web2c/texmf.cnf" 1470266149 31958 926ad82bc47ee89401cf24be7d2cbf7d ""
+  "/usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt" 1472470916 916493 65535a4ae860c820459e377baf538aec ""
+  "/usr/local/texlive/2016/texmf.cnf" 1472470907 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
+  "secant_line.aux" 1472486800 8 a94a2480d3289e625eea47cd1b285758 ""
+  "secant_line.tex" 1472486800 155 7d6add676a7cb0498e3d19de4194f75e ""
+  (generated)
+  "secant_line.pdf"
+  "secant_line.log"

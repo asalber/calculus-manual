@@ -1,0 +1,6 @@
+PWD /media/alf/datos/drive/CEU/DOCENCIA/materiales/calculo/presentaciones/calculus_manual/img/derivatives_1_variable
+INPUT /usr/local/texlive/2016/texmf.cnf
+INPUT /usr/local/texlive/2016/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT secant_line.tex
+OUTPUT secant_line.log

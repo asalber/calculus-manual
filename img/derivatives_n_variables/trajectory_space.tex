@@ -1,0 +1,35 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+  \begin{axis}[
+  3dfun,
+  xmin=-1, xmax=2,
+  ymin=-1, ymax=2,
+  zmin=-0.1, zmax=3,
+  axis x line=middle,
+  axis y line=middle,
+  axis z line=middle,
+  xtick={1,0.7071},
+  xticklabels={$1$, $x(t)$},
+  ytick={1,0.7071},
+  yticklabels={$1$,$y(t)$},
+  ztick={1,0.2618},
+  zticklabels={$1$,$z(t)$},
+  %axis equal=true,
+  every axis x label/.style={at={(xticklabel* cs:1.1)}},
+  every axis y label/.style={at={(yticklabel* cs:1.15)}},
+  every axis z label/.style={at={(zticklabel* cs:1.1)}},
+  clip=false,
+  height=4cm,
+  ]
+  \coordinate (O) at (0,0,0);
+  \coordinate (I) at (1,0,0);
+  \coordinate (J) at (0,1,0);
+  \coordinate (K) at (0,0,1);
+  \draw [vector] (O) -- (I) node[anchor=west] {$\textbf{i}$};
+  \draw [vector] (O) -- (J) node[anchor=west] {$\textbf{j}$};
+  \draw [vector] (O) -- (K) node[anchor=west] {$\textbf{k}$};
+  \addplot3+[domain=0.2:2.5*pi, samples y=0] ({cos(deg(x))}, {sin(deg(x))}, {x/3});
+  \coordinate (P) at (0.7071,0.7071,pi/12);
+  \fill (P) circle (1.2pt) node[anchor=west] {$P=f(t)$};
+  \end{axis}
+\end{tikzpicture}

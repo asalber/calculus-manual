@@ -1,0 +1,29 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+
+\begin{tikzpicture}
+\begin{axis}[
+    gen2dfun, 
+    xmin=-0.1, xmax=3,
+    ymin=-0.1, ymax=3,
+    axis equal=true,  
+    xtick={1,2},
+    xticklabels={$1$,$x(t)$},
+    ytick={1,2.041471},
+    yticklabels={$1$,$y(t)$}, 
+    height=2cm,
+    clip=false,
+    ]
+    \addplot+[domain=-0.2:3.5, samples=100, smooth, name path=F] {sin(deg(x-1))+1.2};
+    \coordinate (O) at (0,0);
+    \coordinate (I) at (1,0);
+    \coordinate (J) at (0,1);
+    \draw [->, color1] (O) -- (I) node[above] {$\mathbf{i}$};
+    \draw [->, color1] (O) -- (J) node[right] {$\mathbf{j}$};
+    \coordinate (P) at (2,2.041471);
+    \fill (P) circle (1.2pt) node[anchor=south west] (Plabel) {$P=f(t)$};
+    \draw[gray, dotted] (P) -- (P|-O);
+    \draw[gray, dotted] (P) -- (P-|O);
+    \draw[->, color2] (O) -- (P);
+    \node at (3.5,3.5) {$\mathbb{R}^2$};
+\end{axis};
+\end{tikzpicture}

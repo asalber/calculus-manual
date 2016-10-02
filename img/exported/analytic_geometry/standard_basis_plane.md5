@@ -1,0 +1,1 @@
+\begingroup \toks 0={macro:->[trim axis left, trim axis right] \begin {axis}[ 2dfun, xmin=-0.2, xmax=2, ymin=-0.20, ymax=2, axis equal=true, clip=false, height=3cm, ] \draw [vector] (0,0) -- (1,0) node[midway, above] {$\mathbf {i}$}; \draw [vector] (0,0) -- (0,1) node[midway, right] {$\mathbf {j}$}; \end {axis} }\xdef \tikzexternallastkey {\the \toks 0 }\endgroup %

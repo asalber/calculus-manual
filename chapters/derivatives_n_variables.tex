@@ -1,4 +1,6 @@
-\section{Cálculo diferencial en varias variables}
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+
+\section{Several Variables Differentiable Calculus}
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Cálculo diferencial en varias variables}
@@ -6,9 +8,101 @@
 \end{frame}
 
 
+\subsection{Vector functions of a single real variable}
+
 % ---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Generalization to curvilinear motion}
+\frametitle{Vector function of a single real variable}
+
+\begin{definition}[Vector function of a single real variable]
+A \emph{vector function of a single real variable} or \emph{vector field of a scalar variable} is a function that maps every scalar value $t\in D\subseteq \mathbb{R}$ into a vector $(x_1(t),\ldots,x_n(t))$ in $\mathbb{R}^n$:
+\[
+\begin{array}{rccl}
+f: & \mathbb{R} & \longrightarrow & \mathbb{R}^n\\
+& t & \longrightarrow & (x_1(t),\ldots, x_n(t))
+\end{array}
+\] 
+where $x_i(t)$, $i=1,\ldots,n$, are real function of a single real variable known as \emph{coordinate functions}.
+\end{definition}
+
+The most common vector field of scalar variable are in the the real plane $\mathbb{R}^2$, where usually they are represented as
+\[
+f(t)=x(t)\mathbf{i}+y(t)\mathbf{j},
+\]
+and in the real space $\mathbb{R}^3$, where usually they are represented as
+\[
+f(t)=x(t)\mathbf{i}+y(t)\mathbf{j}+z(t)\mathbf{k},
+\]
+\end{frame}
+
+
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Graphic representation of vector fields}
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+The graphic representation of a vector field in $\mathbb{R}^2$ is a trajectory in the real plane.
+\begin{center}
+\tikzsetnextfilename{derivatives_n_variables/trajectory_plane}
+\input{img/derivatives_n_variables/trajectory_plane}
+\end{center}
+\end{column}
+\begin{column}{0.5\textwidth}
+The graphic representation of a vector field in $\mathbb{R}^3$ is a trajectory in the real space.
+\begin{center}
+\tikzsetnextfilename{derivatives_n_variables/trajectory_space}
+\input{img/derivatives_n_variables/trajectory_space}
+\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Derivative of a vector field}
+The concept of derivative as the limit of the average rate of change of a function can be extended easily to vector fields.
+
+\begin{definition}[Derivative of a vectorial field]
+A vectorial field $f(t)=(x_1(t),\ldots,x_n(t))$ is \emph{differentiable} at a point $t=a$ if the limit
+\[
+\lim_{\Delta t\rightarrow 0} \frac{f(a+\Delta t)-f(a)}{\Delta t}.
+\]
+exists. 
+In such a case, the value of the limit is known as the \emph{derivative} of the vector field at $a$, and it is written $f'(a)$.
+\end{definition}
+\end{frame}
+
+
+
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Derivative of a vector field}
+Many properties of real functions of a single real variable can be extended to vector fields through its component functions.
+Thus, for instance, the derivative of a vector field can be computed from the derivatives of its component functions. 
+
+\begin{theorem}
+Given a vector field $f(t)=(x_1(t),\ldots,x_n(t))$, if $x_i(t)$ is differentiable at $t=a$ for all $i=1,\ldots,n$, then $f$ is differentiable at $a$ and its derivative is
+\[
+f'(a)=(x_1'(a),\ldots,x_n'(a))
+\]
+\end{theorem}
+
+The proof for a vectorial field in $\mathbb{R}^2$ is easy.
+\begin{align*}
+f'(a)&=\lim_{\Delta t\rightarrow 0} \frac{f(a+\Delta t)-f(a)}{\Delta t} = \lim_{\Delta t\rightarrow 0} \frac{(x(a+\Delta t),y(a+\Delta t))-(x(a),y(a))}{\Delta t} =\\
+&=  \lim_{\Delta t\rightarrow 0} \left(\frac{x(a+\Delta t)-x(a)}{\Delta t},\frac{y(a+\Delta t)-y(a)}{\Delta t}\right) =\\
+&= \left(\lim_{\Delta t\rightarrow 0}\frac{x(a+\Delta t)-x(a)}{\Delta t},\lim_{\Delta t\rightarrow 0}\frac{y(a+\Delta t)-y(a)}{\Delta t}\right) =
+(x'(a),y'(a)).
+\end{align*}
+\end{frame}
+
+
+% ---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Kinematics: Curvilinear motion}
 The notion of derivative as a velocity along a trajectory in the real line can be generalized to a trajectory in any euclidean space $\mathbb{R}^n$.
 
 In case of a two dimensional space $\mathbb{R}^2$, if $f(t)$ describes the position of a moving object in the real plane at any time $t$, taking as reference the coordinates origin $O$ and the unitary vectors $\{\mathbf{i}=(1,0),\mathbf{j}=(0,1)\}$, we can represent the position of the moving object $P$ at every moment $t$ with a vector $\vec{OP}=x(t)\mathbf{i}+y(t)\mathbf{j}$, where the coordinates 
@@ -20,12 +114,12 @@ y=y(t)
 \quad
 t\in \mbox{Dom}(f)
 \]
-are known as \emph{coordinate functions} of $f$; we write $f(t)=(x(t),y(t))$.
+are the \emph{coordinate functions} of $f$.
 
 \begin{center}
 \tikzsetnextfilename{derivatives_1_variable/curvilinear_motion}
-\mode<article>{\input{img/derivatives_1_variable/curvilinear_motion}}
-\mode<presentation>{\scalebox{0.8}{\input{img/derivatives_1_variable/curvilinear_motion}}}
+\mode<article>{\input{img/derivatives_n_variables/curvilinear_motion}}
+\mode<presentation>{\scalebox{0.8}{\input{img/derivatives_n_variables/curvilinear_motion}}}
 \end{center}
 \end{frame}
 
@@ -33,29 +127,9 @@ are known as \emph{coordinate functions} of $f$; we write $f(t)=(x(t),y(t))$.
 % ---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Velocity of a curvilinear motion in the plane}
-In the context of a trajectory $f(t)=(x(t),y(t))$ in the real plane $\mathbb{R}^2$, the derivative of the function $f(t)$ at the moment $a$ is the vector
-\[
-\mathbf{v} = \lim_{\Delta t\rightarrow 0} \frac{f(a+\Delta t)-f(a)}{\Delta t},
-\]
-that is known, as long as the limit exists, as the \emph{velocity} of the trajectory $f$ at moment $a$.
+In this context the derivative of a trajectory $f'(a)=(x_1'(a),\ldots,x_n'(a))$ is the \emph{velocity} vector of the trajectory $f$ at moment $t=a$.
 
-As $f(t)=(x(t),y(t))$,
-\begin{align*}
-f'(a)&=\lim_{\Delta t\rightarrow 0} \frac{f(a+\Delta t)-f(a)}{\Delta t} = \lim_{\Delta t\rightarrow 0} \frac{(x(a+\Delta t),y(a+\Delta t))-(x(a),y(a))}{\Delta t} =\\
-&=  \lim_{\Delta t\rightarrow 0} \left(\frac{x(a+\Delta t)-x(a)}{\Delta t},\frac{y(a+\Delta t)-y(a)}{\Delta t}\right) =\\
-&= \left(\lim_{\Delta t\rightarrow 0}\frac{x(a+\Delta t)-x(a)}{\Delta t},\lim_{\Delta t\rightarrow 0}\frac{y(a+\Delta t)-y(a)}{\Delta t}\right) = (x'(a),y'(a)).
-\end{align*}
-Thus, 
-\[
-\mathbf{v} = x'(a)\mathbf{i}+y'(a)\mathbf{j}.
-\]
-\end{frame}
-
-
-% ---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Velocity of a curvilinear motion in the plane}
-\framesubtitle{Example}
+\structure{\bfseries Example}
 Given the trajectory $f(t) = (\cos t,\sin t)$, $t\in \mathbb{R}$, whose image is the unit circumference centered in the coordinate origin, its coordinate functions are $x(t) = \cos t$, $y(t) = \sin t$, $t\in \mathbb{R}$, and its velocity is
 \[
 \mathbf{v}=f'(t)=(x'(t),y'(t))=(-\sin t, \cos t).
@@ -64,8 +138,8 @@ In the moment $t=\pi/4$, the object is in position $f(\pi/4) = (\cos(\pi/4),\sin
 and it is moving with a velocity $\mathbf{v}=f'(\pi/4)=(-\sin(\pi/4),\cos(\pi/4))=(-\sqrt{2}/2,\sqrt{2}/2)$.
 \begin{center}
 \tikzsetnextfilename{derivatives_1_variable/circumference_trajectory}
-\mode<article>{\input{img/derivatives_1_variable/circumference_trajectory}}
-\mode<presentation>{\scalebox{0.8}{\input{img/derivatives_1_variable/circumference_trajectory}}}
+\mode<article>{\input{img/derivatives_n_variables/circumference_trajectory}}
+\mode<presentation>{\scalebox{0.9}{\input{img/derivatives_n_variables/circumference_trajectory}}}
 \end{center}
 Observe that the module of the velocity vector is always 1 as
 $|\mathbf{v}|=\sqrt{(-\sin t)^2+(\cos t)^2}=1$.
@@ -97,9 +171,11 @@ l:(x,y) &= f(a)+tf'(a) = (x(a),y(a))+t(x'(a),y'(a))\\
 We have seen that for the trajectory $f(t) = (\cos t,\sin t)$, $t\in \mathbb{R}$, whose image is the unit circumference centered at the coordinate origin, the object position at the moment $t=\pi/4$ is $f(\pi/4)=(\sqrt{2}/2,\sqrt{2}/2)$ and its velocity $\mathbf{v}=(-\sqrt{2}/2,\sqrt{2}/2)$. 
 Thus the equation of the tangent line to $f$ at that moment is 
 \[
-l: (x,y) = f(\pi/4)+t\mathbf{v} =
-\left(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right)+t\left(\frac{-\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right) =
-\left(\frac{\sqrt{2}}{2}-t\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}+t\frac{\sqrt{2}}{2}\right).
+\begin{align*}
+l: (x,y) & = f(\pi/4)+t\mathbf{v} =
+\left(\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right)+t\left(\frac{-\sqrt{2}}{2},\frac{\sqrt{2}}{2}\right) =\\
+& =\left(\frac{\sqrt{2}}{2}-t\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}+t\frac{\sqrt{2}}{2}\right).
+\end{align*}
 \]
 \end{frame}
 
@@ -153,7 +229,7 @@ y-\sqrt{2}/2 = \frac{-\sqrt{2}/2}{\sqrt{2}/2}(x-\sqrt{2}/2) \Rightarrow y=-x+\sq
 \frametitle{Normal line to a trajectory in the plane}
 We have seen that the tangent line to a trajectory $f(t)$ at $a$ is the line passing through the point 
 $P=f(a)$ directed by the velocity vector $\mathbf{v}=f'(a)=(x'(a),y'(a))$. 
-If we take as direction vector a vector orthogonal to $\mathbf{v}$, we get another line that is known as \emph{normal line} to the graph of $f$ at moment $a$.
+If we take as direction vector a vector orthogonal to $\mathbf{v}$, we get another line that is known as \emph{normal line} to the trajectory.
 \begin{definition}[Normal line to a trajectory]
 Given a trajectory $f(t)$ in the real plane $\mathbb{R}^2$, the \emph{normal line} to the graph of $f$ at moment $t=a$ is the line with equation
 \[
@@ -234,8 +310,8 @@ and the normal line is
 \frac{x-1}{2} = \frac{y-1}{-1} \Rightarrow y-1 = \frac{-1}{2}(x-1) \Rightarrow y = \frac{-x}{2}+\frac{3}{2}.
 \]
 \begin{center}
-\tikzsetnextfilename{derivatives_1_variable/parable_tangent_normal}
-\input{img/derivatives_1_variable/parable_tangent_normal}
+\tikzsetnextfilename{derivatives_n_variables/parabola_tangent_normal}
+\input{img/derivatives_n_variables/parabola_tangent_normal}
 \end{center}
 \end{frame}
 
@@ -276,1044 +352,1046 @@ and the tangent line to the graph of $f$ at that moment is
 l:(x,y,z)=(0,1,\pi/2)+t(-1,0,1) = (-t,1,t+\pi/2).
 \]
 \begin{center}
-\tikzsetnextfilename{derivatives_1_variable/tangent_trajectory_space}
-\input{img/derivatives_1_variable/tangent_trajectory_space}
-\end{center}
-\end{frame}
-
-\subsection{Funciones de varias variables}
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Necesidad de las funciones de varias variables}
-En numerosos problemas de geometría, física y ciencias naturales nos encontramos a menudo con variables o factores que dependen o están relacionados con otros dos, tres o más factores:
-\begin{itemize}
-\item El área de un triángulo depende de dos factores que son su base y su altura.
-\item El volumen que ocupa un gas perfecto depende de dos factores que son su presión y su temperatura.
-\item El camino recorrido por un cuerpo en un movimiento de caída libre depende de multitud de factores entre los que cabe destacar: el tiempo que dure la caída, el área de la sección transversal del cuerpo, la latitud del lugar, la altura sobre el nivel del mar, la presión del aire, la temperatura del aire, etc.
-\end{itemize}
-Estas dependencias se expresan con funciones de varias variables.
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Funciones de varias variables}
-\begin{definicion}[Función de varias variables]
-Una \emph{función de $n$ variables} de un conjunto $A_1\times \cdots \times A_n$ en un conjunto $B$, es una relación que
-asocia a cada tupla $(a_1,\ldots,a_n)\in A_1\times \cdots\times A_n$ un único elemento de $B$ que se denota
-$f(a_1,\ldots,a_n)$, y se llama imagen de $(a_1,\ldots,a_n)$ mediante $f$.
-\[
-\begin{array}{lccc}
-f: & A_1\times\cdots\times A_n & \longrightarrow & B\\
-   &(a_1,\ldots,a_n) & \longrightarrow & f(a_1,\ldots,a_n)
-\end{array}
-\]
-Cuando $A_1,\ldots,A_n,B\subseteq \mathbb{R}$, entonces se dice que $f$ es
-una función real de $n$ variables reales o bien un \emph{campo escalar}.
-\end{definicion}
-
-\structure{\textbf{Ejemplo}}
-\begin{itemize}
-\item El área de un triángulo es la función real de dos variables reales 
-\[ f(x,y)=\frac{xy}{2}.\]
-\item El volumen de un gas perfecto es otra función real de dos variables
-\[
-v=f(t,p)=\frac{nRt}{p},\quad \mbox{con $n$ y $R$ constantes.}
-\]
-\end{itemize}
-\end{frame}
-
-
-% ---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Gráfica de una función de dos variables}
-La representación gráfica cartesiana de una función de dos variables $f(x,y)$ es una superficie del espacio real
-$\mathbb{R}^3$ donde cada punto de la superficie tiene coordenadas $(x,y,z)$, siendo $z=f(x,y)$.
-\begin{center}
-\scalebox{1}{\input{img/calculo_diferencial_n_variables/coordenadas_3D}}
+\tikzsetnextfilename{derivatives_n_variables/tangent_trajectory_space}
+\input{img/derivatives_n_variables/tangent_trajectory_space}
 \end{center}
 \end{frame}
 
 
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Gráfica de una función de dos variables}
-\framesubtitle{Gráfica del área de un triángulo}
-La función $f(x,y)=\dfrac{xy}{2}$ que mide el área de un triángulo de base $x$ y altura $y$ tiene la siguiente representación gráfica:
-\begin{center}
-\scalebox{1}{\input{img/calculo_diferencial_n_variables/grafica_area_triangulo}}
-\end{center}
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Gráfica de una función de dos variables}
-\framesubtitle{Gráfica de una ``gota de agua''}
-La función $\displaystyle f(x,y)=\frac{\sen(x^2+y^2)}{\sqrt{x^2+y^2}}$ tiene la siguiente representación gráfica tan
-peculiar:
-\begin{center}
-\scalebox{1}{\input{img/calculo_diferencial_n_variables/grafica_gota_agua}}
-\end{center}
-\end{frame}
-
-
-% ---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Conjunto de nivel de un campo escalar}
-\begin{definicion}[Conjunto de nivel]
-Dado un campo ecalar $f:\mathbb{R}^n\rightarrow \mathbb{R}$, se llama \emph{conjunto de nivel} $c$ de $f$ al conjunto
-\[
-C_{f,c}=\{(x_1,\ldots,x_n): f(x_1,\ldots,x_n)=c\}.
-\]
-\end{definicion}
-\structure{\textbf{Ejemplo}}
-Si $f(x,y)=x^2+y^2$ y $P=(1,1)$, el conjunto de nivel de $f$ que incluye al punto $P$ es
-\[
-C_{f,2} = \{(x,y): f(x,y)=f(1,1)=2\} = \{(x,y): x^2+y^2=2\},
-\] 
-que es la circunferencia del plano real centrada en el origen y de radio $\sqrt{2}$.
-\begin{center}
-\scalebox{0.8}{\input{img/calculo_diferencial_n_variables/conjunto_nivel2}}
-\end{center}
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Funciones parciales}
-\begin{definicion}[Función parcial]
-Dado un campo ecalar $f:\mathbb{R}^n\rightarrow \mathbb{R}$, se llama \emph{función parcial} $i$-esima de $f$ a
-cualquier función $f_i:\mathbb{R}\rightarrow \mathbb{R}$ que resulta de fijar todas las variables de $f$ como
-constantes, excepto la variable $i$, es decir:
-\[
-f_i(x)=f(c_1,\ldots,c_{i-1},x,c_{i+1},\ldots,c_{n}),
-\]
-con $c_j$ $(j=1,\ldots, n,\ j\neq i)$ constantes. 
-\end{definicion}
- 
-\structure{\textbf{Ejemplo}} 
-Si consideramos la función del área de un triángulo 
-\[f(x,y)=\frac{xy}{2},\]
-y fijamos el valor de la base $x=c$, entonces el área del triángulo ya sólo depende de la altura y $f$ se convierte en
-una función de una sola variable, que es la función parcial:
-\[
-f_1(y)=f(c,y)=\frac{cy}{2},\quad \mbox{con $c$ constante}.
-\]
-\end{frame}
-
-
-
-\subsection{Noción de derivada parcial}
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Variación de una función con respecto a una variable}
-Al igual que medíamos la variación de una función de una variable, tiene sentido medir la variación de una función de
-varias variables con respecto a cada una de sus variables.
-
-Sea $z=f(x,y)$ un campo escalar de $\mathbb{R}^2$.
-Si estamos en el punto $(x_0,y_0)$ y nos movemos una cantidad $\Delta x$ en la dirección del eje $X$, entonces, al
-mantenerse la coordenada $y$ constante, pasaremos desde el punto $(x_0,y_0)$ al punto $(x_0+\Delta x,y_0)$, y la
-variación que experimenta la función será
-\[
-\Delta z=f(x_0+\Delta x,y_0)-f (x_0,y_0).
-\]
-
-La variación relativa que experimenta la función con respecto a la variable $x$ vendrá dada por el cociente 
-\[\frac{\Delta z}{\Delta x}=\frac{f(x_0+\Delta x,y_0)-f(x_0,y_0)}{\Delta x}.\]
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Tasa de variación instantánea de un campo escalar con respecto a una variable}
-Si en lugar de medir la variación de una función con respecto a una variable en un intervalo, medimos la variación en un
-punto, es decir, cuando $\Delta x$ tiende a 0, entonces obtenemos una tasa de variación instantánea:
-\[
-\lim_{\Delta x\rightarrow 0}\frac{\Delta z}{\Delta x}=\lim_{\Delta x \rightarrow 0}\frac{f(x_0+\Delta x,y_0)-f(x_0,y_0)}{\Delta x}.
-\]
-Al valor del límite, cuando existe, también se le conoce como \emph{derivada parcial} de $f$ con respecto a la variable $x$ en el punto $(x_0,y_0)$ y se nota
-\[
-\frac{\partial f}{\partial x}(x_0,y_0).
-\]
-
-Esta derivada parcial mide la tasa de variación instantánea de $f$ en el punto $P=(x_0,y_0)$ cuando $P$ se mueve en la dirección del eje $X$.
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Interpretación geométrica de la derivada parcial}
-Geométricamente, $z=f(x,y)$ define una superficie. Si se corta esta superficie con el plano de ecuación $y=y_0$ (es
-decir, si $y$ se fija como una constante), la intersección de este plano con la superficie es una curva plana cuya
-pendiente en el punto $(x_0,y_0)$ es la derivada parcial de $f$ con respecto a $x$ en el punto $(x_0,y_0)$.
-
-\begin{center}
-%\scalbebox{1}{\input{img/derivadas_parciales/grafica_tangente_parcial}}
-\includegraphics[scale=0.4]{img/tangentesuperficie}
-\end{center}
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Derivada parcial}
-El concepto de derivada parcial visto para funciones de dos variables puede extenderse fácilmente para funciones de $n$
-variables.
-
-\begin{definicion}[Derivada parcial]
-Dada una función de $n$ variables $f(x_1,\ldots,x_n)$, se dice que $f$ es \emph{derivable parcialmente} con respecto a
-la variable $x_i$ en el punto $a=(a_1,\ldots,a_n)$ si existe el límite
-\[
-\lim_{h\rightarrow 0} \frac{f(a_1,\ldots,a_{i-1},a_i+h,a_{i+1},\ldots,a_n)-f(a_1,\ldots,a_{i-1},a_i,a_{i+1},\ldots,a_n)} {h}.
-\]
-En tal caso, al valor del límite se le llama \emph{derivada parcial} de $f$ en $a$ con respecto a la variable $x_i$, y
-se denota
-\[
-f'_{x_i}(a)=\frac{\partial f}{\partial x_i}(a).
-\]
-\end{definicion}
-\structure{\bf Observación}
-La definición de derivada para funciones de una variable es un caso particular de esta definición para $n=1$.
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Cálculo de la derivada parcial}
-Al medir la variación de $f$ con respecto a la variación de una sola de sus variables $x_i$ en un punto
-$a=(a_1,\ldots,a_n)$, el resto de las variables se pueden considerar como constantes y, en tal caso, podemos ver a $f$
-como una función parcial $i$-ésima 
-\[
-f_i(x_i)=f(a_1,\ldots,a_{i-1},x_i,a_{i+1},\ldots,a_n).
-\]
-
-La derivada parcial de $f$ con respecto a $x_i$ puede calcularse derivando esta función:
-\[
-\frac{\partial f}{\partial x_i}(a)=f_i'(a_i).
-\]
-
-\begin{block}{Regla}
-Para derivar parcialmente $f(x_1,\ldots,x_n)$ con respecto a una variable $x_i$, se deriva $f$ como si la única variable
-fuese $x_i$, tratando el resto de las variables como constantes.
-\end{block} 
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Cálculo de la derivada parcial}
-\framesubtitle{Ejemplo con el volumen de un gas perfecto}
-En la ecuación de estado de los gases perfectos, el volumen es una función que depende de dos variables  
-\[v(t,p)=\frac{nRt}{p},\]
-donde $t$ mide la temperatura, $p$ la presión y $n$ y $R$ son constantes.
-
-La tasa de variación instantánea que experimenta el volumen con respecto a la presión viene dada por la derivada parcial de $v$ con respecto a $p$.
-
-Para calcular esta derivada parcial se fija $t$ como constante y se deriva $v$ como si la única variable fuese $p$:
-\[
-\frac{\partial v}{\partial p}(t,p)=\frac{d}{dp}\left(\frac{nRt}{p}\right)_{\mbox{\scriptsize $t=$cte}}=\frac{-nRt}{p^2}.
-\]
-
-Del mismo modo, la tasa de variación instantánea del volumen con respecto a la temperatura es:
-\[
-\frac{\partial v}{\partial t}(t,p)=\frac{d}{dt}\left(\frac{nRt}{p}\right)_{\mbox{\scriptsize$p=$cte}}=\frac{nR}{p}.
-\]
-\end{frame}
-
-
-
-\subsection{Vector gradiente}
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Vector gradiente}
-\begin{definicion}[Vector gradiente]
-Dado un campo escalar $f(x_1,\ldots,x_n)$, se llama \emph{gradiente} de $f$, y se escribe $\nabla f$, a la función que a
-cada punto $a=(a_1,\ldots,a_n)$ le asigna el vector cuyas coordenadas cartesianas son las derivadas parciales de $f$ en
-$a$,
-\[
-\nabla f(a)=\left(\frac{\partial f}{\partial x_1}(a),\ldots,\frac{\partial f}{\partial x_n}(a)\right).
-\]
-\end{definicion}
-
-Más adelante se mostrará que vector gradiente en un punto dado tiene la misma magnitud y dirección que la velocidad máxima de variación de la
-función en ese punto. 
-
-De este modo, \alert{\emph{$\nabla f(a)$ indica la dirección de máximo crecimiento de $f$ en el punto $a$}}, mientras que $- \nabla f(a)$ indica la dirección de máximo decrecimiento.
-\end{frame}
-
-
-
-% ---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Cálculo del vector gradiente}
-\framesubtitle{Ejemplo con una función de temperatura}
-Al calentar una superficie la temperatura $t$ (en ºC) en cada punto $(x,y,z)$ (en m) de dicha superficie viene dada por
-la función:
-\[ 
-t(x,y,z)=\frac{x}{y}+z^2. 
-\]
-\emph{¿En qué dirección y con qué magnitud aumentará más rápidamente la temperatura en el punto $(2,1,1)$ de dicha superficie?}
-
-
-La dirección en la que más rápidamente aumenta la temperatura nos la da el vector gradiente 
-\[
-\nabla t(x,y,z)=\left(\frac{\partial t}{\partial x}(x,y,z),\frac{\partial t}{\partial y}(x,y,z),\frac{\partial t}{\partial
-z}(x,y,z)\right)=\left(\frac{1}{y},\frac{-x}{y^2},2z\right).
-\]
-
-En el punto $(2,1,1)$ dicha dirección será
-\[
-\nabla t(2,1,1)=\left(\frac{1}{1},\frac{-2}{1^2},2\cdot 1\right)=(1,-2,2),
-\]
-y su magnitud 
-\[
-|\nabla f(2,1,1)|=|\sqrt{1^2+(-2)^2+2^2}|=|\sqrt{9}|=3 \mbox{ $^\circ$C/m}.
-\]
-\end{frame}
-
-
-
-\subsection{Composición de una trayectoria con un campo escalar}
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Composición de una trayectoria con un campo escalar. Regla de la cadena}
-Si $f:\mathbb{R}^n\rightarrow \mathbb{R}$ es un campo escalar y $g:\mathbb{R}\rightarrow \mathbb{R}^n$ es una
-trayectoría, entonces es posible componer $g$ con $f$, de manera que $f\circ g:\mathbb{R}\rightarrow \mathbb{R}$ es una
-función real de variable real.
-
-La regla de la cadena para derivar la composición de una trayectoria con un campo escalar dice 
-\[
-(f\circ g)'(t) = \nabla f(g(t))\cdot g'(t) 
-\]  
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Composición de una trayectoria con un campo escalar. Regla de la cadena}
-\framesubtitle{Ejemplo}
-Si se toma el campo escalar del plano real $f(x,y)=x^2y$ y la trayectoria $g(t)=(\cos t,\sen t)$ $t\in [0,2\pi]$ del mismo plano, entonces
-\[
-\nabla f(x,y) = (2xy, x^2) \quad  \mbox{y} \quad g'(t) = (-\sen t, \cos t),
-\]
-y 
-\begin{align*}
-(f\circ g)'(t) &= \nabla f(g(t))\cdot g'(t) = (2\cos t\sen t,\cos^2 t)\cdot (-\sen t,\cos t) =\\
-&= -2\cos t\sen^2 t+\cos^3 t.
-\end{align*}
-
-Se puede llegar al mismo resultado, sin aplicar la regla de la cadena, derivando directamente la función compuesta
-\[
-(f\circ g)(t) = f(g(t)) = f(\cos t, \sen t) = \cos^2 t\sen t,
-\]
-de manera que
-\[
-(f\circ g)'(t) = 2\cos t(-\sen t)\sen t+\cos^2 t \cos t = -2\cos t\sen^2 t+\cos^3 t.
-\]
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Composición de una trayectoria con un campo escalar. Regla de la cadena}
-La regla de la cadena para la composición de un campo escalar con una trayectoria permite obtener fácilmente el álgebra de derivadas para funciones reales de una variable real:
-\begin{align*}
-(u+v)' &= u'+v'\\
-(uv)' &= u'v+uv'\\
-\left(\frac{u}{v}\right)' &= \frac{u'v-uv'}{v^2}\\
-(u\circ v)' &= u'(v)v'
-\end{align*}
-
-Para deducir la derivada de la suma se toma el campo escalar $f(x,y)=x+y$ y la trayectoria $g(t)=(u(t),v(t))$, de manera que aplicando la regla de la cadena se tiene
-\[
-(u+v)'(t) = (f\circ g)'(t) = \nabla f(g(t))\cdot g'(t) = (1,1)\cdot (u'(t),v'(t)) = u'(t)+v'(t).
-\]
-y para deducir derivada del producto, tomando $f(x,y)=xy$, se tiene
-\[
-(uv)'(t) = (f\circ g)'(t) = \nabla f(g(t))\cdot g'(t) = (v(t),u(t))\cdot (u'(t),v'(t)) = u'(t)v(t)+u(t)v'(t).
-\]
-\end{frame}
-
-
-
-\subsection{Derivada direccional}
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Derivada direccional}
-Para un campo escalar $f(x,y)$ de $\mathbb{R}^2$ y un punto $P=(x_0,y_0)$, se vió que $\dfrac{\partial f}{\partial x}$
-es la tasa de variación instantánea de $f$ con respecto a $x$ en el punto $P$, es decir, cuando nos desplazamos desde el
-punto $P$ en la dirección del eje $X$.
-
-Del mismo modo, $\dfrac{\partial f}{\partial y}$ es la tasa de variación instantánea de $f$ con respecto a $y$ en el
-punto $P$, es decir, cuando nos desplazamos desde el punto $P$ en la dirección del eje $Y$.
-
-Pero, \emph {¿qué pasa si nos movemos en cualquier otra dirección?}
-
-La tasa de variación instantánea de $f$ en un punto $P$ en la dirección de un vector unitario cualquiera $u$ se conoce como \emph{derivada direccional}.
-
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Derivada direccional}
-\begin{definicion}[Derivada direccional]
-Dado un campo escalar $f$ de $\mathbb{R}^n$, un punto $P$ y un vector unitario $\mathbf{u}$ en ese espacio, el límite
-\[
-f'_{\mathbf{u}}(P) = \lim_{h\rightarrow 0}\frac{f(P+h\mathbf{u})-f(P)}{h},
-\] 
-cuando existe, se llama \emph{derivada direccional} de $f$ en el punto $P$ en la dirección de $\mathbf{u}$.
-\end{definicion}
-Si se considera un vector unitario $\mathbf{u}$, la trayectoria que pasa por $P$, dirigida por $\mathbf{u}$, tiene ecuación
-\[
-g(t)=P+t\mathbf{u},\ t\in\mathbb{R},
-\]
-que para $t=0$, pasa por $P=g(0)$ con velocidad $\mathbf{u}=g'(0)$.
-
-Así, la tasa de variación de $f$ a partir del punto $P$ en la dirección de $\mathbf{u}$ es
-\[
-(f\circ g)'(0) = \nabla f(g(0))\cdot g'(0) = \nabla f(P)\cdot \mathbf{u}.
-\]
-
-Obsérvese que las derivadas parciales son las derivadas direccionales en las direcciones de los vectores coordenados. 
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Cálculo de la derivada direccional}
-\framesubtitle{Ejemplo}
-Dada la función $f(x,y) = x^2+y^2$, su vector gradiente es
-\[
-\nabla f(x,y) = (2x,2y),
-\]
-de manera que la derivada direccional en el punto $P=(1,1)$, en la dirección del vector unitario $\mathbf{u}=(1/\sqrt{2},1/\sqrt{2})$ es
-\[
-f'_{\mathbf{u}}(P) = \nabla f(P)\cdot \mathbf{u} = (2,2)\cdot(1/\sqrt{2},1/\sqrt{2}) = \frac{2}{\sqrt{2}}+\frac{2}{\sqrt{2}} = \frac{4}{\sqrt{2}}.
-\]
-
-Para calcular la derivada direccional en la dirección de un vector no unitario $\mathbf{v}$, basta con convertirlo en unitario mediante la transformación
-\[
-\mathbf{v'}=\frac{\mathbf{v}}{|\mathbf{v}|}.
-\] 
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Crecimiento de un campo escalar a partir del gradiente}
-Como se ha visto, para un vector unitario $\mathbf{u}$
-\[
-f'_{\mathbf{u}}(P) = \nabla f(P)\cdot \mathbf{u} = |\nabla f(P)|\cos \theta,
-\] 
-donde $\theta$ es el ángulo que forma $\mathbf{u}$ con el vector gradiente $\nabla f(P)$.
-
-Teniendo en cuenta que $-1\leq \cos\theta\leq 1$, para cualquier vector $\mathbf{u}$ se cumple 
-\[
--|\nabla f(P)|\leq f'_{\mathbf{u}}(P)\leq |\nabla f(P)|.
-\]
-Además, si $\mathbf{u}$ tiene la misma dirección y sentido que el gradiente, se tiene $f'_{\mathbf{u}}(P)=|\nabla f(P)|\cos 0=|\nabla f(P)|$. 
-Por tanto, el \alert{\emph{crecimiento máximo de un campo escalar se produce en la dirección y sentido del gradiente}}.
-
-Del mismo modo, si $\mathbf{u}$ tiene la misma dirección y sentido opuesto al gradiente, se tiene $f'_{\mathbf{u}}(P)=|\nabla f(P)|\cos \pi=-|\nabla f(P)|$. 
-Por tanto, el \alert{\emph{decrecimiento máximo de un campo escalar se produce en la dirección y sentido opuesto al gradiente}}.  
-\end{frame}
-
-
-\subsection{Derivación implícita}
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Derivación implícita}
-Si se sabe que la ecuación 
-\[
-f(x,y)=0
-\]
-define a $y$ como función de $x$, $y=h(x)$, alrededor de cierto valor $x=x_0$ para el que $y=h(x_0)=y_0$, entonces, si se toma la trayectoria $g(x)=(x,h(x))$, la ecuación anterior se puede expresar como
-\[
-(f\circ g)(x) = f(g(x)) = f(x,h(x))=0,
-\]
-de modo que usando la regla de la cadena sobre se tiene
-\[
-(f\circ g)'(x) = \nabla f(g(x))\cdot g'(x) = \left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}\right)\cdot (1,h'(x)) = 
-\frac{\partial f}{\partial x}+\frac{\partial f}{\partial y}h'(x) = 0,
-\] 
-de donde se deduce
-\[
-y'=h'(x)=\frac{-\dfrac{\partial f}{\partial x}}{\dfrac{\partial f}{\partial y}}
-\]
-A este proceso que permite obtener $y'$ en un entorno de $x_0$ sin disponer de la fórmula explícita $y=h(x)$, se le llama \emph{derivación implícita}.
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Derivación implícita}
-\framesubtitle{Ejemplo}
-La ecuación $x^2+y^2=1$ define a la circunferencia de radio 1 centrada en el origen de coordenadas, que también puede expresarse como
-\[
-f(x,y) = x^2+y^2-1 = 0.
-\]
-Si se piensa en $y$ como función implícita de $x$, se tiene 
-\[
-y'=\frac{-\dfrac{\partial f}{\partial x}}{\dfrac{\partial f}{\partial y}} = \frac{-2x}{2y}=\frac{-x}{y}.
-\]
-Podría llegarse al mismo resultado, despejando $y$ de la ecuación de la circunferencia, 
-\[
-x^2+y^2=1 \Leftrightarrow y^2=1-x^2 \Leftrightarrow y= \pm\sqrt{1-x^2}.
-\]
-Si se toma la raíz positiva, que corresponde a la semicircunferencia superior, la derivada vale
-\[
-y' = \frac{1}{2\sqrt{1-x^2}}(-2x) = \frac{-x}{\sqrt{1-x^2}}, 
-\]
-que coincide con el resultado de la derivación implícita, teniendo en cuenta que $y=\sqrt{1-x^2}$.
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Propiedad del gradiente}
-\begin{teorema}
-Sea $C$ el conjunto de nivel de un campo escalar $f$ que incluye a un punto $P$. 
-Si $\mathbf{v}$ es la velocidad al pasar por $P$ de una trayectoria que circule por $C$, entonces
-\[
-\nabla f(P) \cdot \mathbf{v} = 0.
-\] 
-Es decir, el vector gradiente de $f$ en $P$ es normal a $C$ en $P$, siempre que no sea nulo.
-\end{teorema}
-\structure{\textbf{Demostración}}
-Si se considera una trayectoria $g(t)$ a lo largo del conjunto de nivel $C$ que pase por $P=g(t_0)$, de modo que $\mathbf{v}=g'(t_0)$, entonces 
-\[
-(f\circ g)(t) = f(g(t)) = f(P),
-\]
-que es constante para cualquier $t$, y al aplicar la regla de la cadena se tiene
-\[
-(f\circ g)'(t) = \nabla f(g(t))\cdot  g'(t) = 0,
-\]
-de modo que, cuanto $t=t_0$, se tiene 
-\[
-\nabla f(P)\cdot \mathbf{v} = 0.
-\]
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Rectas normal y tangente a una linea en el plano}
-Según el resultado anterior, la recta normal a una línea $f(x,y)=0$ en un punto $P=(x_0,y_0)$, tiene ecuación
-\[
-P+t\nabla f(P) = (x_0,y_0)+t\nabla f(x_0,y_0).
-\]
-\structure{\textbf{Ejemplo}}
-Dado el campo escalar $f(x,y)=x^2+y^2-1$, y el punto $P=(0,1)$, resulta que el conjunto de nivel que pasa por $P$, para el que $f(x,y)=f(P)=0$ es la circunferencia de radio 1 centrada en el origen.
-Así pues, tomando como vector normal el gradiente de $f$
-\[
-\nabla f(x,y) = (2x,2y),
-\] 
-que en el punto $P=(0,1)$ vale $\nabla f(0,1) = (0,2)$, la recta normal a la circunferencia en $P$ es
-\[
-P+t\nabla f(P) = (0,1)+t(0,2) = (0,1+2t),
-\]
-que se trata de la recta vertical $x=0$, que coincide con el eje $Y$.
-
-y la recta tangente a la circunferencia en $P$ es
-\[
-((x,y)-P)\cdot \nabla f(P) = ((x,y)-(0,1))\cdot (0,2) = (x,y-1)\cdot(0,2) = 2(y-1) = 0 \Rightarrow y=1. 
-\]
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Recta normal y plano tangente a una superficie}
-De mismo modo, si en lugar de una línea en el plano se tiene una superficie $f(x,y,z)=0$, en el punto $P=(x_0,y_0,z_0)$ la recta normal tiene ecuación
-\[
-P+t\nabla f(P) = (x_0,y_0,z_0)+t\nabla f(x_0,y_0,z_0).
-\]
-\structure{\textbf{Ejemplo}}
-Dada el campo escalar $f(x,y,z)=x^2+y^2-z$, y el punto $P=(1,1,2)$, resulta que el conjunto de nivel que pasa por $P$, para el que $f(x,y)=f(P)=0$, es el paraboloide $z=x^2+y^2$.
-Así pues, tomando como vector normal el gradiente de $f$, que vale  
-\[
-\nabla f(x,y,z) = (2x,2y,-1),
-\] 
-que en el punto $P=(1,1,2)$ vale $\nabla f(1,1,2) = (2,2,-1)$, la recta normal al paraboloide en $P$ es
-\[
-P+t\nabla f(P) = (1,1,2)+t\nabla f(1,1,2) = (1,1,2)+t(2,2,-1) = (1+2t,1+2t,2-t),
-\]
-que se trata de la recta de ecuaciones  $x=y$ y $x=5-2z$.
-
-Y el plano tangente al paraboloide en $P$ es
-\begin{align*}
-((x,y,z)-P)\cdot \nabla f(P) &= ((x,y,z)-(1,1,2))(2,2,-1) = (x-1,y-1,z-2)(2,2,-1)=\\
- &= 2(x-1)+2(y-1)-(z-2) = 2x+2y-z-2= 0.
-\end{align*}
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Recta normal y plano tangente a una superficie}
-\framesubtitle{Ejemplo}
-La gráfica del paraboloide $f(x,y,z)=x^2+y^2-z=0$ y su plano tangente en el punto $P=(1,1,2)$ es 
-\begin{center}
-\scalebox{1}{\input{img/calculo_diferencial_n_variables/plano_tangente_paraboloide}}
-\end{center}
-\end{frame}
-
-
-\subsection{Derivadas parciales de segundo orden}
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Derivadas parciales de segundo orden}
-Las derivadas parciales de una función son, a su vez, funciones de varias variables que muchas veces pueden volverse a
-derivar parcialmente con respecto a alguna de sus variables. 
-
-Si una función $f(x_1,\ldots,x_n)$ tiene derivada parcial $f'_{x_i}(x_1,\ldots,x_n)$ con respecto a la variable $x_i$ en un conjunto $A$, entonces podemos derivar de nuevo parcialmente $f'_{x_i}$ con respecto a la variable $x_j$. Esta segunda derivada, cuando existe, se llama \emph{derivada parcial de segundo orden} de $f$ con respecto a las variables $x_i$ y $x_j$, y se nota
-\[
-\frac{\partial ^2 f}{\partial x_j \partial x_i}= \frac{\partial}{\partial x_j}\left(\frac{\partial f}{\partial x_i}\right).
-\]
-
-De forma análoga se definen las derivadas de orden superior.
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Cálculo de las derivadas parciales de segundo orden}
-La función de dos variables
-\[f(x,y)=x^y\]
-tiene cuatro derivadas parciales de segundo orden, que son:
-\begin{align*}
-\frac{\partial^2 f}{\partial x^2}(x,y) &=
-\frac{\partial}{\partial x}\left(\frac{\partial f}{\partial x}(x,y)\right) =
-\frac{\partial}{\partial x}\left(yx^{y-1}\right) =
-y(y-1)x^{y-2},\\
-\frac{\partial^2 f}{\partial y \partial x}(x,y) &=
-\frac{\partial}{\partial y}\left(\frac{\partial f}{\partial x}(x,y)\right) =
-\frac{\partial}{\partial y}\left(yx^{y-1}\right) =
-x^{y-1}+yx^{y-1}\log x,\\
-\frac{\partial^2 f}{\partial x \partial y}(x,y) &=
-\frac{\partial}{\partial x}\left(\frac{\partial f}{\partial y}(x,y)\right) =
-\frac{\partial}{\partial x}\left(x^y\log x \right) =
-yx^{y-1}\log x+x^y\frac{1}{x},\\
-\frac{\partial^2 f}{\partial y^2}(x,y) &=
-\frac{\partial}{\partial y}\left(\frac{\partial f}{\partial y}(x,y)\right) =
-\frac{\partial}{\partial y}\left(x^y\log x \right) =
-x^y(\log x)^2.
-\end{align*}
-\end{frame}
-
-
-\subsection{Matriz hessiana}
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Matriz hessiana y f hessiano}
-\begin{definicion}[Matriz hessiana]
-Dada una función de varias variables $f(x_1,\ldots,x_n)$, para la que existen todas sus derivadas parciales de segundo
-orden en un punto $a=(a_1,\ldots,a_n)$, se define la \emph{matriz hessiana} de $f$ en $a$, y se nota $\nabla^2f(a)$, como la
-matriz cuadrada cuyos elementos son
-\[
-\nabla^2f(a)=\left(
-\begin{array}{cccc}
-\dfrac{\partial^2 f}{\partial x_1^2}(a) & 
-\dfrac{\partial^2 f}{\partial x_1 \partial x_2}(a) &
-\cdots &
-\dfrac{\partial^2 f}{\partial x_1 \partial x_n}(a)\\
-\dfrac{\partial^2 f}{\partial x_2 \partial x_1}(a) &
-\dfrac{\partial^2 f}{\partial x_2^2}(a) & 
-\cdots &
-\dfrac{\partial^2 f}{\partial x_2 \partial x_n}(a)\\
-\vdots & \vdots & \ddots & \vdots \\
-\dfrac{\partial^2 f}{\partial x_n \partial x_1}(a) &
-\dfrac{\partial^2 f}{\partial x_n \partial x_2}(a) &
-\cdots &
-\dfrac{\partial^2 f}{\partial x_n^2}(a)
-\end{array}
-\right)
-\]
-Al determinante de esta matriz se le llama \emph{hessiano} de $f$ en $a$, y se nota $Hf(a)=|\nabla^2f(a)|$.
-\end{definicion}
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Cálculo de la matriz hessiana y el hessiano}
-Consideremos de nuevo la función de dos variables
-\[f(x,y)=x^y.\]
-Su matriz hessiana es:
-\[
-\nabla^2f(x,y)=\left(
-\begin{array}{cc}
-\dfrac{\partial^2 f}{\partial x^2} & \dfrac{\partial^2 f}{\partial x \partial y}\\
-\dfrac{\partial^2 f}{\partial y \partial x} & \dfrac{\partial^2 f}{\partial y^2} 
-\end{array}
-\right)
-=
-\left(
-\begin{array}{cc}
-y(y-1)x^{y-2} & x^{y-1}(y\log x+1) \\
-x^{y-1}(y\log x+1) & x^y(\log x)^2
-\end{array}
-\right).
-\]
-
-En el punto $(1,2)$ la matriz vale
-\[
-\nabla^2f(1,2)=\left(
-\begin{array}{cc}
-2(2-1)1^{2-2} & 1^{2-1}(2\log 1+1) \\
-1^{2-1}(2\log 1+1) & 1^2(\log 1)^2
-\end{array}
-\right)
-=
-\left(
-\begin{array}{cc}
-2 & 1 \\
-1 & 0 
-\end{array}
-\right).
-\]
-
-Y el hessiano en dicho punto vale
-\[ 
-Hf(1,2)=\left|
-\begin{array}{cc}
-2 & 1 \\
-1 & 0
-\end{array}
-\right|=
-2\cdot 0-1\cdot1= -1.
-\]
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Igualdad de las derivadas cruzadas}
-En el ejemplo anterior se aprecia que las \emph{derivadas cruzadas} de segundo orden $\frac{\partial^2 f}{\partial y\partial x}$ y $\frac{\partial^2 f}{\partial x\partial y}$ coinciden. Ello es debido al siguiente teorema: 
-
-\begin{teorema}[Igualdad derivadas cruzadas]
-Si $f(x,y)$ es una función tal que sus derivadas parciales $\frac{\partial f}{\partial x}$, $\frac{\partial f}{\partial y}$, $\frac{\partial^2 f}{\partial y\partial x}$ y $\frac{\partial^2 f}{\partial x\partial y}$ existen y son continuas en un conjunto abierto $A$, entonces
-\[
-\frac{\partial^2 f}{\partial y\partial x}=\frac{\partial^2 f}{\partial x\partial y}.
-\]
-\end{teorema}
-
-Una consecuencia del teorema es que, al calcular una derivada parcial de segundo orden que cumpla lo anterior, \alert{\emph{¡el orden en que se realicen las derivadas parciales no importa!}}
-
-Si el teorema se cumple para todas las derivadas parciales de segundo orden, entonces la matriz hessiana es simétrica. 
-\end{frame}
-
-
-
-\subsection{Fórmula de Taylor}
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Aproximación lineal de un campo escalar}
-Ya se vio cómo aproximar funciones de una variable mediante polinomios de Taylor. 
-Esto también se puede generalizar a la aproximación de campos escalares mediante polinomios de varias variables. 
-
-Si $P$ es un punto del dominio de un campo escalar $f$ y $\mathbf{v}$ un vector, la \emph{fórmula de Taylor} de primer grado de $f$ alrededor del punto $P$ es
-\[
-f(P+\mathbf{v}) = f(P) + \nabla f(P)\cdot \mathbf{v} +R^1_{f,P}(\mathbf{v}),
-\]
-donde 
-\begin{align*}
-P^1_{f,P}(\mathbf{v}) = f(P)+\nabla f(P)\mathbf{v}
-\end{align*}
-es el \emph{polinomio de Taylor} de primer grado de $f$ en el punto $P$, y $R^1_{f,P}(\mathbf{v})$ es el \emph{resto de taylor} para el vector $\mathbf{v}$, y mide el error cometido en la aproximación.
-
-Se cumple que  
-\[
-\lim_{|\mathbf{v}|\rightarrow 0} \frac{R^1_{f,P}(\mathbf{v})}{|\mathbf{v}|} = 0
-\]
-
-Obsérvese que el polinomio de Taylor de primer grado coincide con el plano tangente a $f$ en $P$.
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Aproximación lineal de un campo escalar}
-\framesubtitle{Campo escalar de dos variables}
-Si $f$ es un campo escalar de dos variables $f(x,y)$ y $P=(x_0,y_0)$, teniendo en cuenta que para un punto cualquiera $Q=(x,y)$, el vector $\mathbf{v}=\vec{PQ}=(x-x_0,y-y_0)$, el polinomio de Taylor de $f$
-en el punto $P$, puede expresarse
-\begin{align*}
-P^1_{f,P}(x,y) &= f(x_0,y_0)+\nabla f(x_0,y_0)(x-x_0,y-y_0) =\\
-&= f(x_0,y_0)+\frac{\partial f}{\partial x}(x_0,y_0)(x-x_0)+\frac{\partial f}{\partial y}(x_0,y_0)(y-y_0).
-\end{align*}
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Aproximación lineal de un campo escalar}
-\framesubtitle{Ejemplo}
-Dado el campo escalar $f(x,y)=\log(xy)$, su gradiente es
-\[
-\nabla f(x,y) = \left(\frac{1}{x},\frac{1}{y}\right),
-\]
-y el polinomio de Taylor de primer grado en el punto $P=(1,1)$ es
-\begin{align*}
-P^1_{f,P}(x,y) &= f(1,1) +\nabla f(1,1)\cdot (x-1,y-1) = \\
-&= \log 1+(1,1)\cdot(x-1,y-1) = x-1+y-1 = x+y-2.\\
-\end{align*}
-Este polinomio, permite aproximar el valor de $f$ cerca del punto $P$.
-Por ejemplo
-\[ 
-f(1.01,1.01) \approx P^1_{f,P}(1.01,1.01) = 1.01+1.01-2 = 0.02.
-\]
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Aproximación cuadrática de un campo escalar}
-Si $P$ es un punto del dominio de un campo escalar $f$ y $\mathbf{v}$ un vector, la \emph{fórmula de Taylor} de segundo
-grado de $f$ alrededor del punto $P$ es
-\[
-f(P+\mathbf{v}) = f(P) + \nabla f(P)\cdot \mathbf{v} + \frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v} + R^2_{f,P}(\mathbf{v}),
-\]
-donde 
-\begin{align*}
-P^2_{f,P}(\mathbf{v})&=f(P)+\nabla f(P)\mathbf{v}+\frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}
-\end{align*}
-es el \emph{polinomio de Taylor} de segundo grado de $f$ en el punto $P$, y $R^2_{f,P}(\mathbf{v})$ es el \emph{resto de taylor} para el vector $\mathbf{v}$.
-
-Se cumple que  
-\[
-\lim_{|\mathbf{v}\rightarrow 0|} \frac{R^2_{f,P}(\mathbf{v})}{|\mathbf{v}|^2} = 0
-\]
-lo que indica que el resto es mucho más pequeño que el cuadrado del módulo de $\mathbf{v}$.
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Aproximación cuadrática de un campo escalar}
-\framesubtitle{Campo escalar de dos variables}
-Si $f$ es un campo escalar de dos variables $f(x,y)$ y $P=(x_0,y_0)$, el polinomio de Taylor de $f$ en el punto $P$, puede expresarse
-\begin{multline*}
-P^2_{f,P}(x,y) = f(x_0,y_0)+\nabla f(x_0,y_0)(x-x_0,y-y_0) +\\
-+\frac{1}{2}(x-x_0,y-y_0)\nabla^2f(x_0,y_0)(x-x_0,y-y_0)= \\
-= f(x_0,y_0)+\frac{\partial f}{\partial x}(x_0,y_0)(x-x_0)+\frac{\partial f}{\partial y}(x_0,y_0)(y-y_0)+\\
-+\frac{1}{2}\left(\frac{\partial^2 f}{\partial x^2}(x_0,y_0) (x-x_0)^2 + 2\frac{\partial^2 f}{\partial y\partial x}(x_0,y_0) (x-x_0)(y-y_0) + \frac{\partial^2 f}{\partial y^2}(x_0,y_0) (y-y_0)^2\right)
-\end{multline*}
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Aproximación cuadrática de un campo escalar}
-\framesubtitle{Ejemplo}
-Dado el campo escalar $f(x,y)=\log(xy)$, su gradiente es
-\[
-\nabla f(x,y) = \left(\frac{1}{x},\frac{1}{y}\right),
-\]
-y su matriz hessiana es 
-\[
-Hf(x,y) = \left(
-\begin{array}{cc}
-\frac{-1}{x^2} & 0\\
-0 & \frac{-1}{y^2}
-\end{array}
-\right)
-\]
-y el polinomio de Taylor de segundo grado en el punto $P=(1,1)$ es
-\begin{align*}
-P^2_{f,P}(x,y) &= f(1,1) +\nabla f(1,1)\cdot (x-1,y-1) + \frac{1}{2}(x-1,y-1)\nabla^2f(1,1)\cdot(x-1,y-1)=\\
-&= \log 1+(1,1)\cdot(x-1,y-1) + \frac{1}{2}(x-1,y-1)
-\left(
-\begin{array}{cc}
--1 & 0\\
-0 & -1
-\end{array}
-\right)
-\left(
-\begin{array}{c}
-x-1\\
-y-1
-\end{array}
-\right)
-= \\
-&= x-1+y-1+\frac{-x^2-y^2+2x+2y-2}{2} = \frac{-x^2-y^2+4x+4y-6}{2}.
-\end{align*}
-Así, $f(1.01,1.01) \approx P^1_{f,P}(1.01,1.01) = \frac{-1.01^2-1.01^2+4\cdot 1.01+4\cdot 1.01-6}{2} = 0.0199$.
-\end{frame}
-
-
-\subsection{Extremos}
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Extremos de un campo escalar}
-\begin{definicion}[Máximo y mínimo relativos]
-Dado un campo escalar $f$ de $\mathbb{R}^n$, se dice que un punto $P$ es un \emph{máximo relativo} de $f$ si existe un valor $\epsilon>0$ tal que
-\[
-f(P)\geq f(X)\ \forall X, |\vec{PX}|<\epsilon.
-\] 
-Del mismo modo se dice que un punto $P$ es un \emph{mínimo relativo} de $f$ si existe un valor $\epsilon>0$ tal que
-\[
-f(P)\leq f(X)\ \forall X, |\vec{PX}|<\epsilon.
-\] 
-A los máximos y mínimos de $f$ se les conoce como \emph{extremos relativos} de $f$.
-\end{definicion}
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Anulación del gradiente en los extremos}
-\begin{teorema}
-Si $P$ es un extremo de un campo escalar $f$ de $\mathbb{R}^n$, entonces $P$ es un punto crítico de $f$, es decir,
-\[
-\nabla f(P) = 0.
-\]
-\end{teorema}
-
-\structure{\textbf{Demostración}} Tomando la trayectoria que pasa por $P$ con la dirección y sentido del gradiente,
-\[
-g(t)=P+t\nabla f(P),
-\] 
-la función $h=(f\circ g)(t)$ no decrece en $t=0$ ya que 
-\[
-h'(0)= (f\circ g)'(0) = \nabla f(g(0))\cdot g'(0) = \nabla f(P)\cdot \nabla f(P) = |\nabla f(P)|^2\geq 0.
-\]
-y sólo se anula si $\nabla f(P)=0$.
-
-Así pues, si $\nabla f(P)\neq 0$, entonces $P$ no puede ser un máximo ya que siguiendo la trayectoria de $g$ desde $P$ se encontrarían puntos en los que la imagen de $f$ es mayor que en $P$.
-Del mismo modo, siguiendo la trayectoria opuesta a $g$ se encontrarían puntos en los que la imagen de $f$ es menor que la imagen en $P$, por lo que tampoco puede ser un mínimo. 
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Anulación del gradiente en los extremos}
-\framesubtitle{Ejemplo}
-Para el campo escalar $f(x,y)=x^2+y^2$, resulta evidente que sólo tiene un mínimo en el origen $(0,0)$ ya que 
-\[
-f(0,0)=0 \leq f(x,y)=x^2+y^2,\ \forall x,y\in \mathbb{R}.
-\]
-En este punto se cumple, $\nabla f(0,0) = 0$.
-\begin{center}
-\scalebox{1}{\input{img/calculo_diferencial_n_variables/minimo_paraboloide}}
-\end{center}
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Puntos de silla}
-No todos los puntos críticos son extremos. 
-Si se considera, por ejemplo, el campo escalar $f(x,y)=x^2-y^2$, su gradiente es
-\[
-\nabla f(x,y) = (2x,-2y),
-\]
-que sólo se anula en el punto $(0,0)$. 
-Sin embargo, este punto no es un máximo relativo ya que los puntos $(x,0)$ del eje $X$ tienen imágenes $f(x,0)=x^2\geq
-0=f(0,0)$, y tampoco es un mínimo relativo ya que los puntos $(0,y)$ del eje $Y$ tienen imágenes $f(0,y)=-y^2\leq
-0=f(0,0)$.
-Este tipo de puntos que anulan el gradiente pero que no son extremos, se conocen como \emph{puntos de silla}.
-\begin{center}
-\scalebox{1}{\input{img/calculo_diferencial_n_variables/punto_silla}}
-\end{center}
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Determinación de los extremos de un campo escalar}
-De la fórmula de Taylor de segundo grado para un campo escalar $f$ en un punto $P$ se deduce que
-\[
-f(P+\mathbf{v})-f(P)&\approx \nabla f(P)\mathbf{v}+\frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}.
-\]
-De manera que si $P$ es un punto crítico de $f$, como $\nabla f(P)=0$, se tiene que 
-\[
-f(P+\mathbf{v})-f(P)&\approx \frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}.
-\]
-Por tanto, el signo de $f(P+\mathbf{v})-f(P)$ coincide con el signo del término cuadrático $\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}$.
-
-Se pueden dar cuatro posibilidades:
-\begin{itemize}
-\item Definido positivo: $\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}>0$ $\forall \mathbf{v}\neq 0$.
-\item Definido negativo: $\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}<0$ $\forall \mathbf{v}\neq 0$.
-\item Indefinido: $\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}>0$ para algún $\mathbf{v}\neq 0$ y  $\nabla^2f(P)\mathbf{u}\cdot\mathbf{u}<0$ para algún $\mathbf{u}\neq 0$.
-\item Semidefinido: Cualquier otro caso distinto de los anteriores.
-\end{itemize}
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Determinación de los extremos de un campo escalar}
-Así pues, dependiendo el signo de $Hf(P)\mathbf{v}\cdot\mathbf{v}$, se tiene
-\begin{teorema}
-Dado un punto crítico $P$ de un campo escalar $f$ que tiene matríz hessiana $Hf(P)$, se cumple
-\begin{itemize}
-\item Si $\nabla^2f(P)$ es definido positivo entonces $f$ tiene un mínimo relativo en $P$.
-\item Si $\nabla^2f(P)$ es definido negativo entonces $f$ tiene un máximo relativo en $P$.
-\item Si $\nabla^2f(P)$ es indefinido entonces $f$ tiene un punto de silla en $P$.
-\end{itemize}
-\end{teorema}
-En el caso de que $\nabla^2f(P)$ sea semidefinido, no se puede obtener ninguna conclusión y hay que recurrir a derivadas parciales de orden superior.
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Determinación de los extremos de un campo escalar}
-\framesubtitle{Campo escalar de dos variables}
-En el caso particular de un campo escalar de dos variables se tiene
-\begin{teorema}
-Dado un punto crítico $P=(x_0,y_0)$ de un campo escalar $f(x,y)$ que tiene matríz hessiana $\nabla^2f(P)$, se cumple
-\begin{itemize}
-\item Si $Hf(P)>0$ y $\dfrac{\partial^2 f}{\partial x^2}(x_0,y_0)>0$ entonces $f$ tiene un mínimo relativo en $P$.
-\item Si $Hf(P)>0$ y $\dfrac{\partial^2 f}{\partial x^2}(x_0,y_0)<0$ entonces $f$ tiene un máximo relativo en $P$.
-\item Si $Hf(P)<0$ entonces $f$ tiene un punto de silla en $P$.
-\end{itemize}
-\end{teorema}
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Determinación de los extremos de un campo escalar}
-\framesubtitle{Ejemplo}
-Dada el campo escalar $f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y$, se tiene que su gradiente vale
-\[
-\nabla f(x,y)= (x^2-1,-y^2+1),
-\]
-que se anula en los puntos $(1,1)$, $(1,-1)$, $(-1,1)$ y $(-1,-1)$.
-
-La matriz hessiana vale 
-\[
-\nabla^2f(x,y) = \left(
-\begin{array}{cc}
-2x & 0\\
-0 & -2y
-\end{array}
-\right)
-\]
-y el hessiano vale
-\[
-Hf(x,y) = -4xy.
-\]
-Así pues, se tiene
-\begin{itemize}
-\item Punto $(1,1)$: $Hf(1,1)=-4<0 \Rightarrow$ Punto de silla.
-\item Punto $(1,-1)$: $Hf(1,-1)=4>0$ y $\frac{\partial^2}{\partial x^2}(1,-1)=2>0 \Rightarrow$ Mínimo relativo.
-\item Punto $(-1,1)$: $Hf(-1,1)=4>0$ y $\frac{\partial^2}{\partial x^2}(-1,1)=-2<0 \Rightarrow$ Máximo relativo.
-\item Punto $(-1,-1)$: $Hf(-1,-1)=-4<0 \Rightarrow$ Punto de silla.
-\end{itemize}
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Determinación de los extremos de un campo escalar}
-\framesubtitle{Ejemplo}
-\begin{center}
-\scalebox{1}{\input{img/calculo_diferencial_n_variables/determinacion_extremos}}
-\end{center}
-\end{frame}
+% 
+% \subsection{Funciones de varias variables}
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Necesidad de las funciones de varias variables}
+% En numerosos problemas de geometría, física y ciencias naturales nos encontramos a menudo con variables o factores que dependen o están relacionados con otros dos, tres o más factores:
+% \begin{itemize}
+% \item El área de un triángulo depende de dos factores que son su base y su altura.
+% \item El volumen que ocupa un gas perfecto depende de dos factores que son su presión y su temperatura.
+% \item El camino recorrido por un cuerpo en un movimiento de caída libre depende de multitud de factores entre los que cabe destacar: el tiempo que dure la caída, el área de la sección transversal del cuerpo, la latitud del lugar, la altura sobre el nivel del mar, la presión del aire, la temperatura del aire, etc.
+% \end{itemize}
+% Estas dependencias se expresan con funciones de varias variables.
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Funciones de varias variables}
+% \begin{definition}[Función de varias variables]
+% Una \emph{función de $n$ variables} de un conjunto $A_1\times \cdots \times A_n$ en un conjunto $B$, es una relación que
+% asocia a cada tupla $(a_1,\ldots,a_n)\in A_1\times \cdots\times A_n$ un único elemento de $B$ que se denota
+% $f(a_1,\ldots,a_n)$, y se llama imagen de $(a_1,\ldots,a_n)$ mediante $f$.
+% \[
+% \begin{array}{lccc}
+% f: & A_1\times\cdots\times A_n & \longrightarrow & B\\
+%    &(a_1,\ldots,a_n) & \longrightarrow & f(a_1,\ldots,a_n)
+% \end{array}
+% \]
+% Cuando $A_1,\ldots,A_n,B\subseteq \mathbb{R}$, entonces se dice que $f$ es
+% una función real de $n$ variables reales o bien un \emph{campo escalar}.
+% \end{definition}
+% 
+% \structure{\textbf{Ejemplo}}
+% \begin{itemize}
+% \item El área de un triángulo es la función real de dos variables reales 
+% \[ f(x,y)=\frac{xy}{2}.\]
+% \item El volumen de un gas perfecto es otra función real de dos variables
+% \[
+% v=f(t,p)=\frac{nRt}{p},\quad \mbox{con $n$ y $R$ constantes.}
+% \]
+% \end{itemize}
+% \end{frame}
+% 
+% 
+% % ---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Gráfica de una función de dos variables}
+% La representación gráfica cartesiana de una función de dos variables $f(x,y)$ es una superficie del espacio real
+% $\mathbb{R}^3$ donde cada punto de la superficie tiene coordenadas $(x,y,z)$, siendo $z=f(x,y)$.
+% \begin{center}
+% \scalebox{1}{\input{img/calculo_diferencial_n_variables/coordenadas_3D}}
+% \end{center}
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Gráfica de una función de dos variables}
+% \framesubtitle{Gráfica del área de un triángulo}
+% La función $f(x,y)=\dfrac{xy}{2}$ que mide el área de un triángulo de base $x$ y altura $y$ tiene la siguiente representación gráfica:
+% \begin{center}
+% \scalebox{1}{\input{img/calculo_diferencial_n_variables/grafica_area_triangulo}}
+% \end{center}
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Gráfica de una función de dos variables}
+% \framesubtitle{Gráfica de una ``gota de agua''}
+% La función $\displaystyle f(x,y)=\frac{\sen(x^2+y^2)}{\sqrt{x^2+y^2}}$ tiene la siguiente representación gráfica tan
+% peculiar:
+% \begin{center}
+% \scalebox{1}{\input{img/calculo_diferencial_n_variables/grafica_gota_agua}}
+% \end{center}
+% \end{frame}
+% 
+% 
+% % ---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Conjunto de nivel de un campo escalar}
+% \begin{definition}[Conjunto de nivel]
+% Dado un campo ecalar $f:\mathbb{R}^n\rightarrow \mathbb{R}$, se llama \emph{conjunto de nivel} $c$ de $f$ al conjunto
+% \[
+% C_{f,c}=\{(x_1,\ldots,x_n): f(x_1,\ldots,x_n)=c\}.
+% \]
+% \end{definition}
+% \structure{\textbf{Ejemplo}}
+% Si $f(x,y)=x^2+y^2$ y $P=(1,1)$, el conjunto de nivel de $f$ que incluye al punto $P$ es
+% \[
+% C_{f,2} = \{(x,y): f(x,y)=f(1,1)=2\} = \{(x,y): x^2+y^2=2\},
+% \] 
+% que es la circunferencia del plano real centrada en el origen y de radio $\sqrt{2}$.
+% \begin{center}
+% \scalebox{0.8}{\input{img/calculo_diferencial_n_variables/conjunto_nivel2}}
+% \end{center}
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Funciones parciales}
+% \begin{definition}[Función parcial]
+% Dado un campo ecalar $f:\mathbb{R}^n\rightarrow \mathbb{R}$, se llama \emph{función parcial} $i$-esima de $f$ a
+% cualquier función $f_i:\mathbb{R}\rightarrow \mathbb{R}$ que resulta de fijar todas las variables de $f$ como
+% constantes, excepto la variable $i$, es decir:
+% \[
+% f_i(x)=f(c_1,\ldots,c_{i-1},x,c_{i+1},\ldots,c_{n}),
+% \]
+% con $c_j$ $(j=1,\ldots, n,\ j\neq i)$ constantes. 
+% \end{definition}
+%  
+% \structure{\textbf{Ejemplo}} 
+% Si consideramos la función del área de un triángulo 
+% \[f(x,y)=\frac{xy}{2},\]
+% y fijamos el valor de la base $x=c$, entonces el área del triángulo ya sólo depende de la altura y $f$ se convierte en
+% una función de una sola variable, que es la función parcial:
+% \[
+% f_1(y)=f(c,y)=\frac{cy}{2},\quad \mbox{con $c$ constante}.
+% \]
+% \end{frame}
+% 
+% 
+% 
+% \subsection{Noción de derivada parcial}
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Variación de una función con respecto a una variable}
+% Al igual que medíamos la variación de una función de una variable, tiene sentido medir la variación de una función de
+% varias variables con respecto a cada una de sus variables.
+% 
+% Sea $z=f(x,y)$ un campo escalar de $\mathbb{R}^2$.
+% Si estamos en el punto $(x_0,y_0)$ y nos movemos una cantidad $\Delta x$ en la dirección del eje $X$, entonces, al
+% mantenerse la coordenada $y$ constante, pasaremos desde el punto $(x_0,y_0)$ al punto $(x_0+\Delta x,y_0)$, y la
+% variación que experimenta la función será
+% \[
+% \Delta z=f(x_0+\Delta x,y_0)-f (x_0,y_0).
+% \]
+% 
+% La variación relativa que experimenta la función con respecto a la variable $x$ vendrá dada por el cociente 
+% \[\frac{\Delta z}{\Delta x}=\frac{f(x_0+\Delta x,y_0)-f(x_0,y_0)}{\Delta x}.\]
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Tasa de variación instantánea de un campo escalar con respecto a una variable}
+% Si en lugar de medir la variación de una función con respecto a una variable en un intervalo, medimos la variación en un
+% punto, es decir, cuando $\Delta x$ tiende a 0, entonces obtenemos una tasa de variación instantánea:
+% \[
+% \lim_{\Delta x\rightarrow 0}\frac{\Delta z}{\Delta x}=\lim_{\Delta x \rightarrow 0}\frac{f(x_0+\Delta x,y_0)-f(x_0,y_0)}{\Delta x}.
+% \]
+% Al valor del límite, cuando existe, también se le conoce como \emph{derivada parcial} de $f$ con respecto a la variable $x$ en el punto $(x_0,y_0)$ y se nota
+% \[
+% \frac{\partial f}{\partial x}(x_0,y_0).
+% \]
+% 
+% Esta derivada parcial mide la tasa de variación instantánea de $f$ en el punto $P=(x_0,y_0)$ cuando $P$ se mueve en la dirección del eje $X$.
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Interpretación geométrica de la derivada parcial}
+% Geométricamente, $z=f(x,y)$ define una superficie. Si se corta esta superficie con el plano de ecuación $y=y_0$ (es
+% decir, si $y$ se fija como una constante), la intersección de este plano con la superficie es una curva plana cuya
+% pendiente en el punto $(x_0,y_0)$ es la derivada parcial de $f$ con respecto a $x$ en el punto $(x_0,y_0)$.
+% 
+% \begin{center}
+% %\scalbebox{1}{\input{img/derivadas_parciales/grafica_tangente_parcial}}
+% \includegraphics[scale=0.4]{img/tangentesuperficie}
+% \end{center}
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Derivada parcial}
+% El concepto de derivada parcial visto para funciones de dos variables puede extenderse fácilmente para funciones de $n$
+% variables.
+% 
+% \begin{definition}[Derivada parcial]
+% Dada una función de $n$ variables $f(x_1,\ldots,x_n)$, se dice que $f$ es \emph{derivable parcialmente} con respecto a
+% la variable $x_i$ en el punto $a=(a_1,\ldots,a_n)$ si existe el límite
+% \[
+% \lim_{h\rightarrow 0} \frac{f(a_1,\ldots,a_{i-1},a_i+h,a_{i+1},\ldots,a_n)-f(a_1,\ldots,a_{i-1},a_i,a_{i+1},\ldots,a_n)} {h}.
+% \]
+% En tal caso, al valor del límite se le llama \emph{derivada parcial} de $f$ en $a$ con respecto a la variable $x_i$, y
+% se denota
+% \[
+% f'_{x_i}(a)=\frac{\partial f}{\partial x_i}(a).
+% \]
+% \end{definition}
+% \structure{\bf Observación}
+% La definición de derivada para funciones de una variable es un caso particular de esta definición para $n=1$.
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Cálculo de la derivada parcial}
+% Al medir la variación de $f$ con respecto a la variación de una sola de sus variables $x_i$ en un punto
+% $a=(a_1,\ldots,a_n)$, el resto de las variables se pueden considerar como constantes y, en tal caso, podemos ver a $f$
+% como una función parcial $i$-ésima 
+% \[
+% f_i(x_i)=f(a_1,\ldots,a_{i-1},x_i,a_{i+1},\ldots,a_n).
+% \]
+% 
+% La derivada parcial de $f$ con respecto a $x_i$ puede calcularse derivando esta función:
+% \[
+% \frac{\partial f}{\partial x_i}(a)=f_i'(a_i).
+% \]
+% 
+% \begin{block}{Regla}
+% Para derivar parcialmente $f(x_1,\ldots,x_n)$ con respecto a una variable $x_i$, se deriva $f$ como si la única variable
+% fuese $x_i$, tratando el resto de las variables como constantes.
+% \end{block} 
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Cálculo de la derivada parcial}
+% \framesubtitle{Ejemplo con el volumen de un gas perfecto}
+% En la ecuación de estado de los gases perfectos, el volumen es una función que depende de dos variables  
+% \[v(t,p)=\frac{nRt}{p},\]
+% donde $t$ mide la temperatura, $p$ la presión y $n$ y $R$ son constantes.
+% 
+% La tasa de variación instantánea que experimenta el volumen con respecto a la presión viene dada por la derivada parcial de $v$ con respecto a $p$.
+% 
+% Para calcular esta derivada parcial se fija $t$ como constante y se deriva $v$ como si la única variable fuese $p$:
+% \[
+% \frac{\partial v}{\partial p}(t,p)=\frac{d}{dp}\left(\frac{nRt}{p}\right)_{\mbox{\scriptsize $t=$cte}}=\frac{-nRt}{p^2}.
+% \]
+% 
+% Del mismo modo, la tasa de variación instantánea del volumen con respecto a la temperatura es:
+% \[
+% \frac{\partial v}{\partial t}(t,p)=\frac{d}{dt}\left(\frac{nRt}{p}\right)_{\mbox{\scriptsize$p=$cte}}=\frac{nR}{p}.
+% \]
+% \end{frame}
+% 
+% 
+% 
+% \subsection{Vector gradiente}
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Vector gradiente}
+% \begin{definition}[Vector gradiente]
+% Dado un campo escalar $f(x_1,\ldots,x_n)$, se llama \emph{gradiente} de $f$, y se escribe $\nabla f$, a la función que a
+% cada punto $a=(a_1,\ldots,a_n)$ le asigna el vector cuyas coordenadas cartesianas son las derivadas parciales de $f$ en
+% $a$,
+% \[
+% \nabla f(a)=\left(\frac{\partial f}{\partial x_1}(a),\ldots,\frac{\partial f}{\partial x_n}(a)\right).
+% \]
+% \end{definition}
+% 
+% Más adelante se mostrará que vector gradiente en un punto dado tiene la misma magnitud y dirección que la velocidad máxima de variación de la
+% función en ese punto. 
+% 
+% De este modo, \alert{\emph{$\nabla f(a)$ indica la dirección de máximo crecimiento de $f$ en el punto $a$}}, mientras que $- \nabla f(a)$ indica la dirección de máximo decrecimiento.
+% \end{frame}
+% 
+% 
+% 
+% % ---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Cálculo del vector gradiente}
+% \framesubtitle{Ejemplo con una función de temperatura}
+% Al calentar una superficie la temperatura $t$ (en ºC) en cada punto $(x,y,z)$ (en m) de dicha superficie viene dada por
+% la función:
+% \[ 
+% t(x,y,z)=\frac{x}{y}+z^2. 
+% \]
+% \emph{¿En qué dirección y con qué magnitud aumentará más rápidamente la temperatura en el punto $(2,1,1)$ de dicha superficie?}
+% 
+% 
+% La dirección en la que más rápidamente aumenta la temperatura nos la da el vector gradiente 
+% \[
+% \nabla t(x,y,z)=\left(\frac{\partial t}{\partial x}(x,y,z),\frac{\partial t}{\partial y}(x,y,z),\frac{\partial t}{\partial
+% z}(x,y,z)\right)=\left(\frac{1}{y},\frac{-x}{y^2},2z\right).
+% \]
+% 
+% En el punto $(2,1,1)$ dicha dirección será
+% \[
+% \nabla t(2,1,1)=\left(\frac{1}{1},\frac{-2}{1^2},2\cdot 1\right)=(1,-2,2),
+% \]
+% y su magnitud 
+% \[
+% |\nabla f(2,1,1)|=|\sqrt{1^2+(-2)^2+2^2}|=|\sqrt{9}|=3 \mbox{ $^\circ$C/m}.
+% \]
+% \end{frame}
+% 
+% 
+% 
+% \subsection{Composición de una trayectoria con un campo escalar}
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Composición de una trayectoria con un campo escalar. Regla de la cadena}
+% Si $f:\mathbb{R}^n\rightarrow \mathbb{R}$ es un campo escalar y $g:\mathbb{R}\rightarrow \mathbb{R}^n$ es una
+% trayectoría, entonces es posible componer $g$ con $f$, de manera que $f\circ g:\mathbb{R}\rightarrow \mathbb{R}$ es una
+% función real de variable real.
+% 
+% La regla de la cadena para derivar la composición de una trayectoria con un campo escalar dice 
+% \[
+% (f\circ g)'(t) = \nabla f(g(t))\cdot g'(t) 
+% \]  
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Composición de una trayectoria con un campo escalar. Regla de la cadena}
+% \framesubtitle{Ejemplo}
+% Si se toma el campo escalar del plano real $f(x,y)=x^2y$ y la trayectoria $g(t)=(\cos t,\sen t)$ $t\in [0,2\pi]$ del mismo plano, entonces
+% \[
+% \nabla f(x,y) = (2xy, x^2) \quad  \mbox{y} \quad g'(t) = (-\sen t, \cos t),
+% \]
+% y 
+% \begin{align*}
+% (f\circ g)'(t) &= \nabla f(g(t))\cdot g'(t) = (2\cos t\sen t,\cos^2 t)\cdot (-\sen t,\cos t) =\\
+% &= -2\cos t\sen^2 t+\cos^3 t.
+% \end{align*}
+% 
+% Se puede llegar al mismo resultado, sin aplicar la regla de la cadena, derivando directamente la función compuesta
+% \[
+% (f\circ g)(t) = f(g(t)) = f(\cos t, \sen t) = \cos^2 t\sen t,
+% \]
+% de manera que
+% \[
+% (f\circ g)'(t) = 2\cos t(-\sen t)\sen t+\cos^2 t \cos t = -2\cos t\sen^2 t+\cos^3 t.
+% \]
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Composición de una trayectoria con un campo escalar. Regla de la cadena}
+% La regla de la cadena para la composición de un campo escalar con una trayectoria permite obtener fácilmente el álgebra de derivadas para funciones reales de una variable real:
+% \begin{align*}
+% (u+v)' &= u'+v'\\
+% (uv)' &= u'v+uv'\\
+% \left(\frac{u}{v}\right)' &= \frac{u'v-uv'}{v^2}\\
+% (u\circ v)' &= u'(v)v'
+% \end{align*}
+% 
+% Para deducir la derivada de la suma se toma el campo escalar $f(x,y)=x+y$ y la trayectoria $g(t)=(u(t),v(t))$, de manera que aplicando la regla de la cadena se tiene
+% \[
+% (u+v)'(t) = (f\circ g)'(t) = \nabla f(g(t))\cdot g'(t) = (1,1)\cdot (u'(t),v'(t)) = u'(t)+v'(t).
+% \]
+% y para deducir derivada del producto, tomando $f(x,y)=xy$, se tiene
+% \[
+% (uv)'(t) = (f\circ g)'(t) = \nabla f(g(t))\cdot g'(t) = (v(t),u(t))\cdot (u'(t),v'(t)) = u'(t)v(t)+u(t)v'(t).
+% \]
+% \end{frame}
+% 
+% 
+% 
+% \subsection{Derivada direccional}
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Derivada direccional}
+% Para un campo escalar $f(x,y)$ de $\mathbb{R}^2$ y un punto $P=(x_0,y_0)$, se vió que $\dfrac{\partial f}{\partial x}$
+% es la tasa de variación instantánea de $f$ con respecto a $x$ en el punto $P$, es decir, cuando nos desplazamos desde el
+% punto $P$ en la dirección del eje $X$.
+% 
+% Del mismo modo, $\dfrac{\partial f}{\partial y}$ es la tasa de variación instantánea de $f$ con respecto a $y$ en el
+% punto $P$, es decir, cuando nos desplazamos desde el punto $P$ en la dirección del eje $Y$.
+% 
+% Pero, \emph {¿qué pasa si nos movemos en cualquier otra dirección?}
+% 
+% La tasa de variación instantánea de $f$ en un punto $P$ en la dirección de un vector unitario cualquiera $u$ se conoce como \emph{derivada direccional}.
+% 
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Derivada direccional}
+% \begin{definition}[Derivada direccional]
+% Dado un campo escalar $f$ de $\mathbb{R}^n$, un punto $P$ y un vector unitario $\mathbf{u}$ en ese espacio, el límite
+% \[
+% f'_{\mathbf{u}}(P) = \lim_{h\rightarrow 0}\frac{f(P+h\mathbf{u})-f(P)}{h},
+% \] 
+% cuando existe, se llama \emph{derivada direccional} de $f$ en el punto $P$ en la dirección de $\mathbf{u}$.
+% \end{definition}
+% Si se considera un vector unitario $\mathbf{u}$, la trayectoria que pasa por $P$, dirigida por $\mathbf{u}$, tiene ecuación
+% \[
+% g(t)=P+t\mathbf{u},\ t\in\mathbb{R},
+% \]
+% que para $t=0$, pasa por $P=g(0)$ con velocidad $\mathbf{u}=g'(0)$.
+% 
+% Así, la tasa de variación de $f$ a partir del punto $P$ en la dirección de $\mathbf{u}$ es
+% \[
+% (f\circ g)'(0) = \nabla f(g(0))\cdot g'(0) = \nabla f(P)\cdot \mathbf{u}.
+% \]
+% 
+% Obsérvese que las derivadas parciales son las derivadas direccionales en las direcciones de los vectores coordenados. 
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Cálculo de la derivada direccional}
+% \framesubtitle{Ejemplo}
+% Dada la función $f(x,y) = x^2+y^2$, su vector gradiente es
+% \[
+% \nabla f(x,y) = (2x,2y),
+% \]
+% de manera que la derivada direccional en el punto $P=(1,1)$, en la dirección del vector unitario $\mathbf{u}=(1/\sqrt{2},1/\sqrt{2})$ es
+% \[
+% f'_{\mathbf{u}}(P) = \nabla f(P)\cdot \mathbf{u} = (2,2)\cdot(1/\sqrt{2},1/\sqrt{2}) = \frac{2}{\sqrt{2}}+\frac{2}{\sqrt{2}} = \frac{4}{\sqrt{2}}.
+% \]
+% 
+% Para calcular la derivada direccional en la dirección de un vector no unitario $\mathbf{v}$, basta con convertirlo en unitario mediante la transformación
+% \[
+% \mathbf{v'}=\frac{\mathbf{v}}{|\mathbf{v}|}.
+% \] 
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Crecimiento de un campo escalar a partir del gradiente}
+% Como se ha visto, para un vector unitario $\mathbf{u}$
+% \[
+% f'_{\mathbf{u}}(P) = \nabla f(P)\cdot \mathbf{u} = |\nabla f(P)|\cos \theta,
+% \] 
+% donde $\theta$ es el ángulo que forma $\mathbf{u}$ con el vector gradiente $\nabla f(P)$.
+% 
+% Teniendo en cuenta que $-1\leq \cos\theta\leq 1$, para cualquier vector $\mathbf{u}$ se cumple 
+% \[
+% -|\nabla f(P)|\leq f'_{\mathbf{u}}(P)\leq |\nabla f(P)|.
+% \]
+% Además, si $\mathbf{u}$ tiene la misma dirección y sentido que el gradiente, se tiene $f'_{\mathbf{u}}(P)=|\nabla f(P)|\cos 0=|\nabla f(P)|$. 
+% Por tanto, el \alert{\emph{crecimiento máximo de un campo escalar se produce en la dirección y sentido del gradiente}}.
+% 
+% Del mismo modo, si $\mathbf{u}$ tiene la misma dirección y sentido opuesto al gradiente, se tiene $f'_{\mathbf{u}}(P)=|\nabla f(P)|\cos \pi=-|\nabla f(P)|$. 
+% Por tanto, el \alert{\emph{decrecimiento máximo de un campo escalar se produce en la dirección y sentido opuesto al gradiente}}.  
+% \end{frame}
+% 
+% 
+% \subsection{Derivación implícita}
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Derivación implícita}
+% Si se sabe que la ecuación 
+% \[
+% f(x,y)=0
+% \]
+% define a $y$ como función de $x$, $y=h(x)$, alrededor de cierto valor $x=x_0$ para el que $y=h(x_0)=y_0$, entonces, si se toma la trayectoria $g(x)=(x,h(x))$, la ecuación anterior se puede expresar como
+% \[
+% (f\circ g)(x) = f(g(x)) = f(x,h(x))=0,
+% \]
+% de modo que usando la regla de la cadena sobre se tiene
+% \[
+% (f\circ g)'(x) = \nabla f(g(x))\cdot g'(x) = \left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}\right)\cdot (1,h'(x)) = 
+% \frac{\partial f}{\partial x}+\frac{\partial f}{\partial y}h'(x) = 0,
+% \] 
+% de donde se deduce
+% \[
+% y'=h'(x)=\frac{-\dfrac{\partial f}{\partial x}}{\dfrac{\partial f}{\partial y}}
+% \]
+% A este proceso que permite obtener $y'$ en un entorno de $x_0$ sin disponer de la fórmula explícita $y=h(x)$, se le llama \emph{derivación implícita}.
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Derivación implícita}
+% \framesubtitle{Ejemplo}
+% La ecuación $x^2+y^2=1$ define a la circunferencia de radio 1 centrada en el origen de coordenadas, que también puede expresarse como
+% \[
+% f(x,y) = x^2+y^2-1 = 0.
+% \]
+% Si se piensa en $y$ como función implícita de $x$, se tiene 
+% \[
+% y'=\frac{-\dfrac{\partial f}{\partial x}}{\dfrac{\partial f}{\partial y}} = \frac{-2x}{2y}=\frac{-x}{y}.
+% \]
+% Podría llegarse al mismo resultado, despejando $y$ de la ecuación de la circunferencia, 
+% \[
+% x^2+y^2=1 \Leftrightarrow y^2=1-x^2 \Leftrightarrow y= \pm\sqrt{1-x^2}.
+% \]
+% Si se toma la raíz positiva, que corresponde a la semicircunferencia superior, la derivada vale
+% \[
+% y' = \frac{1}{2\sqrt{1-x^2}}(-2x) = \frac{-x}{\sqrt{1-x^2}}, 
+% \]
+% que coincide con el resultado de la derivación implícita, teniendo en cuenta que $y=\sqrt{1-x^2}$.
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Propiedad del gradiente}
+% \begin{theorem}
+% Sea $C$ el conjunto de nivel de un campo escalar $f$ que incluye a un punto $P$. 
+% Si $\mathbf{v}$ es la velocidad al pasar por $P$ de una trayectoria que circule por $C$, entonces
+% \[
+% \nabla f(P) \cdot \mathbf{v} = 0.
+% \] 
+% Es decir, el vector gradiente de $f$ en $P$ es normal a $C$ en $P$, siempre que no sea nulo.
+% \end{theorem}
+% \structure{\textbf{Demostración}}
+% Si se considera una trayectoria $g(t)$ a lo largo del conjunto de nivel $C$ que pase por $P=g(t_0)$, de modo que $\mathbf{v}=g'(t_0)$, entonces 
+% \[
+% (f\circ g)(t) = f(g(t)) = f(P),
+% \]
+% que es constante para cualquier $t$, y al aplicar la regla de la cadena se tiene
+% \[
+% (f\circ g)'(t) = \nabla f(g(t))\cdot  g'(t) = 0,
+% \]
+% de modo que, cuanto $t=t_0$, se tiene 
+% \[
+% \nabla f(P)\cdot \mathbf{v} = 0.
+% \]
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Rectas normal y tangente a una linea en el plano}
+% Según el resultado anterior, la recta normal a una línea $f(x,y)=0$ en un punto $P=(x_0,y_0)$, tiene ecuación
+% \[
+% P+t\nabla f(P) = (x_0,y_0)+t\nabla f(x_0,y_0).
+% \]
+% \structure{\textbf{Ejemplo}}
+% Dado el campo escalar $f(x,y)=x^2+y^2-1$, y el punto $P=(0,1)$, resulta que el conjunto de nivel que pasa por $P$, para el que $f(x,y)=f(P)=0$ es la circunferencia de radio 1 centrada en el origen.
+% Así pues, tomando como vector normal el gradiente de $f$
+% \[
+% \nabla f(x,y) = (2x,2y),
+% \] 
+% que en el punto $P=(0,1)$ vale $\nabla f(0,1) = (0,2)$, la recta normal a la circunferencia en $P$ es
+% \[
+% P+t\nabla f(P) = (0,1)+t(0,2) = (0,1+2t),
+% \]
+% que se trata de la recta vertical $x=0$, que coincide con el eje $Y$.
+% 
+% y la recta tangente a la circunferencia en $P$ es
+% \[
+% ((x,y)-P)\cdot \nabla f(P) = ((x,y)-(0,1))\cdot (0,2) = (x,y-1)\cdot(0,2) = 2(y-1) = 0 \Rightarrow y=1. 
+% \]
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Recta normal y plano tangente a una superficie}
+% De mismo modo, si en lugar de una línea en el plano se tiene una superficie $f(x,y,z)=0$, en el punto $P=(x_0,y_0,z_0)$ la recta normal tiene ecuación
+% \[
+% P+t\nabla f(P) = (x_0,y_0,z_0)+t\nabla f(x_0,y_0,z_0).
+% \]
+% \structure{\textbf{Ejemplo}}
+% Dada el campo escalar $f(x,y,z)=x^2+y^2-z$, y el punto $P=(1,1,2)$, resulta que el conjunto de nivel que pasa por $P$, para el que $f(x,y)=f(P)=0$, es el paraboloide $z=x^2+y^2$.
+% Así pues, tomando como vector normal el gradiente de $f$, que vale  
+% \[
+% \nabla f(x,y,z) = (2x,2y,-1),
+% \] 
+% que en el punto $P=(1,1,2)$ vale $\nabla f(1,1,2) = (2,2,-1)$, la recta normal al paraboloide en $P$ es
+% \[
+% P+t\nabla f(P) = (1,1,2)+t\nabla f(1,1,2) = (1,1,2)+t(2,2,-1) = (1+2t,1+2t,2-t),
+% \]
+% que se trata de la recta de ecuaciones  $x=y$ y $x=5-2z$.
+% 
+% Y el plano tangente al paraboloide en $P$ es
+% \begin{align*}
+% ((x,y,z)-P)\cdot \nabla f(P) &= ((x,y,z)-(1,1,2))(2,2,-1) = (x-1,y-1,z-2)(2,2,-1)=\\
+%  &= 2(x-1)+2(y-1)-(z-2) = 2x+2y-z-2= 0.
+% \end{align*}
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Recta normal y plano tangente a una superficie}
+% \framesubtitle{Ejemplo}
+% La gráfica del paraboloide $f(x,y,z)=x^2+y^2-z=0$ y su plano tangente en el punto $P=(1,1,2)$ es 
+% \begin{center}
+% \scalebox{1}{\input{img/calculo_diferencial_n_variables/plano_tangente_paraboloide}}
+% \end{center}
+% \end{frame}
+% 
+% 
+% \subsection{Derivadas parciales de segundo orden}
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Derivadas parciales de segundo orden}
+% Las derivadas parciales de una función son, a su vez, funciones de varias variables que muchas veces pueden volverse a
+% derivar parcialmente con respecto a alguna de sus variables. 
+% 
+% Si una función $f(x_1,\ldots,x_n)$ tiene derivada parcial $f'_{x_i}(x_1,\ldots,x_n)$ con respecto a la variable $x_i$ en un conjunto $A$, entonces podemos derivar de nuevo parcialmente $f'_{x_i}$ con respecto a la variable $x_j$. Esta segunda derivada, cuando existe, se llama \emph{derivada parcial de segundo orden} de $f$ con respecto a las variables $x_i$ y $x_j$, y se nota
+% \[
+% \frac{\partial ^2 f}{\partial x_j \partial x_i}= \frac{\partial}{\partial x_j}\left(\frac{\partial f}{\partial x_i}\right).
+% \]
+% 
+% De forma análoga se definen las derivadas de orden superior.
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Cálculo de las derivadas parciales de segundo orden}
+% La función de dos variables
+% \[f(x,y)=x^y\]
+% tiene cuatro derivadas parciales de segundo orden, que son:
+% \begin{align*}
+% \frac{\partial^2 f}{\partial x^2}(x,y) &=
+% \frac{\partial}{\partial x}\left(\frac{\partial f}{\partial x}(x,y)\right) =
+% \frac{\partial}{\partial x}\left(yx^{y-1}\right) =
+% y(y-1)x^{y-2},\\
+% \frac{\partial^2 f}{\partial y \partial x}(x,y) &=
+% \frac{\partial}{\partial y}\left(\frac{\partial f}{\partial x}(x,y)\right) =
+% \frac{\partial}{\partial y}\left(yx^{y-1}\right) =
+% x^{y-1}+yx^{y-1}\log x,\\
+% \frac{\partial^2 f}{\partial x \partial y}(x,y) &=
+% \frac{\partial}{\partial x}\left(\frac{\partial f}{\partial y}(x,y)\right) =
+% \frac{\partial}{\partial x}\left(x^y\log x \right) =
+% yx^{y-1}\log x+x^y\frac{1}{x},\\
+% \frac{\partial^2 f}{\partial y^2}(x,y) &=
+% \frac{\partial}{\partial y}\left(\frac{\partial f}{\partial y}(x,y)\right) =
+% \frac{\partial}{\partial y}\left(x^y\log x \right) =
+% x^y(\log x)^2.
+% \end{align*}
+% \end{frame}
+% 
+% 
+% \subsection{Matriz hessiana}
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Matriz hessiana y f hessiano}
+% \begin{definition}[Matriz hessiana]
+% Dada una función de varias variables $f(x_1,\ldots,x_n)$, para la que existen todas sus derivadas parciales de segundo
+% orden en un punto $a=(a_1,\ldots,a_n)$, se define la \emph{matriz hessiana} de $f$ en $a$, y se nota $\nabla^2f(a)$, como la
+% matriz cuadrada cuyos elementos son
+% \[
+% \nabla^2f(a)=\left(
+% \begin{array}{cccc}
+% \dfrac{\partial^2 f}{\partial x_1^2}(a) & 
+% \dfrac{\partial^2 f}{\partial x_1 \partial x_2}(a) &
+% \cdots &
+% \dfrac{\partial^2 f}{\partial x_1 \partial x_n}(a)\\
+% \dfrac{\partial^2 f}{\partial x_2 \partial x_1}(a) &
+% \dfrac{\partial^2 f}{\partial x_2^2}(a) & 
+% \cdots &
+% \dfrac{\partial^2 f}{\partial x_2 \partial x_n}(a)\\
+% \vdots & \vdots & \ddots & \vdots \\
+% \dfrac{\partial^2 f}{\partial x_n \partial x_1}(a) &
+% \dfrac{\partial^2 f}{\partial x_n \partial x_2}(a) &
+% \cdots &
+% \dfrac{\partial^2 f}{\partial x_n^2}(a)
+% \end{array}
+% \right)
+% \]
+% Al determinante de esta matriz se le llama \emph{hessiano} de $f$ en $a$, y se nota $Hf(a)=|\nabla^2f(a)|$.
+% \end{definition}
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Cálculo de la matriz hessiana y el hessiano}
+% Consideremos de nuevo la función de dos variables
+% \[f(x,y)=x^y.\]
+% Su matriz hessiana es:
+% \[
+% \nabla^2f(x,y)=\left(
+% \begin{array}{cc}
+% \dfrac{\partial^2 f}{\partial x^2} & \dfrac{\partial^2 f}{\partial x \partial y}\\
+% \dfrac{\partial^2 f}{\partial y \partial x} & \dfrac{\partial^2 f}{\partial y^2} 
+% \end{array}
+% \right)
+% =
+% \left(
+% \begin{array}{cc}
+% y(y-1)x^{y-2} & x^{y-1}(y\log x+1) \\
+% x^{y-1}(y\log x+1) & x^y(\log x)^2
+% \end{array}
+% \right).
+% \]
+% 
+% En el punto $(1,2)$ la matriz vale
+% \[
+% \nabla^2f(1,2)=\left(
+% \begin{array}{cc}
+% 2(2-1)1^{2-2} & 1^{2-1}(2\log 1+1) \\
+% 1^{2-1}(2\log 1+1) & 1^2(\log 1)^2
+% \end{array}
+% \right)
+% =
+% \left(
+% \begin{array}{cc}
+% 2 & 1 \\
+% 1 & 0 
+% \end{array}
+% \right).
+% \]
+% 
+% Y el hessiano en dicho punto vale
+% \[ 
+% Hf(1,2)=\left|
+% \begin{array}{cc}
+% 2 & 1 \\
+% 1 & 0
+% \end{array}
+% \right|=
+% 2\cdot 0-1\cdot1= -1.
+% \]
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Igualdad de las derivadas cruzadas}
+% En el ejemplo anterior se aprecia que las \emph{derivadas cruzadas} de segundo orden $\frac{\partial^2 f}{\partial y\partial x}$ y $\frac{\partial^2 f}{\partial x\partial y}$ coinciden. Ello es debido al siguiente theorem: 
+% 
+% \begin{theorem}[Igualdad derivadas cruzadas]
+% Si $f(x,y)$ es una función tal que sus derivadas parciales $\frac{\partial f}{\partial x}$, $\frac{\partial f}{\partial y}$, $\frac{\partial^2 f}{\partial y\partial x}$ y $\frac{\partial^2 f}{\partial x\partial y}$ existen y son continuas en un conjunto abierto $A$, entonces
+% \[
+% \frac{\partial^2 f}{\partial y\partial x}=\frac{\partial^2 f}{\partial x\partial y}.
+% \]
+% \end{theorem}
+% 
+% Una consecuencia del theorem es que, al calcular una derivada parcial de segundo orden que cumpla lo anterior, \alert{\emph{¡el orden en que se realicen las derivadas parciales no importa!}}
+% 
+% Si el theorem se cumple para todas las derivadas parciales de segundo orden, entonces la matriz hessiana es simétrica. 
+% \end{frame}
+% 
+% 
+% 
+% \subsection{Fórmula de Taylor}
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Aproximación lineal de un campo escalar}
+% Ya se vio cómo aproximar funciones de una variable mediante polinomios de Taylor. 
+% Esto también se puede generalizar a la aproximación de campos escalares mediante polinomios de varias variables. 
+% 
+% Si $P$ es un punto del dominio de un campo escalar $f$ y $\mathbf{v}$ un vector, la \emph{fórmula de Taylor} de primer grado de $f$ alrededor del punto $P$ es
+% \[
+% f(P+\mathbf{v}) = f(P) + \nabla f(P)\cdot \mathbf{v} +R^1_{f,P}(\mathbf{v}),
+% \]
+% donde 
+% \begin{align*}
+% P^1_{f,P}(\mathbf{v}) = f(P)+\nabla f(P)\mathbf{v}
+% \end{align*}
+% es el \emph{polinomio de Taylor} de primer grado de $f$ en el punto $P$, y $R^1_{f,P}(\mathbf{v})$ es el \emph{resto de taylor} para el vector $\mathbf{v}$, y mide el error cometido en la aproximación.
+% 
+% Se cumple que  
+% \[
+% \lim_{|\mathbf{v}|\rightarrow 0} \frac{R^1_{f,P}(\mathbf{v})}{|\mathbf{v}|} = 0
+% \]
+% 
+% Obsérvese que el polinomio de Taylor de primer grado coincide con el plano tangente a $f$ en $P$.
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Aproximación lineal de un campo escalar}
+% \framesubtitle{Campo escalar de dos variables}
+% Si $f$ es un campo escalar de dos variables $f(x,y)$ y $P=(x_0,y_0)$, teniendo en cuenta que para un punto cualquiera $Q=(x,y)$, el vector $\mathbf{v}=\vec{PQ}=(x-x_0,y-y_0)$, el polinomio de Taylor de $f$
+% en el punto $P$, puede expresarse
+% \begin{align*}
+% P^1_{f,P}(x,y) &= f(x_0,y_0)+\nabla f(x_0,y_0)(x-x_0,y-y_0) =\\
+% &= f(x_0,y_0)+\frac{\partial f}{\partial x}(x_0,y_0)(x-x_0)+\frac{\partial f}{\partial y}(x_0,y_0)(y-y_0).
+% \end{align*}
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Aproximación lineal de un campo escalar}
+% \framesubtitle{Ejemplo}
+% Dado el campo escalar $f(x,y)=\log(xy)$, su gradiente es
+% \[
+% \nabla f(x,y) = \left(\frac{1}{x},\frac{1}{y}\right),
+% \]
+% y el polinomio de Taylor de primer grado en el punto $P=(1,1)$ es
+% \begin{align*}
+% P^1_{f,P}(x,y) &= f(1,1) +\nabla f(1,1)\cdot (x-1,y-1) = \\
+% &= \log 1+(1,1)\cdot(x-1,y-1) = x-1+y-1 = x+y-2.\\
+% \end{align*}
+% Este polinomio, permite aproximar el valor de $f$ cerca del punto $P$.
+% Por ejemplo
+% \[ 
+% f(1.01,1.01) \approx P^1_{f,P}(1.01,1.01) = 1.01+1.01-2 = 0.02.
+% \]
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Aproximación cuadrática de un campo escalar}
+% Si $P$ es un punto del dominio de un campo escalar $f$ y $\mathbf{v}$ un vector, la \emph{fórmula de Taylor} de segundo
+% grado de $f$ alrededor del punto $P$ es
+% \[
+% f(P+\mathbf{v}) = f(P) + \nabla f(P)\cdot \mathbf{v} + \frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v} + R^2_{f,P}(\mathbf{v}),
+% \]
+% donde 
+% \begin{align*}
+% P^2_{f,P}(\mathbf{v})&=f(P)+\nabla f(P)\mathbf{v}+\frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}
+% \end{align*}
+% es el \emph{polinomio de Taylor} de segundo grado de $f$ en el punto $P$, y $R^2_{f,P}(\mathbf{v})$ es el \emph{resto de taylor} para el vector $\mathbf{v}$.
+% 
+% Se cumple que  
+% \[
+% \lim_{|\mathbf{v}\rightarrow 0|} \frac{R^2_{f,P}(\mathbf{v})}{|\mathbf{v}|^2} = 0
+% \]
+% lo que indica que el resto es mucho más pequeño que el cuadrado del módulo de $\mathbf{v}$.
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Aproximación cuadrática de un campo escalar}
+% \framesubtitle{Campo escalar de dos variables}
+% Si $f$ es un campo escalar de dos variables $f(x,y)$ y $P=(x_0,y_0)$, el polinomio de Taylor de $f$ en el punto $P$, puede expresarse
+% \begin{multline*}
+% P^2_{f,P}(x,y) = f(x_0,y_0)+\nabla f(x_0,y_0)(x-x_0,y-y_0) +\\
+% +\frac{1}{2}(x-x_0,y-y_0)\nabla^2f(x_0,y_0)(x-x_0,y-y_0)= \\
+% = f(x_0,y_0)+\frac{\partial f}{\partial x}(x_0,y_0)(x-x_0)+\frac{\partial f}{\partial y}(x_0,y_0)(y-y_0)+\\
+% +\frac{1}{2}\left(\frac{\partial^2 f}{\partial x^2}(x_0,y_0) (x-x_0)^2 + 2\frac{\partial^2 f}{\partial y\partial x}(x_0,y_0) (x-x_0)(y-y_0) + \frac{\partial^2 f}{\partial y^2}(x_0,y_0) (y-y_0)^2\right)
+% \end{multline*}
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Aproximación cuadrática de un campo escalar}
+% \framesubtitle{Ejemplo}
+% Dado el campo escalar $f(x,y)=\log(xy)$, su gradiente es
+% \[
+% \nabla f(x,y) = \left(\frac{1}{x},\frac{1}{y}\right),
+% \]
+% y su matriz hessiana es 
+% \[
+% Hf(x,y) = \left(
+% \begin{array}{cc}
+% \frac{-1}{x^2} & 0\\
+% 0 & \frac{-1}{y^2}
+% \end{array}
+% \right)
+% \]
+% y el polinomio de Taylor de segundo grado en el punto $P=(1,1)$ es
+% \begin{align*}
+% P^2_{f,P}(x,y) &= f(1,1) +\nabla f(1,1)\cdot (x-1,y-1) + \frac{1}{2}(x-1,y-1)\nabla^2f(1,1)\cdot(x-1,y-1)=\\
+% &= \log 1+(1,1)\cdot(x-1,y-1) + \frac{1}{2}(x-1,y-1)
+% \left(
+% \begin{array}{cc}
+% -1 & 0\\
+% 0 & -1
+% \end{array}
+% \right)
+% \left(
+% \begin{array}{c}
+% x-1\\
+% y-1
+% \end{array}
+% \right)
+% = \\
+% &= x-1+y-1+\frac{-x^2-y^2+2x+2y-2}{2} = \frac{-x^2-y^2+4x+4y-6}{2}.
+% \end{align*}
+% Así, $f(1.01,1.01) \approx P^1_{f,P}(1.01,1.01) = \frac{-1.01^2-1.01^2+4\cdot 1.01+4\cdot 1.01-6}{2} = 0.0199$.
+% \end{frame}
+% 
+% 
+% \subsection{Extremos}
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Extremos de un campo escalar}
+% \begin{definition}[Máximo y mínimo relativos]
+% Dado un campo escalar $f$ de $\mathbb{R}^n$, se dice que un punto $P$ es un \emph{máximo relativo} de $f$ si existe un valor $\epsilon>0$ tal que
+% \[
+% f(P)\geq f(X)\ \forall X, |\vec{PX}|<\epsilon.
+% \] 
+% Del mismo modo se dice que un punto $P$ es un \emph{mínimo relativo} de $f$ si existe un valor $\epsilon>0$ tal que
+% \[
+% f(P)\leq f(X)\ \forall X, |\vec{PX}|<\epsilon.
+% \] 
+% A los máximos y mínimos de $f$ se les conoce como \emph{extremos relativos} de $f$.
+% \end{definition}
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Anulación del gradiente en los extremos}
+% \begin{theorem}
+% Si $P$ es un extremo de un campo escalar $f$ de $\mathbb{R}^n$, entonces $P$ es un punto crítico de $f$, es decir,
+% \[
+% \nabla f(P) = 0.
+% \]
+% \end{theorem}
+% 
+% \structure{\textbf{Demostración}} Tomando la trayectoria que pasa por $P$ con la dirección y sentido del gradiente,
+% \[
+% g(t)=P+t\nabla f(P),
+% \] 
+% la función $h=(f\circ g)(t)$ no decrece en $t=0$ ya que 
+% \[
+% h'(0)= (f\circ g)'(0) = \nabla f(g(0))\cdot g'(0) = \nabla f(P)\cdot \nabla f(P) = |\nabla f(P)|^2\geq 0.
+% \]
+% y sólo se anula si $\nabla f(P)=0$.
+% 
+% Así pues, si $\nabla f(P)\neq 0$, entonces $P$ no puede ser un máximo ya que siguiendo la trayectoria de $g$ desde $P$ se encontrarían puntos en los que la imagen de $f$ es mayor que en $P$.
+% Del mismo modo, siguiendo la trayectoria opuesta a $g$ se encontrarían puntos en los que la imagen de $f$ es menor que la imagen en $P$, por lo que tampoco puede ser un mínimo. 
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Anulación del gradiente en los extremos}
+% \framesubtitle{Ejemplo}
+% Para el campo escalar $f(x,y)=x^2+y^2$, resulta evidente que sólo tiene un mínimo en el origen $(0,0)$ ya que 
+% \[
+% f(0,0)=0 \leq f(x,y)=x^2+y^2,\ \forall x,y\in \mathbb{R}.
+% \]
+% En este punto se cumple, $\nabla f(0,0) = 0$.
+% \begin{center}
+% \scalebox{1}{\input{img/calculo_diferencial_n_variables/minimo_paraboloide}}
+% \end{center}
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Puntos de silla}
+% No todos los puntos críticos son extremos. 
+% Si se considera, por ejemplo, el campo escalar $f(x,y)=x^2-y^2$, su gradiente es
+% \[
+% \nabla f(x,y) = (2x,-2y),
+% \]
+% que sólo se anula en el punto $(0,0)$. 
+% Sin embargo, este punto no es un máximo relativo ya que los puntos $(x,0)$ del eje $X$ tienen imágenes $f(x,0)=x^2\geq
+% 0=f(0,0)$, y tampoco es un mínimo relativo ya que los puntos $(0,y)$ del eje $Y$ tienen imágenes $f(0,y)=-y^2\leq
+% 0=f(0,0)$.
+% Este tipo de puntos que anulan el gradiente pero que no son extremos, se conocen como \emph{puntos de silla}.
+% \begin{center}
+% \scalebox{1}{\input{img/calculo_diferencial_n_variables/punto_silla}}
+% \end{center}
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Determinación de los extremos de un campo escalar}
+% De la fórmula de Taylor de segundo grado para un campo escalar $f$ en un punto $P$ se deduce que
+% \[
+% f(P+\mathbf{v})-f(P)&\approx \nabla f(P)\mathbf{v}+\frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}.
+% \]
+% De manera que si $P$ es un punto crítico de $f$, como $\nabla f(P)=0$, se tiene que 
+% \[
+% f(P+\mathbf{v})-f(P)&\approx \frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}.
+% \]
+% Por tanto, el signo de $f(P+\mathbf{v})-f(P)$ coincide con el signo del término cuadrático $\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}$.
+% 
+% Se pueden dar cuatro posibilidades:
+% \begin{itemize}
+% \item Definido positivo: $\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}>0$ $\forall \mathbf{v}\neq 0$.
+% \item Definido negativo: $\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}<0$ $\forall \mathbf{v}\neq 0$.
+% \item Indefinido: $\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}>0$ para algún $\mathbf{v}\neq 0$ y  $\nabla^2f(P)\mathbf{u}\cdot\mathbf{u}<0$ para algún $\mathbf{u}\neq 0$.
+% \item Semidefinido: Cualquier otro caso distinto de los anteriores.
+% \end{itemize}
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Determinación de los extremos de un campo escalar}
+% Así pues, dependiendo el signo de $Hf(P)\mathbf{v}\cdot\mathbf{v}$, se tiene
+% \begin{theorem}
+% Dado un punto crítico $P$ de un campo escalar $f$ que tiene matríz hessiana $Hf(P)$, se cumple
+% \begin{itemize}
+% \item Si $\nabla^2f(P)$ es definido positivo entonces $f$ tiene un mínimo relativo en $P$.
+% \item Si $\nabla^2f(P)$ es definido negativo entonces $f$ tiene un máximo relativo en $P$.
+% \item Si $\nabla^2f(P)$ es indefinido entonces $f$ tiene un punto de silla en $P$.
+% \end{itemize}
+% \end{theorem}
+% En el caso de que $\nabla^2f(P)$ sea semidefinido, no se puede obtener ninguna conclusión y hay que recurrir a derivadas parciales de orden superior.
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Determinación de los extremos de un campo escalar}
+% \framesubtitle{Campo escalar de dos variables}
+% En el caso particular de un campo escalar de dos variables se tiene
+% \begin{theorem}
+% Dado un punto crítico $P=(x_0,y_0)$ de un campo escalar $f(x,y)$ que tiene matríz hessiana $\nabla^2f(P)$, se cumple
+% \begin{itemize}
+% \item Si $Hf(P)>0$ y $\dfrac{\partial^2 f}{\partial x^2}(x_0,y_0)>0$ entonces $f$ tiene un mínimo relativo en $P$.
+% \item Si $Hf(P)>0$ y $\dfrac{\partial^2 f}{\partial x^2}(x_0,y_0)<0$ entonces $f$ tiene un máximo relativo en $P$.
+% \item Si $Hf(P)<0$ entonces $f$ tiene un punto de silla en $P$.
+% \end{itemize}
+% \end{theorem}
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Determinación de los extremos de un campo escalar}
+% \framesubtitle{Ejemplo}
+% Dada el campo escalar $f(x,y)=\dfrac{x^3}{3}-\dfrac{y^3}{3}-x+y$, se tiene que su gradiente vale
+% \[
+% \nabla f(x,y)= (x^2-1,-y^2+1),
+% \]
+% que se anula en los puntos $(1,1)$, $(1,-1)$, $(-1,1)$ y $(-1,-1)$.
+% 
+% La matriz hessiana vale 
+% \[
+% \nabla^2f(x,y) = \left(
+% \begin{array}{cc}
+% 2x & 0\\
+% 0 & -2y
+% \end{array}
+% \right)
+% \]
+% y el hessiano vale
+% \[
+% Hf(x,y) = -4xy.
+% \]
+% Así pues, se tiene
+% \begin{itemize}
+% \item Punto $(1,1)$: $Hf(1,1)=-4<0 \Rightarrow$ Punto de silla.
+% \item Punto $(1,-1)$: $Hf(1,-1)=4>0$ y $\frac{\partial^2}{\partial x^2}(1,-1)=2>0 \Rightarrow$ Mínimo relativo.
+% \item Punto $(-1,1)$: $Hf(-1,1)=4>0$ y $\frac{\partial^2}{\partial x^2}(-1,1)=-2<0 \Rightarrow$ Máximo relativo.
+% \item Punto $(-1,-1)$: $Hf(-1,-1)=-4<0 \Rightarrow$ Punto de silla.
+% \end{itemize}
+% \end{frame}
+% 
+% 
+% %---------------------------------------------------------------------slide----
+% \begin{frame}
+% \frametitle{Determinación de los extremos de un campo escalar}
+% \framesubtitle{Ejemplo}
+% \begin{center}
+% \scalebox{1}{\input{img/calculo_diferencial_n_variables/determinacion_extremos}}
+% \end{center}
+% \end{frame}
 
