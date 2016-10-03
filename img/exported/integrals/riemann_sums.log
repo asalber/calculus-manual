@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.8.29)  3 OCT 2016 00:33
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.9.5)  3 OCT 2016 11:19
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1539,6 +1539,7 @@ tion.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/ccicons/ccicons.sty
 Package: ccicons 2013/04/16 v1.5 LaTeX support for Creative Commons icons
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2016/08/27 3.6 Extensive control of page headers and footers
 \fancy@headwidth=\skip63
 \f@ncyO@elh=\skip64
 \f@ncyO@erh=\skip65
@@ -4680,8 +4681,8 @@ l.22 \end{axis}
                 
 Here is how much of TeX's memory you used:
  54306 strings out of 495464
- 1211322 string characters out of 6184122
- 1513679 words of memory out of 5000000
+ 1211322 string characters out of 6184123
+ 1513768 words of memory out of 5000000
  56582 multiletter control sequences out of 15000+600000
  15998 words of font info for 141 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
