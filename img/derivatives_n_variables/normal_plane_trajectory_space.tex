@@ -1,0 +1,18 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+  \begin{axis}[
+  3dfun,
+  xmin = -1, xmax=1,
+  ymin=-1, ymax=1,
+  zmin=0, zmax=2,
+  axis equal = true,
+  clip=false,
+  height=3cm,
+  ]
+    \addplot3+[domain=0:pi, samples y=0] ({cos(deg(x))}, {sin(deg(x))}, {x});
+    \coordinate (P) at (0,1,pi/2);
+    \fill (P) circle (1.2pt) node[anchor=west] {$P=f(\pi/2)=(0,1,\pi/2)$};
+    \draw [->, color3] (P) -- (-1,1,2.57) node[anchor=west] {$\textbf{v}$};
+    \addplot3+[surf, domain=-pi/2:pi/2, samples=2, opacity=0.5] {x+pi/2};
+  \end{axis}
+\end{tikzpicture}

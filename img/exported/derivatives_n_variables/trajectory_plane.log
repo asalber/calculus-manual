@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.8.29)  3 OCT 2016 00:21
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.9.5)  3 OCT 2016 11:34
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1539,6 +1539,7 @@ tion.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/ccicons/ccicons.sty
 Package: ccicons 2013/04/16 v1.5 LaTeX support for Creative Commons icons
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2016/08/27 3.6 Extensive control of page headers and footers
 \fancy@headwidth=\skip63
 \f@ncyO@elh=\skip64
 \f@ncyO@erh=\skip65
@@ -4438,9 +4439,9 @@ Package microtype Info: Character `―' is missing
 (microtype)             in font `\EU1/TeXGyrePagella(1)/m/n/5'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `EU1/TeXGyrePagellaMath(1)/m/n' will be
-(Font)              scaled to size 9.00014pt on input line 28.
+(Font)              scaled to size 9.00014pt on input line 27.
 LaTeX Font Info:    Font shape `EU1/TeXGyrePagellaMath(2)/m/n' will be
-(Font)              scaled to size 8.99986pt on input line 28.
+(Font)              scaled to size 8.99986pt on input line 27.
 Package microtype Info: Character `ﬆ' is missing
 (microtype)             in font `\EU1/TeXGyrePagella(1)/bx/n/9'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -4716,13 +4717,13 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.178 \end{align*}
+l.181 \end{align*}
                    
 Here is how much of TeX's memory you used:
- 54382 strings out of 495464
- 1213736 string characters out of 6184122
- 1511086 words of memory out of 5000000
- 56622 multiletter control sequences out of 15000+600000
+ 54381 strings out of 495464
+ 1213715 string characters out of 6184123
+ 1511010 words of memory out of 5000000
+ 56621 multiletter control sequences out of 15000+600000
  15998 words of font info for 141 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
  83i,13n,114p,10472b,2255s stack positions out of 5000i,500n,10000p,200000b,80000s

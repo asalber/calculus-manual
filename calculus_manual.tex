@@ -74,7 +74,7 @@
 % pgfplots styles
 \input{settings/pgfplots}
 \usepackage{tikz}
-\usetikzlibrary{external, arrows, arrows.meta, calc, shapes, shapes.arrows, positioning, decorations.pathreplacing, intersections}
+\usetikzlibrary{external, arrows, arrows.meta, calc, shapes, shapes.arrows, positioning, decorations.pathreplacing, intersections, fillbetween}
 % TIKZ SETTINGS
 \tikzset{
 	% Overlays
@@ -172,7 +172,7 @@
 \newcommand{\highlight}[1]{\textcolor{orange}{\textbf{#1}}}
 
 % PDF settings
-\hypersetup{colorlinks=true}
+\hypersetup{colorlinks=false}
 
 %=====================================================================BODY=====
 
@@ -219,7 +219,6 @@ Alfredo Sánchez Alberca (\href{mailto:asalber@ceu.es}{asalber@ceu.es})}
 \setbeamertemplate{section in toc}[sections numbered]
 \tableofcontents[hideallsubsections]
 \end{frame}
-
 \include{chapters/analytic_geometry}
 \include{chapters/derivatives_one_variable}
 \include{chapters/integrals}

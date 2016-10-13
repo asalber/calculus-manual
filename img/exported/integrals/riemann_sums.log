@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.9.5)  3 OCT 2016 11:19
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.8.29)  13 OCT 2016 02:57
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1539,7 +1539,6 @@ tion.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/ccicons/ccicons.sty
 Package: ccicons 2013/04/16 v1.5 LaTeX support for Creative Commons icons
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-Package: fancyhdr 2016/08/27 3.6 Extensive control of page headers and footers
 \fancy@headwidth=\skip63
 \f@ncyO@elh=\skip64
 \f@ncyO@erh=\skip65
@@ -1573,7 +1572,7 @@ Package titlesec Warning: Non standard sectioning command detected
 (titlesec)                Using default spacing and no format.
 
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 175.
+Package hyperref Info: Option `colorlinks' set `false' on input line 175.
 No file img/exported/integrals/riemann_sums.aux.
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 205.
 LaTeX Font Info:    ... okay on input line 205.
@@ -1602,7 +1601,7 @@ LaTeX Font Info:    ... okay on input line 205.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 205.
 LaTeX Font Info:    ... okay on input line 205.
 \AtBeginShipoutBox=\box83
-Package hyperref Info: Link coloring ON on input line 205.
+Package hyperref Info: Link coloring OFF on input line 205.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -2867,8 +2866,8 @@ LaTeX Font Info:    Font shape `EU1/TeXGyrePagellaMath(2)/m/n' will be
 
 Overfull \hbox (2.4499pt too wide) in paragraph at lines 5--7
 []\EU1/TeXGyrePagella(0)/m/n/7 This work is licensed under an Attribution-NonCo
-mmercial-ShareAlike 4.0 International Creative Commons License. [][]$[][][][] [
-] [] [] [][][][][][][][][][][][][][][] []
+mmercial-ShareAlike 4.0 International Creative Commons License. []$[][][][] [] 
+[] [] [][][][][][][][][][][][][][][] []
  []
 
 LaTeX Font Info:    Font shape `U/ccicons/m/n' will be
@@ -4680,10 +4679,10 @@ Package microtype Info: Character `―' is missing
 l.22 \end{axis}
                 
 Here is how much of TeX's memory you used:
- 54306 strings out of 495464
- 1211322 string characters out of 6184123
- 1513768 words of memory out of 5000000
- 56582 multiletter control sequences out of 15000+600000
+ 54338 strings out of 495464
+ 1212186 string characters out of 6184122
+ 1514155 words of memory out of 5000000
+ 56614 multiletter control sequences out of 15000+600000
  15998 words of font info for 141 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
  84i,13n,114p,10472b,2261s stack positions out of 5000i,500n,10000p,200000b,80000s

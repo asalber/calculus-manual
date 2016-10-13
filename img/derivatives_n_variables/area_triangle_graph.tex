@@ -1,0 +1,22 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+  \begin{axis}[view={120}{20},
+  3dfun,
+  xmin=-3, xmax=3,
+  ymin=-3, ymax=3,
+  zmin=-4, zmax=4,
+  axis equal=true,
+  mesh/interior colormap name=incolormap,
+  colormap name=outcolormap,
+%   every axis x label/.style={at={(xticklabel* cs:1.1)}},
+%   every axis y label/.style={at={(yticklabel* cs:1.1)}},
+%   every axis z label/.style={at={(zticklabel* cs:1.1)}},
+%   x tick label style={anchor=east, inner sep=2pt}, 
+%   y tick label style={anchor=north, inner sep=5pt},
+%   z tick label style={anchor=east, inner sep=2pt},  
+  clip=false,
+  height=4cm,
+  ]
+  \addplot3[surf, domain=-3:3, y domain=-3:3, opacity=0.5, faceted color=color1] {x*y/2};
+  \end{axis}
+\end{tikzpicture}

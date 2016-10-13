@@ -107,8 +107,6 @@
 </g>
 <path style="fill:none;stroke-width:0.3985;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(50%,50%,50%);stroke-opacity:1;stroke-dasharray:0.3985,1.99255;stroke-miterlimit:10;" d="M 40.232031 39.162281 L 40.232031 1.83025 " transform="matrix(1,0,0,-1,21.475,72.799)"/>
 <path style="fill:none;stroke-width:0.3985;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(50%,50%,50%);stroke-opacity:1;stroke-dasharray:0.3985,1.99255;stroke-miterlimit:10;" d="M 40.232031 39.162281 L 3.657812 39.162281 " transform="matrix(1,0,0,-1,21.475,72.799)"/>
-<path style="fill:none;stroke-width:0.3985;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(93.299866%,19.599915%,14.099121%);stroke-opacity:1;stroke-miterlimit:10;" d="M 3.657812 1.83025 L 38.833594 37.732594 " transform="matrix(1,0,0,-1,21.475,72.799)"/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(93.299866%,19.599915%,14.099121%);fill-opacity:1;" d="M 61.707031 33.636719 L 58.324219 34.804688 L 60.308594 35.066406 L 60.609375 37.046875 "/>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
   <use xlink:href="#glyph0-10" x="82.957" y="10.609"/>
 </g>

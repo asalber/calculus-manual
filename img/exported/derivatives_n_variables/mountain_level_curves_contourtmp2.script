@@ -1,0 +1,1 @@
+unset surface; set cntrparam levels 14; set contour; set table "img/exported/derivatives_n_variables/mountain_level_curves_contourtmp2.table"; splot "img/exported/derivatives_n_variables/mountain_level_curves_contourtmp2.dat";

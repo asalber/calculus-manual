@@ -1,0 +1,25 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+  \begin{axis}[view={120}{20},
+  3dfun,
+  xmin=-1.8, xmax=1.8,
+  ymin=-1.8, ymax=1.8,
+  zmin=-0.2, zmax=4,
+%  axis equal=true,
+  mesh/interior colormap name=incolormap,
+  colormap name=outcolormap,
+  clip=false,
+  height=4cm,
+  ]
+  \addplot3[surf, domain=-1.5:1.5, y domain=-1.5:1.5, opacity=0.5, faceted color=color1] {x^2+y^2};
+%  \addplot3[domain=-1.5:1.5, y domain=-1.5:1.5, contour gnuplot = {number=2, labels={false}, draw color = color2}, samples = 21,]{x^2+y^2};
+  \coordinate (O) at (0,0,0);
+  \coordinate (P) at (1,1,2);
+  \fill (P) circle (1.2pt);
+  \coordinate (Pxy) at (1,1,0);
+  \fill (Pxy) circle (1.2pt) node[right] {$P=(1,1)$} ;
+  \draw[gray, dotted] (P) -- (Pxy);
+  \addplot3[domain=0:2*pi, samples=100, samples y=0, smooth, color2, dashed] ({sqrt(2)*cos(deg(x))}, {sqrt(2)*sin(deg(x))}, {2});
+  \addplot3[domain=0:2*pi, samples=100, samples y=0, smooth, color2] ({sqrt(2)*cos(deg(x))}, {sqrt(2)*sin(deg(x))}, {0});
+  \end{axis}
+\end{tikzpicture}

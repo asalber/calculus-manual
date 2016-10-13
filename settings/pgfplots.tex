@@ -1,4 +1,9 @@
 % Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+
+\pgfplotsset{colormap={outcolormap}{color=(color1); color=(color1!50)},
+             colormap={incolormap}{color=(color2); color=(color2!50)},
+             colormap={twocolormap}{color=(color1); color=(color2)}}
+
 % Line styles for plotting 2d functions
 \pgfplotscreateplotcyclelist{2dfun cycle}{%
   {color1, line width=0.8pt},
