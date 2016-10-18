@@ -25,5 +25,8 @@
 \contentsline {subsection}{\numberline {5.3}Functions of several variables}{47}{subsection.5.3}
 \contentsline {subsection}{\numberline {5.4}Partial derivative notion}{50}{subsection.5.4}
 \contentsline {subsection}{\numberline {5.5}Gradient}{52}{subsection.5.5}
-\contentsline {subsection}{\numberline {5.6}Second order partial derivatives}{53}{subsection.5.6}
-\contentsline {subsection}{\numberline {5.7}Matriz hessiana}{54}{subsection.5.7}
+\contentsline {subsection}{\numberline {5.6}Composition of a vectorial field with a scalar field}{53}{subsection.5.6}
+\contentsline {subsection}{\numberline {5.7}Directional derivative}{54}{subsection.5.7}
+\contentsline {subsection}{\numberline {5.8}Implicit derivation}{56}{subsection.5.8}
+\contentsline {subsection}{\numberline {5.9}Second order partial derivatives}{56}{subsection.5.9}
+\contentsline {subsection}{\numberline {5.10}Hessian matrix}{57}{subsection.5.10}

@@ -443,9 +443,9 @@ v=f(t,p)=\frac{nRt}{p},\quad \mbox{with $n$ and $R$ constants.}
 The graph of a function of two variables $f(x,y)$ is a surface in the real space $\mathbb{R}^3$ where every point of the surface has coordinates $(x,y,z)$, with $z=f(x,y)$.
 \begin{center}
 \tikzsetnextfilename{derivatives_n_variables/paraboloid}
-\href{https://www.google.es/search?q=x^2\%2By^2}{
+%\href{https://www.google.es/search?q=x^2\%2By^2}{
 \input{img/derivatives_n_variables/paraboloid}
-}
+%}
 \end{center}
 \end{frame}
 
@@ -457,9 +457,9 @@ The graph of a function of two variables $f(x,y)$ is a surface in the real space
 The function $f(x,y)=\dfrac{xy}{2}$ that measures the area of a triangle of base $x$ and height $y$ has the graph below.
 \begin{center}
 \tikzsetnextfilename{derivatives_n_variables/area_triangle_graph}
-\href{https://www.google.es/search?q=x*y\%2F2}{
+%\href{https://www.google.es/search?q=x*y\%2F2}{
 \input{img/derivatives_n_variables/area_triangle_graph}
-}
+%}
 \end{center}
 \end{frame}
 
@@ -471,9 +471,9 @@ The function $f(x,y)=\dfrac{xy}{2}$ that measures the area of a triangle of base
 The function $\displaystyle f(x,y)=\frac{\sin(x^2+y^2)}{\sqrt{x^2+y^2}}$ has the peculiar graph below.
 \begin{center}
 \tikzsetnextfilename{derivatives_n_variables/water_drop_graph}
-\href{https://www.google.es/webhp?q=sin(sqrt(x^2\%2By^2))\%2Fsqrt(x^2\%2By^2)}{
+%\href{https://www.google.es/webhp?q=sin(sqrt(x^2\%2By^2))\%2Fsqrt(x^2\%2By^2)}{
 \input{img/derivatives_n_variables/water_drop_graph}
-}
+%}
 \end{center}
 \end{frame}
 
@@ -511,6 +511,7 @@ that is the circumference of radius $\sqrt{2}$ centered at the origin.
 % ---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Level set of a scalar field}
+\framesubtitle{Applications: Topographic maps and weather maps}
 \begin{columns}
 \begin{column}{0.5\textwidth}
 \begin{center}
@@ -519,7 +520,7 @@ Topographic maps
 \mode<presentation>{\resizebox{\textwidth}{!}{\input{img/derivatives_n_variables/mountain_level_curves}}}
 \mode<article>{\resizebox{0.5\textwidth}{!}{\input{img/derivatives_n_variables/mountain_level_curves}}}
 \end{center}
-Level curves correspond to points with the same atmospheric pressure.
+Level curves correspond to points with the height above the sea level.
 \end{column}
 \begin{column}{0.5\textwidth}
 \begin{center}
@@ -584,22 +585,22 @@ The value of this limit, if exists, it is known as the \emph{partial derivative}
 \frac{\partial f}{\partial x}(x_0,y_0).
 \]
 
-This partial derivative measures the instantaneous rate of change of $f$ at the point $P=(x_0,y_0)$ when $P$ when we move $P$ in the $x$-axis direction.
+This partial derivative measures the instantaneous rate of change of $f$ at the point $P=(x_0,y_0)$ when $P$ moves in the $x$-axis direction.
 \end{frame}
 
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Geometric interpretation of partial derivatives}
-Geometrically, a two-variable function $z=f(x,y)$ defines a surface. 
+Geometrically, a two-variable function $z=f(x,y)$ defines a surface.
 If we cut this surface with a plane of equation $y=y_0$ (that is, the plane where $y$ is the constant $y_0$)
-the intersection is a curve, and the partial derivative of $f$ with respect to to $x$ at $(x_0,y_0)$ is the slope of the tangent line to that curve at $x=x_0$.  
+the intersection is a curve, and the partial derivative of $f$ with respect to to $x$ at $(x_0,y_0)$ is the slope of the tangent line to that curve at $x=x_0$.
 
 \begin{center}
 \tikzsetnextfilename{derivatives_n_variables/partial_tangent_surface}
-\href{https://ggbm.at/K3xnQRY8}{
+%\href{https://ggbm.at/K3xnQRY8}{
 \input{img/derivatives_n_variables/partial_tangent_surface}
-}
+%}
 \end{center}
 \end{frame}
 
@@ -628,8 +629,8 @@ The definition of derivative for one-variable functions is a particular case of 
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Partial derivatives computation}
-When we measure the variation of $f$ with respect to a variable $x_i$ at the point $a=(a_1,\ldots,a_n)$, the other variables remain constant. 
-Thus, if we can consider the $i$-th partial function 
+When we measure the variation of $f$ with respect to a variable $x_i$ at the point $a=(a_1,\ldots,a_n)$, the other variables remain constant.
+Thus, if we can consider the $i$-th partial function
 \[
 f_i(x_i)=f(a_1,\ldots,a_{i-1},x_i,a_{i+1},\ldots,a_n),
 \]
@@ -656,12 +657,12 @@ where $t$ is the temperature, $p$ the pressure and $n$ and $R$ are constants.
 The instantaneous rate of change of the volume with respect to the pressure is the partial derivative of $v$ with respect to $p$.
 To compute this derivative we have to think in $t$ as a constant and differentiate $v$ as if the unique variable was $p$:
 \[
-\frac{\partial v}{\partial p}(t,p)=\frac{d}{dp}\left(\frac{nRt}{p}\right)_{\mbox{\scriptsize $t=$cte}}=\frac{-nRt}{p^2}.
+\frac{\partial v}{\partial p}(t,p)=\frac{d}{dp}\left(\frac{nRt}{p}\right)_{\mbox{\scriptsize $t=$cst}}=\frac{-nRt}{p^2}.
 \]
 
-In the same way, the instantaneous rate of change of the volume with respect to the tempearature is the partial derivative of $v$ with respect to $t$:
+In the same way, the instantaneous rate of change of the volume with respect to the temperature is the partial derivative of $v$ with respect to $t$:
 \[
-\frac{\partial v}{\partial t}(t,p)=\frac{d}{dt}\left(\frac{nRt}{p}\right)_{\mbox{\scriptsize$p=$cte}}=\frac{nR}{p}.
+\frac{\partial v}{\partial t}(t,p)=\frac{d}{dt}\left(\frac{nRt}{p}\right)_{\mbox{\scriptsize$p=$cst}}=\frac{nR}{p}.
 \]
 \end{frame}
 
@@ -672,7 +673,7 @@ In the same way, the instantaneous rate of change of the volume with respect to 
 \begin{frame}
 \frametitle{Gradient}
 \begin{definition}[Gradient]
-Given a scalar field $f(x_1,\ldots,x_n)$, the \emph{gradiente} of $f$, denoted by $\nabla f$, is a function that maps every point
+Given a scalar field $f(x_1,\ldots,x_n)$, the \emph{gradient} of $f$, denoted by $\nabla f$, is a function that maps every point
 $a=(a_1,\ldots,a_n)$ to a vector with coordinates the partial derivatives of $f$ at $a$,
 \[
 \nabla f(a)=\left(\frac{\partial f}{\partial x_1}(a),\ldots,\frac{\partial f}{\partial x_n}(a)\right).
@@ -690,7 +691,7 @@ Thus, \alert{\emph{$\nabla f(a)$ shows the direction of maximum increase of $f$ 
 \frametitle{Gradient computation}
 \framesubtitle{Example with a temperature function}
 
-After heating a surface, the temperature $t$ (in $^\circ$C) at each point $(x,y,z)$ (in m) of the surface is given by the function 
+After heating a surface, the temperature $t$ (in $^\circ$C) at each point $(x,y,z)$ (in m) of the surface is given by the function
 \[
 t(x,y,z)=\frac{x}{y}+z^2.
 \]
@@ -713,204 +714,224 @@ and its magnitude is
 \]
 \end{frame}
 
-% 
-% 
-% \subsection{Composición de una trayectoria con un campo escalar}
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Composición de una trayectoria con un campo escalar. Regla de la cadena}
-% Si $f:\mathbb{R}^n\rightarrow \mathbb{R}$ es un campo escalar y $g:\mathbb{R}\rightarrow \mathbb{R}^n$ es una
-% trayectoría, entonces es posible componer $g$ con $f$, de manera que $f\circ g:\mathbb{R}\rightarrow \mathbb{R}$ es una
-% function real de variable real.
-% 
-% La regla de la cadena para derivar la composición de una trayectoria con un campo escalar dice 
-% \[
-% (f\circ g)'(t) = \nabla f(g(t))\cdot g'(t) 
-% \]  
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Composición de una trayectoria con un campo escalar. Regla de la cadena}
-% \framesubtitle{Example}
-% Si se toma el campo escalar del plano real $f(x,y)=x^2y$ y la trayectoria $g(t)=(\cos t,\sin t)$ $t\in [0,2\pi]$ del mismo plano, entonces
-% \[
-% \nabla f(x,y) = (2xy, x^2) \quad  \mbox{y} \quad g'(t) = (-\sin t, \cos t),
-% \]
-% y 
-% \begin{align*}
-% (f\circ g)'(t) &= \nabla f(g(t))\cdot g'(t) = (2\cos t\sin t,\cos^2 t)\cdot (-\sin t,\cos t) =\\
-% &= -2\cos t\sin^2 t+\cos^3 t.
-% \end{align*}
-% 
-% Se puede llegar al mismo resultado, sin aplicar la regla de la cadena, derivando directamente la function compuesta
-% \[
-% (f\circ g)(t) = f(g(t)) = f(\cos t, \sin t) = \cos^2 t\sin t,
-% \]
-% de manera que
-% \[
-% (f\circ g)'(t) = 2\cos t(-\sin t)\sin t+\cos^2 t \cos t = -2\cos t\sin^2 t+\cos^3 t.
-% \]
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Composición de una trayectoria con un campo escalar. Regla de la cadena}
-% La regla de la cadena para la composición de un campo escalar con una trayectoria permite obtener fácilmente el álgebra de derivatives para functions reales de una variable real:
-% \begin{align*}
-% (u+v)' &= u'+v'\\
-% (uv)' &= u'v+uv'\\
-% \left(\frac{u}{v}\right)' &= \frac{u'v-uv'}{v^2}\\
-% (u\circ v)' &= u'(v)v'
-% \end{align*}
-% 
-% Para deducir la derivative de la suma se toma el campo escalar $f(x,y)=x+y$ y la trayectoria $g(t)=(u(t),v(t))$, de manera que aplicando la regla de la cadena se tiene
-% \[
-% (u+v)'(t) = (f\circ g)'(t) = \nabla f(g(t))\cdot g'(t) = (1,1)\cdot (u'(t),v'(t)) = u'(t)+v'(t).
-% \]
-% y para deducir derivative del producto, tomando $f(x,y)=xy$, se tiene
-% \[
-% (uv)'(t) = (f\circ g)'(t) = \nabla f(g(t))\cdot g'(t) = (v(t),u(t))\cdot (u'(t),v'(t)) = u'(t)v(t)+u(t)v'(t).
-% \]
-% \end{frame}
-% 
-% 
-% 
-% \subsection{Derivada direccional}
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Derivada direccional}
-% Para un campo escalar $f(x,y)$ de $\mathbb{R}^2$ y un punto $P=(x_0,y_0)$, se vió que $\dfrac{\partial f}{\partial x}$
-% es la tasa de variación instantánea de $f$ con respecto a $x$ en el punto $P$, es decir, cuando nos desplazamos desde el
-% punto $P$ en la dirección del eje $X$.
-% 
-% Del mismo modo, $\dfrac{\partial f}{\partial y}$ es la tasa de variación instantánea de $f$ con respecto a $y$ en el
-% punto $P$, es decir, cuando nos desplazamos desde el punto $P$ en la dirección del eje $Y$.
-% 
-% Pero, \emph {¿qué pasa si nos movemos en cualquier otra dirección?}
-% 
-% La tasa de variación instantánea de $f$ en un punto $P$ en la dirección de un vector unitario cualquiera $u$ se conoce como \emph{derivative direccional}.
-% 
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Derivada direccional}
-% \begin{definition}[Derivada direccional]
-% Dado un campo escalar $f$ de $\mathbb{R}^n$, un punto $P$ y un vector unitario $\mathbf{u}$ en ese espacio, el límite
-% \[
-% f'_{\mathbf{u}}(P) = \lim_{h\rightarrow 0}\frac{f(P+h\mathbf{u})-f(P)}{h},
-% \] 
-% cuando existe, se llama \emph{derivative direccional} de $f$ en el punto $P$ en la dirección de $\mathbf{u}$.
-% \end{definition}
-% Si se considera un vector unitario $\mathbf{u}$, la trayectoria que pasa por $P$, dirigida por $\mathbf{u}$, tiene ecuación
-% \[
-% g(t)=P+t\mathbf{u},\ t\in\mathbb{R},
-% \]
-% que para $t=0$, pasa por $P=g(0)$ con velocidad $\mathbf{u}=g'(0)$.
-% 
-% Así, la tasa de variación de $f$ a partir del punto $P$ en la dirección de $\mathbf{u}$ es
-% \[
-% (f\circ g)'(0) = \nabla f(g(0))\cdot g'(0) = \nabla f(P)\cdot \mathbf{u}.
-% \]
-% 
-% Obsérvese que las derivatives parciales son las derivatives direccionales en las direcciones de los vectores coordenados. 
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Cálculo de la derivative direccional}
-% \framesubtitle{Example}
-% Dada la function $f(x,y) = x^2+y^2$, su vector gradiente es
-% \[
-% \nabla f(x,y) = (2x,2y),
-% \]
-% de manera que la derivative direccional en el punto $P=(1,1)$, en la dirección del vector unitario $\mathbf{u}=(1/\sqrt{2},1/\sqrt{2})$ es
-% \[
-% f'_{\mathbf{u}}(P) = \nabla f(P)\cdot \mathbf{u} = (2,2)\cdot(1/\sqrt{2},1/\sqrt{2}) = \frac{2}{\sqrt{2}}+\frac{2}{\sqrt{2}} = \frac{4}{\sqrt{2}}.
-% \]
-% 
-% Para calcular la derivative direccional en la dirección de un vector no unitario $\mathbf{v}$, basta con convertirlo en unitario mediante la transformación
-% \[
-% \mathbf{v'}=\frac{\mathbf{v}}{|\mathbf{v}|}.
-% \] 
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Crecimiento de un campo escalar a partir del gradiente}
-% Como se ha visto, para un vector unitario $\mathbf{u}$
-% \[
-% f'_{\mathbf{u}}(P) = \nabla f(P)\cdot \mathbf{u} = |\nabla f(P)|\cos \theta,
-% \] 
-% donde $\theta$ es el ángulo que forma $\mathbf{u}$ con el vector gradiente $\nabla f(P)$.
-% 
-% Teniendo en cuenta que $-1\leq \cos\theta\leq 1$, para cualquier vector $\mathbf{u}$ se cumple 
-% \[
-% -|\nabla f(P)|\leq f'_{\mathbf{u}}(P)\leq |\nabla f(P)|.
-% \]
-% Además, si $\mathbf{u}$ tiene la misma dirección y sentido que el gradiente, se tiene $f'_{\mathbf{u}}(P)=|\nabla f(P)|\cos 0=|\nabla f(P)|$. 
-% Por tanto, el \alert{\emph{crecimiento máximo de un campo escalar se produce en la dirección y sentido del gradiente}}.
-% 
-% Del mismo modo, si $\mathbf{u}$ tiene la misma dirección y sentido opuesto al gradiente, se tiene $f'_{\mathbf{u}}(P)=|\nabla f(P)|\cos \pi=-|\nabla f(P)|$. 
-% Por tanto, el \alert{\emph{decrecimiento máximo de un campo escalar se produce en la dirección y sentido opuesto al gradiente}}.  
-% \end{frame}
-% 
-% 
-% \subsection{Derivación implícita}
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Derivación implícita}
-% Si se sabe que la ecuación 
-% \[
-% f(x,y)=0
-% \]
-% define a $y$ como function de $x$, $y=h(x)$, alrededor de cierto valor $x=x_0$ para el que $y=h(x_0)=y_0$, entonces, si se toma la trayectoria $g(x)=(x,h(x))$, la ecuación anterior se puede expresar como
-% \[
-% (f\circ g)(x) = f(g(x)) = f(x,h(x))=0,
-% \]
-% de modo que usando la regla de la cadena sobre se tiene
-% \[
-% (f\circ g)'(x) = \nabla f(g(x))\cdot g'(x) = \left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}\right)\cdot (1,h'(x)) = 
-% \frac{\partial f}{\partial x}+\frac{\partial f}{\partial y}h'(x) = 0,
-% \] 
-% de donde se deduce
-% \[
-% y'=h'(x)=\frac{-\dfrac{\partial f}{\partial x}}{\dfrac{\partial f}{\partial y}}
-% \]
-% A este proceso que permite obtener $y'$ en un entorno de $x_0$ sin disponer de la fórmula explícita $y=h(x)$, se le llama \emph{derivación implícita}.
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Derivación implícita}
-% \framesubtitle{Example}
-% La ecuación $x^2+y^2=1$ define a la circunferencia de radio 1 centrada en el origen de coordenadas, que también puede expresarse como
-% \[
-% f(x,y) = x^2+y^2-1 = 0.
-% \]
-% Si se piensa en $y$ como function implícita de $x$, se tiene 
-% \[
-% y'=\frac{-\dfrac{\partial f}{\partial x}}{\dfrac{\partial f}{\partial y}} = \frac{-2x}{2y}=\frac{-x}{y}.
-% \]
-% Podría llegarse al mismo resultado, despejando $y$ de la ecuación de la circunferencia, 
-% \[
-% x^2+y^2=1 \Leftrightarrow y^2=1-x^2 \Leftrightarrow y= \pm\sqrt{1-x^2}.
-% \]
-% Si se toma la raíz positiva, que corresponde a la semicircunferencia superior, la derivative vale
-% \[
-% y' = \frac{1}{2\sqrt{1-x^2}}(-2x) = \frac{-x}{\sqrt{1-x^2}}, 
-% \]
-% que coincide con el resultado de la derivación implícita, teniendo en cuenta que $y=\sqrt{1-x^2}$.
-% \end{frame}
-% 
-% 
+
+
+\subsection{Composition of a vectorial field with a scalar field}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Composition of a vectorial field with a scalar field\\ Multivariate chain rule}
+If $f:\mathbb{R}^n\rightarrow \mathbb{R}$ is a scalar field and $g:\mathbb{R}\rightarrow \mathbb{R}^n$ is a vectorial function, then it is possible to compound $g$ with $f$, so that $f\circ g:\mathbb{R}\rightarrow \mathbb{R}$ is a one-variable function.
+
+\begin{theorem}[Chain rule]
+If $g(t)=(x_1(t),\ldots,x_n(t))$ is a vectorial function differentiable at $t$ and $f(x_1,\ldots,x_n)$ is a scalar field differentiable at the point $g(t)$, then $f\circ g(t)$ is differentiable at $t$ and 
+\[
+(f\circ g)'(t) = \nabla f(g(t))\cdot g'(t)=\frac{\partial f}{\partial x_1}\frac{dx_1}{dt}+ \cdots + \frac{\partial f}{\partial x_n}\frac{dx_n}{dt}
+\]
+\end{theorem}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Composition of a vectorial field with a scalar field\\ Multivariate chain rule}
+\framesubtitle{Example}
+Let us consider the scalar field $f(x,y)=x^2y$ and the vectorial function $g(t)=(\cos t,\sin t)$ $t\in [0,2\pi]$ in the real plane, then
+\[
+\nabla f(x,y) = (2xy, x^2) \quad  \mbox{and} \quad g'(t) = (-\sin t, \cos t),
+\]
+and
+\begin{align*}
+(f\circ g)'(t) &= \nabla f(g(t))\cdot g'(t) = (2\cos t\sin t,\cos^2 t)\cdot (-\sin t,\cos t) =\\
+&= -2\cos t\sin^2 t+\cos^3 t.
+\end{align*}
+
+We can get the same result differentiating the composed function directly
+\[
+(f\circ g)(t) = f(g(t)) = f(\cos t, \sin t) = \cos^2 t\sin t,
+\]
+and its derivative is 
+\[
+(f\circ g)'(t) = 2\cos t(-\sin t)\sin t+\cos^2 t \cos t = -2\cos t\sin^2 t+\cos^3 t.
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Multivariate chain rule}
+The chain rule for the composition of a vectorial function with a scalar field allow us to get the algebra of derivatives for one-variable functions easily:
+\begin{align*}
+(u+v)' &= u'+v'\\
+(uv)' &= u'v+uv'\\
+\left(\frac{u}{v}\right)' &= \frac{u'v-uv'}{v^2}\\
+(u\circ v)' &= u'(v)v'
+\end{align*}
+
+To infer the derivative of the sum of two functions $u$ and $v$, we can take the scalar field $f(x,y)=x+y$ and the vectorial function $g(t)=(u(t),v(t))$. 
+Applying the chain rule we get
+\[
+(u+v)'(t) = (f\circ g)'(t) = \nabla f(g(t))\cdot g'(t) = (1,1)\cdot (u',v') = u'+v'.
+\]
+To infer the derivative of the quotient of two functions $u$ and $v$, we can take the scalar field $f(x,y)=x/y$ and the vectorial function $g(t)=(u(t),v(t))$. 
+\[
+\left(\frac{u}{v}\right)'(t) = (f\circ g)'(t) = \nabla f(g(t))\cdot g'(t) = \left(\frac{1}{v},-\frac{u}{v^2}\right)\cdot (u',v') = \frac{u'v-uv'}{v^2}.
+\]
+\end{frame}
+
+
+
+\subsection{Directional derivative}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Directional derivative}
+For a scalar field $f(x,y)$, we have seen that the partial derivative $\dfrac{\partial f}{\partial x}(x_0,y_0)$ is the instantaneous rate of change of $f$ with respect to $x$ at point $P=(x_0,y_0)$, that is, when we move along the $x$-axis.
+
+In the same way, $\dfrac{\partial f}{\partial y}(x_0,y_0)$ is the instantaneous rate of change of $f$ with respect to $y$ at the point $P=(x_0,y_0)$, that is, when we move along the $y$-axis.
+
+But, \emph {what happens if we move along any other direction?}
+
+The instantaneous rate of change of $f$ at the point $P=(x_0,y_0)$ along the direction of a unitary vector $u$ is known as \emph{directional derivative}.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Directional derivative}
+\begin{definition}[Directional derivative]
+Given a scalar field $f$ of $\mathbb{R}^n$, a point $P$ and a unitary vector $\mathbf{u}$ in that space, we say that $f$ is differentiable at $P$ along the direction of $\mathbf{u}$ if exists the limit
+\[
+f'_{\mathbf{u}}(P) = \lim_{h\rightarrow 0}\frac{f(P+h\mathbf{u})-f(P)}{h}.
+\]
+In such a case, the value of the limit is known as \emph{directional derivative} of $f$ at the point $P$ along the direction of $\mathbf{u}$.
+\end{definition}
+
+If we consider a unitary vector $\mathbf{u}$, the trajectory that passes through $P$, following the direction of $\mathbf{u}$, has equation
+\[
+g(t)=P+t\mathbf{u},\ t\in\mathbb{R}.
+\]
+
+For $t=0$, this trajectory passes through the point $P=g(0)$ with velocity $\mathbf{u}=g'(0)$.
+
+Thus, the directional derivative of $f$ at the point $P$ along the direction of $\mathbf{u}$ is
+\[
+(f\circ g)'(0) = \nabla f(g(0))\cdot g'(0) = \nabla f(P)\cdot \mathbf{u}.
+\]
+
+\textbf{Remark}: The partial derivatives are the directional derivatives along the vectors of the canonical basis. 
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Directional derivative}
+\framesubtitle{Example}
+Given the function $f(x,y) = x^2+y^2$, its gradient is 
+\[
+\nabla f(x,y) = (2x,2y).
+\]
+
+The directional derivative of $f$ at the point $P=(1,1)$, along the unit vector $\mathbf{u}=(1/\sqrt{2},1/\sqrt{2})$ is
+\[
+f'_{\mathbf{u}}(P) = \nabla f(P)\cdot \mathbf{u} = (2,2)\cdot(1/\sqrt{2},1/\sqrt{2}) = \frac{2}{\sqrt{2}}+\frac{2}{\sqrt{2}} = \frac{4}{\sqrt{2}}.
+\]
+
+To compute the directional derivative along a non-unitary vector $\mathbf{v}$, we have to use the unitary vector that results from normalizing $v$ with the transformation:
+\[
+\mathbf{v'}=\frac{\mathbf{v}}{|\mathbf{v}|}.
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Geometric interpretation of the directional derivative}
+Geometrically, a two-variable function $z=f(x,y)$ defines a surface.
+If we cut this surface with a plane of equation $a(y-y_0)=b(x-x_0)$ (that is, the vertical plane that passes through the point $P=(x_0,y_0)$ with the direction of vector $\mathbf{u}=(a,b)$)
+the intersection is a curve, and the directional derivative of $f$ at $P$ along the direction of $\mathbf{u}$ is the slope of the tangent line to that curve at point $P$.
+
+\begin{center}
+\tikzsetnextfilename{derivatives_n_variables/directional_tangent_surface}
+%\href{https://ggbm.at/Bx8nFMNc}{
+\input{img/derivatives_n_variables/directional_tangent_surface}
+%}
+\end{center}
+\end{frame}
+
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Growth of scalar field along the gradient}
+We have seen that for any vector $\mathbf{u}$
+\[
+f'_{\mathbf{u}}(P) = \nabla f(P)\cdot \mathbf{u} = |\nabla f(P)|\cos \theta,
+\]
+where $\theta$ is the angle between $\mathbf{u}$ and the gradient $\nabla f(P)$.
+
+Taking into account that $-1\leq \cos\theta\leq 1$, for any vector $\mathbf{u}$ it is satisfied that
+\[
+-|\nabla f(P)|\leq f'_{\mathbf{u}}(P)\leq |\nabla f(P)|.
+\]
+Furthermore, if $\mathbf{u}$ has the same direction and sense than the gradient, we have $f'_{\mathbf{u}}(P)=|\nabla f(P)|\cos 0=|\nabla f(P)|$.
+Therefore, \alert{\emph{the maximum increase of a scalar field at a point $P$ is along the direction of the gradient at that point}}.
+
+In the same manner, if $\mathbf{u}$ has the same direction but opposite sense than the gradient, we have $f'_{\mathbf{u}}(P)=|\nabla f(P)|\cos \pi=-|\nabla f(P)|$.
+Therefore, \alert{\emph{the maximum decrease of a scalar field at a point $P$ is along the opposite direction of the gradient at that point}}.
+\end{frame}
+
+
+\subsection{Implicit derivation}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Implicit derivation}
+If we know that the equation
+\[
+f(x,y)=0
+\]
+defines $y$ as a function of $x$, $y=h(x)$, around $x=x_0$, then if we take the trajectory $g(x)=(x,h(x))$, the previous equation can be written as
+\[
+(f\circ g)(x) = f(g(x)) = f(x,h(x))=0.
+\]
+
+Thus, using the chain rule we have
+
+\[
+(f\circ g)'(x) = \nabla f(g(x))\cdot g'(x) = \left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}\right)\cdot (1,h'(x)) =
+\frac{\partial f}{\partial x}+\frac{\partial f}{\partial y}h'(x) = 0,
+\]
+from where we can deduce
+\[
+y'=h'(x)=\frac{-\dfrac{\partial f}{\partial x}}{\dfrac{\partial f}{\partial y}}
+\]
+
+This technique that allows us to compute $y'$ in a neighborhood of $x_0$ without the explicit formula of $y=h(x)$, it is known as \emph{implicit derivation}.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Implicit derivation}
+\framesubtitle{Example}
+The equation $x^2+y^2=1$ defines the unit circumference centered at the origin of coordinates. 
+It can also be written as
+\[
+f(x,y) = x^2+y^2-1 = 0.
+\]
+If we think about $y$ as a implicit function of $x$, we have
+\[
+y'=\frac{-\dfrac{\partial f}{\partial x}}{\dfrac{\partial f}{\partial y}} = \frac{-2x}{2y}=\frac{-x}{y}.
+\]
+We can get the same result solving the equation for $y$,
+\[
+x^2+y^2=1 \Leftrightarrow y^2=1-x^2 \Leftrightarrow y= \pm\sqrt{1-x^2}.
+\]
+and then computing the derivative as usual
+\[
+y' = \frac{1}{2\sqrt{1-x^2}}(-2x) = \frac{-x}{\sqrt{1-x^2}}.
+\]
+\end{frame}
+
+
 % %---------------------------------------------------------------------slide----
 % \begin{frame}
 % \frametitle{Propiedad del gradiente}
@@ -1009,7 +1030,7 @@ and its magnitude is
 As the partial derivatives of a function are also functions of several variables we can differentiate partially each of them. 
 
 If a function $f(x_1,\ldots,x_n)$ has a partial derivative $f'_{x_i}(x_1,\ldots,x_n)$ with respect to the variable $x_i$ in a set $A$, then we can differentiate partially again $f'_{x_i}$ with respect to the variable $x_j$. 
-This second derivative, when exists, is known as \emph{sencond order partial derivative} of $f$ with respect to the variables $x_i$ and $x_j$; it is written as 
+This second derivative, when exists, is known as \emph{second order partial derivative} of $f$ with respect to the variables $x_i$ and $x_j$; it is written as 
 \[
 \frac{\partial ^2 f}{\partial x_j \partial x_i}= \frac{\partial}{\partial x_j}\left(\frac{\partial f}{\partial x_i}\right).
 \]
@@ -1047,7 +1068,7 @@ x^y(\log x)^2.
 
 
 
-\subsection{Matriz hessiana}
+\subsection{Hessian matrix}
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Hessian matrix and Hessian}
