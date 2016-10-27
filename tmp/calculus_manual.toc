@@ -28,5 +28,6 @@
 \contentsline {subsection}{\numberline {5.6}Composition of a vectorial field with a scalar field}{53}{subsection.5.6}
 \contentsline {subsection}{\numberline {5.7}Directional derivative}{54}{subsection.5.7}
 \contentsline {subsection}{\numberline {5.8}Implicit derivation}{56}{subsection.5.8}
-\contentsline {subsection}{\numberline {5.9}Second order partial derivatives}{56}{subsection.5.9}
-\contentsline {subsection}{\numberline {5.10}Hessian matrix}{57}{subsection.5.10}
+\contentsline {subsection}{\numberline {5.9}Second order partial derivatives}{58}{subsection.5.9}
+\contentsline {subsection}{\numberline {5.10}Hessian matrix}{59}{subsection.5.10}
+\contentsline {subsection}{\numberline {5.11}Relative extrema}{60}{subsection.5.11}

@@ -1,0 +1,29 @@
+% Author: Alfredo Sánchez Alberca (asalber@ceu.es)
+\begin{tikzpicture}
+  \begin{axis}[view={120}{20},
+  3dfun,
+  xmin=-2, xmax=2,
+  ymin=-2, ymax=2,
+  zmin=-2, zmax=2,
+  axis x line=middle,
+  axis y line=middle,
+  axis z line=middle,
+%  axis equal=true,
+  every axis x label/.style={at={(xticklabel* cs:1.1)}},
+  every axis y label/.style={at={(yticklabel* cs:1.1)}},
+  every axis z label/.style={at={(zticklabel* cs:1.1)}},
+  x tick label style={anchor=east, inner sep=2pt}, 
+  y tick label style={anchor=north, inner sep=5pt},
+  z tick label style={anchor=east, inner sep=2pt},  
+  mesh/interior colormap name=incolormap,
+  colormap name=outcolormap,
+  clip=false,
+  height=5cm,
+  ]
+  \addplot3[surf, domain=-2:2, y domain=-2:2, opacity=0.5, faceted color=color1] {x^3/3-y^3/3-x+y};
+  \fill[color2] (1,1,0) circle (1.2pt) node[color=DarkTeal, right] {(1,1,0)};
+  \fill[color2] (1,-1,-4/3) circle (1.2pt) node[color=DarkTeal, right] {(1,-1,-4/3)};
+  \fill[color2] (-1,1,4/3) circle (1.2pt) node[color=DarkTeal, right] {(-1,1,4/3)};
+  \fill[color2] (-1,-1,0) circle (1.2pt) node[color=DarkTeal, right] {(-1,-1,0)};
+  \end{axis}
+\end{tikzpicture}
