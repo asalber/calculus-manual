@@ -903,7 +903,7 @@ If an equation $f(x,y)=0$ defines $y$ as a implicit function of $x$, $y=h(x)$, i
 we can compute de derivative of $y$, $h'(x)$, even if we do not know the explicit formula for $h$.
 
 \begin{theorem}[Implicit function (one-variable)]
-Let $f(x,y):\mathbb{R}^2\longrightarrow \mathbb{R}$ a two-variables function and let $(x_0,y_0)$ be a point in $\mathbb{R}^2$ such that $f(x_0,y_0)=0$.
+Let $f(x,y):\mathbb{R}^2\longrightarrow \mathbb{R}$ a two-variable function and let $(x_0,y_0)$ be a point in $\mathbb{R}^2$ such that $f(x_0,y_0)=0$.
 If $f$ has partial derivatives continuous at $(x_0,y_0)$ and $\frac{\partial f}{\partial y}(x_0,y_0)\neq 0$, then there is an open interval $I\subset \mathbb{R}$ with $x_0\in I$ and a function $h(x): I\longrightarrow \mathbb{R}$ such that
 \begin{enumerate}
 \item $y_0=h(x_0)$.
@@ -1090,7 +1090,7 @@ In the same way we can define higher order partial derivatives.
 \begin{frame}
 \frametitle{Second order partial derivatives computation}
 \framesubtitle{Example}
-The two-variables function
+The two-variable function
 \[f(x,y)=x^y\]
 has 4 second order partial derivatives:
 \begin{align*}
@@ -1148,7 +1148,7 @@ The determinant of this matrix is known as \emph{Hessian} of $f$ at $a$; it is d
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Hessian matrix computation}
-Consider again the two-variables function
+Consider again the two-variable function
 \[f(x,y)=x^y.\]
 Its Hessian matrix is
 \[
@@ -1199,159 +1199,182 @@ Hf(1,2)=\left|
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\frametitle{Igualdad de las derivatives cruzadas}
-En el ejemplo anterior se aprecia que las \emph{derivatives cruzadas} de segundo orden $\frac{\partial^2 f}{\partial y\partial x}$ y $\frac{\partial^2 f}{\partial x\partial y}$ coinciden. Ello es debido al siguiente theorem:
+\frametitle{Symmetry of second partial derivatives}
+In the previous example we can observe that the \emph{mixed derivatives} of second order $\frac{\partial^2 f}{\partial y\partial x}$ and $\frac{\partial^2 f}{\partial x\partial y}$ are the same. 
+This fact is due to the following result.
 
-\begin{theorem}[Igualdad derivatives cruzadas]
-Si $f(x,y)$ es una function tal que sus derivatives parciales $\frac{\partial f}{\partial x}$, $\frac{\partial f}{\partial y}$, $\frac{\partial^2 f}{\partial y\partial x}$ y $\frac{\partial^2 f}{\partial x\partial y}$ existen y son continuas en un conjunto abierto $A$, entonces
+\begin{theorem}[Symmetry of second partial derivatives]
+If $f(x_1,\ldots,x_n)$ is a scalar field with second order partial derivatives $\frac{\partial^2 f}{\partial x_i\partial x_j}$ and $\frac{\partial^2 f}{\partial x_j\partial x_i}$ continuous at a point $(a_1,\ldots,a_n)$, then
 \[
-\frac{\partial^2 f}{\partial y\partial x}=\frac{\partial^2 f}{\partial x\partial y}.
+\frac{\partial^2 f}{\partial x_i\partial x_j}(a_1,\ldots,a_n)=\frac{\partial^2 f}{\partial x_j\partial x_i}(a_1,\ldots,a_n).
 \]
 \end{theorem}
 
-Una consecuencia del theorem es que, al calcular una derivative parcial de segundo orden que cumpla lo anterior, \alert{\emph{¡el orden en que se realicen las derivatives parciales no importa!}}
+This means that \alert{\emph{the order of the partial derivatives does not matter}} when computing a second partial derivative.
 
-Si el theorem se cumple para todas las derivatives parciales de segundo orden, entonces la matriz hessiana es simétrica.
+As a consequence, if the function satisfies the requirements of the theorem for all the second order partial derivatives, the Hessian matrix is symmetric. 
 \end{frame}
-% 
-% 
-% 
-% \subsection{Fórmula de Taylor}
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Aproximación lineal de un campo escalar}
-% Ya se vio cómo aproximar functions de una variable mediante polinomios de Taylor. 
-% Esto también se puede generalizar a la aproximación de campos escalares mediante polinomios de varias variables. 
-% 
-% Si $P$ es un punto del dominio de un campo escalar $f$ y $\mathbf{v}$ un vector, la \emph{fórmula de Taylor} de primer grado de $f$ alrededor del punto $P$ es
-% \[
-% f(P+\mathbf{v}) = f(P) + \nabla f(P)\cdot \mathbf{v} +R^1_{f,P}(\mathbf{v}),
-% \]
-% donde 
-% \begin{align*}
-% P^1_{f,P}(\mathbf{v}) = f(P)+\nabla f(P)\mathbf{v}
-% \end{align*}
-% es el \emph{polinomio de Taylor} de primer grado de $f$ en el punto $P$, y $R^1_{f,P}(\mathbf{v})$ es el \emph{resto de taylor} para el vector $\mathbf{v}$, y mide el error cometido en la aproximación.
-% 
-% Se cumple que  
-% \[
-% \lim_{|\mathbf{v}|\rightarrow 0} \frac{R^1_{f,P}(\mathbf{v})}{|\mathbf{v}|} = 0
-% \]
-% 
-% Obsérvese que el polinomio de Taylor de primer grado coincide con el plano tangente a $f$ en $P$.
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Aproximación lineal de un campo escalar}
-% \framesubtitle{Campo escalar de dos variables}
-% Si $f$ es un campo escalar de dos variables $f(x,y)$ y $P=(x_0,y_0)$, teniendo en cuenta que para un punto cualquiera $Q=(x,y)$, el vector $\mathbf{v}=\vec{PQ}=(x-x_0,y-y_0)$, el polinomio de Taylor de $f$
-% en el punto $P$, puede expresarse
-% \begin{align*}
-% P^1_{f,P}(x,y) &= f(x_0,y_0)+\nabla f(x_0,y_0)(x-x_0,y-y_0) =\\
-% &= f(x_0,y_0)+\frac{\partial f}{\partial x}(x_0,y_0)(x-x_0)+\frac{\partial f}{\partial y}(x_0,y_0)(y-y_0).
-% \end{align*}
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Aproximación lineal de un campo escalar}
-% \framesubtitle{Example}
-% Dado el campo escalar $f(x,y)=\log(xy)$, su gradiente es
-% \[
-% \nabla f(x,y) = \left(\frac{1}{x},\frac{1}{y}\right),
-% \]
-% y el polinomio de Taylor de primer grado en el punto $P=(1,1)$ es
-% \begin{align*}
-% P^1_{f,P}(x,y) &= f(1,1) +\nabla f(1,1)\cdot (x-1,y-1) = \\
-% &= \log 1+(1,1)\cdot(x-1,y-1) = x-1+y-1 = x+y-2.\\
-% \end{align*}
-% Este polinomio, permite aproximar el valor de $f$ cerca del punto $P$.
-% Por ejemplo
-% \[ 
-% f(1.01,1.01) \approx P^1_{f,P}(1.01,1.01) = 1.01+1.01-2 = 0.02.
-% \]
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Aproximación cuadrática de un campo escalar}
-% Si $P$ es un punto del dominio de un campo escalar $f$ y $\mathbf{v}$ un vector, la \emph{fórmula de Taylor} de segundo
-% grado de $f$ alrededor del punto $P$ es
-% \[
-% f(P+\mathbf{v}) = f(P) + \nabla f(P)\cdot \mathbf{v} + \frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v} + R^2_{f,P}(\mathbf{v}),
-% \]
-% donde 
-% \begin{align*}
-% P^2_{f,P}(\mathbf{v})&=f(P)+\nabla f(P)\mathbf{v}+\frac{1}{2}\nabla^2f(P)\mathbf{v}\cdot\mathbf{v}
-% \end{align*}
-% es el \emph{polinomio de Taylor} de segundo grado de $f$ en el punto $P$, y $R^2_{f,P}(\mathbf{v})$ es el \emph{resto de taylor} para el vector $\mathbf{v}$.
-% 
-% Se cumple que  
-% \[
-% \lim_{|\mathbf{v}\rightarrow 0|} \frac{R^2_{f,P}(\mathbf{v})}{|\mathbf{v}|^2} = 0
-% \]
-% lo que indica que el resto es mucho más pequeño que el cuadrado del módulo de $\mathbf{v}$.
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Aproximación cuadrática de un campo escalar}
-% \framesubtitle{Campo escalar de dos variables}
-% Si $f$ es un campo escalar de dos variables $f(x,y)$ y $P=(x_0,y_0)$, el polinomio de Taylor de $f$ en el punto $P$, puede expresarse
-% \begin{multline*}
-% P^2_{f,P}(x,y) = f(x_0,y_0)+\nabla f(x_0,y_0)(x-x_0,y-y_0) +\\
-% +\frac{1}{2}(x-x_0,y-y_0)\nabla^2f(x_0,y_0)(x-x_0,y-y_0)= \\
-% = f(x_0,y_0)+\frac{\partial f}{\partial x}(x_0,y_0)(x-x_0)+\frac{\partial f}{\partial y}(x_0,y_0)(y-y_0)+\\
-% +\frac{1}{2}\left(\frac{\partial^2 f}{\partial x^2}(x_0,y_0) (x-x_0)^2 + 2\frac{\partial^2 f}{\partial y\partial x}(x_0,y_0) (x-x_0)(y-y_0) + \frac{\partial^2 f}{\partial y^2}(x_0,y_0) (y-y_0)^2\right)
-% \end{multline*}
-% \end{frame}
-% 
-% 
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Aproximación cuadrática de un campo escalar}
-% \framesubtitle{Example}
-% Dado el campo escalar $f(x,y)=\log(xy)$, su gradiente es
-% \[
-% \nabla f(x,y) = \left(\frac{1}{x},\frac{1}{y}\right),
-% \]
-% y su matriz hessiana es 
-% \[
-% Hf(x,y) = \left(
-% \begin{array}{cc}
-% \frac{-1}{x^2} & 0\\
-% 0 & \frac{-1}{y^2}
-% \end{array}
-% \right)
-% \]
-% y el polinomio de Taylor de segundo grado en el punto $P=(1,1)$ es
-% \begin{align*}
-% P^2_{f,P}(x,y) &= f(1,1) +\nabla f(1,1)\cdot (x-1,y-1) + \frac{1}{2}(x-1,y-1)\nabla^2f(1,1)\cdot(x-1,y-1)=\\
-% &= \log 1+(1,1)\cdot(x-1,y-1) + \frac{1}{2}(x-1,y-1)
-% \left(
-% \begin{array}{cc}
-% -1 & 0\\
-% 0 & -1
-% \end{array}
-% \right)
-% \left(
-% \begin{array}{c}
-% x-1\\
-% y-1
-% \end{array}
-% \right)
-% = \\
-% &= x-1+y-1+\frac{-x^2-y^2+2x+2y-2}{2} = \frac{-x^2-y^2+4x+4y-6}{2}.
-% \end{align*}
-% Así, $f(1.01,1.01) \approx P^1_{f,P}(1.01,1.01) = \frac{-1.01^2-1.01^2+4\cdot 1.01+4\cdot 1.01-6}{2} = 0.0199$.
-% \end{frame}
-% 
-% 
+
+
+\subsection{Taylor polynomials}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Linear approximation of a scalar field}
+In a previous chapter we saw how to approximate a one-variable function with a Taylor polynomial.  
+This can be generalized to several-variables functions. 
+
+If $P$ is a point in the domain of a scalar field $f$ and $\mathbf{v}$ is a vector, the first degree \emph{Taylor formula} of $f$ around $P$ is
+\[
+f(P+\mathbf{v}) = f(P) + \nabla f(P)\cdot \mathbf{v} +R^1_{f,P}(\mathbf{v}),
+\]
+where
+\begin{align*}
+P^1_{f,P}(\mathbf{v}) = f(P)+\nabla f(P)\mathbf{v}
+\end{align*}
+is the first degree \emph{Taylor polynomial} of $f$ at $P$, and $R^1_{f,P}(\mathbf{v})$ is the \emph{Taylor remainder} for the vector $\mathbf{v}$, that is the error in the approximation.
+
+The remainder satisfies
+\[
+\lim_{|\mathbf{v}|\rightarrow 0} \frac{R^1_{f,P}(\mathbf{v})}{|\mathbf{v}|} = 0
+\]
+
+Observe that the first degree Taylor polynomial for a function of two variables is the tangent plange to the graph of $f$ at $P$.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Linear approximation of a two-variable function}
+If $f$ is a scalar field of two variables $f(x,y)$ and $P=(x_0,y_0)$, as for any point $Q=(x,y)$ we can take the vector $\mathbf{v}=\vec{PQ}=(x-x_0,y-y_0)$, then the first degree Taylor polynomial of $f$ at $P$, can be written as
+\begin{align*}
+P^1_{f,P}(x,y) &= f(x_0,y_0)+\nabla f(x_0,y_0)(x-x_0,y-y_0) =\\
+&= f(x_0,y_0)+\frac{\partial f}{\partial x}(x_0,y_0)(x-x_0)+\frac{\partial f}{\partial y}(x_0,y_0)(y-y_0).
+\end{align*}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Linear approximation of a two-variable function}
+\framesubtitle{Example}
+Given the scalar field $f(x,y)=\log(xy)$, its gradient is
+\[
+\nabla f(x,y) = \left(\frac{1}{x},\frac{1}{y}\right),
+\]
+and the first degree Taylor polynomial at the point $P=(1,1)$ is
+\begin{align*}
+P^1_{f,P}(x,y) &= f(1,1) +\nabla f(1,1)\cdot (x-1,y-1) = \\
+&= \log 1+(1,1)\cdot(x-1,y-1) = x-1+y-1 = x+y-2.\\
+\end{align*}
+This polynomial approximates $f$ near the point $P$.
+For instance,
+\[
+f(1.01,1.01) \approx P^1_{f,P}(1.01,1.01) = 1.01+1.01-2 = 0.02.
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Linear approximation of a two-variable function}
+\framesubtitle{Example}
+The graph of the scalar field $f(x,y)=\log(xy)$ and the first degree Taylor polynomial of $f$ at the point $P=(1,1)$ is below. 
+\begin{center}
+\tikzsetnextfilename{derivatives_n_variables/first_degree_taylor_polynomial}
+\input{img/derivatives_n_variables/first_degree_taylor_polynomial}
+\end{center}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Quadratic approximation of a scalar field}
+If $P$ is a point in the domain of a scalar field $f$ and $\mathbf{v}$ is a vector, the second degree \emph{Taylor formula} of $f$ around $P$ is
+\[
+f(P+\mathbf{v}) = f(P) + \nabla f(P)\cdot \mathbf{v} + \frac{1}{2}\left(\mathbf{v}\nabla^2f(P)\mathbf{v}\right) + R^2_{f,P}(\mathbf{v}),
+\]
+where
+\begin{align*}
+P^2_{f,P}(\mathbf{v})&=f(P)+\nabla f(P)\mathbf{v}+\frac{1}{2}\left(\mathbf{v}\nabla^2f(P)\mathbf{v}\right)
+\end{align*}
+is the second degree \emph{Taylor polynomial} of $f$ at the point $P$, and $R^2_{f,P}(\mathbf{v})$ is the \emph{Taylor remainder} for the vector $\mathbf{v}$, that is the error in the approximation.
+
+The remainder satisfies
+\[
+\lim_{|\mathbf{v}\rightarrow 0|} \frac{R^2_{f,P}(\mathbf{v})}{|\mathbf{v}|^2} = 0.
+\]
+This means that the remainder is smaller than the square of the module of $\mathbf{v}$.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Quadratic approximation of a two-variable function}
+If $f$ is a scalar field of two variables $f(x,y)$ and $P=(x_0,y_0)$, then the second degree Taylor polynomial of $f$ at $P$, can be written as
+\begin{multline*}
+P^2_{f,P}(x,y) = f(x_0,y_0)+\nabla f(x_0,y_0)(x-x_0,y-y_0) +\\
++\frac{1}{2}(x-x_0,y-y_0)\nabla^2f(x_0,y_0)(x-x_0,y-y_0)= \\
+= f(x_0,y_0)+\frac{\partial f}{\partial x}(x_0,y_0)(x-x_0)+\frac{\partial f}{\partial y}(x_0,y_0)(y-y_0)+\\
++\frac{1}{2}\left(\frac{\partial^2 f}{\partial x^2}(x_0,y_0) (x-x_0)^2 + 2\frac{\partial^2 f}{\partial y\partial x}(x_0,y_0) (x-x_0)(y-y_0) + \frac{\partial^2 f}{\partial y^2}(x_0,y_0) (y-y_0)^2\right)
+\end{multline*}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Quadratic approximation of a two-variable function}
+\framesubtitle{Example}
+Given the scalar field $f(x,y)=\log(xy)$, its gradient is
+\[
+\nabla f(x,y) = \left(\frac{1}{x},\frac{1}{y}\right),
+\]
+its Hessian matrix is
+\[
+Hf(x,y) = \left(
+\begin{array}{cc}
+\frac{-1}{x^2} & 0\\
+0 & \frac{-1}{y^2}
+\end{array}
+\right)
+\]
+and the second degree Taylor polynomial of $f$ at the point $P=(1,1)$ is 
+\begin{align*}
+P^2_{f,P}(x,y) &= f(1,1) +\nabla f(1,1)\cdot (x-1,y-1) + \frac{1}{2}(x-1,y-1)\nabla^2f(1,1)\cdot(x-1,y-1)=\\
+&= \log 1+(1,1)\cdot(x-1,y-1) + \frac{1}{2}(x-1,y-1)
+\left(
+\begin{array}{cc}
+-1 & 0\\
+0 & -1
+\end{array}
+\right)
+\left(
+\begin{array}{c}
+x-1\\
+y-1
+\end{array}
+\right)
+= \\
+&= x-1+y-1+\frac{-x^2-y^2+2x+2y-2}{2} = \frac{-x^2-y^2+4x+4y-6}{2}.
+\end{align*}
+Thus, $\displaystyle f(1.01,1.01) \approx P^1_{f,P}(1.01,1.01) = \frac{-1.01^2-1.01^2+4\cdot 1.01+4\cdot 1.01-6}{2} = 0.0199$.
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Quadratic approximation of a two-variable function}
+\framesubtitle{Example}
+The graph of the scalar field $f(x,y)=\log(xy)$ and the second degree Taylor polynomial of $f$ at the point $P=(1,1)$ is below. 
+\begin{center}
+\tikzsetnextfilename{derivatives_n_variables/second_degree_taylor_polynomial}
+%\href{https://ggbm.at/Ehnz3hGb}{
+\input{img/derivatives_n_variables/second_degree_taylor_polynomial}
+%}
+\end{center}
+\end{frame}
+
+
+
 \subsection{Relative extrema}
 %---------------------------------------------------------------------slide----
 \begin{frame}
