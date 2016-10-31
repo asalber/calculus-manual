@@ -780,6 +780,101 @@ To infer the derivative of the quotient of two functions $u$ and $v$, we can tak
 
 
 
+\subsection{Tangent plane and normal line to a surface}
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Gradient property}
+\begin{theorem}
+Let $C$ be the level set of a scalar field $f$ that includes a point $P$.
+If $\mathbf{v}$ is the velocity at $P$ of a trajectory following $C$, then
+\[
+\nabla f(P) \cdot \mathbf{v} = 0.
+\]
+that is, the gradient of $f$ at $P$ is normal to $C$ at $P$, provided that the gradient is not zero.
+\end{theorem}
+
+\structure{\textbf{Proof}}
+If we take the trajectory $g(t)$ that follows the level set $C$ and passes through $P$ at time $t=t_0$, that is $P=g(t_0)$, so $\mathbf{v}=g'(t_0)$, then
+\[
+(f\circ g)(t) = f(g(t)) = f(P),
+\]
+that is constant at any $t$.
+Thus, applying the chain rule we have
+\[
+(f\circ g)'(t) = \nabla f(g(t))\cdot  g'(t) = 0,
+\]
+and, particularly, at $t=t_0$, we have
+\[
+\nabla f(P)\cdot \mathbf{v} = 0.
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Normal and tangent line to curve in the plane}
+According to the previous result, the normal line to a curve with equation $f(x,y)=0$ at point $P=(x_0,y_0)$, has equation
+\[
+P+t\nabla f(P) = (x_0,y_0)+t\nabla f(x_0,y_0).
+\]
+\structure{\textbf{Example}}
+Given the scalar field $f(x,y)=x^2+y^2-25$, and the point $P=(3,4)$, the level set of $f$ that passes through $P$, that satisfies $f(x,y)=f(P)=0$, is the circle with radius 5 centered at the origin of coordinates.
+Thus, taking as a normal vector the gradient of $f$
+\[
+\nabla f(x,y) = (2x,2y),
+\]
+at the point $P=(3,4)$ is $\nabla f(3,4) = (6,8)$, and the normal line to the circle at $P$ is
+\[
+P+t\nabla f(P) = (3,4)+t(6,8) = (3+6t,4+8t),
+\]
+
+On the other hand, the tangent line to the circle at $P$ is
+\[
+((x,y)-P)\cdot \nabla f(P) = ((x,y)-(3,4))\cdot (6,8) = (x-3,y-4)\cdot(6,8) = 6x+8y=50.
+\]
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Normal line and tangent plane to a surface in the space}
+In the same way, if we have a surface with equation $f(x,y,z)=0$, at the point $P=(x_0,y_0,z_0)$ the normal line has equation
+\[
+P+t\nabla f(P) = (x_0,y_0,z_0)+t\nabla f(x_0,y_0,z_0).
+\]
+\structure{\textbf{Example}}
+Given the scalar field $f(x,y,z)=x^2+y^2-z$, and the point $P=(1,1,2)$, the level set of $f$ that passes through $P$, that satisfies $f(x,y)=f(P)=0$, is the paraboloid $z=x^2+y^2$.
+Thus, taking as a normal vector the gradient of $f$
+\[
+\nabla f(x,y,z) = (2x,2y,-1),
+\]
+at the point $P=(1,1,2)$ is $\nabla f(1,1,2) = (2,2,-1)$, and the normal line to the paraboloid at $P$ is
+\[
+P+t\nabla f(P) = (1,1,2)+t\nabla f(1,1,2) = (1,1,2)+t(2,2,-1) = (1+2t,1+2t,2-t).
+\]
+
+On the other hand, the tangent plane to the paraboloid at $P$ is
+\begin{align*}
+((x,y,z)-P)\cdot \nabla f(P) &= ((x,y,z)-(1,1,2))(2,2,-1) = (x-1,y-1,z-2)(2,2,-1)=\\
+ &= 2(x-1)+2(y-1)-(z-2) = 2x+2y-z-2= 0.
+\end{align*}
+\end{frame}
+
+
+%---------------------------------------------------------------------slide----
+\begin{frame}
+\frametitle{Normal line and tangent plane to a surface in the space}
+\framesubtitle{Example}
+The graph of the paraboloid $f(x,y,z)=x^2+y^2-z=0$ and the normal line and the tangent plane to the graph of $f$ at the point $P=(1,1,2)$ is below. 
+\begin{center}
+\tikzsetnextfilename{derivatives_n_variables/tangent_plane_paraboloid}
+%\href{https://ggbm.at/wTh7KKd3}{
+\input{img/derivatives_n_variables/tangent_plane_paraboloid}
+%}
+\end{center}
+\end{frame}
+
+
 \subsection{Directional derivative}
 %---------------------------------------------------------------------slide----
 \begin{frame}
@@ -858,7 +953,6 @@ the intersection is a curve, and the directional derivative of $f$ at $P$ along 
 \end{frame}
 
 
-
 %---------------------------------------------------------------------slide----
 \begin{frame}
 \frametitle{Growth of scalar field along the gradient}
@@ -878,8 +972,8 @@ Therefore, \alert{\emph{the maximum increase of a scalar field at a point $P$ is
 In the same manner, if $\mathbf{u}$ has the same direction but opposite sense than the gradient, we have $f'_{\mathbf{u}}(P)=|\nabla f(P)|\cos \pi=-|\nabla f(P)|$.
 Therefore, \alert{\emph{the maximum decrease of a scalar field at a point $P$ is along the opposite direction of the gradient at that point}}.
 \end{frame}
-%
-%
+
+
 \subsection{Implicit derivation}
 %---------------------------------------------------------------------slide----
 \begin{frame}
@@ -978,96 +1072,6 @@ If $f$ has partial derivatives continuous at $(x_1^0,\ldots,x_n^0,y^0)$ and $\fr
 \end{theorem}
 \end{frame}
 
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Gradient property}
-\begin{theorem}
-Let $C$ be the level set of a scalar field $f$ that includes a point $P$.
-If $\mathbf{v}$ is the velocity at $P$ of a trajectory following $C$, then
-\[
-\nabla f(P) \cdot \mathbf{v} = 0.
-\]
-that is, the gradient of $f$ at $P$ is normal to $C$ at $P$, provided that the gradient is not zero.
-\end{theorem}
-
-\structure{\textbf{Proof}}
-If we take the trajectory $g(t)$ that follows the level set $C$ and passes through $P$ at time $t=t_0$, that is $P=g(t_0)$, so $\mathbf{v}=g'(t_0)$, then
-\[
-(f\circ g)(t) = f(g(t)) = f(P),
-\]
-that is constant at any $t$.
-Thus, applying the chain rule we have
-\[
-(f\circ g)'(t) = \nabla f(g(t))\cdot  g'(t) = 0,
-\]
-and, particularly, at $t=t_0$, we have
-\[
-\nabla f(P)\cdot \mathbf{v} = 0.
-\]
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Normal and tangent line to curve in the plane}
-According to the previous result, the normal line to a curve with equation $f(x,y)=0$ at point $P=(x_0,y_0)$, has equation
-\[
-P+t\nabla f(P) = (x_0,y_0)+t\nabla f(x_0,y_0).
-\]
-\structure{\textbf{Example}}
-Given the scalar field $f(x,y)=x^2+y^2-25$, and the point $P=(3,4)$, the level set of $f$ that passes through $P$, that satisfies $f(x,y)=f(P)=0$, is the circle with radius 5 centered at the origin of coordinates.
-Thus, taking as a normal vector the gradient of $f$
-\[
-\nabla f(x,y) = (2x,2y),
-\]
-at the point $P=(3,4)$ is $\nabla f(3,4) = (6,8)$, and the normal line to the circle at $P$ is
-\[
-P+t\nabla f(P) = (3,4)+t(6,8) = (3+6t,4+8t),
-\]
-
-On the other hand, the tangent line to the circle at $P$ is
-\[
-((x,y)-P)\cdot \nabla f(P) = ((x,y)-(3,4))\cdot (6,8) = (x-3,y-4)\cdot(6,8) = 6x+8y=50.
-\]
-\end{frame}
-
-
-%---------------------------------------------------------------------slide----
-\begin{frame}
-\frametitle{Normal line and tangent plane to a surface in the space}
-In the same way, if we have a surface with equation $f(x,y,z)=0$, at the point $P=(x_0,y_0,z_0)$ the normal line has equation
-\[
-P+t\nabla f(P) = (x_0,y_0,z_0)+t\nabla f(x_0,y_0,z_0).
-\]
-\structure{\textbf{Example}}
-Given the scalar field $f(x,y,z)=x^2+y^2-z$, and the point $P=(1,1,2)$, the level set of $f$ that passes through $P$, that satisfies $f(x,y)=f(P)=0$, is the paraboloid $z=x^2+y^2$.
-Thus, taking as a normal vector the gradient of $f$
-\[
-\nabla f(x,y,z) = (2x,2y,-1),
-\]
-at the point $P=(1,1,2)$ is $\nabla f(1,1,2) = (2,2,-1)$, and the normal line to the paraboloid at $P$ is
-\[
-P+t\nabla f(P) = (1,1,2)+t\nabla f(1,1,2) = (1,1,2)+t(2,2,-1) = (1+2t,1+2t,2-t).
-\]
-
-On the other hand, the tangent plane to the paraboloid at $P$ is
-\begin{align*}
-((x,y,z)-P)\cdot \nabla f(P) &= ((x,y,z)-(1,1,2))(2,2,-1) = (x-1,y-1,z-2)(2,2,-1)=\\
- &= 2(x-1)+2(y-1)-(z-2) = 2x+2y-z-2= 0.
-\end{align*}
-\end{frame}
-
-%
-% %---------------------------------------------------------------------slide----
-% \begin{frame}
-% \frametitle{Recta normal y plano tangente a una superficie}
-% \framesubtitle{Example}
-% La gráfica del paraboloide $f(x,y,z)=x^2+y^2-z=0$ y su plano tangente en el punto $P=(1,1,2)$ es
-% \begin{center}
-% \scalebox{1}{\input{img/calculo_diferencial_n_variables/plano_tangente_paraboloide}}
-% \end{center}
-% \end{frame}
 
 
 \subsection{Second order partial derivatives}
