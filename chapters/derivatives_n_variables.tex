@@ -945,10 +945,12 @@ If we cut this surface with a plane of equation $a(y-y_0)=b(x-x_0)$ (that is, th
 the intersection is a curve, and the directional derivative of $f$ at $P$ along the direction of $\mathbf{u}$ is the slope of the tangent line to that curve at point $P$.
 
 \begin{center}
+\mode<presentation>{
 \tikzsetnextfilename{derivatives_n_variables/directional_tangent_surface}
 %\href{https://ggbm.at/Bx8nFMNc}{
 \input{img/derivatives_n_variables/directional_tangent_surface}
 %}
+}
 \end{center}
 \end{frame}
 
@@ -1062,10 +1064,10 @@ y' = \frac{1}{2\sqrt{1-x^2}}(-2x) = \frac{-x}{\sqrt{1-x^2}}.
 The implicit function theorem can be generalized to functions with several variables.
 
 \begin{theorem}[Implicit function]
-Let $f(x_1,\ldots,x_n,y):\mathbb{R}^{n+1}\longrightarrow \mathbb{R}$ a $n+1$-variables function and let $(x_1^0,\ldots, x_2^0,y^0)$ be a point in $\mathbb{R}^{n+1}$ such that $f(x_1^0,\ldots,x_n^0,y^0)=0$.
-If $f$ has partial derivatives continuous at $(x_1^0,\ldots,x_n^0,y^0)$ and $\frac{\partial f}{\partial y}(x_1^0,\ldots,x_n^0,y^0)\neq 0$, then there is a region $I\subset \mathbb{R}^n$ with $(x_1^0,\ldots,x_n^0)\in I$ and a function $h(x1,\ldots, xn): I\longrightarrow \mathbb{R}$ such that
+Let $f(x_1,\ldots,x_n,y):\mathbb{R}^{n+1}\longrightarrow \mathbb{R}$ a $n+1$-variables function and let $(a_1,\ldots, a_n,b)$ be a point in $\mathbb{R}^{n+1}$ such that $f(a_1,\ldots,a_n,b)=0$.
+If $f$ has partial derivatives continuous at $(a_1,\ldots,a_n,b)$ and $\frac{\partial f}{\partial y}(a_1,\ldots,a_n,b)\neq 0$, then there is a region $I\subset \mathbb{R}^n$ with $(a_1,\ldots,a_n)\in I$ and a function $h(x_1,\ldots, x_n): I\longrightarrow \mathbb{R}$ such that
 \begin{enumerate}
-\item $y_0=h(x_1^0,\ldots,x_n^0)$.
+\item $b=h(a_1,\ldots,a_n)$.
 \item $f(x_1,\ldots,x_n,h(x_1,\ldots,x_n))=0$ for all $(x_1,\ldots,x_n)\in I$.
 \item $h$ is differentiable on $I$, and $\dfrac{\partial y}{\partial x_i}=\frac{-\dfrac{\partial f}{\partial x_i}}{\dfrac{\partial f}{\partial y}}$
 \end{enumerate}
