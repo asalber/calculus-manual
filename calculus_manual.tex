@@ -4,10 +4,10 @@
 % ASPECT RATIO FOR YOUTUBE VIDEO
 % \documentclass[aspectratio=1610,mathserif,profesionalfont,10pt,svgnames,red,xcolor=table]{beamer}
 % ASPECT RATIO FOR PROJECTOR
-%\documentclass[profesionalfont,10pt,svgnames,xcolor=table]{beamer}
+% \documentclass[profesionalfont,10pt,svgnames,xcolor=table]{beamer}
 
 % BEAMER THEME
-%\usetheme[progressbar=frametitle,background=light,titleformat=smallcaps,block=fill]{metropolis}
+% \usetheme[progressbar=frametitle,background=light,titleformat=smallcaps,block=fill]{metropolis}
 
 % ARTICLE VERSION
 % \pdfminorversion=4 % for solving some problems with png graphics in acrobat reader
@@ -16,22 +16,22 @@
 
 \usepackage{standalone}
 
-% LANGUAGE 
+% LANGUAGE
 \usepackage{polyglossia}
-\setdefaultlanguage{english} 
+\setdefaultlanguage{english}
 
 % FONT
 %\usefonttheme{professionalfonts}
 %\usepackage{cmbright}
 %\setmainfont{CMU Bright}
 %\setmathfont{Arial}
- 
 
-\mode<article>{ 
+
+\mode<article>{
 \usepackage{fontspec}
 \usepackage{unicode-math}
 \setmainfont[Ligatures=TeX]{TeX Gyre Pagella}
-\setmathfont[math-style=ISO,bold-style=ISO,vargreek-shape=TeX]{TeX Gyre Pagella Math}
+\setmathfont[math-style=ISO,bold-style=ISO]{TeX Gyre Pagella Math}
 %\usepackage[sc]{mathpazo}
 %\setromanfont[Mapping=tex-text]{Linux Libertine}
 %\setsansfont[Mapping=tex-text]{Myriad Pro}
@@ -95,17 +95,18 @@
 \tikzset{
     png export/.style={
         external/system call={
-            xelatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname "\image" "\texsource";
-            convert -density 300 -transparent white "\image.pdf" "\image.png"
+            xelatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname '\image' '\texsource';
+            convert -density 300 -transparent white '\image.pdf' '\image.png'
         }
     }
 }
 \tikzset{
 	svg export/.style={
         external/system call/.add={}%
-        {; pdf2svg "\image.pdf" "\image.svg"}
+        {; pdf2svg '\image.pdf' '\image.svg'}
     }
 }
+\tikzset{external/up to date check=diff}
 \tikzexternalize[prefix=img/exported/]
 \tikzset{png export}
 \tikzset{svg export}
@@ -118,10 +119,10 @@
 
 % LOGO POSITION
 \setbeamertemplate{title graphic}{
- \vbox to 0pt {
+  \vbox to 0pt {
  	\vspace*{0.9\textheight}
- 	\inserttitlegraphic
- }
+    \inserttitlegraphic
+    }
 }
 
 % SPACE BETWEEN PARAGRAFS
@@ -172,7 +173,7 @@
 \newcommand{\highlight}[1]{\textcolor{orange}{\textbf{#1}}}
 
 % PDF settings
-\hypersetup{colorlinks=false}
+\hypersetup{colorlinks=true}
 
 %=====================================================================BODY=====
 
@@ -186,7 +187,7 @@ José Rojo Montijano (\href{mailto:jrojo.eps@ceu.es}{jrojo.eps@ceu.es}) \and
 Anselmo Romero Limón (\href{mailto:arlimon@ceu.es}{arlimon@ceu.es}) \and
 Alfredo Sánchez Alberca (\href{mailto:asalber@ceu.es}{asalber@ceu.es})
 }
-\date{Sep 2016\\[1cm]
+\date{Sep 2018\\[1cm]
 Department of Applied Math and Statistics\\ CEU San Pablo\\[1cm]
 \includegraphics[height=2cm]{img/logo_uspceu}
 }
@@ -196,7 +197,7 @@ Department of Applied Math and Statistics\\ CEU San Pablo\\[1cm]
 \author{
 Alfredo Sánchez Alberca (\href{mailto:asalber@ceu.es}{asalber@ceu.es})}
 \institute{Department of Applied Math and Statistics\\ CEU San Pablo}
-\date{Sep 2016}
+\date{Sep 2018}
 \titlegraphic{\hfill\includegraphics[height=1.5cm]{img/logo_uspceu}}
 }
 
@@ -208,20 +209,20 @@ Alfredo Sánchez Alberca (\href{mailto:asalber@ceu.es}{asalber@ceu.es})}
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\input{preamble/license}
+	\input{preamble/license}
 \end{frame}
 
 \mode<article>{\clearpage}
 
 %---------------------------------------------------------------------slide----
 \begin{frame}
-\mode<presentation>{\frametitle{Contents}}
-\setbeamertemplate{section in toc}[sections numbered]
-\tableofcontents[hideallsubsections]
+	\mode<presentation>{\frametitle{Contents}}
+	\setbeamertemplate{section in toc}[sections numbered]
+	\tableofcontents[hideallsubsections]
 \end{frame}
 \include{chapters/analytic_geometry}
 \include{chapters/derivatives_one_variable}
 \include{chapters/integrals}
 \include{chapters/ordinary_differential_equations}
-\include{chapters/derivatives_n_variables} 
-\end{document} 
+\include{chapters/derivatives_n_variables}
+\end{document}

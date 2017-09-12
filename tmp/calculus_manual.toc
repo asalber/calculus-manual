@@ -1,35 +1,5 @@
 \select@language {english}
-\contentsline {section}{\numberline {1}Analytic geometry}{3}{section.1}
-\contentsline {subsection}{\numberline {1.1}Vectors}{3}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}Lines}{7}{subsection.1.2}
-\contentsline {subsection}{\numberline {1.3}Planes}{8}{subsection.1.3}
-\contentsline {section}{\numberline {2}Differential calculus with one real variable}{10}{section.2}
-\contentsline {subsection}{\numberline {2.1}Concept of derivative}{10}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Algebra of derivatives}{13}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Analysis of functions}{14}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Function approximation}{17}{subsection.2.4}
-\contentsline {section}{\numberline {3}Integrals}{25}{section.3}
-\contentsline {subsection}{\numberline {3.1}Antiderivative of a function}{25}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Elementary integrals}{26}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Techniques of integration}{27}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Definite integral}{31}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}Area calculation}{32}{subsection.3.5}
-\contentsline {section}{\numberline {4}Ordinary Differential Equations}{34}{section.4}
-\contentsline {subsection}{\numberline {4.1}Ordinary Differential Equations}{34}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Separable differential equations}{36}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Homogeneous differential equations}{37}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}Linear differential equations}{38}{subsection.4.4}
-\contentsline {section}{\numberline {5}Several Variables Differentiable Calculus}{41}{section.5}
-\contentsline {subsection}{\numberline {5.1}Vector functions of a single real variable}{41}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Tangent line to a trajectory}{43}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}Functions of several variables}{47}{subsection.5.3}
-\contentsline {subsection}{\numberline {5.4}Partial derivative notion}{50}{subsection.5.4}
-\contentsline {subsection}{\numberline {5.5}Gradient}{52}{subsection.5.5}
-\contentsline {subsection}{\numberline {5.6}Composition of a vectorial field with a scalar field}{53}{subsection.5.6}
-\contentsline {subsection}{\numberline {5.7}Tangent plane and normal line to a surface}{54}{subsection.5.7}
-\contentsline {subsection}{\numberline {5.8}Directional derivative}{55}{subsection.5.8}
-\contentsline {subsection}{\numberline {5.9}Implicit derivation}{57}{subsection.5.9}
-\contentsline {subsection}{\numberline {5.10}Second order partial derivatives}{59}{subsection.5.10}
-\contentsline {subsection}{\numberline {5.11}Hessian matrix}{59}{subsection.5.11}
-\contentsline {subsection}{\numberline {5.12}Taylor polynomials}{60}{subsection.5.12}
-\contentsline {subsection}{\numberline {5.13}Relative extrema}{63}{subsection.5.13}
+\beamer@sectionintoc {1}{Analytic geometry}{4}{0}{1}
+\beamer@subsectionintoc {1}{1}{Vectors}{6}{0}{1}
+\beamer@subsectionintoc {1}{2}{Lines}{18}{0}{1}
+\beamer@subsectionintoc {1}{3}{Planes}{22}{0}{1}

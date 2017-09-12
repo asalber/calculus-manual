@@ -1,0 +1,20 @@
+Tue Sep 12 19:56:36 2017
+latexindent version 2.1R, a script to indent .tex files
+latexindent lives here: /usr/local/texlive/2016/texmf-dist/scripts/latexindent/
+
+Directory for backup files and indent.log: /media/alf/datos/drive/CEU/DOCENCIA/materiales/calculo/presentaciones/calculus_manual/chapters
+Reading defaultSettings.yaml from /usr/local/texlive/2016/texmf-dist/scripts/latexindent/defaultSettings.yaml
+
+Home directory is /home/alf
+To specify user settings you would put indentconfig.yaml here: 
+	/home/alf/indentconfig.yaml
+
+Alternatively, you can use the hidden file .indentconfig.yaml as: 
+	/home/alf/.indentconfig.yaml
+
+Just out put to the terminal :)
+
+Line Count of /media/alf/datos/drive/CEU/DOCENCIA/materiales/calculo/presentaciones/calculus_manual/chapters/derivatives_one_variable.tex: 780
+Line Count of indented /media/alf/datos/drive/CEU/DOCENCIA/materiales/calculo/presentaciones/calculus_manual/chapters/derivatives_one_variable.tex: 780
+
+Line counts of original file and indented file match

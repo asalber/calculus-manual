@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.8.29)  31 OCT 2016 20:56
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.8.29)  13 DEC 2016 19:41
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -4909,15 +4909,12 @@ Package microtype Info: Character `―' is missing
 (./img/derivatives_n_variables/tangent_plane_paraboloid.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
 isable this.
-) (./img/derivatives_n_variables/directional_tangent_surface.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to d
-isable this.
 )
-Overfull \hbox (14.09305pt too wide) in paragraph at lines 1065--1068
+Overfull \hbox (7.95067pt too wide) in paragraph at lines 1067--1070
 [][]\EU1/TeXGyrePagella(0)/bx/n/10 Theorem 51 \EU1/TeXGyrePagella(0)/m/n/10 (Im
 plicit function)\EU1/TeXGyrePagella(0)/bx/n/10 . []\EU1/TeXGyrePagella(0)/m/it/
 10 Let $[][][][][] [] [] [][][] [][] [] [][] [] []$ a $[] [] []$-variables func
-tion and let $[][][][] [] [] [][][] [][][]$
+tion and let $[][][][] [] [] [][][] [][]$
  []
 
 (./img/derivatives_n_variables/first_degree_taylor_polynomial.tex
@@ -5174,7 +5171,6 @@ img/derivatives_n_variables/paraboloid_level_set.tex
 img/derivatives_n_variables/mountain_level_curves.tex
 img/derivatives_n_variables/partial_tangent_surface.tex
 img/derivatives_n_variables/tangent_plane_paraboloid.tex
-img/derivatives_n_variables/directional_tangent_surface.tex
 img/derivatives_n_variables/first_degree_taylor_polynomial.tex
 img/derivatives_n_variables/second_degree_taylor_polynomial.tex
 img/derivatives_n_variables/paraboloid_minimum.tex
@@ -5186,10 +5182,10 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 227.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 227.
  ) 
 Here is how much of TeX's memory you used:
- 54547 strings out of 495464
- 1219846 string characters out of 6184122
- 1521124 words of memory out of 5000000
- 56738 multiletter control sequences out of 15000+600000
+ 54542 strings out of 495464
+ 1219600 string characters out of 6184122
+ 1520124 words of memory out of 5000000
+ 56736 multiletter control sequences out of 15000+600000
  16014 words of font info for 143 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
  84i,14n,114p,10472b,2261s stack positions out of 5000i,500n,10000p,200000b,80000s
